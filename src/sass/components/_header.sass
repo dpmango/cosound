@@ -4,45 +4,40 @@
   top: 0
   right: 0
   left: 0
-  background: #f5f5f5
+  z-index: 10
+  background: transparent
   &__wrapper
     display: flex
     align-items: center
-    height: 70px
+    padding: 35px 50px
+    color: white
 
   &__logo
     flex: 0 0 auto
     font-size: 35px
     padding-right: 30px
+    font-size: 25px
 
   &__menu
     flex: 0 1 auto
+    margin-left: auto
     display: flex
     align-items: center
-    font-size: 18px
-    margin: 0 auto
-    padding: 0
     li
       display: inline-block
       margin-right: 30px
     a
       transition: color .25s $ease
       &:hover
-        color: tomato
-
-  &__cta
-    margin-left: auto
-    padding-left: 30px
+        color: $colorRed
 
   &__hamburger
-    // display: none
+    display: none
     padding-left: 20px
 
 
 +r($desktop)
   .header
-    &__cta
-      display: none
 
 +r($tablet)
   .header

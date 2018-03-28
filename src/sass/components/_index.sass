@@ -1,4 +1,127 @@
 // INDEX
 
-.hello
-  display: none
+.hero
+  position: relative
+  color: white
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+  .container
+    position: relative
+    z-index: 2
+  &__wrapper
+    min-height: 700px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 90px 0
+
+  &__logo
+    font-size: 66px
+
+  &__text
+    margin-top: 50px
+    font-size: 20px
+    max-width: 670px
+    margin-left: auto
+    margin-right: auto
+    p
+      line-height: 1.9
+
+  &__cta
+    margin-top: 100px
+    .btn
+      margin-right: 27px
+      margin-bottom: 30px
+      &:last-child
+        margin-right: 0
+
+
+.info
+  margin-top: 90px
+  &__wrapper
+    display: flex
+    align-items: flex-start
+
+  &__content
+    flex: 0 0 auto
+    max-width: 100%
+    min-width: 1px
+    min-height: 1px
+    margin-top: 90px
+
+  &__heading
+    font-weight: 500
+    font-size: 36px
+    text-align: right
+  &__text
+    margin-top: 25px
+    color: rgba($fontColor, .52)
+    text-align: right
+    max-width: 343px
+    margin-left: auto
+    p
+      font-size: 14px
+      line-height: 2
+      margin-top: 0
+      & + p
+        margin-top: 1em
+
+  &__video
+    flex: 0 0 auto
+    padding-left: 5%
+    margin-left: auto
+    &-box
+      position: relative
+      border: 8px solid white
+      border-radius: 9px
+      box-shadow: 0 10px 60px 0 rgba(0,0,0,0.26)
+      transition: .25s $ease
+      cursor: pointer
+      &:hover
+        box-shadow: 0 5px 40px 0 rgba(0,0,0,0.15)
+        .info__video-play
+          box-shadow: 0 6px 30px rgba(black, .5)
+          transform: translate(-50%,-50%) scale(1.2)
+          .ico
+            transform: translateX(10%) scale(0.8)
+    &-placeholder
+      font-size: 0
+      user-select: none
+      img
+        max-width: 100%
+    &-play
+      position: absolute
+      top: 50%
+      left: 50%
+      z-index: 2
+      min-size: 68px
+      transform: translate(-50%,-50%)
+      border-radius: 50%
+      background: white
+      box-shadow: 0 2px 20px rgba(black, .5)
+      display: flex
+      align-items: center
+      justify-content: center
+      color: $colorViolet
+      font-size: 27px
+      cursor: pointer
+      transition: .25s $ease
+      .ico
+        transform: translateX(10%)
+        transition: .25s $ease
+
+
+.prefooter
+  text-align: center
+  margin-top: 120px
+  font-size: 0
+  img
+    max-width: 100%
