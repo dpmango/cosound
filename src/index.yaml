@@ -2,6 +2,6 @@ ProjectTitle: Cosound
 
 PageList:
 - file: homepage.html
-  ready: 100
+  ready: 70
 - file: page.html
   ready: 0

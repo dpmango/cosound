@@ -89,3 +89,33 @@
       text-transform: uppercase
       margin-bottom: 20px
       color: $colorWhite50
+
++r($desktop)
+  .footer
+    &__nav
+      display: none
+
++r($tablet)
+  .footer
+    &__main
+      margin-top: 30px
+    &__info, &__copy
+      font-size: 12px
+
++r($mobile)
+  .footer
+    &__wrapper
+      padding: 40px 0 40px
+    &__top
+      flex-direction: column
+    &__socials
+      padding-right: 0
+      justify-content: center
+      margin-left: 0
+      margin-top: 20px
+    &__main
+
+    &__info
+      text-align: center
+      p
+        display: none

@@ -2,6 +2,7 @@
 
 .hero
   position: relative
+  z-index: 2
   color: white
   &__bg
     position: absolute
@@ -10,6 +11,10 @@
     right: 0
     bottom: 0
     z-index: 1
+    svg
+      // height: 100%
+      height: auto
+      overflow: visible
   .container
     position: relative
     z-index: 2
@@ -33,16 +38,31 @@
     margin-left: auto
     margin-right: auto
     p
+      margin: 0
       line-height: 1.9
+      & + p
+        margin-bottom: 1em
 
   &__cta
     margin-top: 100px
     .btn
-      margin-right: 27px
-      margin-bottom: 30px
-      &:last-child
-        margin-right: 0
+      margin: 0 13px 20px
 
++r($tablet)
+  .hero
+    &__bg
+      top: 0px
+      svg
+        width: 1600px
+        height: auto
+        margin-left: -200px
+    &__wrapper
+      padding-top: 140px
+      min-height: 550px
+    &__logo
+      font-size: 50px
+    &__text
+      font-size: 18px
 
 .info
   margin-top: 90px
@@ -56,15 +76,15 @@
     min-width: 1px
     min-height: 1px
     margin-top: 90px
+    text-align: right
 
   &__heading
     font-weight: 500
     font-size: 36px
-    text-align: right
+
   &__text
     margin-top: 25px
     color: rgba($fontColor, .52)
-    text-align: right
     max-width: 343px
     margin-left: auto
     p
@@ -75,7 +95,7 @@
         margin-top: 1em
 
   &__video
-    flex: 0 0 auto
+    flex: 0 1 auto
     padding-left: 5%
     margin-left: auto
     &-box
@@ -118,6 +138,29 @@
         transform: translateX(10%)
         transition: .25s $ease
 
++r($desktop)
+  .info
+    &__wrapper
+      flex-direction: column-reverse
+    &__video
+      padding-left: 0
+      margin-left: auto
+      margin-right: auto
+    &__content
+      margin-top: 50px
+      margin-left: auto
+      margin-right: auto
+      text-align: center
+
++r($mobile)
+  .info
+    &__heading
+      font-size: 32px
+
++r($tablet)
+  .info
+    margin-top: 0
+
 
 .prefooter
   text-align: center
@@ -125,3 +168,17 @@
   font-size: 0
   img
     max-width: 100%
+
++r($tablet)
+  .prefooter
+    margin-top: 70px
+
++r($mobile)
+  .prefooter
+    margin-left: -25px
+    margin-right: -25px
+
++r($mobile-s)
+  .prefooter
+    margin-left: -100px
+    margin-right: -100px

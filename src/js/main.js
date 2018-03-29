@@ -176,7 +176,7 @@ $(document).ready(function(){
     if (footer.length > 0) {
       var footerHeight = footer.outerHeight();
       var maxHeight = _window.height() - footerHeight > 100;
-      if (maxHeight && !msieversion() ) {
+      if (maxHeight && !msieversion() && _window.width > 768 ) {
         $('body').css({
           'margin-bottom': footerHeight
         });
@@ -202,39 +202,6 @@ $(document).ready(function(){
   //////////
 
   function initSliders(){
-    var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
-    var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
-
-    // General purpose sliders
-    $('[js-slider]').each(function(i, slider){
-      var self = $(slider);
-
-      // set data attributes on slick instance to control
-      if (self && self !== undefined) {
-        self.slick({
-          autoplay: self.data('slick-autoplay') !== undefined ? true : false,
-          dots: self.data('slick-dots') !== undefined ? true : false,
-          arrows: self.data('slick-arrows') !== undefined ? true : false,
-          prevArrow: slickNextArrow,
-          nextArrow: slickPrevArrow,
-          infinite: self.data('slick-infinite') !== undefined ? true : true,
-          speed: 300,
-          slidesToShow: 1,
-          accessibility: false,
-          adaptiveHeight: true,
-          draggable: self.data('slick-no-controls') !== undefined ? false : true,
-          swipe: self.data('slick-no-controls') !== undefined ? false : true,
-          swipeToSlide: self.data('slick-no-controls') !== undefined ? false : true,
-          touchMove: self.data('slick-no-controls') !== undefined ? false : true
-        });
-      }
-
-    })
-
-    // other individual sliders goes here
-    $('[js-myCustomSlider]').slick({
-
-    })
 
   }
 
@@ -331,6 +298,45 @@ $(document).ready(function(){
   function initMasks(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+  }
+
+  ////////////
+  // TELEPORT PLUGIN
+  ////////////
+  function initTeleport(){
+    $('[js-teleport]').each(function (i, val) {
+      var self = $(val)
+      var objHtml = $(val).html();
+      var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
+      var conditionMedia = $(val).data('teleport-condition').substring(1);
+      var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+
+      if (target && objHtml && conditionPosition) {
+
+        function teleport() {
+          var condition;
+
+          if (conditionPosition === "<") {
+            condition = _window.width() < conditionMedia;
+          } else if (conditionPosition === ">") {
+            condition = _window.width() > conditionMedia;
+          }
+
+          if (condition) {
+            target.html(objHtml)
+            self.html('')
+          } else {
+            self.html(objHtml)
+            target.html("")
+          }
+        }
+
+        teleport();
+        _window.on('resize', debounce(teleport, 100));
+
+
+      }
+    })
   }
 
 
