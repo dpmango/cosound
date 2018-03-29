@@ -7,7 +7,8 @@ block content
   // HERO
   .hero
     .hero__bg
-      include ../inline-svg/hero-bg-1.svg
+      .hero__bg-wrapper
+        include ../inline-svg/hero-bg-1.svg
     .container
       .hero__wrapper
         .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
@@ -33,7 +34,7 @@ block content
         .info__video.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
           .info__video-box(js-popupVideo href="https://www.youtube.com/watch?v=6dVFy4d61gU")
             .info__video-placeholder
-              img(data-src='img/homepage-video-placeholder.jpg' data-srcset='img/homepage-video-placeholder@2x.jpg 2x' js-lazy)
+              img(src='img/homepage-video-placeholder.jpg' srcset='img/homepage-video-placeholder@2x.jpg 2x')
             .info__video-play
               +icon('ico-play')
   
