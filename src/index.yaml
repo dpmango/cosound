@@ -3,6 +3,8 @@ ProjectTitle: Cosound
 PageList:
 - file: homepage.html
   ready: 90
+- file: login.html
+  ready: 10
 - file: singup-1.html
   ready: 0
 - file: singup-2.html
@@ -12,8 +14,6 @@ PageList:
 - file: singup-4.html
   ready: 0
 - file: singup-5.html
-  ready: 0
-- file: login.html
   ready: 0
 - file: dashboard.html
   ready: 0

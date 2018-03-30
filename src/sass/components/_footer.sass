@@ -90,6 +90,18 @@
       margin-bottom: 20px
       color: $colorWhite50
 
+  &--mini
+    z-index: 8
+    position: static
+    .footer
+      &__wrapper
+        padding: 30px 50px
+      &__socials
+        padding-right: 0
+      &__copy
+        margin-top: 0
+
+
 +r($desktop)
   .footer
     &__nav
@@ -101,6 +113,12 @@
       margin-top: 30px
     &__info, &__copy
       font-size: 12px
+
+    &--mini
+      .footer
+        &__wrapper
+          padding-left: 25px
+          padding-right: 25px
 
 +r($mobile)
   .footer

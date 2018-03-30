@@ -31,16 +31,13 @@ $(document).ready(function(){
     initSliders();
     initScrollMonitor();
     initMasks();
+    initValidations();
     initLazyLoad();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
-    // AVAILABLE in _components folder
-    // copy paste in main.js and initialize here
-
-    // initTeleport();
-    // parseSvg();
+    initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
   }
@@ -355,8 +352,6 @@ $(document).ready(function(){
         delay = $(el).data('animation-delay') !== undefined ? $(el).data('animation-delay') : '0.2s';
       }
 
-      console.log(delay)
-
       var animationClass = $(el).data('animation-class') || "wowFadeUp"
 
       var animationName = $(el).data('animation-name') || "wowFade"
@@ -404,6 +399,96 @@ $(document).ready(function(){
         // element.attr('style', '')
       }
     });
+  }
+
+  function initValidations(){
+    ////////////////
+    // FORM VALIDATIONS
+    ////////////////
+
+    // jQuery validate plugin
+    // https://jqueryvalidation.org
+
+
+    // GENERIC FUNCTIONS
+    ////////////////////
+
+    var validateErrorPlacement = function(error, element) {
+      error.addClass('ui-input__validation');
+      error.appendTo(element.parent("div"));
+    }
+    var validateHighlight = function(element) {
+      $(element).parent('div').addClass("has-error");
+    }
+    var validateUnhighlight = function(element) {
+      $(element).parent('div').removeClass("has-error");
+    }
+    var validateSubmitHandler = function(form) {
+      $(form).addClass('loading');
+      $.ajax({
+        type: "POST",
+        url: $(form).attr('action'),
+        data: $(form).serialize(),
+        success: function(response) {
+          $(form).removeClass('loading');
+          var data = $.parseJSON(response);
+          if (data.status == 'success') {
+            // do something I can't test
+          } else {
+              $(form).find('[data-error]').html(data.message).show();
+          }
+        }
+      });
+    }
+
+    var validatePhone = {
+      required: true,
+      normalizer: function(value) {
+          var PHONE_MASK = '+X (XXX) XXX-XXXX';
+          if (!value || value === PHONE_MASK) {
+              return value;
+          } else {
+              return value.replace(/[^\d]/g, '');
+          }
+      },
+      minlength: 11,
+      digits: true
+    }
+
+    ////////
+    // FORMS
+
+
+    /////////////////////
+    // REGISTRATION FORM
+    ////////////////////
+    $("[js-validate-login]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+        password: {
+          required: true,
+          minlength: 6,
+        }
+      },
+      messages: {
+        email: {
+            required: "This field is required",
+            email: "Email is not valid"
+        },
+        password: {
+            required: "This field is required",
+            minlength: "Password should be at least 6 chr."
+        },
+      }
+    });
+
   }
 
   //////////
