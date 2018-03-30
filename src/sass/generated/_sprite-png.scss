@@ -1,20 +1,38 @@
 $sprite: (
 	checkmark: (
-		offset-x: -25px,
-		offset-y: 0px,
+		offset-x: -69px,
+		offset-y: -21px,
 		width: 10px,
 		height: 8px,
-		total-width: 35px,
-		total-height: 11px,
+		total-width: 84px,
+		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: 0px,
+		offset-x: -69px,
 		offset-y: 0px,
 		width: 15px,
 		height: 11px,
-		total-width: 35px,
-		total-height: 11px,
+		total-width: 84px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	signup-type-musician: (
+		offset-x: 0px,
+		offset-y: -73px,
+		width: 49px,
+		height: 75px,
+		total-width: 84px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	signup-type-pro: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 59px,
+		height: 63px,
+		total-width: 84px,
+		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 );
@@ -78,4 +96,10 @@ $sprite: (
 	}
 	.icon-signup-check {
 		@include sprite(signup-check)
+	}
+	.icon-signup-type-musician {
+		@include sprite(signup-type-musician)
+	}
+	.icon-signup-type-pro {
+		@include sprite(signup-type-pro)
 	}

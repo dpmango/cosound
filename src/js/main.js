@@ -331,6 +331,26 @@ $(document).ready(function(){
     });
   }
 
+  // SHOW SELECTED IMAGE IN READER
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var parent = $(input).parent();
+      var targetPlaceholder = parent.find('img');
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        targetPlaceholder.attr('src', e.target.result);
+        parent.addClass('has-file');
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $('[js-photo-upload] input').on('change', function (e) {
+    var parent = $(this).parent();
+    readURL(this);
+  });
 
   ////////////
   // TELEPORT PLUGIN
@@ -495,7 +515,7 @@ $(document).ready(function(){
 
 
     /////////////////////
-    // REGISTRATION FORM
+    // LOGIN FORM
     ////////////////////
     $("[js-validate-login]").validate({
       errorPlacement: validateErrorPlacement,
@@ -519,7 +539,77 @@ $(document).ready(function(){
         },
         password: {
             required: "This field is required",
-            minlength: "Password should be at least 6 chr."
+            minlength: "Password should be at least 6 character"
+        },
+      }
+    });
+
+    /////////////////////
+    // SIGNUP FORMS
+    ////////////////////
+    $("[js-validate-signup-1]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        postal_code: {
+          required: true,
+          minlength: 6,
+        }
+      },
+      messages: {
+        postal_code: {
+          required: "This field is required",
+          minlength: "Postal code should be at least 6 character"
+        },
+      }
+    });
+
+
+    // $("[js-validate-signup-2]").validate({
+    //   errorPlacement: validateErrorPlacement,
+    //   highlight: validateHighlight,
+    //   unhighlight: validateUnhighlight,
+    //   submitHandler: validateSubmitHandler,
+    //   rules: {
+    //     postal_code: {
+    //       required: true,
+    //       minlength: 6,
+    //     }
+    //   },
+    //   messages: {
+    //     postal_code: {
+    //         required: "This field is required",
+    //         minlength: "Postal code should be at least 6 character"
+    //     },
+    //   }
+    // });
+
+
+    // ????
+    // HOW TO VALIDATE STEP 2 AND REDIRECT ????
+
+
+    $("[js-validate-signup-3]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: {
+          required: true,
+        },
+        artist: {
+          required: true,
+        },
+      },
+      messages: {
+        name: {
+          required: "This field is required",
+        },
+        name: {
+          required: "This field is required",
         },
       }
     });
