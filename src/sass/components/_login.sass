@@ -1,31 +1,8 @@
+/* LOGIN
 .login
   position: relative
   z-index: 2
   color: white
-  &__bg
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    z-index: 1
-    display: flex
-    flex-direction: column
-    &-wrapper
-      flex: 1 1 auto
-      display: flex
-      flex-direction: column
-      position: relative
-    svg
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%,-50%)
-      min-width: 100%
-      min-height: 100%
-      width: auto
-      height: auto
-      overflow: visible
   .container
     position: relative
     z-index: 2
@@ -70,3 +47,133 @@
       margin-right: 35px
       &:last-child
         margin-right: 0
+
+
+/* LOGIN
+.signup
+  position: relative
+  z-index: 2
+  color: white
+  .container
+    position: relative
+    z-index: 2
+  &__wrapper
+    min-height: 1100px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    padding: 70px 0
+  &__logo
+    font-size: 44px
+  &__heading
+    margin: 70px 0 30px
+    font-weight: 400
+    font-size: 30px
+  &__text
+    font-size: 16px
+    color: $colorWhite50
+    p
+      margin: 0
+      line-height: 1.9
+      & + p
+        margin-bottom: 1em
+  &__steps
+    margin-top: 180px
+    width: 100%
+    display: flex
+    color: $fontColor
+
+.signup-form
+  width: 100%
+  max-width: 550px
+  margin-top: 80px
+  margin-bottom: 60px
+  margin-left: auto
+  margin-right: auto
+  color: $fontColor
+  &__cta
+    margin-top: 60px
+    .btn
+      min-width: 220px
+
+
+/* Signup step
+.signup-step
+  flex: 1 1 20%
+  position: relative
+  min-width: 80px
+  min-height: 1px
+  margin-bottom: 30px
+  // just making the line
+  &::before, &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    top: 0px
+    height: 6px
+    width: 50%
+    z-index: 1
+    background: $borderColor
+  &::before
+    left: 0
+  &::after
+    right: 0
+  &:first-child
+    &::before
+      display: none
+  &:last-child
+    &::after
+      display: none
+
+  &__progress
+    width: 100%
+    height: 6px
+    bottom: auto
+    // background: $borderColor
+    position: relative
+    z-index: 2
+
+    &::before
+      position: absolute
+      size: 22px
+      background: white
+      border: 2px solid #E0E0E0
+      border-radius: 50%
+      display: block
+      content: ''
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      transition: .25s $ease
+      box-shadow: 0 8px 10px 0 rgba(0,0,0,0.07)
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      +sprite('signup-check')
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%) scale(0)
+      transition: .25s $ease
+  span
+    display: inline-block
+    margin-top: 40px
+    font-size: 16px
+    color: $fontColor50
+
+  &.is-active
+    .signup-step__progress
+      &::before
+        background: $colorGreen2
+        box-shadow: 0 3px 4px 0 rgba($colorGreen2,0.54)
+        border-color: transparent
+        size: 37px
+      &::after
+        transform: translate(-50%,-50%) scale(1)
+    span
+      color: $fontColor
+  &.is-active
+    .signup-step__progress
+      &::before

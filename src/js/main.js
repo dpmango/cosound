@@ -31,6 +31,7 @@ $(document).ready(function(){
     initSliders();
     initScrollMonitor();
     initMasks();
+    initSelectric();
     initValidations();
     initLazyLoad();
 
@@ -40,6 +41,9 @@ $(document).ready(function(){
     initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
+
+    // login/sign
+    setStepsClasses();
   }
 
   // this is a master function which should have all functionality
@@ -194,6 +198,28 @@ $(document).ready(function(){
   }
 
 
+
+  //////////
+  // LOGIN/SIGNUP FUNCTIONS
+  //////////
+
+  // Fillings steps
+  function setStepsClasses() {
+    var $steps = $('.signup__steps');
+    var $stepsChilds = $steps.children();
+    var productStep = parseInt($steps.data('active-step'));
+
+    if (typeof productStep == 'number' && $stepsChilds.length > 1) {
+        $($stepsChilds[productStep]).addClass('in-progress')
+
+        for (var i = 0; i <= productStep - 1; i++) {
+            $($stepsChilds[i]).addClass('is-active')
+        }
+    }
+  }
+
+
+
   //////////
   // SLIDERS
   //////////
@@ -296,6 +322,15 @@ $(document).ready(function(){
     $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
+
+  // selectric
+  function initSelectric(){
+    $('select').selectric({
+      maxHeight: 300,
+      arrowButtonMarkup: '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
+    });
+  }
+
 
   ////////////
   // TELEPORT PLUGIN
@@ -568,8 +603,9 @@ $(document).ready(function(){
 
   // some plugins get bindings onNewPage only that way
   function triggerBody(){
-    $(window).scroll();
-    $(window).resize();
+    _window.scrollTop(1);
+    _window.scroll();
+    _window.resize();
   }
 
   //////////

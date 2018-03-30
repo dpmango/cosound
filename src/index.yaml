@@ -4,16 +4,16 @@ PageList:
 - file: homepage.html
   ready: 90
 - file: login.html
-  ready: 10
-- file: singup-1.html
+  ready: 70
+- file: signup.html
+  ready: 70
+- file: signup-2.html
   ready: 0
-- file: singup-2.html
+- file: signup-3.html
   ready: 0
-- file: singup-3.html
+- file: signup-4.html
   ready: 0
-- file: singup-4.html
-  ready: 0
-- file: singup-5.html
+- file: signup-5.html
   ready: 0
 - file: dashboard.html
   ready: 0

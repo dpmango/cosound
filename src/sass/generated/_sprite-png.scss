@@ -1,11 +1,20 @@
 $sprite: (
 	checkmark: (
-		offset-x: 0px,
+		offset-x: -25px,
 		offset-y: 0px,
 		width: 10px,
 		height: 8px,
-		total-width: 10px,
-		total-height: 8px,
+		total-width: 35px,
+		total-height: 11px,
+		image: '../img/sprite.png'
+	),
+	signup-check: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 15px,
+		height: 11px,
+		total-width: 35px,
+		total-height: 11px,
 		image: '../img/sprite.png'
 	),
 );
@@ -66,4 +75,7 @@ $sprite: (
 
 	.icon-checkmark {
 		@include sprite(checkmark)
+	}
+	.icon-signup-check {
+		@include sprite(signup-check)
 	}
