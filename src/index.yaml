@@ -2,9 +2,9 @@ ProjectTitle: Cosound
 
 PageList:
 - file: homepage.html
-  ready: 90
+  ready: 100
 - file: login.html
-  ready: 70
+  ready: 90
 - file: signup.html
   ready: 70
 - file: signup-2.html

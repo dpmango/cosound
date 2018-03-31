@@ -42,8 +42,27 @@
       min-width: 220px
   &__socials
     margin-top: 90px
+    margin-left: -17px
+    margin-right: -17px
     display: flex
+    justify-content: center
+    flex-wrap: wrap
     .btn
-      margin-right: 35px
-      &:last-child
-        margin-right: 0
+      flex: 0 0 auto
+      margin: 17px
+
++r($mobile)
+  .login
+    &__wrapper
+      min-height: 1px
+      padding-top: 175px
+
+  .login-form
+    margin-top: 60px
+    margin-bottom: 40px
+    &__socials
+      margin-top: 40px
+      margin-left: -10px
+      margin-right: -10px
+      .btn
+        margin: 10px

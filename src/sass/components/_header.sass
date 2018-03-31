@@ -86,3 +86,15 @@
   .header
     &__logo
       // font-size: 30px
+    &__info
+      flex-direction: column
+      align-items: flex-end
+      text-align: right
+      span
+        margin-bottom: 5px
+
++r($mobile-s)
+  .header
+    &__info
+      span
+        font-size: 12px
