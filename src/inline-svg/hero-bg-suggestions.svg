@@ -1,0 +1,17 @@
+
+<svg width="1920px" height="1130px" viewBox="0 0 1920 1130" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="18.7653777%" x2="1.09049479%" y2="34.3330864%" id="linearGradient-1">
+            <stop stop-color="#2CC1A5" offset="0%"></stop>
+            <stop stop-color="#1CA9B4" offset="45.2143426%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="10" fill="url(#linearGradient-1)">
+            <path d="M1920,1129.24053 C1692.80967,1121.3119 1473.15212,1034.56688 1286.4033,906.5761 C1231.29493,868.809243 1179.05655,826.853572 1130.51068,780.940635 C1082.99207,736.006915 1042.09999,684.686312 999.980695,634.791341 C919.531963,539.46428 833.340291,448.413315 718.333849,395.377458 C641.070985,359.752499 557.631479,346.040936 473.459614,359.916163 C386.349425,374.269503 305.105206,412.667906 225.425302,448.983439 C176.235935,471.400998 126.874318,496.142924 75.3452987,512.722043 C50.675977,520.658439 25.4857119,526.425531 2.46913601e-13,530.136898 L0,-1.00974196e-28 L1920,-1.00974196e-28 L1920,1129.24053 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

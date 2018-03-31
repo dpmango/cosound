@@ -8,16 +8,17 @@ PageList:
 - file: signup.html
   ready: 70
 - file: signup-2.html
-  ready: 60
+  ready: 70
 - file: signup-3.html
   ready: 50
 - file: signup-3b.html
   ready: 50
 - file: signup-4.html
-  ready: 50
+  ready: 70
 - file: signup-5.html
-  ready: 0
-
+  ready: 70
+- file: signup-suggestions.html
+  ready: 60
 
 - file: dashboard.html
   ready: 0

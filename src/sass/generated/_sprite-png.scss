@@ -1,19 +1,19 @@
 $sprite: (
 	checkmark: (
-		offset-x: -69px,
-		offset-y: -21px,
+		offset-x: -94px,
+		offset-y: -66px,
 		width: 10px,
 		height: 8px,
-		total-width: 84px,
+		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
 		offset-x: -69px,
-		offset-y: 0px,
+		offset-y: -66px,
 		width: 15px,
 		height: 11px,
-		total-width: 84px,
+		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -22,7 +22,7 @@ $sprite: (
 		offset-y: -73px,
 		width: 49px,
 		height: 75px,
-		total-width: 84px,
+		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -31,7 +31,16 @@ $sprite: (
 		offset-y: 0px,
 		width: 59px,
 		height: 63px,
-		total-width: 84px,
+		total-width: 125px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	suggestions-search: (
+		offset-x: -69px,
+		offset-y: 0px,
+		width: 56px,
+		height: 56px,
+		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -102,4 +111,7 @@ $sprite: (
 	}
 	.icon-signup-type-pro {
 		@include sprite(signup-type-pro)
+	}
+	.icon-suggestions-search {
+		@include sprite(suggestions-search)
 	}

@@ -218,6 +218,23 @@ $(document).ready(function(){
     }
   }
 
+  // fake functions
+  // should be ajax based added and -fake- removed
+  _document
+    .on('click', '[js-fake-addSuggestionCard]', function(){
+      $(this).find('.card-suggestion__cta').toggleClass('is-added')
+
+      // do some ajax stuff ?
+
+      // some notification maybe ?
+
+    })
+    .on('click', '[js-fake-moreSuggestions]', function(){
+      var row = $(this).closest('.suggestions__section').find('.suggestions__row')
+      var cloned = row.find('.suggestions__card').clone()
+
+      row.append(cloned).hide().fadeIn(250)
+    })
 
 
   //////////
