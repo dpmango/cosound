@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="524px" viewBox="0 0 1920 524" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>hero-bg-profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-3.93107096%" y1="0%" x2="80.0870768%" y2="102.746302%" id="linearGradient-1">
+            <stop stop-color="#2CC4A0" offset="0%"></stop>
+            <stop stop-color="#0DC6AD" offset="41.1338247%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <!-- <animate attributeName="x2" dur="4s" from="80.0870768%" to="80.0870768%" values="80.0870768%;30%;80.0870768%" repeatCount="indefinite" /> -->
+        </linearGradient>
+        <path d="M0,428.665485 L0,0 L1920,0 L1920,428.665485 C1643.91086,488.96002 1314.17246,524 960,524 C605.827536,524 276.089144,488.96002 -8.52651283e-14,428.665485 Z" id="path-2"></path>
+    </defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="17">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="hero-bg-profile" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>

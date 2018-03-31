@@ -1,0 +1,75 @@
+/* Media (video/audio) plugins
+
+.m-music
+  &__scope
+    margin: 10px 0
+    display: flex
+    align-content: center
+  &__cover
+    position: relative
+    flex: 0 0 92px
+    size: 92px
+    // opacity: 0.65
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.35)
+    img
+      max-width: 100%
+
+  &__play
+    position: absolute
+    bottom: -20px
+    right: -17px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    background: $colorRed
+    border-radius: 50%
+    size: 40px
+    box-shadow: 0 4px 10px 0 rgba(255,39,123,0.33)
+    font-size: 13px
+    cursor: pointer
+    transition: .25s $ease
+    &:hover
+      background-color: $colorAqua
+
+  &__names
+    margin-left: 28px
+    // margin-right: -10px
+  &__author
+    font-size: 16px
+    color: $fontColor50
+    line-height: 2
+
+  &__title
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.5
+
+  &__track-graph
+    margin: 40px 0 10px
+    img
+      max-width: 100%
+
+  &__tracks
+    margin: 20px 0
+
+  &__track
+    padding: 10px 0
+    display: flex
+    align-items: center
+    border-bottom: 1px solid rgba(#979797, .2)
+    &-name
+      flex: 1 1 auto
+      min-width: 1px
+      min-height: 0
+      font-size: 14px
+      line-height: 1.9
+      +text-overflow
+    &-duration
+      font-size: 12px
+      margin-left: auto
+      text-align: right
+
+
+/* video
+.m-video

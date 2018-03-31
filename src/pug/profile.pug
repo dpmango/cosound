@@ -1,0 +1,69 @@
+---
+title: Profile
+---
+extends shared/_layout
+
+block header
+  include components/_header-dash
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .profile__image
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__status
+            a(href="#") Premium
+          .profile__name Lois Stokes
+          .profile__position Job Title/Artist Name.
+          .profile__connections
+            .profile__connections-num 500+ 
+            .profile__connections-name Connections
+          .profile__bio
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    
+    // DASH CONTENT
+    .container.container--wide
+      .profile__dash.dash
+        .dash__sidebar
+          .d-card
+            .d-card__head
+              .d-card__title My Music
+              .d-card__action(js-do-some)
+                +icon('ico-card-add')
+            .d-card__content
+              // music plugin
+              .m-music
+                .m-music__scope
+                  .m-music__cover
+                    img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
+                    .m-music__play
+                      +icon('ico-play')
+                  .m-music__names
+                    .m-music__author Kygo
+                    .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
+                .m-music__track-graph
+                  img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
+                .m-music__tracks
+                  .m-music__track
+                    span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 2. Summer Stories (Original Mix)
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 3. Dancing Ninja (Original Mix)
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 4. Him I (GeoM Remix )
+                    span.m-music__track-duration 5:10
+                      
+                    
+        .dash__content
+          

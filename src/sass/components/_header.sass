@@ -67,6 +67,144 @@
       margin-left: 15px
       font-weight: 500
 
+  &__search
+    position: relative
+    margin-left: auto
+    flex: 0 2 640px
+    &-input
+      position: relative
+      z-index: 2
+      font-size: 14px
+      input
+        width: 100%
+        -webkit-apperance: none
+        border-radius: 25px
+        padding: 13px 45px
+        border: 0
+        background: rgba(white, .13)
+        color: white
+        transition: .25s $ease
+        &::placeholder
+          color: rgba(white, .6)
+        &:focus
+          color: $fontColor
+          background: white
+          box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+          &::placeholder
+            color: $fontColor
+          + .ico
+            fill: #667AC2
+      .ico
+        fill: white
+        font-size: 15px
+        position: absolute
+        top: 50%
+        left: 19px
+        transform: translateY(-50%)
+        transition: .25s $ease
+
+    &-drop
+      position: absolute
+      z-index: 1
+      top: 30px
+      left: 20px
+      right: 20px
+      background: white
+      box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+      border-radius: 10px
+      padding: 27px
+      opacity: 0
+      transform: translate(0,20px)
+      pointer-events: none
+      transition: .25s $ease
+      span
+        display: block
+        padding: 10px 0
+        color: #949494
+        margin-bottom: 5px
+      &.is-active
+        opacity: 1
+        transform: translate(0,0)
+        pointer-events: all
+
+
+  &__actions
+    // margin-left: auto
+    padding-left: 60px
+    flex: 0 1 auto
+    display: flex
+    align-items: center
+    min-width: 1px
+    min-height: 0
+    &-item
+      flex: 0 1 auto
+      min-width: 80px
+      min-height: 0
+      // padding: 0 5%
+      display: flex
+      a
+        display: block
+        width: 100%
+        text-align: center
+    .ico
+      &-case
+        font-size: 18px
+      &-comments
+        font-size: 20px
+        transform: translateY(2px)
+      &-profile
+        font-size: 18px
+      &-notifications
+        font-size: 22px
+      &-cart
+        font-size: 22px
+
+
+  &__premium
+    padding-left: 20px
+    a
+      display: inline-block
+      border-radius: 50px
+      font-size: 14px
+      font-weight: 500
+      background: #319B9D
+      padding: 12px 14px
+      transition: .25s $ease
+      &:hover
+        background: $colorRed
+        color: white
+
+  &__cart
+    position: relative
+    &-num
+      position: absolute
+      top: -5px
+      right: 20px
+      background: $colorRed
+      color: white
+      border-radius: 50px
+      font-size: 10px
+      min-size: 14px
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__notifications
+    position: relative
+    &-mark
+      display: inline-block
+      position: absolute
+      top: 0px
+      right: 31px
+      background: $colorRed
+      border-radius: 50%
+      box-shadow: 0 2px 4px 0 #FF1E7A
+      size: 6px
+      opacity: 0
+      transition: .25s $ease
+    &.has-notifications
+      .header__notifications-mark
+        opacity: 1
 
 +r($desktop)
   .header

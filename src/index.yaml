@@ -20,15 +20,9 @@ PageList:
 - file: signup-suggestions.html
   ready: 90
 
-- file: dashboard.html
-  ready: 0
-- file: plans.html
-  ready: 0
-- file: plans-a.html
-  ready: 0
-- file: plans-b.html
-  ready: 0
 - file: profile.html
+  ready: 30
+- file: dashboard.html
   ready: 0
 - file: messages.html
   ready: 0
@@ -37,4 +31,10 @@ PageList:
 - file: product.html
   ready: 0
 - file: checkout.html
+  ready: 0
+- file: plans.html
+  ready: 0
+- file: plans-a.html
+  ready: 0
+- file: plans-b.html
   ready: 0

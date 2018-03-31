@@ -1,0 +1,113 @@
+.profile
+  position: relative
+  z-index: 2
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    z-index: 1
+    &-wrapper
+      height: 520px
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto
+      overflow: visible
+
+  &__hero
+    padding-top: 100px
+    .container
+      position: relative
+      z-index: 3
+
+  &__image
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    z-index: 2
+    border-radius: 50%
+    overflow: hidden
+    font-size: 0
+    size: 94px
+    box-shadow: 0px 9px 19px rgba(black, .3)
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      width: 110%
+
+
+  &__info
+    margin-top: 75px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  &__status
+    margin-top: 20px
+    display: inline-block
+    border-radius: 50px
+    font-size: 14px
+    font-weight: 500
+    background: white
+    color: $colorGreen
+    padding: 12px 14px
+    transition: .25s $ease
+    &:hover
+      background: #319B9D
+      color: white
+
+  &__name
+    margin-top: 40px
+    font-size: 40px
+    font-weight: 500
+    color: white
+    text-align: center
+
+  &__position
+    font-size: 14px
+    margin-top: 15px
+    color: $colorWhite50
+    text-align: center
+
+  &__connections
+    background: white
+    margin-top: 40px
+    padding: 8px 15px 14px
+    min-width: 172px
+    text-align: center
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.12)
+    border-radius: 3px
+    &-num
+      margin-top: 5px
+      font-size: 20px
+
+
+    &-name
+      font-size: 14px
+      color: $fontColor50
+
+  &__bio
+    margin: 50px 0
+    text-align: center
+    max-width: 840px
+    margin-left: auto
+    margin-right: auto
+    p
+      margin: 0
+      line-height: 1.9
+      font-size: 16px
+      & + p
+        margin-top: 1em
+
+  &__dash
+    margin: 50px 0

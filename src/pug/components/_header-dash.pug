@@ -1,0 +1,39 @@
+// HEADER :: START
+header.header
+  .header__wrapper.wow(data-animation-class="wowFadeDown")
+    a(href="homepage.html").header__logo
+      +icon('ico-logo')
+    .header__search
+      .header__search-input
+        input(name="search" type="text" placeholder="Search..")
+        +icon('ico-search')
+      .header__search-drop
+        span Music
+        span Music Lounge
+        span Music Rock
+        span Music Listen
+        span Music
+        span Music Lounge
+    .header__actions
+      .header__actions-item
+        a(href="#")
+          +icon('ico-case')
+      .header__actions-item
+        a(href="#")
+          +icon('ico-comments')
+      .header__actions-item
+        a(href="#")
+          +icon('ico-profile')
+      .header__actions-item
+        a(href="#").header__notifications.has-notifications
+          +icon('ico-notifications')
+          span.header__notifications-mark
+      .header__actions-item
+        a(href="#").header__cart
+          +icon('ico-cart')
+          .header__cart-num
+            span 4
+    .header__premium
+      a(href="plans.html") Premium
+
+// HEADER :: END
