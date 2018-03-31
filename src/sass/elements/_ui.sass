@@ -107,4 +107,18 @@
 
 
 // TAG INPUTS
-.tag-inputs
+.multiple-inputs
+  input
+    border: 2px solid white
+    padding: 14px 29px
+    background: transparent
+    &:focus
+      background: white
+  .ico-plus
+    cursor: pointer
+  &.is-ready
+    background: white
+    .ico-plus
+      opacity: 0
+      pointer-events: none
+      

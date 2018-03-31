@@ -38,9 +38,9 @@ block content
             input(type="text" name="genres" placeholder="Music Genres")
             +icon('ico-search')
           .ui-group.wow(data-animation-delay=".6s")
-            .tag-inputs
+            .multiple-inputs(js-multiple-inputs)
               input(type="text" name="socails" placeholder="Social links")
-              +icon('ico-plus')
+              +icon('ico-plus','js-multiple-inputs-plus')
           .signup-form__cta.wow(data-animation-delay=".8s")
             button(type="submit").btn.btn-primary.btn-primary--red
               span Next

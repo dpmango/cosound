@@ -381,6 +381,29 @@ $(document).ready(function(){
     readURL(this);
   });
 
+  // MULTIPLE INPUTS
+  _document
+    .on("keydown", ".multiple-inputs input", function(e){
+      // catch enter
+      if ( e.originalEvent.keyCode == 13){
+        addAnotherInput($(this));
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    })
+    .on('click', '.multiple-inputs .ico-plus', function(){
+      var linkedInput = $(this).parent().find('input');
+      addAnotherInput(linkedInput)
+    })
+
+  function addAnotherInput(origin){
+    var newIndex = $('.multiple-inputs').length
+    var newInput = '<div class="ui-group"><div class="multiple-inputs"><input type="text" name="socails['+newIndex+']" placeholder="Social links" /><svg class="ico ico-plus"><use xlink:href="img/sprite.svg#ico-plus"></use></svg></div></div>'
+
+    origin.parent().addClass('is-ready');
+    $(newInput).insertAfter(origin.parent().parent()).hide().fadeIn(250);
+  }
+
   ////////////
   // TELEPORT PLUGIN
   ////////////
