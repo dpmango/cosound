@@ -6,9 +6,9 @@ PageList:
 - file: login.html
   ready: 90
 - file: signup.html
-  ready: 70
+  ready: 90
 - file: signup-2.html
-  ready: 70
+  ready: 90
 - file: signup-3.html
   ready: 50
 - file: signup-3b.html

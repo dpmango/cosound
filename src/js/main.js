@@ -235,6 +235,18 @@ $(document).ready(function(){
 
       row.append(cloned).hide().fadeIn(250)
     })
+    .on('change', '[js-validate-signup-2]', debounce(function(e){
+      var selectedOpt = $(this).find('input:checked').val()
+
+      // some ajax magic + onSucess redirect to step 3
+
+      if ( selectedOpt == "musician"){
+        window.location.href="/signup-3b.html"
+      } else if ( selectedOpt == "pro" ){
+        window.location.href="/signup-3.html"
+      }
+
+    },1000))
 
 
   //////////

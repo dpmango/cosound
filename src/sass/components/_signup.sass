@@ -4,12 +4,19 @@
   position: relative
   z-index: 2
   color: white
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
   .container
     position: relative
     z-index: 2
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
   &__wrapper
     min-height: 1100px
     width: 100%
+    flex: 1 0 auto
     display: flex
     flex-direction: column
     align-items: center
@@ -32,7 +39,8 @@
       & + p
         margin-bottom: 1em
   &__steps
-    margin-top: 180px
+    margin-top: auto
+    padding-top: 180px
     width: 100%
     display: flex
     color: $fontColor
@@ -63,6 +71,27 @@
         font-size: 16px
         color: $fontColor50
 
++r($mobile)
+  .signup
+    &__wrapper
+      min-height: 1px
+      padding: 50px 0
+    &__logo
+      font-size: 35px
+    &__heading
+      font-size: 28px
+      margin: 40px 0 20px 0
+      &--big
+        font-size: 32px
+    &__text
+      font-size: 14px
+      max-width: 360px
+      margin-left: auto
+      margin-right: auto
+    &__steps
+      padding-top: 80px
+
+
 
 /* Signup form
 .signup-form
@@ -90,6 +119,11 @@
       transition: .25s $ease
       &:hover
         color: $colorAqua
+
+
++r($mobile)
+  .signup-form
+    margin-top: 60px
 
 
 /* Signup step
@@ -196,6 +230,36 @@
       span
         color: $fontColor
 
++r($tablet)
+  .signup-step
+
+    &__progress
+      &::before
+        size: 20px
+    span
+      margin-top: 30px
+      font-size: 13px
+
+    &.is-current
+      .signup-step__progress
+        &::before
+          size: 32px
+
++r($mobile)
+  .signup-step
+    min-width: 1px
+    &__progress
+      &::before
+        size: 18px
+    span
+      display: none
+
+    &.is-current
+      .signup-step__progress
+        &::before
+          size: 28px
+
+
 .signup-type
   display: flex
   justify-content: center
@@ -234,8 +298,30 @@
         font-size: 18px
         padding-top: 30px
         line-height: 1.5
+        transition: .25s $ease
 
-
++r($mobile)
+  .signup-type
+    margin-top: -50px
+    flex-direction: column
+    align-items: center
+    &__radio
+      flex: 0 0 auto
+      width: 240px
+      input
+        &:checked
+          + label
+            span
+              color: $fontColor
+      label
+        padding: 25px 15px
+        background: rgba(white, .5)
+        .icon
+          transform: scale(.8)
+          transform-origin: center center
+        span
+          padding-top: 20px
+          color: $fontColor50
 
 // SIGNUP SUGGESTIONS
 .suggestions
