@@ -14,11 +14,11 @@ PageList:
 - file: signup-3b.html
   ready: 50
 - file: signup-4.html
-  ready: 0
+  ready: 50
 - file: signup-5.html
   ready: 0
 
-  
+
 - file: dashboard.html
   ready: 0
 - file: plans.html

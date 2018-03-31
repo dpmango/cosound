@@ -4,6 +4,7 @@ title: Signup 1
 extends shared/_layout
 
 block header
+  // empty header
   
 block content
   
@@ -39,18 +40,4 @@ block content
         
         // steps
         .signup__steps(data-active-step="1" data-animation-class="wowFadeDown").wow
-          .signup-step.is-active
-            .signup-step__progress
-            span Choose location
-          .signup-step
-            .signup-step__progress
-            span Profession
-          .signup-step
-            .signup-step__progress
-            span Tell us more
-          .signup-step
-            .signup-step__progress
-            span Bio
-          .signup-step
-            .signup-step__progress
-            span Meet the Music
+          include components/_signup-steps

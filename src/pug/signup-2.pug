@@ -4,6 +4,7 @@ title: Signup 2
 extends shared/_layout
 
 block header
+  // empty header
   
 block content
   
@@ -17,8 +18,6 @@ block content
         .signup__logo.wow(data-animation-class="wowFadeDown")
           +icon('ico-logo')
         h2.signup__heading.wow(data-animation-delay=".4s") Are you…
-        .signup__text.wow(data-animation-delay=".5s")
-          p 
           
         //form
         form.signup-form(action="#" js-validate-signup-2 data-animation-delay=".6s").wow
@@ -36,18 +35,4 @@ block content
                 
         // steps
         .signup__steps(data-active-step="2" data-animation-class="wowFadeDown").wow
-          .signup-step.is-active
-            .signup-step__progress
-            span Choose location
-          .signup-step
-            .signup-step__progress
-            span Profession
-          .signup-step
-            .signup-step__progress
-            span Tell us more
-          .signup-step
-            .signup-step__progress
-            span Bio
-          .signup-step
-            .signup-step__progress
-            span Meet the Music
+          include components/_signup-steps

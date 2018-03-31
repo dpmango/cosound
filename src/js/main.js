@@ -207,13 +207,13 @@ $(document).ready(function(){
   function setStepsClasses() {
     var $steps = $('.signup__steps');
     var $stepsChilds = $steps.children();
-    var productStep = parseInt($steps.data('active-step'));
+    var productStep = parseInt($steps.data('active-step')) - 1; // arr index
 
     if (typeof productStep == 'number' && $stepsChilds.length > 1) {
-        $($stepsChilds[productStep]).addClass('in-progress')
+        $($stepsChilds[productStep]).addClass('is-current')
 
         for (var i = 0; i <= productStep - 1; i++) {
-            $($stepsChilds[i]).addClass('is-active')
+            $($stepsChilds[i]).addClass('is-done')
         }
     }
   }
