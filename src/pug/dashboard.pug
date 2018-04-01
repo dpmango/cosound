@@ -1,0 +1,80 @@
+---
+title: Dashboard
+---
+extends shared/_layout
+
+block header
+  include components/_header-dash
+  
+block content
+  
+  // DASHBOARD
+  .feed
+
+    // DASH CONTENT
+    .container.container--wide
+      .profile__dash.dash
+        .dash__sidebar
+          // card
+          .d-card
+            .d-card__head
+              .d-card__title My Music
+              .d-card__action(js-do-some)
+                +icon('ico-card-add')
+            .d-card__content
+              // music plugin (media)
+              .m-music
+                .m-music__scope
+                  .m-music__cover
+                    img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
+                    .m-music__play
+                      +icon('ico-play')
+                  .m-music__names
+                    .m-music__author Kygo
+                    .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
+                .m-music__track-graph
+                  img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
+                .m-music__tracks
+                  .m-music__track
+                    span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 2. Summer Stories (Original Mix)
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 3. Dancing Ninja (Original Mix)
+                    span.m-music__track-duration 5:10
+                  .m-music__track
+                    span.m-music__track-name 4. Him I (GeoM Remix )
+                    span.m-music__track-duration 5:10
+              
+              .d-card__more
+                a(href="#" js-load-more) View More…
+                 
+        
+        // DASH CONTENT (CENTER COL)    
+        .dash__content
+          //card
+          .d-card
+            form(action="#").create-post
+              .create-post__writting
+                textarea(name="content" placeholder="Wright something…" rows="5" data-min-rows="5")
+              .create-post__actions
+                .create-post__types(js-post-types)
+                  .create-post__type.create-post__type--music.is-current
+                    +icon('ico-music')
+                    span Music
+                  .create-post__type.create-post__type--video
+                    +icon('ico-video')
+                    span Video
+                  .create-post__type.create-post__type--images
+                    +icon('ico-images')
+                    span Images
+                .create-post__cta
+                  button(type="submit").btn.btn-post
+                    span Post
+                    +icon('ico-arrow-next')
+          
+          include components/dash/_d-card-video
+
+          

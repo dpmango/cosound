@@ -170,30 +170,32 @@
 /* Start: CONTROL BAR
 
 .mejs__controls
-  bottom: 0
-  display: -webkit-box
-  display: -webkit-flex
-  display: -ms-flexbox
+  bottom: -70px
   display: flex
+  align-items: center
   height: 40px
   left: 0
   list-style-type: none
   margin: 0
-  padding: 0 10px
+  padding: 0 0px
   position: absolute
   width: 100%
   z-index: 3
+  opacity: 1 !important
   &:not([style*='display: none'])
-    background: rgba(255, 0, 0, 0.7)
-    background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.35))
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.35))
+    // background: rgba(255, 0, 0, 0.7)
+    // background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.35))
+    // background: linear-gradient(transparent, rgba(0, 0, 0, 0.35))
+    // background: rgba(#000, .1)
+    opacity: 1 !important
 
 .mejs__button, .mejs__time, .mejs__time-rail
+  position: relative
   font-size: 10px
   height: 40px
   line-height: 10px
   margin: 0
-  width: 32px
+  width: 40px
 
 .mejs__button > button
   background: transparent url('../img/mejs-controls.svg')
@@ -203,14 +205,17 @@
   font-size: 0
   height: 20px
   line-height: 0
-  margin: 10px 6px
+  // margin: 10px 6px
   overflow: hidden
   padding: 0
   position: absolute
   text-decoration: none
   width: 20px
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
   &:focus
-    outline: dotted 1px #999
+    // outline: dotted 1px #999
 
 /* :focus for accessibility
 
@@ -226,24 +231,37 @@
 
 .mejs__time
   box-sizing: content-box
-  color: #fff
-  font-size: 11px
-  font-weight: bold
-  height: 24px
+  color: $fontColor
+  font-size: 12px
   overflow: hidden
-  padding: 16px 6px 0
   text-align: center
   width: auto
+  display: flex
+  align-items: center
 
 /* End: Time (Current / Duration)
 
 /* Start: Play/Pause/Stop
 
-.mejs__play > button
-  background-position: 0 0
+.mejs__play, .mejs__pause
+  background: $colorRed
+  border-radius: 50%
+  margin-right: 27px
+  box-shadow: 0 4px 10px 0 rgba(255,39,123,0.33)
+  cursor: pointer
+  transition: .25s $ease
+  &:hover
+    box-shadow: 0 2px 5px 0 rgba(255,39,123,0.13)
 
-.mejs__pause > button
-  background-position: -20px 0
+.mejs__play
+  > button
+    background-position: 0 0
+    transform: translate(-45%,-45%)
+
+.mejs__pause
+  > button
+    background-position: -20px 0
+    transform: translate(-45%,-45%)
 
 .mejs__replay > button
   background-position: -160px 0
@@ -267,12 +285,12 @@
   border-radius: 2px
   cursor: pointer
   display: block
-  height: 10px
+  height: 2px
   position: absolute
 
 .mejs__time-total
-  background: rgba(255, 255, 255, 0.3)
-  margin: 5px 0 0
+  background: rgba(#979797, 0.13)
+  margin: 9px 0 0
   width: 100%
 
 .mejs__time-buffering
@@ -304,6 +322,7 @@
 
 .mejs__time-current, .mejs__time-handle-content
   background: rgba(255, 255, 255, 0.9)
+  background: linear-gradient(to right, #8E5ACD, #21B0B0)
 
 .mejs__time-hovered
   background: rgba(255, 255, 255, 0.5)
@@ -337,33 +356,38 @@
     transform: scaleX(0) !important
 
 .mejs__time-handle
-  border: 4px solid transparent
+  // border: 4px solid transparent
+  size: 15px
   cursor: pointer
-  left: 0
+  left: -7px
+  top: -7px
   position: absolute
   -webkit-transform: translateX(0)
   -ms-transform: translateX(0)
   transform: translateX(0)
   z-index: 11
+  background: #FFFFFF
+  border-radius: 50%
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
+  // transition: .1s linear
 
 .mejs__time-handle-content
-  border: 4px solid transparent
+  // display: none
+  // border: 4px solid transparent
   cursor: pointer
   left: 0
   position: absolute
-  -webkit-transform: translateX(0)
-  -ms-transform: translateX(0)
   transform: translateX(0)
   z-index: 11
-  border: 4px solid rgba(255, 255, 255, 0.9)
+  // border: 4px solid rgba(255, 255, 255, 0.9)
   border-radius: 50%
   height: 10px
   left: -7px
   top: -4px
-  -webkit-transform: scale(0)
-  -ms-transform: scale(0)
+  background: white
+  opacity: 0
   transform: scale(0)
-  width: 10px
+  size: 15px
 
 .mejs__time-rail
   &:hover .mejs__time-handle-content

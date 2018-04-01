@@ -479,8 +479,18 @@ $(document).ready(function(){
   	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
   	// this will allow the CDN to use Flash without restrictions
   	// (by default, this is set as `sameDomain`)
-  	shimScriptAccess: 'always'
+  	shimScriptAccess: 'always',
   	// more configuration
+    stretching: 'responsive',
+
+    loop: true,
+    controlsTimeoutDefault: 90000000, // don't hide controls
+    controlsTimeoutMouseLeave: 90000000,
+    controlsTimeoutMouseEnter: 90000000,
+    useFakeFullscreen: true,
+    // clickToPlayPause: false
+
+
   });
 
   ////////////

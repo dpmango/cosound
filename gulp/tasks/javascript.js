@@ -22,6 +22,10 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'jquery-lazy/jquery.lazy.min.js'),
       path.resolve('bower_components', 'animejs/anime.min.js'),
       path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
+      // shims, langs
+      // path.resolve('bower_components', 'mediaelement/build/renderers/soundcloud.js'),
+      // path.resolve('bower_components', 'mediaelement/build/renderers/vimeo.js'),
+      // path.resolve('bower_components', 'mediaelement/build/renderers/facebook.js'),
       config.src.js + '/vendor/**/*.js'
      ])
     .pipe(plumber({ errorHandler: config.errorHandler }))

@@ -25,7 +25,7 @@ PageList:
 - file: profile.html
   ready: 50
 - file: dashboard.html
-  ready: 0
+  ready: 10
 - file: messages.html
   ready: 0
 - file: market.html
