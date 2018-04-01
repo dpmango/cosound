@@ -368,9 +368,45 @@ $(document).ready(function(){
 
   // Masked input
   function initMasks(){
-    $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $("[js-date-mask]").mask('A9/B9/C999', {
+  		translation: {
+  			A: { pattern: /[0-3]/ },
+  			B: { pattern: /[0-1]/ },
+  			C: { pattern: /[0-2]/ }
+  		},
+    });
+    // $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
+
+  // $("input[name='time']").mask('AB:CD', {
+  //   translation: {
+  //     A: { pattern: /[0-2]/ },
+  //     B: { pattern: /[0-9]/ },
+  //     C: { pattern: /[0-6]/ },
+  //     D: { pattern: /[0-9]/ }
+  //   },
+  //   onKeyPress: function(a, b, c, d) {
+  //     if (!a) return;
+  //     let m = a.match(/(\d{1})/g);
+  //     if (!m) return;
+  //     if (parseInt(m[0]) === 3) {
+  //       d.translation.B.pattern = /[0-1]/;
+  //     } else {
+  //       d.translation.B.pattern = /[0-9]/;
+  //     }
+  //     if (parseInt(m[2]) == 1) {
+  //       d.translation.D.pattern = /[0-2]/;
+  //     } else {
+  //       d.translation.D.pattern = /[0-9]/;
+  //     }
+  //     let temp_value = c.val();
+  //     c.val('');
+  //     c.unmask().mask('AB:CD', d);
+  //     c.val(temp_value);
+  //   }
+  // })
+  // .keyup();
+
 
   // selectric
   function initSelectric(){
