@@ -5,6 +5,8 @@ PageList:
   ready: 100
 - file: login.html
   ready: 90
+- file: recover-password.html
+  ready: 90
 - file: signup.html
   ready: 90
 - file: signup-2.html
@@ -21,7 +23,7 @@ PageList:
   ready: 90
 
 - file: profile.html
-  ready: 30
+  ready: 40
 - file: dashboard.html
   ready: 0
 - file: messages.html

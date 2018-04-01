@@ -217,6 +217,18 @@ $(document).ready(function(){
         }
     }
   }
+  _document.on('change', '[js-change-location]', function(e){
+    var selectedVal = $(this).val().toLowerCase();
+    var zipInput = $(this).closest('form').find('input[name="postal_code"]')
+
+    if ( selectedVal == "canada" || selectedVal == "united states" ){
+      zipInput.attr('placeholder', 'Zip code')
+    } else {
+      zipInput.attr('placeholder', 'Postal code')
+    }
+  })
+
+
 
   // fake functions
   // should be ajax based added and -fake- removed
@@ -247,6 +259,14 @@ $(document).ready(function(){
       }
 
     },1000))
+
+  //////////
+  // PROFILE/DASH FUNCTIONS
+  //////////
+  _document
+    .on('click', '[js-post-types] .create-post__type', function(){
+      $(this).addClass('is-current').siblings().removeClass('is-current')
+    });
 
 
   //////////
@@ -289,7 +309,7 @@ $(document).ready(function(){
     $('[js-popup-gallery]').magnificPopup({
   		delegate: 'a',
   		type: 'image',
-  		tLoading: 'Загрузка #%curr%...',
+  		tLoading: 'Loading #%curr%...',
   		mainClass: 'popup-buble',
   		gallery: {
   			enabled: true,
@@ -333,13 +353,13 @@ $(document).ready(function(){
 
   // textarea autoExpand
   _document
-    .one('focus.autoExpand', '.ui-group textarea', function(){
+    .one('focus.autoExpand', '.ui-group textarea, .create-post textarea', function(){
         var savedValue = this.value;
         this.value = '';
         this.baseScrollHeight = this.scrollHeight;
         this.value = savedValue;
     })
-    .on('input.autoExpand', '.ui-group textarea', function(){
+    .on('input.autoExpand', '.ui-group textarea, .create-post textarea', function(){
         var minRows = this.getAttribute('data-min-rows')|0, rows;
         this.rows = minRows;
         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
@@ -403,6 +423,18 @@ $(document).ready(function(){
     origin.parent().addClass('is-ready');
     $(newInput).insertAfter(origin.parent().parent()).hide().fadeIn(250);
   }
+
+  ////////////
+  // MEDIA
+  ////////////
+  $('video, audio').mediaelementplayer({
+  	// Do not forget to put a final slash (/)
+  	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
+  	// this will allow the CDN to use Flash without restrictions
+  	// (by default, this is set as `sameDomain`)
+  	shimScriptAccess: 'always'
+  	// more configuration
+  });
 
   ////////////
   // TELEPORT PLUGIN
@@ -592,6 +624,26 @@ $(document).ready(function(){
         password: {
             required: "This field is required",
             minlength: "Password should be at least 6 character"
+        },
+      }
+    });
+
+    // recover
+    $("[js-validate-recover]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+      },
+      messages: {
+        email: {
+            required: "This field is required",
+            email: "Email is not valid"
         },
       }
     });

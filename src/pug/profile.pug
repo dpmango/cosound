@@ -32,13 +32,14 @@ block content
     .container.container--wide
       .profile__dash.dash
         .dash__sidebar
+          // card
           .d-card
             .d-card__head
               .d-card__title My Music
               .d-card__action(js-do-some)
                 +icon('ico-card-add')
             .d-card__content
-              // music plugin
+              // music plugin (media)
               .m-music
                 .m-music__scope
                   .m-music__cover
@@ -63,7 +64,98 @@ block content
                   .m-music__track
                     span.m-music__track-name 4. Him I (GeoM Remix )
                     span.m-music__track-duration 5:10
-                      
+              
+              .d-card__more
+                a(href="#" js-load-more) View More…
+                
+          // card
+          .d-card
+            .d-card__head
+              .d-card__title My images
+              .d-card__action(js-do-some)
+                +icon('ico-card-add')
+            .d-card__content
+              // gallery plugin (media)
+              .m-gallery(js-popup-gallery)
+                .m-gallery__item
+                  a(href="/img/gallery-img-1@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-1.jpg' srcset='img/gallery-img-1@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-2@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-2.jpg' srcset='img/gallery-img-2@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-3@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-3.jpg' srcset='img/gallery-img-3@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-4@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-4.jpg' srcset='img/gallery-img-4@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-5@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-5.jpg' srcset='img/gallery-img-5@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-6@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-6.jpg' srcset='img/gallery-img-6@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-7@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-7.jpg' srcset='img/gallery-img-7@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-8@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-8.jpg' srcset='img/gallery-img-8@2x.jpg 2x')
+                .m-gallery__item
+                  a(href="/img/gallery-img-9@2x.jpg").m-gallery__img-holder.no-barba
+                    img(src='img/gallery-img-9.jpg' srcset='img/gallery-img-9@2x.jpg 2x')
                     
+              .d-card__more
+                a(href="#" js-load-more) View More…      
+        
+        // DASH CONTENT (CENTER COL)    
         .dash__content
+          //card
+          .d-card
+            form(action="#").create-post
+              .create-post__writting
+                textarea(name="content" placeholder="Wright something…" rows="5" data-min-rows="5")
+              .create-post__actions
+                .create-post__types(js-post-types)
+                  .create-post__type.create-post__type--music.is-current
+                    +icon('ico-music')
+                    span Music
+                  .create-post__type.create-post__type--video
+                    +icon('ico-video')
+                    span Video
+                  .create-post__type.create-post__type--images
+                    +icon('ico-images')
+                    span Images
+                .create-post__cta
+                  button(type="submit").btn.btn-post
+                    span Post
+                    +icon('ico-arrow-next')
+          
+          // card (post)
+          .d-card
+            .d-card__head
+              .d-card__user
+                .d-card__user-avatar
+                  img(src="img/suggestionCard-avatar-1.jpg" srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+                .d-card__user-info
+                  .d-card__user-name Bryan Garza
+                  .d-card__user-position Job Title/Artist Name.
+            
+            .d-card__content
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+              .m-image
+                img(src='img/post-image-1.jpg' srcset='img/post-image-1@2x.jpg 2x')
+              .m-audio
+                audio(controls='')
+                  source(src='media/audio-piano.mp3', type='audio/mpeg')
+                  | Your browser does not support the audio element.
+
+
+
+              
+  
+              
+            
+          
+        
           

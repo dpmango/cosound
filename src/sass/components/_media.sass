@@ -51,10 +51,10 @@
       max-width: 100%
 
   &__tracks
-    margin: 20px 0
+    margin: 20px 0 0
 
   &__track
-    padding: 10px 0
+    padding: 13px 0
     display: flex
     align-items: center
     border-bottom: 1px solid rgba(#979797, .2)
@@ -73,3 +73,49 @@
 
 /* video
 .m-video
+
+
+
+/* gallery
+.m-gallery
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -7px 25px
+  &__item
+    flex: 0 1 33.3%
+    font-size: 0
+    padding: 7px
+  &__img-holder
+    display: inline-block
+    // min-size: 120px
+    height: 120px
+    width: 100%
+    position: relative
+    z-index: 1
+    border-radius: 6px
+    overflow: hidden
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,0.11)
+    transition: .25s $ease
+    &:hover
+      box-shadow: none
+      img
+        transform: translate(-50%,-50%) scale(1.1)
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: auto
+      height: auto
+      transition: .25s $ease
+
+.m-image
+  margin: 20px 0
+  position: relative
+  z-index: 1
+  border-radius: 5px
+  overflow: hidden
+  img
+    max-width: 100%
