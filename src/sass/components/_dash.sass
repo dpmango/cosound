@@ -19,6 +19,7 @@
 .d-card
   position: relative
   z-index: 2
+  overflow: hidden
   padding: 30px 30px 0px
   margin-bottom: 30px
   background: white
@@ -93,3 +94,174 @@
       font-size: 14px
       line-height: 2
       color: $fontColor50
+
+  &__actions
+    display: flex
+    align-items: center
+    margin: 25px 0
+
+  &__like, &__share, &__repost
+    color: #8E8E8E
+    border: 1px solid #D8D8D8
+    border-radius: 100px
+    min-size: 67px 28px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 5px
+    cursor: pointer
+    transition: .25s $ease
+    span
+      display: inline-block
+      margin-left: 5px
+      font-size: 12px
+    &:hover, &.is-active
+      background: #EEEEEE
+      border-color: #EEEEEE
+    // refactor - click change the class and hover is not clear enought
+    &.is-active
+      &:hover
+        border-color: #D8D8D8
+        background: #D8D8D8
+
+  &__like
+    margin-right: 15px
+    .ico
+      font-size: 12px
+  &__share
+    .ico
+      font-size: 10px
+
+  &__repost
+    min-width: 36px
+    margin-left: auto
+    .ico
+      font-size: 11px
+
+  &__comments
+    margin: 35px 0 0
+    &-head
+      position: relative
+      display: flex
+      justify-content: center
+      margin: 20px 0
+      padding-bottom: 5px
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        height: 1px
+        background: rgba(#979797, .2)
+    &-toggle
+      position: relative
+      z-index: 2
+      display: flex
+      margin-left: auto
+      margin-right: auto
+      min-width: 160px
+      padding-left: 18px
+      border-radius: 30px
+      background: white
+      border: 1px solid #EAEAEA
+      font-size: 12px
+      cursor: pointer
+      color: $fontColor50
+      transition: .25s $ease
+      .ico
+        fill: #8E8E8E
+      span
+        display: inline-block
+        margin-left: 7px
+      &:hover
+        background: #EEEEEE
+        border-color: #EEEEEE
+      &.is-opened
+        .d-card__comments-arrow
+          .ico
+            transform: rotate(180deg)
+    &-text
+      display: flex
+      align-items: center
+    &-arrow
+      font-size: 5px
+      margin: -1px -1px -1px auto
+      flex: 0 0 auto
+      border: 1px solid #EAEAEA
+      border-radius: 15px
+      padding: 9px 12px
+      .ico
+        transition: .25s $ease
+
+    &-drop
+      display: none
+      margin: 30px 0
+      .d-card__comment
+        &:first-child
+          margin-top: 0
+        &:last-child
+          margin-bottom: 0
+
+  /* comment
+  &__comment
+    display: flex
+    margin: 30px 0
+    &-avatar
+      position: relative
+      z-index: 1
+      flex: 0 0 45px
+      size: 45px
+      border-radius: 50%
+      overflow: hidden
+      font-size: 0
+      box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        max-width: 105%
+
+    &-content
+      flex: 1 1 auto
+      padding: 0 23px
+
+    &-author
+      font-size: 16px
+      font-weight: 500
+      line-height: 2
+    &-text
+      font-size: 14px
+      color: $fontColor50
+      p
+        margin: 0
+        line-height: 1.9
+        & + p
+          margin-top: 1em
+
+    &-date
+      flex: 0 0 auto
+      font-size: 12px
+      color: $fontColor50
+
+  &__reply
+    background: #F1F1F1
+    display: flex
+    margin: 20px -30px 0
+    padding: 20px 30px
+    textarea
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      background: #F1F1F1
+      color: $fontColor
+      border: none
+      border-radius: 8px
+      padding: 5px 0px
+      margin-left: 20px
+      resize: vertical
+      // transition: .25s $ease
+      &::placeholder
+        color: $fontColor50

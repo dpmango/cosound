@@ -266,7 +266,18 @@ $(document).ready(function(){
   _document
     .on('click', '[js-post-types] .create-post__type', function(){
       $(this).addClass('is-current').siblings().removeClass('is-current')
-    });
+    })
+    .on('click', '[js-toggle-comments]', function(){
+      $(this).toggleClass('is-opened')
+      $(this).closest('.d-card__comments').find('.d-card__comments-drop').slideToggle(250)
+    })
+    .on('click', '.d-card__like, .d-card__share, .d-card__repost', function(){
+      $(this).toggleClass('is-active')
+    })
+
+
+
+
 
 
   //////////
@@ -353,13 +364,13 @@ $(document).ready(function(){
 
   // textarea autoExpand
   _document
-    .one('focus.autoExpand', '.ui-group textarea, .create-post textarea', function(){
+    .one('focus.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea', function(){
         var savedValue = this.value;
         this.value = '';
         this.baseScrollHeight = this.scrollHeight;
         this.value = savedValue;
     })
-    .on('input.autoExpand', '.ui-group textarea, .create-post textarea', function(){
+    .on('input.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea', function(){
         var minRows = this.getAttribute('data-min-rows')|0, rows;
         this.rows = minRows;
         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
