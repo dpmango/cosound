@@ -21,7 +21,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'barba.js/dist/barba.min.js'),
       path.resolve('bower_components', 'jquery-lazy/jquery.lazy.min.js'),
       path.resolve('bower_components', 'animejs/anime.min.js'),
-      path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
+      // path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
       // shims, langs
       // path.resolve('bower_components', 'mediaelement/build/renderers/soundcloud.js'),
       // path.resolve('bower_components', 'mediaelement/build/renderers/vimeo.js'),

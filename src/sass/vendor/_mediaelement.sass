@@ -182,12 +182,14 @@
   width: 100%
   z-index: 3
   opacity: 1 !important
+  transform: translate3d(0,0,1)
+  transform-style: preserve-3d
   &:not([style*='display: none'])
     // background: rgba(255, 0, 0, 0.7)
     // background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.35))
     // background: linear-gradient(transparent, rgba(0, 0, 0, 0.35))
     // background: rgba(#000, .1)
-    opacity: 1 !important
+    // opacity: 1 !important
 
 .mejs__button, .mejs__time, .mejs__time-rail
   position: relative
@@ -456,35 +458,39 @@
 /* Start: Fullscreen
 
 .mejs__fullscreen-button > button
-  background-position: -80px 0
+  +sprite(fullscreen)
 
 .mejs__unfullscreen > button
-  background-position: -100px 0
+  // refactor - missing icon
+  +sprite(fullscreen)
 
 /* End: Fullscreen
 
 /* Start: Mute/Volume
 
+.mejs__mute, .mejs__unmute
+  margin-left: 13px
+
 .mejs__mute > button
-  background-position: -60px 0
+  +sprite('soundbar')
 
 .mejs__unmute > button
-  background-position: -40px 0
+  // refactor - need muted state
+  +sprite('soundbar')
 
 .mejs__volume-button
   position: relative
   > .mejs__volume-slider
     -webkit-backface-visibility: hidden
-    background: rgba(50, 50, 50, 0.7)
-    border-radius: 0
+    background: #FFFFFF
+    box-shadow: 10px 0 30px 0 rgba(0,0,0,0.08)
+    border-radius: 6px
     bottom: 100%
     display: none
     height: 115px
     left: 50%
     margin: 0
     position: absolute
-    -webkit-transform: translateX(-50%)
-    -ms-transform: translateX(-50%)
     transform: translateX(-50%)
     width: 25px
     z-index: 1
@@ -492,35 +498,31 @@
     border-radius: 0 0 4px 4px
 
 .mejs__volume-total
-  background: rgba(255, 255, 255, 0.5)
+  background: rgba(#979797, 0.13)
   height: 100px
   left: 50%
   margin: 0
   position: absolute
   top: 8px
-  -webkit-transform: translateX(-50%)
-  -ms-transform: translateX(-50%)
   transform: translateX(-50%)
   width: 2px
 
 .mejs__volume-current
-  background: rgba(255, 255, 255, 0.9)
+  background: linear-gradient(to top, #8E5ACD, #21B0B0)
   left: 0
   margin: 0
   position: absolute
   width: 100%
 
 .mejs__volume-handle
-  background: rgba(255, 255, 255, 0.9)
-  border-radius: 1px
+  background: #FFFFFF
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
+  border-radius: 50%
   cursor: ns-resize
-  height: 6px
+  size: 14px
   left: 50%
   position: absolute
-  -webkit-transform: translateX(-50%)
-  -ms-transform: translateX(-50%)
   transform: translateX(-50%)
-  width: 16px
 
 .mejs__horizontal-volume-slider
   display: block
