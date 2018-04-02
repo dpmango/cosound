@@ -23,7 +23,7 @@ PageList:
   ready: 90
 
 - file: profile.html
-  ready: 50
+  ready: 60
 - file: dashboard.html
   ready: 10
 - file: messages.html

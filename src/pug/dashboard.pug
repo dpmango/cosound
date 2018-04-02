@@ -13,43 +13,15 @@ block content
 
     // DASH CONTENT
     .container.container--wide
-      .profile__dash.dash
-        .dash__sidebar
+      .dash.dash--feed
+        .dash__sidebar.dash__sidebar--narrow
           // card
           .d-card
-            .d-card__head
-              .d-card__title My Music
-              .d-card__action(js-do-some)
-                +icon('ico-card-add')
-            .d-card__content
-              // music plugin (media)
-              .m-music
-                .m-music__scope
-                  .m-music__cover
-                    img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
-                    .m-music__play
-                      +icon('ico-play')
-                  .m-music__names
-                    .m-music__author Kygo
-                    .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
-                .m-music__track-graph
-                  img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
-                .m-music__tracks
-                  .m-music__track
-                    span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]
-                    span.m-music__track-duration 5:10
-                  .m-music__track
-                    span.m-music__track-name 2. Summer Stories (Original Mix)
-                    span.m-music__track-duration 5:10
-                  .m-music__track
-                    span.m-music__track-name 3. Dancing Ninja (Original Mix)
-                    span.m-music__track-duration 5:10
-                  .m-music__track
-                    span.m-music__track-name 4. Him I (GeoM Remix )
-                    span.m-music__track-duration 5:10
-              
-              .d-card__more
-                a(href="#" js-load-more) View More…
+            .sidebar-user
+              .sidebar-user__avatar
+                img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name Lois Stokes
+              .sidebar-user__position Job Title/Artist Name.
                  
         
         // DASH CONTENT (CENTER COL)    
@@ -74,6 +46,12 @@ block content
                   button(type="submit").btn.btn-post
                     span Post
                     +icon('ico-arrow-next')
+          
+          include components/dash/_d-card-audio
+          
+          include components/dash/_d-card-images
+          
+          include components/dash/_d-card-image
           
           include components/dash/_d-card-video
 

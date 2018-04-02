@@ -5,8 +5,7 @@
 
 .dash
   display: flex
-  margin-left: -12px
-  margin-right: -12px
+  margin: 50px -12px
   &__sidebar
     flex: 0 1 480px
     max-width: 480px
@@ -19,6 +18,33 @@
     min-width: 1px
     min-height: 0
     padding: 0 12px
+  &--feed
+    .dash
+      &__sidebar
+        flex-basis: 285px
+        max-width: 285px
+      &__content
+        flex-basis: 875px
+        max-width: 875px
+
++r($desktop)
+  .dash
+    flex-direction: column
+    &__sidebar
+      // display: none
+      flex: 0 0 auto
+      max-width: 100%
+      width: 100%
+      display: flex
+      .d-card
+        flex: 0 1 50%
+        margin-right: 24px
+        &:last-child
+          margin-right: 0
+    &__content
+      flex: 0 0 auto
+      margin-left: auto
+      margin-right: auto
 
 // Dash card
 .d-card

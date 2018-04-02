@@ -30,7 +30,7 @@ block content
     
     // DASH CONTENT
     .container.container--wide
-      .profile__dash.dash
+      .dash
         .dash__sidebar
           // card
           .d-card
@@ -51,6 +51,10 @@ block content
                     .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
                 .m-music__track-graph
                   img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
+                  .m-audio
+                    audio(controls='')
+                      source(src='media/audio-piano.mp3', type='audio/mpeg')
+                      | Your browser does not support the audio element.
                 .m-music__tracks
                   .m-music__track
                     span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]

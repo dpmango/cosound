@@ -25,7 +25,7 @@ $(document).ready(function(){
   function pageReady(){
     legacySupport();
     // updateHeaderActiveClass();
-    // initHeaderScroll();
+    initHeaderScroll();
 
     initPopups();
     initSliders();
@@ -127,21 +127,16 @@ $(document).ready(function(){
   function initHeaderScroll(){
     _window.on('scroll', throttle(function(e) {
       var vScroll = _window.scrollTop();
-      var header = $('.header').not('.header--static');
-      var headerHeight = header.height();
-      var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
+      var header = $('.header.js-should-scroll').not('.header--static');
+      // var headerHeight = header.height();
+      // var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
       var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5
 
       if (visibleWhen){
-        if ( vScroll > headerHeight ){
-          header.addClass('is-fixed');
+        if ( vScroll > 10 ){
+          header.addClass('is-scrolled');
         } else {
-          header.removeClass('is-fixed');
-        }
-        if ( vScroll > firstSection ){
-          header.addClass('is-fixed-visible');
-        } else {
-          header.removeClass('is-fixed-visible');
+          header.removeClass('is-scrolled');
         }
       }
     }, 10));
@@ -489,8 +484,26 @@ $(document).ready(function(){
     controlsTimeoutMouseEnter: 90000000,
     useFakeFullscreen: true,
     // clickToPlayPause: false
+  });
 
+  // WAVESURFER
+  var wavesurfer = WaveSurfer.create({
+    container: '[js-audio-waveform ]',
+    waveColor: '#D8D8D8',
+    progressColor: '#8E5ACD',
+    // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
+    cursorColor: '#F1F1F1',
+    height: 130,
+    barWidth: 2,
+    hideScrollbar: true,
+  });
 
+  // load self from data attr
+  wavesurfer.load(wavesurfer.container.dataset.src);
+
+  wavesurfer.on('ready', function () {
+    console.log('wavesurfer ready', this)
+    wavesurfer.play();
   });
 
   ////////////
