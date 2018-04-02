@@ -7,10 +7,32 @@
       .d-card__user-info
         .d-card__user-name Bryan Garza
         .d-card__user-position Job Title/Artist Name.
-  
+    .d-card__options
+      .d-card__options-wrap
+        .d-card__options-toggle(js-card-options)
+          +icon('ico-more')
+        ul.d-card__options-list
+          li
+            a(href="#") All
+          li
+            a(href="#") Copy link
+          li
+            a(href="#") Share
+          li
+            a(href="#") Unollow User
+          li
+            a(href="#") Report Post
+            
   .d-card__content
-    
-  
+    // how to proprely display 3,4,5 ?
+    .m-img-row(data-images="2")
+      .m-img-row__col
+        .m-image
+          img(src='img/post-image-gal-1.jpg' srcset='img/post-image-gal-1@2x.jpg 2x')
+      .m-img-row__col
+        .m-image
+          img(src='img/post-image-gal-2.jpg' srcset='img/post-image-gal-2@2x.jpg 2x')
+
   .d-card__actions
     .d-card__like.is-active
       +icon('ico-like')

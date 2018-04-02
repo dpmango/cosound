@@ -7,15 +7,31 @@
       .d-card__user-info
         .d-card__user-name Bryan Garza
         .d-card__user-position Job Title/Artist Name.
-  
+    .d-card__options
+      .d-card__options-wrap
+        .d-card__options-toggle(js-card-options)
+          +icon('ico-more')
+        ul.d-card__options-list
+          li
+            a(href="#") All
+          li
+            a(href="#") Copy link
+          li
+            a(href="#") Share
+          li
+            a(href="#") Unollow User
+          li
+            a(href="#") Report Post
+    
   .d-card__content
     // music plugin (media)
     .m-music
       .m-music__scope
         .m-music__cover
           img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
-          .m-music__play
+          .m-music__play(js-play-audio)
             +icon('ico-play')
+            +icon('ico-stop')
         .m-music__names
           .m-music__author Kygo
           .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)

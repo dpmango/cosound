@@ -269,6 +269,14 @@ $(document).ready(function(){
     .on('click', '.d-card__like, .d-card__share, .d-card__repost', function(){
       $(this).toggleClass('is-active')
     })
+    .on('click', '[js-card-options]', function(){
+      $(this).closest('.d-card__options').find('.d-card__options-list').toggleClass('is-visible')
+    })
+    .on('click', function(e){
+      if ( !$(e.target).closest('.d-card__options').length > 0 ){
+        $('.d-card__options-list').removeClass('is-visible')
+      }
+    })
 
 
 
@@ -502,9 +510,19 @@ $(document).ready(function(){
   wavesurfer.load(wavesurfer.container.dataset.src);
 
   wavesurfer.on('ready', function () {
-    console.log('wavesurfer ready', this)
-    wavesurfer.play();
+    // console.log('wavesurfer ready', this)
+    // wavesurfer.play();
   });
+
+  _document.on('click', '[js-play-audio]', function(e){
+    if ( $(this).is('.is-playing') ){
+      wavesurfer.pause();
+    } else {
+      wavesurfer.play();
+    }
+
+    $(this).toggleClass('is-playing');
+  })
 
   ////////////
   // TELEPORT PLUGIN

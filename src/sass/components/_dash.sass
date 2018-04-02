@@ -50,7 +50,7 @@
 .d-card
   position: relative
   z-index: 2
-  overflow: hidden
+  // overflow: hidden
   padding: 30px 30px 0px
   margin-bottom: 30px
   background: white
@@ -75,6 +75,55 @@
     transition: .25s $ease
     &:hover
       color: $colorAqua
+  &__options
+    position: absolute
+    top: 10px
+    right: 8px
+    &-toggle
+      cursor: pointer
+      font-size: 4px
+      padding: 10px
+      color: $fontColor50
+      transition: .25s $ease
+      &:hover
+        color: $colorAqua
+    &-wrap
+      position: relative
+    &-list
+      position: absolute
+      z-index: 5
+      top: 25px
+      left: 10px
+      padding: 10px 0
+      margin: 0px 0
+      min-width: 180px
+      background: white
+      border-radius: 6px
+      box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+      opacity: 0
+      transform: translate3d(0,15px,0)
+      pointer-events: none
+      transition: .25s $ease
+      &.is-visible
+        opacity: 1
+        transform: translate3d(0,0,0)
+        pointer-events: all
+      li
+        display: block
+        &:first-child
+          font-weight: 500
+      a
+        display: block
+        font-size: 15px
+        padding: 12px 30px
+        color: #8E8E8E
+        transition: .25s $ease
+        &:hover
+          color: $fontColor
+          background: #F9F9F9
+          box-shadow: 0 6px 11px 0 rgba(0,0,0,0.04)
+
+
   &__content
     padding: 25px 0 10px
     p
@@ -282,6 +331,8 @@
     display: flex
     margin: 20px -30px 0
     padding: 20px 30px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
     textarea
       display: block
       width: 100%
