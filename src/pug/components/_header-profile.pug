@@ -5,15 +5,21 @@ header.header
       +icon('ico-logo')
     .header__search
       .header__search-input
-        input(name="search" type="text" placeholder="Search..")
+        input(name="search" type="text" placeholder="Search.." js-header-search)
         +icon('ico-search')
-      .header__search-drop
-        span Music
-        span Music Lounge
-        span Music Rock
-        span Music Listen
-        span Music
-        span Music Lounge
+      .header__search-drop(js-header-searchResults)
+        li
+          a(href="#") Music
+        li
+          a(href="#") Music Lounge
+        li
+          a(href="#") Music Rock
+        li
+          a(href="#") Music Listen
+        li
+          a(href="#") Music
+        li
+          a(href="#") Music Lounge
     .header__actions
       .header__actions-item
         a(href="#")
@@ -25,7 +31,7 @@ header.header
         a(href="#")
           +icon('ico-profile')
       .header__actions-item
-        a(href="#").header__notifications.has-notifications
+        a(href="#").header__notifications.has-notifications(js-header-notifications)
           +icon('ico-notifications')
           span.header__notifications-mark
       .header__actions-item
@@ -37,3 +43,6 @@ header.header
       a(href="plans.html") Premium
 
 // HEADER :: END
+
+
+include _notifications

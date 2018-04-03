@@ -9,7 +9,7 @@ $(document).ready(function(){
 
   // BREAKPOINT SETTINGS
   var bp = {
-    mobileS: 375,
+    mobileS: 414,
     mobile: 568,
     tablet: 768,
     desktop: 992,
@@ -34,16 +34,21 @@ $(document).ready(function(){
     initSelectric();
     initValidations();
     initLazyLoad();
-
-    // development helper
-    _window.on('resize', debounce(setBreakpoint, 200))
-
+    initMedia();
     initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
 
     // login/sign
     setStepsClasses();
+
+    // barba fixed - closing certain elements on refresh
+    closeMobileMenu();
+    closeSearch();
+    closeNotifications();
+
+    // development helper
+    _window.on('resize', debounce(setBreakpoint, 200))
   }
 
   // this is a master function which should have all functionality
@@ -135,8 +140,10 @@ $(document).ready(function(){
       if (visibleWhen){
         if ( vScroll > 10 ){
           header.addClass('is-scrolled');
+          $('.notifications--fixed').addClass('is-scrolled')
         } else {
           header.removeClass('is-scrolled');
+          $('.notifications--fixed').removeClass('is-scrolled')
         }
       }
     }, 10));
@@ -172,7 +179,7 @@ $(document).ready(function(){
     if (footer.length > 0) {
       var footerHeight = footer.outerHeight();
       var maxHeight = _window.height() - footerHeight > 100;
-      if (maxHeight && !msieversion() && _window.width > 768 ) {
+      if (maxHeight && !msieversion() && _window.width > bp.tablet ) {
         $('body').css({
           'margin-bottom': footerHeight
         });
@@ -259,6 +266,19 @@ $(document).ready(function(){
   // PROFILE/DASH FUNCTIONS
   //////////
   _document
+    // HEADER
+    // notifications toggle
+    .on('click', '[js-header-notifications]', function(e){
+      $(this).toggleClass('is-active');
+      $('.notifications').toggleClass('is-active');
+    })
+    .on('click', function(e){
+      if ( !$(e.target).closest('.notifications').length > 0 &&
+           !$(e.target).closest('[js-header-notifications]').length > 0 ){
+        closeNotifications();
+      }
+    })
+
     .on('click', '[js-post-types] .create-post__type', function(){
       $(this).addClass('is-current').siblings().removeClass('is-current')
     })
@@ -279,8 +299,51 @@ $(document).ready(function(){
     })
 
 
+  // DASH SEARCH & NOTIFICATIONS
 
+  _document
+    .on('keyup', '[js-header-search]', debounce(function(e) {
+      console.clear()
+      var searchValue = this.value.toLowerCase();
+      var searchLength = this.value.length;
+      var searchResultsDrop = $('[js-header-searchResults]')
 
+      // 2+ letters for search
+      if (searchLength >= 1) {
+        $(this).addClass('is-focused');
+        $('[js-header-searchResults]').addClass('is-active');
+
+        // get ajax json instead
+        var searchResults = searchResultsDrop.children().find('span, a');
+
+        searchResults.each(function() {
+          var name = $(this).text(),
+            nameL = name.toLowerCase(),
+            nameReplace = '<mark>' + name.substr(0, searchLength) + '</mark>' + name.substr(searchLength);
+
+          if (nameL.indexOf(searchValue) !== -1) {
+            $(this).html(nameReplace).closest('li').addClass('is-visible');
+          } else {
+            $(this).html(nameReplace).closest('li').removeClass('is-visible');
+          }
+
+        });
+      } else {
+        // less than 2 symbols
+        closeSearch();
+      }
+
+    }, 200))
+
+  function closeSearch(){
+    $('[js-header-searchResults]').removeClass('is-active');
+    $('[js-header-search]').removeClass('is-focused');
+  }
+
+  function closeNotifications(){
+    $('[js-header-notifications]').removeClass('is-active');
+    $('.notifications').removeClass('is-active');
+  }
 
 
   //////////
@@ -477,42 +540,49 @@ $(document).ready(function(){
   ////////////
   // MEDIA
   ////////////
-  $('video, audio').mediaelementplayer({
-  	// Do not forget to put a final slash (/)
-  	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
-  	// this will allow the CDN to use Flash without restrictions
-  	// (by default, this is set as `sameDomain`)
-  	shimScriptAccess: 'always',
-  	// more configuration
-    stretching: 'responsive',
+  function initMedia(){
+    $('video, audio').mediaelementplayer({
+    	// Do not forget to put a final slash (/)
+    	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
+    	// this will allow the CDN to use Flash without restrictions
+    	// (by default, this is set as `sameDomain`)
+    	shimScriptAccess: 'always',
+    	// more configuration
+      stretching: 'responsive',
 
-    loop: true,
-    controlsTimeoutDefault: 90000000, // don't hide controls
-    controlsTimeoutMouseLeave: 90000000,
-    controlsTimeoutMouseEnter: 90000000,
-    useFakeFullscreen: true,
-    // clickToPlayPause: false
-  });
+      loop: true,
+      controlsTimeoutDefault: 90000000, // don't hide controls
+      controlsTimeoutMouseLeave: 90000000,
+      controlsTimeoutMouseEnter: 90000000,
+      useFakeFullscreen: true,
+      // clickToPlayPause: false
+    });
 
-  // WAVESURFER
-  var wavesurfer = WaveSurfer.create({
-    container: '[js-audio-waveform ]',
-    waveColor: '#D8D8D8',
-    progressColor: '#8E5ACD',
-    // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
-    cursorColor: '#F1F1F1',
-    height: 130,
-    barWidth: 2,
-    hideScrollbar: true,
-  });
+    // WAVESURFER
+    var wavesurfer
+    if ( $('[js-audio-waveform ]').length > 0 ){
+      wavesurfer = WaveSurfer.create({
+        container: '[js-audio-waveform ]',
+        waveColor: '#D8D8D8',
+        progressColor: '#8E5ACD',
+        // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
+        cursorColor: '#F1F1F1',
+        height: 130,
+        barWidth: 2,
+        hideScrollbar: true,
+      });
 
-  // load self from data attr
-  wavesurfer.load(wavesurfer.container.dataset.src);
+      // load self from data attr
+      wavesurfer.load(wavesurfer.container.dataset.src);
 
-  wavesurfer.on('ready', function () {
-    // console.log('wavesurfer ready', this)
-    // wavesurfer.play();
-  });
+      wavesurfer.on('ready', function () {
+        // console.log('wavesurfer ready', this)
+        // wavesurfer.play();
+      });
+    }
+
+  }
+
 
   _document.on('click', '[js-play-audio]', function(e){
     if ( $(this).is('.is-playing') ){
@@ -573,7 +643,7 @@ $(document).ready(function(){
       var elWatcher = scrollMonitor.create( $(el) );
 
       var delay;
-      if ( $(window).width() < 768 ){
+      if ( $(window).width() < bp.tablet ){
         delay = 0
       } else {
         delay = $(el).data('animation-delay') !== undefined ? $(el).data('animation-delay') : '0.2s';
@@ -879,7 +949,7 @@ $(document).ready(function(){
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
 
     pageReady();
-    closeMobileMenu();
+
 
   });
 
