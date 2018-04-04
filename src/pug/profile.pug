@@ -44,17 +44,17 @@ block content
                 .m-music__scope
                   .m-music__cover
                     img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
-                    .m-music__play
+                    .m-music__play(js-play-audio)
                       +icon('ico-play')
+                      +icon('ico-stop')
                   .m-music__names
                     .m-music__author Kygo
                     .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
-                .m-music__track-graph
-                  img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
-                  .m-audio
-                    audio(controls='')
-                      source(src='media/audio-piano.mp3', type='audio/mpeg')
-                      | Your browser does not support the audio element.
+                //- refactor?? Not sure how to make such a graph
+                //- .m-music__track-graph
+                  //- img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
+                .m-audio
+                  div(js-audio-waveform data-src='media/audio-piano.mp3' data-mini="true")
                 .m-music__tracks
                   .m-music__track
                     span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]
@@ -136,6 +136,8 @@ block content
                     +icon('ico-arrow-next')
           
           include components/dash/_d-card-video
+          
+          include components/dash/_d-card-audio
           
           include components/dash/_d-card-video
           

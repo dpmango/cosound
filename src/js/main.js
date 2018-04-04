@@ -559,40 +559,60 @@ $(document).ready(function(){
     });
 
     // WAVESURFER
-    var wavesurfer
-    if ( $('[js-audio-waveform ]').length > 0 ){
-      wavesurfer = WaveSurfer.create({
-        container: '[js-audio-waveform ]',
-        waveColor: '#D8D8D8',
-        progressColor: '#8E5ACD',
-        // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
-        cursorColor: '#F1F1F1',
-        height: 130,
-        barWidth: 2,
-        hideScrollbar: true,
-      });
+    if ( $('[js-audio-waveform]').length > 0 ){
 
-      // load self from data attr
-      wavesurfer.load(wavesurfer.container.dataset.src);
+      $('[js-audio-waveform]').each(function(i, wave){
+        var waveContainer = wave;
+        var $wave = $(wave);
+        // refactor - what would happens when multiple track on the same card
+        var linkedControl = $wave.closest('.d-card').find('[js-play-audio]'); // play btn
+        var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
 
-      wavesurfer.on('ready', function () {
-        // console.log('wavesurfer ready', this)
-        // wavesurfer.play();
+        var wavesurfer = WaveSurfer.create({
+          container: waveContainer,
+          waveColor: '#D8D8D8',
+          progressColor: '#8E5ACD',
+          // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
+          cursorColor: '#F1F1F1',
+          cursorWidth: 0,
+          height: waveHeight,
+          barWidth: 2,
+          hideScrollbar: true,
+        });
+
+        // load self from data attr
+        wavesurfer.load($wave.data('src'));
+
+        // create timestamps
+        var timeTotal = $('<div class="m-audio__time-total">0:00</div>');
+        var timeCurrent = $('<div class="m-audio__time-current">0:00</div>');
+        $wave.append(timeTotal)
+        $wave.append(timeCurrent)
+
+        wavesurfer.on('ready', function () {
+          // wavesurfer.play();
+          timeTotal.html(wavesurfer.getDuration().toString().toTimestamp())
+        });
+
+        // get progress every sec
+        wavesurfer.on('audioprocess', throttle(function () {
+          timeCurrent.html(wavesurfer.getCurrentTime().toString().toTimestamp())
+        },1000));
+
+
+        // sound controls
+
+        // toggle play button
+        linkedControl.on('click', function(e){
+          wavesurfer.isPlaying() ? wavesurfer.pause() : wavesurfer.play()
+
+          $(this).toggleClass('is-playing');
+        })
+
       });
     }
-
   }
 
-
-  _document.on('click', '[js-play-audio]', function(e){
-    if ( $(this).is('.is-playing') ){
-      wavesurfer.pause();
-    } else {
-      wavesurfer.play();
-    }
-
-    $(this).toggleClass('is-playing');
-  })
 
   ////////////
   // TELEPORT PLUGIN
@@ -982,3 +1002,25 @@ $(document).ready(function(){
   }
 
 });
+
+
+// PROTOTYPES aka helper functions
+String.prototype.toTimestamp = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours == 0){
+      hours = "";
+    } else if (hours   < 10) {
+      hours = "0" + hours + ":";
+    }
+    if (minutes == 0){
+      minutes = "0:";
+    } else if (minutes   < 10) {
+      minutes = "" + minutes + ":";
+    }
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+''+minutes+''+seconds;
+}
