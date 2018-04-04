@@ -35,6 +35,7 @@ $(document).ready(function(){
     initValidations();
     initLazyLoad();
     initMedia();
+    initPerfectScrollbar();
     initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
@@ -307,6 +308,7 @@ $(document).ready(function(){
       var searchValue = this.value.toLowerCase();
       var searchLength = this.value.length;
       var searchResultsDrop = $('[js-header-searchResults]')
+      var searchResultsNotFound = searchResultsDrop.find('.header__search-no-results')
 
       // 2+ letters for search
       if (searchLength >= 1) {
@@ -326,8 +328,19 @@ $(document).ready(function(){
           } else {
             $(this).html(nameReplace).closest('li').removeClass('is-visible');
           }
-
         });
+
+        var totalResults = searchResultsDrop.find('.is-visible').length
+
+        console.log(totalResults)
+
+        if ( totalResults == 0 ){
+          searchResultsNotFound.fadeIn(250);
+          searchResultsNotFound.find('span').html(this.value)
+        } else {
+          searchResultsNotFound.hide();
+        }
+
       } else {
         // less than 2 symbols
         closeSearch();
@@ -538,13 +551,31 @@ $(document).ready(function(){
   }
 
   ////////////
+  // SCROLLBAR
+  ////////////
+  function initPerfectScrollbar(){
+    if ( $('[js-scrollbar]').length > 0 ){
+      $('[js-scrollbar]').each(function(i, scrollbar){
+        if ( $(scrollbar).not('.ps') ){ // if it initialized
+          var ps = new PerfectScrollbar(scrollbar, {
+            // wheelSpeed: 2,
+            // wheelPropagation: true,
+            minScrollbarLength: 20
+          });
+        }
+      })
+    }
+  }
+
+
+  ////////////
   // MEDIA
   ////////////
   function initMedia(){
 
     // MEDIAELEMENT.js
     // https://github.com/mediaelement/mediaelement/blob/master/docs/api.md
-    
+
     $('video, audio').mediaelementplayer({
     	// Do not forget to put a final slash (/)
     	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
@@ -575,11 +606,21 @@ $(document).ready(function(){
 
         // options
         // https://wavesurfer-js.org/docs/options.html
+
+        var canvasGrad
+        if ( !$wave.data('mini') ){
+          canvasGrad = document.createElement('canvas').getContext('2d').createLinearGradient(0, 40, 0, 190);
+        } else {
+          canvasGrad = document.createElement('canvas').getContext('2d').createLinearGradient(0, 20, 0, 140);
+        }
+        canvasGrad.addColorStop(0, '#8E5ACD');
+        canvasGrad.addColorStop(1, '#21B0B0');
+
         var wavesurfer = WaveSurfer.create({
           container: waveContainer,
           waveColor: '#D8D8D8',
-          progressColor: '#8E5ACD',
-          // progressColor: 'linear-gradient(-180deg, #8E5ACD 0%, #21B0B0 100%)',
+          // progressColor: '#8E5ACD',
+          progressColor: canvasGrad,
           cursorColor: '#F1F1F1',
           cursorWidth: 0,
           height: waveHeight,

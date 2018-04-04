@@ -23,14 +23,14 @@ PageList:
   ready: 90
 
 - file: profile.html
-  ready: 70
+  ready: 80
 - file: dashboard.html
-  ready: 50
-- file: messages.html
-  ready: 0
+  ready: 70
 - file: market.html
   ready: 0
 - file: product.html
+  ready: 0
+- file: messages.html
   ready: 0
 - file: checkout.html
   ready: 0

@@ -1,5 +1,5 @@
 // HEADER :: START
-header.header
+header.header.header--dash.js-should-scroll
   .header__wrapper.wow(data-animation-class="wowFadeDown")
     a(href="homepage.html").header__logo
       +icon('ico-logo')
@@ -20,6 +20,7 @@ header.header
           a(href="#") Music
         li
           a(href="#") Music Lounge
+        .header__search-no-results No results found for <span>qqq</span> query
     .header__actions
       .header__actions-item
         a(href="#")
@@ -41,8 +42,43 @@ header.header
             span 4
     .header__premium
       a(href="plans.html") Premium
-
+      
+    .header__hamburger
+      .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger-box
+          .hamburger-inner
+            
 // HEADER :: END
 
+
+// MOBILE NAV
+.mobile-navi
+  .mobile-navi__wrapper
+    .header__search
+      .header__search-input
+        input(name="search" type="text" placeholder="Search.." js-header-search)
+        +icon('ico-search')
+      .header__search-drop(js-header-searchResults)
+        li
+          a(href="#") Music
+        li
+          a(href="#") Music Lounge
+        li
+          a(href="#") Music Rock
+        li
+          a(href="#") Music Listen
+        li
+          a(href="#") Music
+        li
+          a(href="#") Music Lounge
+        .header__search-no-results No results found for <span>qqq</span> query
+    ul.mobile-navi__menu
+      li
+        a(href="#") about us. 
+      li
+        a(href="#") lorem ipsum. 
+      li
+        a(href="#") lorem ipsum. 
+      
 
 include _notifications

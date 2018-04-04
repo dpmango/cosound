@@ -15,7 +15,7 @@
     // transition: .25s $ease
 
   &__logo
-    flex: 0 0 auto
+    flex: 0 0 590px
     font-size: 35px
     padding-right: 30px
     font-size: 25px
@@ -71,6 +71,7 @@
   &__search
     position: relative
     margin-left: auto
+    margin-right: auto
     flex: 0 2 640px
     &-input
       position: relative
@@ -113,7 +114,7 @@
       background: white
       box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
       border-radius: 10px
-      padding: 27px 0
+      padding: 37px 0 27px
       opacity: 0
       transform: translate(0,20px)
       pointer-events: none
@@ -141,20 +142,28 @@
         opacity: 1
         transform: translate(0,0)
         pointer-events: all
+    &-no-results
+      display: none
+      color: $fontColor
+      margin: 15px 27px
+      font-size: 16px
+      span
+        font-weight: 500
 
 
   &__actions
     // margin-left: auto
-    padding-left: 60px
-    flex: 0 0 460px
+    padding-left: 80px
+    flex: 0 0 470px
     display: flex
     align-items: center
     min-width: 1px
-    min-height: 0
+    min-height: 42px
     &-item
       flex: 0 1 80px
-      min-width: 80px
+      // min-width: 80px
       min-height: 0
+      font-size: 0
       // padding: 0 5%
       display: flex
       a
@@ -182,12 +191,12 @@
             opacity: 1
     .ico
       &-case
-        font-size: 18px
+        font-size: 20px
       &-comments
         font-size: 20px
         transform: translateY(2px)
       &-profile
-        font-size: 18px
+        font-size: 20px
       &-notifications
         font-size: 22px
       &-cart
@@ -203,7 +212,7 @@
       font-size: 14px
       font-weight: 500
       background: #319B9D
-      padding: 12px 14px
+      padding: 12px 18px
       transition: .25s $ease
       &:hover
         background: $colorRed
@@ -211,10 +220,12 @@
 
   &__cart
     position: relative
+    .ico
+      transform: translate(-3px)
     &-num
       position: absolute
       top: -5px
-      right: 20px
+      right: 22px
       background: $colorRed
       color: white
       border-radius: 50px
@@ -241,25 +252,65 @@
       .header__notifications-mark
         opacity: 1
 
-  &--dash
+  &--bg
     background-image: linear-gradient(80deg, #8E5ACD 0%, #21B0B0 100%)
+  &.js-should-scroll
     position: fixed
     left: 0
     right: 0
-  &.js-should-scroll
     transform-style: preserve-3d
     transform: translate3d(0,0px,0)
     transition: .25s $ease
     &.is-scrolled
       transform: translate3d(0,-20px,0)
+      background-image: linear-gradient(80deg, #8E5ACD 0%, #21B0B0 100%)
       .header
         &__wrapper
           // padding-top: 15px
           padding-bottom: 15px
+  &--dash
+    .header
+      &__hamburger
+        margin-left: 0
+
+
++r(1660)
+  .header
+    &__logo
+      flex-basis: auto
+    &__search
+      margin-right: 0
+      padding-left: 30px
+    &__actions
+      // margin-left: auto
+      padding-left: 40px
+      flex: 0 0 430px
+
++r(1200)
+  .header
+    &__actions
+      flex-basis: 330px
+      &-item
+        flex-basis: 60px
+
+    &__notifications
+      &-mark
+        right: 21px
+    &__cart
+      &-num
+        right: 12px
 
 
 +r($desktop)
   .header
+    &__search
+      display: none
+    &__actions
+      margin-left: auto
+    &--dash
+      .header
+        &__hamburger
+          display: block
 
 +r($tablet)
   .header
@@ -271,6 +322,11 @@
     &__hamburger
       margin-left: auto
       display: block
+    &__premium
+      display: none
+    &--dash
+      .header
+        //
 
 +r($mobile)
   .header
@@ -282,6 +338,27 @@
       text-align: right
       span
         margin-bottom: 5px
+    &__actions
+      flex: 0 0 180px
+      padding-left: 0
+      &-item
+        &:nth-child(1), &:nth-child(3)
+          display: none
+    &--dash
+      .header
+        //
+
++r(460)
+  .header
+    &__actions
+      flex: 0 0 60px
+      &-item
+        &:nth-child(2), &:nth-child(5)
+          display: none
+    &--dash
+      .header
+        &__hamburger
+          padding-left: 0
 
 +r($mobile-s)
   .header

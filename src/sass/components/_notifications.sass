@@ -7,12 +7,16 @@
   background: #F5F5F5
   opacity: 0
   transform: translate(0,20px,0)
+  box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
   pointer-events: none
   transition: .25s $ease
   &--fixed
     position: fixed
     &.is-scrolled
       top: 72px
+      .notifications
+        &__wrapper
+          max-height: calc(100vh - 72px - 42px)
   &.is-active
     opacity: 1
     pointer-events: all
@@ -27,6 +31,8 @@
   &__wrapper
     background: white
     width: 100%
+    max-height: calc(100vh - 112px - 42px)
+    overflow: scroll
   &__list
     max-width: 1240px
     padding-left: 50px
@@ -38,6 +44,8 @@
     display: flex
     border-bottom: 1px solid rgba(#979797, .13)
     padding: 35px 0
+    &:last-child
+      border-bottom: 0
     &-avatar
       position: relative
       flex: 0 0 44px
@@ -84,3 +92,11 @@
         margin: 0
         & + p
           margin-top: 1em
+
+
+
++r($tablet)
+  .notifications
+    &__list
+      padding-left: 25px
+      padding-right: 25px
