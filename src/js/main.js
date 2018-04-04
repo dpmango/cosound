@@ -541,6 +541,10 @@ $(document).ready(function(){
   // MEDIA
   ////////////
   function initMedia(){
+
+    // MEDIAELEMENT.js
+    // https://github.com/mediaelement/mediaelement/blob/master/docs/api.md
+    
     $('video, audio').mediaelementplayer({
     	// Do not forget to put a final slash (/)
     	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
@@ -551,9 +555,10 @@ $(document).ready(function(){
       stretching: 'responsive',
 
       loop: true,
-      controlsTimeoutDefault: 90000000, // don't hide controls
-      controlsTimeoutMouseLeave: 90000000,
-      controlsTimeoutMouseEnter: 90000000,
+      // hideControls() is removed from sources due to flicker issue
+      // controlsTimeoutDefault: 90000000, // don't hide controls
+      // controlsTimeoutMouseLeave: 90000000,
+      // controlsTimeoutMouseEnter: 90000000,
       useFakeFullscreen: true,
       // clickToPlayPause: false
     });
@@ -568,6 +573,8 @@ $(document).ready(function(){
         var linkedControl = $wave.closest('.d-card').find('[js-play-audio]'); // play btn
         var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
 
+        // options
+        // https://wavesurfer-js.org/docs/options.html
         var wavesurfer = WaveSurfer.create({
           container: waveContainer,
           waveColor: '#D8D8D8',
