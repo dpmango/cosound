@@ -1,0 +1,103 @@
+---
+title: MARKETPLACE
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-market
+  
+block content
+  
+  // MARKETPLACE
+  .market
+    .market__container
+      // top
+      .market__top
+        .market__top-left
+          .d-card
+            .sidebar-user
+              .sidebar-user__avatar
+                img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name Lois Stokes
+              .sidebar-user__position Job Title/Artist Name.
+                       
+        .market__top-right
+          //slider
+          .market__slider.swiper-container(js-market-slider)
+            .swiper-wrapper
+              // slide
+              .market-slide
+                .market-slide__bg
+                  img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
+                .market-slide__content
+                  .market-slide__title Sed do eiusmod tempor incididun
+                  .market-slide__desc
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .market-slide__cta
+                    a(href="#").btn.btn-primary.btn-primary--red
+                      span See more ...
+              // slide
+              .market-slide
+                .market-slide__bg
+                  img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
+                .market-slide__content
+                  .market-slide__title Sed do eiusmod tempor incididun
+                  .market-slide__desc
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  .market-slide__cta
+                    a(href="#").btn.btn-primary.btn-primary--red
+                      span See more ...
+                      
+          .market__slider-next
+            +icon("ico-swiper-right")
+          .market__slider-prev
+            +icon('ico-swiper-left')
+    
+      .market-grid
+        .market-grid__title Your Personal Reccomendations
+        .market-grid__list
+          
+          -
+            var cards = [
+              ['marketGrid-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGrid-2', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGrid-3', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGrid-4', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+              ['marketGrid-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGrid-2', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGrid-3', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGrid-4', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+              ['marketGrid-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGrid-2', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGrid-3', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGrid-4', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+
+            ]
+          
+          each card, index in cards
+            .market-grid__col
+              // market-card
+              .m-card
+                a(href="#").m-card__cover
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .m-card__content
+                  .m-card__info
+                    .m-card__info-left
+                      .m-card__avatar
+                        img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
+                    .m-card__info-right
+                      a(href="#").m-card__name= card[1]
+                      .m-card__album= card[2]
+                      .m-card__rating
+                        .m-card__rating-stars(data-rating=''+card[3]+'')
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                        span.m-card__rating-count 112
+                  .m-card__actions
+                    .m-card__price= card[4]
+                    .m-card__like
+                      +icon('ico-heart-outline')
+                    

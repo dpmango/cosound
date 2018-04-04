@@ -1,7 +1,7 @@
 $sprite: (
 	checkmark: (
-		offset-x: -94px,
-		offset-y: -91px,
+		offset-x: -69px,
+		offset-y: -112px,
 		width: 10px,
 		height: 8px,
 		total-width: 125px,
@@ -49,6 +49,24 @@ $sprite: (
 		offset-y: -66px,
 		width: 19px,
 		height: 15px,
+		total-width: 125px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	star-blank: (
+		offset-x: -94px,
+		offset-y: -91px,
+		width: 10px,
+		height: 10px,
+		total-width: 125px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	star-fill: (
+		offset-x: -114px,
+		offset-y: -91px,
+		width: 10px,
+		height: 10px,
 		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
@@ -135,6 +153,12 @@ $sprite: (
 	}
 	.icon-soundbar {
 		@include sprite(soundbar)
+	}
+	.icon-star-blank {
+		@include sprite(star-blank)
+	}
+	.icon-star-fill {
+		@include sprite(star-fill)
 	}
 	.icon-suggestions-search {
 		@include sprite(suggestions-search)

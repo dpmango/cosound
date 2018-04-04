@@ -13,6 +13,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),
       // path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.hacks.js'),
       // path.resolve('bower_components', 'slick-carousel/slick/slick.min.js'),
+      path.resolve('bower_components', 'swiper/dist/js/swiper.min.js'),
       path.resolve('bower_components', 'magnific-popup/dist/jquery.magnific-popup.min.js'),
       path.resolve('bower_components', 'scrollMonitor/scrollMonitor.js'),
       path.resolve('bower_components', 'jquery-validation/dist/jquery.validate.min.js'),

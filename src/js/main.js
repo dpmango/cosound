@@ -136,16 +136,14 @@ $(document).ready(function(){
       var header = $('.header.js-should-scroll').not('.header--static');
       // var headerHeight = header.height();
       // var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-      var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5
+      // var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5
 
-      if (visibleWhen){
-        if ( vScroll > 10 ){
-          header.addClass('is-scrolled');
-          $('.notifications--fixed').addClass('is-scrolled')
-        } else {
-          header.removeClass('is-scrolled');
-          $('.notifications--fixed').removeClass('is-scrolled')
-        }
+      if ( vScroll > 10 ){
+        header.addClass('is-scrolled');
+        $('.notifications--fixed').addClass('is-scrolled')
+      } else {
+        header.removeClass('is-scrolled');
+        $('.notifications--fixed').removeClass('is-scrolled')
       }
     }, 10));
   }
@@ -364,6 +362,25 @@ $(document).ready(function(){
   //////////
 
   function initSliders(){
+    // Why carousel
+    var swiperMarket = new Swiper('[js-market-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "market-slide",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: false,
+      // setWrapperSize: true,
+      spaceBetween: 0,
+      // slidesPerView: 1,
+      // loop: true,
+      normalizeSlideIndex: true,
+      // centeredSlides: true,
+      freeMode: false,
+      navigation: {
+        nextEl: '.market__slider-next',
+        prevEl: '.market__slider-prev',
+      },
+    })
 
   }
 

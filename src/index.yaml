@@ -26,8 +26,8 @@ PageList:
   ready: 80
 - file: dashboard.html
   ready: 70
-- file: market.html
-  ready: 0
+- file: marketplace.html
+  ready: 35
 - file: product.html
   ready: 0
 - file: messages.html
