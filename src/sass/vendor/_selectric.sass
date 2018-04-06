@@ -177,18 +177,12 @@
     cursor: default !important
     background: none !important
     color: #666 !important
-    -webkit-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
     user-select: none
   .selectric-group
     .selectric-group-label
       font-weight: bold
       padding-left: 10px
       cursor: default
-      -webkit-user-select: none
-      -moz-user-select: none
-      -ms-user-select: none
       user-select: none
       background: none
       color: #444
@@ -197,3 +191,25 @@
       opacity: 1
     li
       padding-left: 25px
+
+/* MINI
+.selectric--mini
+  .selectric
+    border-radius: 15px
+    .label
+      margin: 0 10px 0 0px
+      font-size: 14px
+      padding: 8px 20px
+    .button
+      margin-right: 0
+      height: 36px
+      width: 40px
+      color: $fontColor50
+  .selectric-items
+    li
+      padding: 8px 20px
+  &.selectric-open
+    .selectric
+      // border-color: #c4c4c4
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0

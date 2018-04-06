@@ -1,7 +1,7 @@
 $sprite: (
 	checkmark: (
-		offset-x: -69px,
-		offset-y: -112px,
+		offset-x: -109px,
+		offset-y: -125px,
 		width: 10px,
 		height: 8px,
 		total-width: 125px,
@@ -9,17 +9,26 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -98px,
-		offset-y: -66px,
+		offset-x: -69px,
+		offset-y: -101px,
 		width: 14px,
 		height: 14px,
 		total-width: 125px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
-	signup-check: (
+	list-check: (
 		offset-x: -69px,
-		offset-y: -91px,
+		offset-y: -66px,
+		width: 25px,
+		height: 25px,
+		total-width: 125px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	signup-check: (
+		offset-x: -93px,
+		offset-y: -101px,
 		width: 15px,
 		height: 11px,
 		total-width: 125px,
@@ -45,7 +54,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -69px,
+		offset-x: -104px,
 		offset-y: -66px,
 		width: 19px,
 		height: 15px,
@@ -54,8 +63,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -94px,
-		offset-y: -91px,
+		offset-x: -69px,
+		offset-y: -125px,
 		width: 10px,
 		height: 10px,
 		total-width: 125px,
@@ -63,8 +72,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -114px,
-		offset-y: -91px,
+		offset-x: -89px,
+		offset-y: -125px,
 		width: 10px,
 		height: 10px,
 		total-width: 125px,
@@ -141,6 +150,9 @@ $sprite: (
 	}
 	.icon-fullscreen {
 		@include sprite(fullscreen)
+	}
+	.icon-list-check {
+		@include sprite(list-check)
 	}
 	.icon-signup-check {
 		@include sprite(signup-check)

@@ -19,7 +19,132 @@ block content
   
       .product__wrapper
         .product__content
+          // box
           .product__box
+            .product__main
+              .product__cover
+                img(src='img/productCover.jpg' srcset='img/productCover@2x.jpg 2x')
+              .product__scope
+                .product__artist Give and Take
+                .product__name Bassline Drift
+                .product__album Album · 2005
+                .product__price $99
+                .product__delivery
+                  +icon('ico-time')
+                  span Delivery time <span>3 Days</span>
+          //box
+          .product__box
+            .product__title About this Job
+            .product__info
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, 
+              p consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        
+          //box
+          .product__box.product__box--no-pad
+            .product-testimonials
+              .product-testimonials__header
+                .product-testimonials__rating
+                  .rating-stars.rating-stars--bigger(data-rating='5')
+                    i.icon
+                    i.icon
+                    i.icon
+                    i.icon
+                    i.icon
+                  span 112 Reviews
+                .product-testimonials__sorting
+                  select(name="sorting").-mini
+                    option Most Recent 
+                    option Best Rated
+                    option Worst Rated
+                      
+              .product-testimonials__content
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .testimonial__avatar
+                        img(src='img/suggestionCard-avatar-1.jpg' srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Bryan Garza
+                        .testimonial__rating
+                          .rating-stars(data-rating='4')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                  
+                  .testimonial__content
+                    p With Golden Hour, pop-country singer-songwriter Kacey Musgraves delivers a warm, vulnerable album chock-full of masterful love songs that ring pure and true. Musgraves sounds more confident as a musician than she ever has — and her superb debut album, Same Trailer, Different Park, and its follow-up, Pageant Material, were hardly meek.
+                
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .testimonial__avatar
+                        img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Patrick Watkins
+                        .testimonial__rating
+                          .rating-stars(data-rating='5')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                  
+                  .testimonial__content
+                    p a stunning slip of a song that, in less than a minute and 30 seconds, uncovers the aching love that flows through generations of women and has never failed to bring me to tears.
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .testimonial__avatar
+                        img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Bryan Garza
+                        .testimonial__rating
+                          .rating-stars(data-rating='4')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                  
+                  .testimonial__content
+                    p Golden Hour is the steady and self-assured product of an audacious artist whose body of work speaks for itself. The record exemplifies the deep and powerful magic of pure goodness. Musgraves hits one high note after another on Golden Hour; her talent as a songwriter and melody-maker is second to none, and each song is thoughtful, well-formed, and a delightful experience on its own.       
             
-        .product__sidebar
-          
+        //sidebar
+        .product__sidebar.product-sidebar
+          .product-sidebar__wrap
+            .sidebar-user
+              .sidebar-user__avatar
+                img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name.sidebar-user__name--bigger Chester Parsons
+              .sidebar-user__position Job Title/Artist Name.
+              .sidebar-user__rating
+                .rating-stars.rating-stars--bigger(data-rating='3')
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+                    
+          .product-sidebar__bottom
+            .product-sidebar__title Services
+            ul.product-sidebar__list
+              li Lorem ipsum dolor si
+              li Lorem ipsum dolor longer text to fit
+              li Lorem ipsum dolor si
+            .product-sidebar__message
+              a(href="message.html").btn.btn-message
+                span Message seller
+            .product-sidebar__cta
+              a(href="message.html").btn.btn-primary.btn-primary--red
+                span Process to Order

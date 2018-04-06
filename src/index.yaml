@@ -29,7 +29,7 @@ PageList:
 - file: marketplace.html
   ready: 60
 - file: product.html
-  ready: 10
+  ready: 60
 - file: messages.html
   ready: 0
 - file: checkout.html
