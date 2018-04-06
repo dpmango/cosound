@@ -27,9 +27,9 @@ PageList:
 - file: dashboard.html
   ready: 70
 - file: marketplace.html
-  ready: 35
+  ready: 60
 - file: product.html
-  ready: 0
+  ready: 10
 - file: messages.html
   ready: 0
 - file: checkout.html

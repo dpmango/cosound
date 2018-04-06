@@ -345,6 +345,11 @@ $(document).ready(function(){
       }
 
     }, 200))
+    .on('click', function(e){
+      if ( !$(e.target).closest('.header__search').length > 0 ){
+        closeSearch();
+      }
+    })
 
   function closeSearch(){
     $('[js-header-searchResults]').removeClass('is-active');

@@ -13,7 +13,7 @@ block content
     .market__container
       // top
       .market__top
-        .market__top-left
+        .market__top-left.wow
           .d-card
             .sidebar-user
               .sidebar-user__avatar
@@ -21,14 +21,14 @@ block content
               .sidebar-user__name Lois Stokes
               .sidebar-user__position Job Title/Artist Name.
                        
-        .market__top-right
+        .market__top-right.wow
           //slider
           .market__slider.swiper-container(js-market-slider)
             .swiper-wrapper
               // slide
               .market-slide
-                .market-slide__bg
-                  img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
+                .market-slide__bg(style="background-image: url(img/marketplace-slide-bg-1.jpg)")
+                  //- img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
                 .market-slide__content
                   .market-slide__title Sed do eiusmod tempor incididun
                   .market-slide__desc
@@ -38,8 +38,8 @@ block content
                       span See more ...
               // slide
               .market-slide
-                .market-slide__bg
-                  img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
+                .market-slide__bg(style="background-image: url(img/marketplace-slide-bg-1.jpg)")
+                  //- img(src='img/marketplace-slide-bg-1.jpg' srcset='img/marketplace-slide-bg-1@2x.jpg 2x')
                 .market-slide__content
                   .market-slide__title Sed do eiusmod tempor incididun
                   .market-slide__desc
@@ -54,7 +54,7 @@ block content
             +icon('ico-swiper-left')
     
       .market-grid
-        .market-grid__title Your Personal Reccomendations
+        .market-grid__title.wow Your Personal Reccomendations
         .market-grid__list
           
           -
@@ -75,7 +75,7 @@ block content
             ]
           
           each card, index in cards
-            .market-grid__col
+            .market-grid__col.wow
               // market-card
               .m-card
                 a(href="#").m-card__cover
@@ -100,4 +100,60 @@ block content
                     .m-card__price= card[4]
                     .m-card__like
                       +icon('ico-heart-outline')
-                    
+        
+        .market-grid__more.wow(data-animation-delay=".5s")
+          a(href='#' js-fake-moreSuggestions).btn.btn-more
+            span See more…
+                          
+      // narrow modificator            
+      .market-grid.market-grid--narrow
+        .market-grid__title.wow Your Personal Reccomendations
+        
+        .market-grid__list
+          
+          -
+            var cardsMini = [
+              ['marketGird-s-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGird-s-4', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGird-s-3', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGird-s-4', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+              ['marketGird-s-3', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGird-s-2', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGird-s-2', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGird-s-4', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+              ['marketGird-s-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '3', 'From £99', 'suggestionCard-avatar-4'],
+              ['marketGird-s-3', 'Give + Take', 'Drift', '5', 'From £99', 'suggestionCard-avatar-2'],
+              ['marketGird-s-3', 'Give + Take (Out Name which is too long to fit)', 'Very long album name that probably wont fit', '3', 'From £99', 'suggestionCard-avatar-1'],
+              ['marketGird-s-1', 'Give + Take (Out Name which is too long to fit)', 'Bassline Drift', '4', 'From £99', 'suggestionCard-avatar-3'],
+            ]
+          
+          each card, index in cardsMini
+            .market-grid__col.wow
+              // market-card
+              .m-card
+                a(href="#").m-card__cover
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .m-card__content
+                  .m-card__info
+                    .m-card__info-left
+                      .m-card__avatar
+                        img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
+                    .m-card__info-right
+                      a(href="#").m-card__name= card[1]
+                      .m-card__album= card[2]
+                      .m-card__rating
+                        .m-card__rating-stars(data-rating=''+card[3]+'')
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                        span.m-card__rating-count 112
+                  .m-card__actions
+                    .m-card__price= card[4]
+                    .m-card__like
+                      +icon('ico-heart-outline')
+                
+        .market-grid__more.wow(data-animation-delay=".5s")
+          a(href='#' js-fake-moreSuggestions).btn.btn-more
+            span See more…                  
