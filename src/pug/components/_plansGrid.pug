@@ -1,7 +1,7 @@
 .plans__grid
   //col
   .plans__col
-    .plan-card
+    .plan-card(js-plan data-target="1")
       .plan-card__icon
         i.icon.icon-signup-type-musician
       .plan-card__name Artists
@@ -17,7 +17,7 @@
           span Select plan
   //col
   .plans__col
-    .plan-card
+    .plan-card(js-plan data-target="2")
       .plan-card__icon
         i.icon.icon-signup-type-band
       .plan-card__name Band
@@ -29,11 +29,12 @@
           br
           | Aliquip ex ea commodo consequat
       .plan-card__cta
-        a(href="#").btn.btn-plan.btn-plan--violet
+        // .btn-plan--violet
+        a(href="#").btn.btn-plan
           span Select plan
   //col
   .plans__col
-    .plan-card
+    .plan-card(js-plan data-target="3")
       .plan-card__icon
         i.icon.icon-signup-type-pro
       .plan-card__name Proffessional

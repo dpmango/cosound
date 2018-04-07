@@ -10,13 +10,12 @@
     flex: 0 1 33.333%
     max-width: 33.333%
     padding: 15px
-    &:nth-child(2)
-      margin-top: 30px
     &:hover
       .plan-card
-        transform: translate(0,-10px)
+        transform: translate(0,10px)
         box-shadow: 0 15px 20px -10px rgba(0,0,0,0.15)
-
+        .btn
+          background: #8262CB
 
 .plan-card
   background: white
@@ -25,7 +24,12 @@
   color: $fontColor
   box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
   border-radius: 10px
+  cursor: pointer
   transition: .25s $ease
+  &.is-active
+    margin-top: 30px
+    .btn
+      background: #8262CB
   &__icon
     min-height: 75px
     display: flex
@@ -48,8 +52,11 @@
     transform: translateY(21px)
 
 
-.plan-benefits
+.plans-tabs
   margin: 160px 0 -40px
+
+.plan-benefits
+  display: none
   text-align: center
   &__title
     color: $colorAqua

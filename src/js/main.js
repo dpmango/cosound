@@ -380,6 +380,28 @@ $(document).ready(function(){
       }
     })
 
+    .on('click', '[js-plan]', function(e){
+      var dataTab = $(this).data('target');
+      var targetTab = _document.find('[data-plan="'+dataTab+'"]')
+
+      if ( targetTab ){
+        $(this).parent().siblings().find('[js-plan]').removeClass('is-active');
+        $(this).addClass('is-active');
+
+        targetTab.siblings().slideUp();
+        targetTab.slideDown();
+
+        setTimeout(function(){
+          // scroll to target
+          anime({
+            targets: 'html, body',
+            scrollTop: targetTab.offset().top - 100,
+            easing: easingSwing, // swing
+            duration: 500,
+          })
+        },300)
+      }
+    })
 
 
   //////////

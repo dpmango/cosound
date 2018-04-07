@@ -41,8 +41,6 @@ PageList:
   ready: 50
 - file: plans.html
   ready: 50
-- file: plans-a.html
-  ready: 50
 - file: plans-b.html
   ready: 50
 - file: payment.html
