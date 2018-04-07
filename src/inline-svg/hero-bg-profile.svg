@@ -4,7 +4,7 @@
     <title>hero-bg-profile</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="-3.93107096%" y1="0%" x2="80.0870768%" y2="102.746302%" id="linearGradient-1">
+        <linearGradient x1="-3.93107096%" y1="0%" x2="80.0870768%" y2="102.746302%" id="linearGradient-profile-1">
             <stop stop-color="#2CC4A0" offset="0%"></stop>
             <stop stop-color="#0DC6AD" offset="41.1338247%"></stop>
             <stop stop-color="#8E5ACD" offset="100%"></stop>
@@ -17,7 +17,7 @@
             <mask id="mask-3" fill="white">
                 <use xlink:href="#path-2"></use>
             </mask>
-            <use id="hero-bg-profile" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <use id="hero-bg-profile" fill="url(#linearGradient-profile-1)" xlink:href="#path-2"></use>
         </g>
     </g>
 </svg>

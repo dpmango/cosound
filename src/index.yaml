@@ -21,7 +21,6 @@ PageList:
   ready: 90
 - file: signup-suggestions.html
   ready: 90
-
 - file: profile.html
   ready: 80
 - file: dashboard.html
@@ -38,9 +37,13 @@ PageList:
   ready: 60
 - file: messages.html
   ready: 70
+- file: account.html
+  ready: 50
 - file: plans.html
   ready: 0
 - file: plans-a.html
   ready: 0
 - file: plans-b.html
+  ready: 0
+- file: payment.html
   ready: 0

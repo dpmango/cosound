@@ -12,9 +12,9 @@
       position: relative
     svg
       position: absolute
-      top: 50%
+      bottom: 0
       left: 50%
-      transform: translate(-50%,-50%)
+      transform: translate(-50%,0%)
       min-width: 100%
       min-height: 100%
       width: auto
@@ -26,7 +26,10 @@
     .container
       position: relative
       z-index: 3
-
+    &--short
+      padding-top: 50px
+      .profile__bg-wrapper
+        height: 320px
   &__image
     margin-left: auto
     margin-right: auto
@@ -54,6 +57,7 @@
 
   &__status
     margin-top: 20px
+    margin-bottom: 20px
     display: inline-block
     border-radius: 50px
     font-size: 14px
@@ -67,7 +71,7 @@
       color: white
 
   &__name
-    margin-top: 40px
+    margin-top: 20px
     font-size: 40px
     font-weight: 500
     color: white
@@ -108,3 +112,118 @@
       font-size: 16px
       & + p
         margin-top: 1em
+
+
+.profile-settings
+  margin-top: 80px
+  max-width: 740px
+  margin-left: auto
+  margin-right: auto
+
+.profile
+  &__categories
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-left: -10px
+    margin-right: -10px
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 10px
+      right: 10px
+      height: 1px
+      background: rgba(#979797, .13)
+
+  &__category
+    position: relative
+    display: flex
+    align-items: center
+    color: $fontColor50
+    font-size: 14px
+    line-height: 2
+    padding: 30px 10px 10px
+    transition: .25s $ease
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      top: 0px
+      left: 10px
+      right: calc(100% - 10px)
+      height: 1px
+      transition: .25s $ease
+
+    &.is-active, &:hover
+      color: $fontColor
+      &::after
+        right: 10px
+
+    .icon
+      margin-right: 10px
+    span
+      display: inline-block
+      font-size: 14px
+
+    &.--violet
+      &::after
+        background: $colorViolet
+        box-shadow: 0 2px 4px 0 rgba($colorViolet,0.23)
+    &.--blue
+      &::after
+        background: $colorBlue
+        box-shadow: 0 2px 4px 0 rgba($colorBlue,0.23)
+    &.--aqua
+      &::after
+        background: $colorAqua
+        box-shadow: 0 2px 4px 0 rgba($colorAqua,0.23)
+    &.--blue-mute
+      &::after
+        background: $colorBlueMute
+        box-shadow: 0 2px 4px 0 rgba($colorBlueMute,0.23)
+
+
+.profile-tabs
+  margin-top: 100px
+  margin-bottom: 100px
+  display: flex
+  max-width: 850px
+  margin-left: auto
+  margin-right: auto
+  &__sidebar
+    flex: 0 0 230px
+    max-width: 230px
+    border-right: 1px solid #F1F1F1
+
+  &__links
+    margin: 0
+    padding: 0 20px 0 0
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    li
+      display: block
+      width: auto
+      color: $fontColor50
+      border-radius: 3px
+      padding: 15px 20px
+      font-size: 14px
+      margin-bottom: 15px
+      cursor: pointer
+      transition: .25s $ease
+      &:hover, &.is-active
+        color: $fontColor
+      &.is-active
+        background: #FFFFFF
+
+  &__content
+    flex: 1 1 auto
+    padding-left: 60px
+
+  &__tab
+    display: none
+    &.is-active
+      display: block

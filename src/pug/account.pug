@@ -1,0 +1,74 @@
+---
+title: Account
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero.profile__hero--short
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .profile__image
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__name Lois Stokes
+  
+          
+    .container
+      // settings
+      .profile-settings
+        .profile__categories
+          a(href="#").profile__category.--violet.is-active
+            i.icon.icon-profile-gears
+            span Account Settings
+          a(href="#").profile__category.--blue
+            i.icon.icon-profile-privacy
+            span Privacy
+          a(href="#").profile__category.--aqua
+            i.icon.icon-profile-communication
+            span Communiaction
+          a(href="#").profile__category.--blue-mute
+            i.icon.icon-profile-support
+            span Support Center
+      
+      .profile-tabs
+        .profile-tabs__sidebar(js-tabs)
+          ul.profile-tabs__links
+            li(data-target="tab1").is-active Update password 
+            li(data-target="tab2") Cover photo
+            li(data-target="tab3") Payment details
+            li(data-target="tab4") Notification settings 
+            li(data-target="tab5") Other
+            
+        .profile-tabs__content
+          // tab
+          .profile-tabs__tab(data-tab="tab1").is-active
+            .ui-group
+              input(type="email" name="email" placeholder="Email")
+            .ui-group
+              input(type="tel" name="phones" placeholder="Phones")
+            .ui-group.wow(data-animation-delay=".5s")
+              input(type="password" name="password" placeholder="Password")
+          // tab
+          .profile-tabs__tab(data-tab="tab2")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")  
+          // tab
+          .profile-tabs__tab(data-tab="tab3")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")  
+          // tab
+          .profile-tabs__tab(data-tab="tab4")
+            .ui-group
+              input(type="email" name="email" placeholder="Email") 
+          // tab
+          .profile-tabs__tab(data-tab="tab5")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")   

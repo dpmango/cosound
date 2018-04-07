@@ -363,6 +363,24 @@ $(document).ready(function(){
     $('.notifications').removeClass('is-active');
   }
 
+  //////////
+  // TABS
+  //////////
+  _document
+    .on('click', '[js-tabs] li', function(e){
+      var dataTab = $(this).data('target');
+      var targetTab = _document.find('[data-tab="'+dataTab+'"]')
+
+      if ( targetTab ){
+        $(this).siblings().removeClass('is-active');
+        $(this).addClass('is-active');
+
+        targetTab.siblings().removeClass('is-active');
+        targetTab.addClass('is-active');
+      }
+    })
+
+
 
   //////////
   // SLIDERS
@@ -624,7 +642,7 @@ $(document).ready(function(){
   ////////////
   function initEmoji(){
     // https://github.com/mervick/emojionearea
-    
+
     $("[js-emojiArea]").emojioneArea({
       pickerPosition: "top",
   	  filtersPosition: "bottom"
