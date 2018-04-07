@@ -1,0 +1,27 @@
+---
+title: Plans
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Please select Plan
+        .signup__text.wow(data-animation-delay=".5s")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        
+        // PLANS
+        .plans
+          include components/_plansGrid
+          

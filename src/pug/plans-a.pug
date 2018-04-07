@@ -1,0 +1,78 @@
+---
+title: Plans
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container.container--wide
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Please select Plan
+        .signup__text.wow(data-animation-delay=".5s")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        
+        // PLANS
+        .plans
+          include components/_plansGrid
+          
+          // plan benefits
+          .plan-benefits
+            .plan-benefits__title Premium Features for Professionals
+            .plan-benefits__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            .plan-benefits__list
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-1')
+                .plan-benefits__el-name Tempor incididunt 
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-2')
+                .plan-benefits__el-name Ut enim ad minim veniam
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-3')
+                .plan-benefits__el-name Tempor incididunt 
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-4')
+                .plan-benefits__el-name llamco laboris
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-5')
+                .plan-benefits__el-name Tempor incididunt 
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              // el
+              .plan-benefits__el
+                .plan-benefits__icon
+                  +icon('ico-plan-benefit-6')
+                .plan-benefits__el-name Magna aliqua
+                .plan-benefits__el-desc
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+            
+            .plan-benefits__cta
+              a(href='#').btn.btn-primary.btn-primary--red
+                spab Continue

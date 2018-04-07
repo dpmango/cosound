@@ -40,10 +40,10 @@ PageList:
 - file: account.html
   ready: 50
 - file: plans.html
-  ready: 0
+  ready: 50
 - file: plans-a.html
-  ready: 0
+  ready: 50
 - file: plans-b.html
-  ready: 0
+  ready: 50
 - file: payment.html
   ready: 0

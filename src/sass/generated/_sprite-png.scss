@@ -1,155 +1,164 @@
 $sprite: (
 	checkmark: (
-		offset-x: -110px,
-		offset-y: -158px,
+		offset-x: -59px,
+		offset-y: -139px,
 		width: 10px,
 		height: 8px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	emodji: (
-		offset-x: -180px,
-		offset-y: -35px,
+		offset-x: 0px,
+		offset-y: -193px,
 		width: 23px,
 		height: 23px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -61px,
-		offset-y: -158px,
+		offset-x: -65px,
+		offset-y: -193px,
 		width: 14px,
 		height: 14px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	list-check: (
-		offset-x: -180px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -158px,
 		width: 25px,
 		height: 25px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	paperclip: (
-		offset-x: -180px,
-		offset-y: -68px,
+		offset-x: -33px,
+		offset-y: -193px,
 		width: 22px,
 		height: 23px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	pay-amex: (
-		offset-x: -69px,
-		offset-y: -97px,
+		offset-x: -125px,
+		offset-y: -73px,
 		width: 35px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	pay-discover: (
-		offset-x: -135px,
-		offset-y: -62px,
-		width: 34px,
-		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
-		image: '../img/sprite.png'
-	),
-	pay-jcb: (
-		offset-x: -135px,
-		offset-y: -31px,
-		width: 35px,
-		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
-		image: '../img/sprite.png'
-	),
-	pay-maestro-old: (
-		offset-x: -135px,
-		offset-y: 0px,
-		width: 35px,
-		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
-		image: '../img/sprite.png'
-	),
-	pay-mastercard-old: (
-		offset-x: -135px,
+		offset-x: -185px,
 		offset-y: -124px,
 		width: 34px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
+	pay-jcb: (
+		offset-x: -185px,
+		offset-y: 0px,
+		width: 35px,
+		height: 21px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
+	pay-maestro-old: (
+		offset-x: -185px,
+		offset-y: -31px,
+		width: 35px,
+		height: 21px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
+	pay-mastercard-old: (
+		offset-x: -185px,
+		offset-y: -62px,
+		width: 34px,
+		height: 21px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	pay-paypal: (
-		offset-x: -69px,
-		offset-y: -66px,
+		offset-x: -125px,
+		offset-y: -104px,
 		width: 35px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	pay-visa: (
-		offset-x: -135px,
+		offset-x: -185px,
 		offset-y: -93px,
 		width: 34px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	profile-communication: (
-		offset-x: 0px,
+		offset-x: -35px,
 		offset-y: -158px,
 		width: 26px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	profile-gears: (
-		offset-x: -96px,
-		offset-y: -128px,
+		offset-x: -129px,
+		offset-y: -158px,
 		width: 18px,
 		height: 18px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	profile-privacy: (
-		offset-x: -69px,
-		offset-y: -128px,
+		offset-x: -102px,
+		offset-y: -158px,
 		width: 17px,
 		height: 20px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	profile-support: (
-		offset-x: -180px,
-		offset-y: -101px,
+		offset-x: -71px,
+		offset-y: -158px,
 		width: 21px,
 		height: 21px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -85px,
-		offset-y: -158px,
+		offset-x: -89px,
+		offset-y: -193px,
 		width: 15px,
 		height: 11px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
+	signup-type-band: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 106px,
+		height: 63px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	signup-type-musician: (
@@ -157,62 +166,62 @@ $sprite: (
 		offset-y: -73px,
 		width: 49px,
 		height: 75px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	signup-type-pro: (
-		offset-x: 0px,
+		offset-x: -116px,
 		offset-y: 0px,
 		width: 59px,
 		height: 63px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -180px,
-		offset-y: -132px,
+		offset-x: -157px,
+		offset-y: -158px,
 		width: 19px,
 		height: 15px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	star-blank: (
 		offset-x: -114px,
-		offset-y: -66px,
+		offset-y: -193px,
 		width: 10px,
 		height: 10px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -114px,
-		offset-y: -97px,
+		offset-x: -134px,
+		offset-y: -193px,
 		width: 10px,
 		height: 10px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	suggestions-search: (
-		offset-x: -69px,
-		offset-y: 0px,
+		offset-x: -59px,
+		offset-y: -73px,
 		width: 56px,
 		height: 56px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 	time: (
-		offset-x: -36px,
+		offset-x: -186px,
 		offset-y: -158px,
 		width: 15px,
 		height: 15px,
-		total-width: 205px,
-		total-height: 179px,
+		total-width: 220px,
+		total-height: 216px,
 		image: '../img/sprite.png'
 	),
 );
@@ -321,6 +330,9 @@ $sprite: (
 	}
 	.icon-signup-check {
 		@include sprite(signup-check)
+	}
+	.icon-signup-type-band {
+		@include sprite(signup-type-band)
 	}
 	.icon-signup-type-musician {
 		@include sprite(signup-type-musician)
