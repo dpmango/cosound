@@ -11,7 +11,6 @@
     max-width: 880px
     padding: 0 15px
 
-
   &__box
     padding: 40px
     background: white
@@ -20,6 +19,10 @@
     margin-bottom: 40px
     &--no-pad
       padding: 0
+    // for cart b page
+    &--no-bg
+      background: transparent
+      box-shadow: none
 
   &__main
     display: flex
@@ -86,6 +89,7 @@
     max-width: 290px
     padding: 0 15px
 
+/* sidebar
 .product-sidebar
   &__wrap
     background: #FFFFFF
@@ -96,19 +100,25 @@
     margin-top: -10px
     background: #FFFFFF
     padding: 25px 20px 0
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
     box-shadow: 0 2px 30px 0 rgba(0,0,0,0.08)
   &__title
     font-size: 16px
     font-weight: 500
     line-height: 2
     text-align: center
+  &__main-title
+    font-size: 24px
+    font-weight: 500
+
   &__list
     margin: 0
     padding: 0
     list-style: none
     li
       display: block
-      padding-left: 35px
+      padding-left: 32px
       position: relative
       color: $fontColor50
       font-size: 14px
@@ -120,13 +130,19 @@
         content: ' '
         +sprite(list-check)
         position: absolute
-        left: 0
+        left: -3px
         top: .35em
         transition: .25s $ease
       &:hover
         color: $fontColor
         &::before
           transform: translateX(-5px)
+      &.is-time
+        color: $fontColor
+        &::before
+          +sprite(time)
+          left: 2px
+          top: .5em
   &__message
     text-align: center
     margin-top: 35px

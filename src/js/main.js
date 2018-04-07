@@ -24,7 +24,7 @@ $(document).ready(function(){
   ////////////
   function pageReady(){
     legacySupport();
-    // updateHeaderActiveClass();
+    updateHeaderActiveClass();
     initHeaderScroll();
 
     initPopups();
@@ -36,6 +36,7 @@ $(document).ready(function(){
     initLazyLoad();
     initMedia();
     initPerfectScrollbar();
+    initHidenSeek();
     initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
@@ -163,8 +164,8 @@ $(document).ready(function(){
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering when header is inside barba-container
   function updateHeaderActiveClass(){
-    $('.header__menu li').each(function(i,val){
-      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
+    $('.header__actions a').each(function(i,val){
+      if ( $(val).attr('href') == window.location.pathname.split('/').pop() ){
         $(val).addClass('is-active');
       } else {
         $(val).removeClass('is-active')
@@ -572,6 +573,20 @@ $(document).ready(function(){
     $(newInput).insertAfter(origin.parent().parent()).hide().fadeIn(250);
   }
 
+  // pseudo radio
+  _document
+    .on('click', '[js-radio]', function(e){
+      var radio = $(this).find('input[type="radio"]')
+
+      if ( radio ){
+        $(this).siblings().removeClass('is-selected');
+        $(this).siblings().find('input[type="radio"]').attr("checked", false)
+
+        $(this).toggleClass('is-selected');
+        radio.attr("checked", "checked")
+      }
+    })
+
   ////////////
   // SCROLLBAR
   ////////////
@@ -588,6 +603,21 @@ $(document).ready(function(){
       })
     }
   }
+
+  ////////////
+  // HIDENSEEK
+  ////////////
+  function initHidenSeek(){
+    $('[js-filter-dialogs]').hideseek({
+      nodata: 'No results found ... ',
+      highlight: true,
+      navigation: true,
+      ignore_accents: true,
+      min_chars: 3,
+      ignore: '.ms-dialog__timestamp'
+    })
+  }
+
 
 
   ////////////

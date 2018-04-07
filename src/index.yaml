@@ -30,10 +30,14 @@ PageList:
   ready: 60
 - file: product.html
   ready: 60
-- file: messages.html
-  ready: 0
+- file: cart.html
+  ready: 60
+- file: cart-b.html
+  ready: 60
 - file: checkout.html
-  ready: 0
+  ready: 60
+- file: messages.html
+  ready: 40
 - file: plans.html
   ready: 0
 - file: plans-a.html

@@ -1,37 +1,100 @@
 $sprite: (
 	checkmark: (
-		offset-x: -109px,
-		offset-y: -125px,
+		offset-x: -114px,
+		offset-y: -97px,
 		width: 10px,
 		height: 8px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -69px,
-		offset-y: -101px,
+		offset-x: -180px,
+		offset-y: -85px,
 		width: 14px,
 		height: 14px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	list-check: (
-		offset-x: -69px,
-		offset-y: -66px,
+		offset-x: -180px,
+		offset-y: 0px,
 		width: 25px,
 		height: 25px,
-		total-width: 125px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-amex: (
+		offset-x: -69px,
+		offset-y: -66px,
+		width: 35px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-discover: (
+		offset-x: -135px,
+		offset-y: -62px,
+		width: 34px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-jcb: (
+		offset-x: -69px,
+		offset-y: -97px,
+		width: 35px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-maestro-old: (
+		offset-x: -135px,
+		offset-y: 0px,
+		width: 35px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-mastercard-old: (
+		offset-x: -135px,
+		offset-y: -124px,
+		width: 34px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-paypal: (
+		offset-x: -135px,
+		offset-y: -31px,
+		width: 35px,
+		height: 21px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	pay-visa: (
+		offset-x: -135px,
+		offset-y: -93px,
+		width: 34px,
+		height: 21px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -93px,
-		offset-y: -101px,
+		offset-x: -180px,
+		offset-y: -109px,
 		width: 15px,
 		height: 11px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -40,7 +103,7 @@ $sprite: (
 		offset-y: -73px,
 		width: 49px,
 		height: 75px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -49,34 +112,34 @@ $sprite: (
 		offset-y: 0px,
 		width: 59px,
 		height: 63px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -104px,
-		offset-y: -66px,
+		offset-x: -180px,
+		offset-y: -35px,
 		width: 19px,
 		height: 15px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -69px,
-		offset-y: -125px,
+		offset-x: -180px,
+		offset-y: -130px,
 		width: 10px,
 		height: 10px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -89px,
-		offset-y: -125px,
+		offset-x: -114px,
+		offset-y: -66px,
 		width: 10px,
 		height: 10px,
-		total-width: 125px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -85,7 +148,16 @@ $sprite: (
 		offset-y: 0px,
 		width: 56px,
 		height: 56px,
-		total-width: 125px,
+		total-width: 205px,
+		total-height: 148px,
+		image: '../img/sprite.png'
+	),
+	time: (
+		offset-x: -180px,
+		offset-y: -60px,
+		width: 15px,
+		height: 15px,
+		total-width: 205px,
 		total-height: 148px,
 		image: '../img/sprite.png'
 	),
@@ -154,6 +226,27 @@ $sprite: (
 	.icon-list-check {
 		@include sprite(list-check)
 	}
+	.icon-pay-amex {
+		@include sprite(pay-amex)
+	}
+	.icon-pay-discover {
+		@include sprite(pay-discover)
+	}
+	.icon-pay-jcb {
+		@include sprite(pay-jcb)
+	}
+	.icon-pay-maestro-old {
+		@include sprite(pay-maestro-old)
+	}
+	.icon-pay-mastercard-old {
+		@include sprite(pay-mastercard-old)
+	}
+	.icon-pay-paypal {
+		@include sprite(pay-paypal)
+	}
+	.icon-pay-visa {
+		@include sprite(pay-visa)
+	}
 	.icon-signup-check {
 		@include sprite(signup-check)
 	}
@@ -174,4 +267,7 @@ $sprite: (
 	}
 	.icon-suggestions-search {
 		@include sprite(suggestions-search)
+	}
+	.icon-time {
+		@include sprite(time)
 	}
