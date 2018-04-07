@@ -28,6 +28,7 @@
     "jquery-selectric": "^1.13.0",
     "mediaelement": "^4.2.9",
     "perfect-scrollbar": "^0.8.1",
-    "swiper": "^4.2.2"
+    "swiper": "^4.2.2",
+    "emojionearea": "^3.0.0"
   }
 }

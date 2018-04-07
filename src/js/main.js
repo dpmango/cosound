@@ -37,6 +37,7 @@ $(document).ready(function(){
     initMedia();
     initPerfectScrollbar();
     initHidenSeek();
+    initEmoji();
     initTeleport();
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
@@ -466,13 +467,13 @@ $(document).ready(function(){
 
   // textarea autoExpand
   _document
-    .one('focus.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea', function(){
+    .one('focus.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea, [js-autoexpand]', function(){
         var savedValue = this.value;
         this.value = '';
         this.baseScrollHeight = this.scrollHeight;
         this.value = savedValue;
     })
-    .on('input.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea', function(){
+    .on('input.autoExpand', '.ui-group textarea, .create-post textarea, .d-card__reply textarea, [js-autoexpand]', function(){
         var minRows = this.getAttribute('data-min-rows')|0, rows;
         this.rows = minRows;
         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
@@ -618,7 +619,17 @@ $(document).ready(function(){
     })
   }
 
-
+  ////////////
+  // EMOJI
+  ////////////
+  function initEmoji(){
+    // https://github.com/mervick/emojionearea
+    
+    $("[js-emojiArea]").emojioneArea({
+      pickerPosition: "top",
+  	  filtersPosition: "bottom"
+    });
+  }
 
   ////////////
   // MEDIA
@@ -653,9 +664,11 @@ $(document).ready(function(){
         var waveContainer = wave;
         var $wave = $(wave);
         // refactor - what would happens when multiple track on the same card
-        var linkedControl = $wave.closest('.d-card').find('[js-play-audio]'); // play btn
+        var closestCard = $wave.closest('.d-card').length > 0 ? $wave.closest('.d-card') : $wave.closest('.ms-message')
+        console.log(closestCard)
+        var linkedControl = closestCard.find('[js-play-audio]'); // play btn
         var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
-
+        console.log(waveHeight)
         // options
         // https://wavesurfer-js.org/docs/options.html
 
@@ -684,21 +697,23 @@ $(document).ready(function(){
         wavesurfer.load($wave.data('src'));
 
         // create timestamps
-        var timeTotal = $('<div class="m-audio__time-total">0:00</div>');
-        var timeCurrent = $('<div class="m-audio__time-current">0:00</div>');
-        $wave.append(timeTotal)
-        $wave.append(timeCurrent)
+        if ( $wave.data('timestamp') !== false ){
+          var timeTotal = $('<div class="m-audio__time-total">0:00</div>');
+          var timeCurrent = $('<div class="m-audio__time-current">0:00</div>');
+          $wave.append(timeTotal)
+          $wave.append(timeCurrent)
 
-        wavesurfer.on('ready', function () {
-          // wavesurfer.play();
-          timeTotal.html(wavesurfer.getDuration().toString().toTimestamp())
-        });
+          wavesurfer.on('ready', function () {
+            // wavesurfer.play();
+            timeTotal.html(wavesurfer.getDuration().toString().toTimestamp())
+          });
 
-        // get progress every sec
-        wavesurfer.on('audioprocess', throttle(function () {
-          timeCurrent.html(wavesurfer.getCurrentTime().toString().toTimestamp())
-        },1000));
+          // get progress every sec
+          wavesurfer.on('audioprocess', throttle(function () {
+            timeCurrent.html(wavesurfer.getCurrentTime().toString().toTimestamp())
+          },1000));
 
+        }
 
         // sound controls
 

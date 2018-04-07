@@ -89,7 +89,11 @@ block content
               .ms-message__avatar
                 img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
               .ms-message__content
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                .m-music__play(js-play-audio)
+                  +icon('ico-play')
+                  +icon('ico-stop')
+                .m-audio
+                  div(js-audio-waveform data-src='media/audio-drum.mp3' data-mini="true" data-timestamp="false")
                 .ms-message__timestamp 9:41pm
                 
             // message self
@@ -102,6 +106,14 @@ block content
                 
                 
           // writing area
-          .ms__create
+          .ms__create.ms-create
+            .ms-create__attach
+              i.icon.icon-paperclip
+            
+            .ms-create__textarea
+              textarea(type="text" placeholder="Message" js-emojiArea)
+            
+            .ms-create__emodji
+              i.icon.icon-emodji
             
       

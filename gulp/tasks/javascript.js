@@ -22,6 +22,7 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'barba.js/dist/barba.min.js'),
       path.resolve('bower_components', 'jquery-lazy/jquery.lazy.min.js'),
       path.resolve('bower_components', 'animejs/anime.min.js'),
+      path.resolve('bower_components', 'emojionearea/dist/emojionearea.min.js'),
       // path.resolve('bower_components', 'perfect-scrollbar/js/perfect-scrollbar.jquery.js'),
       // path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
       // shims, langs

@@ -37,7 +37,7 @@ PageList:
 - file: checkout.html
   ready: 60
 - file: messages.html
-  ready: 40
+  ready: 70
 - file: plans.html
   ready: 0
 - file: plans-a.html
