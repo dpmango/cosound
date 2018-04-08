@@ -36,6 +36,7 @@ $(document).ready(function(){
     legacySupport();
     updateHeaderActiveClass();
     initHeaderScroll();
+    checkHash();
 
     initPopups();
     initSliders();
@@ -383,13 +384,9 @@ $(document).ready(function(){
       var dataTab = $(this).data('target');
       var targetTab = _document.find('[data-tab="'+dataTab+'"]')
 
-      if ( targetTab ){
-        $(this).siblings().removeClass('is-active');
-        $(this).addClass('is-active');
+      window.location.hash = dataTab
 
-        targetTab.siblings().removeClass('is-active');
-        targetTab.addClass('is-active');
-      }
+      switchTabs($(this), dataTab, targetTab);
     })
 
     .on('click', '[js-plan]', function(e){
@@ -414,6 +411,26 @@ $(document).ready(function(){
         },300)
       }
     })
+
+  function switchTabs(origin, dataTab, targetTab){
+    if ( targetTab ){
+      origin.siblings().removeClass('is-active');
+      origin.addClass('is-active');
+
+      targetTab.siblings().hide();
+      targetTab.fadeIn();
+
+    }
+  }
+
+  function checkHash(){
+    if ( window.location.hash.length > 0 ){
+      var dataTab = window.location.hash.substring(1);
+      var targetTab = _document.find('[data-tab="'+dataTab+'"]');
+      var origin = $('[data-target="'+dataTab+'"]');
+      switchTabs(origin, dataTab, targetTab);
+    }
+  }
 
 
   //////////
