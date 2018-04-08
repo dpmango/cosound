@@ -32,6 +32,7 @@ $(document).ready(function(){
     initScrollMonitor();
     initMasks();
     initSelectric();
+    initRangeSlider();
     initValidations();
     initLazyLoad();
     initMedia();
@@ -539,6 +540,7 @@ $(document).ready(function(){
     });
     $('[js-mask-cvc]').mask('999');
 
+    // refactor multiple formats ?
     var zipOptions =  {onKeyPress: function(cep, e, field, options){
       var masks = ['00000-000', '0-00-00-00'];
       var mask = (cep.length>7) ? masks[1] : masks[0];
@@ -663,6 +665,26 @@ $(document).ready(function(){
   }
 
   ////////////
+  // RANGESLIDER
+  ////////////
+  function initRangeSlider(){
+    var sliders = $('[js-rangeslider]');
+
+    if ( sliders.length > 0 ){
+      sliders.each(function(i, slider){
+        noUiSlider.create(slider, {
+          start: [100],
+          connect: true,
+          range: {
+            'min': 0,
+            'max': 100
+          }
+        });
+      })
+    }
+  }
+
+  ////////////
   // HIDENSEEK
   ////////////
   function initHidenSeek(){
@@ -722,10 +744,9 @@ $(document).ready(function(){
         var $wave = $(wave);
         // refactor - what would happens when multiple track on the same card
         var closestCard = $wave.closest('.d-card').length > 0 ? $wave.closest('.d-card') : $wave.closest('.ms-message')
-        console.log(closestCard)
         var linkedControl = closestCard.find('[js-play-audio]'); // play btn
+        var linkedSoundSlider = closestCard.find('[js-set-volume]').get(0).noUiSlider;
         var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
-        console.log(waveHeight)
         // options
         // https://wavesurfer-js.org/docs/options.html
 
@@ -777,8 +798,15 @@ $(document).ready(function(){
         // toggle play button
         linkedControl.on('click', function(e){
           wavesurfer.isPlaying() ? wavesurfer.pause() : wavesurfer.play()
-
           $(this).toggleClass('is-playing');
+        })
+
+        // volume controls
+        // slider events
+        // 'start' > 'slide' > 'update' > 'change' > 'set' > 'end'
+        linkedSoundSlider.on('update', function(e){
+          var newVolume = Math.round(linkedSoundSlider.get()) / 100 // 0 .. 1
+          wavesurfer.setVolume(newVolume)
         })
 
       });

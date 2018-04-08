@@ -24,7 +24,7 @@ PageList:
 - file: profile.html
   ready: 80
 - file: dashboard.html
-  ready: 70
+  ready: 75
 - file: marketplace.html
   ready: 60
 - file: product.html
