@@ -810,7 +810,10 @@ $(document).ready(function(){
         // refactor - what would happens when multiple track on the same card
         var closestCard = $wave.closest('.d-card').length > 0 ? $wave.closest('.d-card') : $wave.closest('.ms-message')
         var linkedControl = closestCard.find('[js-play-audio]'); // play btn
-        var linkedSoundSlider = closestCard.find('[js-set-volume]').get(0).noUiSlider;
+        var linkedSoundSlider
+        if ( closestCard.find('[js-set-volume]').length > 0 ){
+          linkedSoundSlider = closestCard.find('[js-set-volume]').get(0).noUiSlider;
+        }
         var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
         // options
         // https://wavesurfer-js.org/docs/options.html

@@ -41,7 +41,7 @@ block content
       .profile-tabs
         .profile-tabs__sidebar(js-tabs)
           ul.profile-tabs__links
-            li(data-target="tab1").is-active Update password 
+            li(data-target="tab1").is-active Contact information 
             li(data-target="tab2") Cover photo
             li(data-target="tab3") Payment details
             li(data-target="tab4") Notification settings 
@@ -51,24 +51,32 @@ block content
           // tab
           .profile-tabs__tab(data-tab="tab1").is-active
             .ui-group
-              input(type="email" name="email" placeholder="Email")
+              input(type="email" name="email" placeholder="Email" value="mail@mail.com")
             .ui-group
               input(type="tel" name="phones" placeholder="Phones" value="+1 123 124 1234, +1 123 122 1234, +1 123 133 1234" js-selectize)
             .ui-group
-              input(type="password" name="password" placeholder="Password")
+              input(type="password" name="password" placeholder="Password" value="supersecret")
           // tab
           .profile-tabs__tab(data-tab="tab2")
             .ui-group
               input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
           // tab
           .profile-tabs__tab(data-tab="tab3")
             .ui-group
               input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
           // tab
           .profile-tabs__tab(data-tab="tab4")
             .ui-group
               input(type="email" name="email" placeholder="Email") 
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
           // tab
           .profile-tabs__tab(data-tab="tab5")
             .ui-group
-              input(type="email" name="email" placeholder="Email")   
+              input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret") 
