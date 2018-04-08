@@ -811,7 +811,8 @@ $(document).ready(function(){
         var closestCard = $wave.closest('.d-card').length > 0 ? $wave.closest('.d-card') : $wave.closest('.ms-message')
         var linkedControl = closestCard.find('[js-play-audio]'); // play btn
         var linkedSoundSlider
-        if ( closestCard.find('[js-set-volume]').length > 0 ){
+        var haveSoundControl = closestCard.find('[js-set-volume]').length > 0
+        if ( haveSoundControl ){
           linkedSoundSlider = closestCard.find('[js-set-volume]').get(0).noUiSlider;
         }
         var waveHeight = $wave.data('mini') ? 80 : 130 // mini coves for profile sidebar
@@ -870,12 +871,14 @@ $(document).ready(function(){
         })
 
         // volume controls
-        // slider events
-        // 'start' > 'slide' > 'update' > 'change' > 'set' > 'end'
-        linkedSoundSlider.on('update', function(e){
-          var newVolume = Math.round(linkedSoundSlider.get()) / 100 // 0 .. 1
-          wavesurfer.setVolume(newVolume)
-        })
+        if ( haveSoundControl ){
+          // slider events
+          // 'start' > 'slide' > 'update' > 'change' > 'set' > 'end'
+          linkedSoundSlider.on('update', function(e){
+            var newVolume = Math.round(linkedSoundSlider.get()) / 100 // 0 .. 1
+            wavesurfer.setVolume(newVolume)
+          })
+        }
 
       });
     }
