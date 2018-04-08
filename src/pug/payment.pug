@@ -1,0 +1,35 @@
+---
+title: PAYMENT
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // PAYMENT
+  .payment
+    .container
+      .payment__title Please add your card info
+      .payment__subtitle We wont keep any personal information about your card in our system.
+      
+      form.payment__form(action="#" js-validate-cc)
+        .ui-group
+          input(type="text" name="cc" placeholder="XXXX     XXXX     XXXX     XXXX" js-mask-cc)
+        .payment__form-row
+          .ui-group
+            input(type="text" placeholder="MM/YY" js-mask-mmyy)
+          .ui-group
+            input(type="text" placeholder="CVC" js-mask-cvc)
+          .ui-group
+            input(type="text" placeholder="ZIP" js-mask-zip)
+
+        .ui-checkbox
+          input(type="checkbox" name="remember" id="remember" checked)
+          label(for="remember")
+            span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        
+        .payment__form-cta
+          button(type="submit").btn.btn-primary.btn-primary--red
+            span Pay

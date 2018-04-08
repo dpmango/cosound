@@ -530,6 +530,23 @@ $(document).ready(function(){
   		},
     });
     // $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $('[js-mask-cc]').mask('9999     9999     9999     9999');
+    $("[js-mask-mmyy]").mask('A9/B9', {
+      translation: {
+        A: { pattern: /[0-1]/ },
+        B: { pattern: /[0-2]/ }
+      },
+    });
+    $('[js-mask-cvc]').mask('999');
+
+    var zipOptions =  {onKeyPress: function(cep, e, field, options){
+      var masks = ['00000-000', '0-00-00-00'];
+      var mask = (cep.length>7) ? masks[1] : masks[0];
+      $('[js-mask-zip]').mask(mask, zipOptions);
+    }};
+
+    $('[js-mask-zip]').mask('00000-000', zipOptions);
+
   }
 
   // $("input[name='time']").mask('AB:CD', {
