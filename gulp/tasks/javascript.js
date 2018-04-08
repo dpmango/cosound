@@ -11,8 +11,6 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'jquery/dist/jquery.min.js'),
       path.resolve('bower_components', 'svg4everybody/dist/svg4everybody.min.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),
-      // path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.hacks.js'),
-      // path.resolve('bower_components', 'slick-carousel/slick/slick.min.js'),
       path.resolve('bower_components', 'swiper/dist/js/swiper.min.js'),
       path.resolve('bower_components', 'magnific-popup/dist/jquery.magnific-popup.min.js'),
       path.resolve('bower_components', 'scrollMonitor/scrollMonitor.js'),
@@ -23,7 +21,8 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'jquery-lazy/jquery.lazy.min.js'),
       path.resolve('bower_components', 'animejs/anime.min.js'),
       path.resolve('bower_components', 'emojionearea/dist/emojionearea.min.js'),
-      // path.resolve('bower_components', 'perfect-scrollbar/js/perfect-scrollbar.jquery.js'),
+      path.resolve('bower_components', 'selectize/dist/js/standalone/selectize.min.js'),
+      // moved to /js/vendor and fixed flicker
       // path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
       // shims, langs
       // path.resolve('bower_components', 'mediaelement/build/renderers/soundcloud.js'),

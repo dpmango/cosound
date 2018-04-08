@@ -24,7 +24,7 @@ block content
         //form
         form.signup-form(action="#" data-animation-delay=".6s").wow
           .ui-group(data-animation-delay=".6s")
-            select(name="options" js-change-location)
+            select(name="options" placeholder="Select location" js-change-location)
               option(disabled) Select location
               option United Kingdom
               option Scotland
@@ -32,7 +32,7 @@ block content
               option Australia
               option Canada
           .ui-group(data-animation-delay=".7s")
-            input(type="text" name="postal_code" placeholder="Postal code")
+            input(type="text" name="postal_code" placeholder="Postal code" js-mask-zip)
 
           .signup-form__cta.wow(data-animation-delay=".8s")
             button(type="submit").btn.btn-primary.btn-primary--red

@@ -12,9 +12,9 @@ PageList:
 - file: signup-2.html
   ready: 90
 - file: signup-3.html
-  ready: 80
+  ready: 90
 - file: signup-3b.html
-  ready: 80
+  ready: 90
 - file: signup-4.html
   ready: 90
 - file: signup-5.html
@@ -38,7 +38,7 @@ PageList:
 - file: messages.html
   ready: 70
 - file: account.html
-  ready: 50
+  ready: 60
 - file: plans.html
   ready: 60
 - file: plans-b.html

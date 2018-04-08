@@ -1,5 +1,15 @@
 $(document).ready(function(){
 
+  // autocompleate (signup)
+  // https://github.com/devbridge/jQuery-Autocomplete +
+  // https://goodies.pixabay.com/jquery/auto-complete/demo.html
+  // https://github.com/pawelczak/EasyAutocomplete ++
+
+  // tagged inputs
+  // http://selectize.github.io/selectize.js/
+  // https://goodies.pixabay.com/jquery/tag-editor/demo.html
+
+
   //////////
   // Global variables
   //////////
@@ -32,6 +42,7 @@ $(document).ready(function(){
     initScrollMonitor();
     initMasks();
     initSelectric();
+    initSelectize();
     initRangeSlider();
     initValidations();
     initLazyLoad();
@@ -586,6 +597,40 @@ $(document).ready(function(){
     $('select').selectric({
       maxHeight: 300,
       arrowButtonMarkup: '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
+
+      onInit: function(element, data){
+        console.log(element,data)
+        var $elm = $(element),
+            $wrapper = $elm.closest('.' + data.classes.wrapper);
+
+        $wrapper.find('.label').html($elm.attr('placeholder'));
+      },
+      onBeforeOpen: function(element, data){
+        var $elm = $(element),
+            $wrapper = $elm.closest('.' + data.classes.wrapper);
+
+        $wrapper.find('.label').data('value', $wrapper.find('.label').html()).html($elm.attr('placeholder'));
+      },
+      onBeforeClose: function(element, data){
+        var $elm = $(element),
+            $wrapper = $elm.closest('.' + data.classes.wrapper);
+
+        $wrapper.find('.label').html($wrapper.find('.label').data('value'));
+      }
+    });
+  }
+
+  function initSelectize(){
+    $('[js-selectize]').selectize({
+      delimiter: ',',
+      persist: false,
+      create: function(input) {
+        return {
+          value: input,
+          text: input
+        }
+      },
+
     });
   }
 
@@ -628,9 +673,12 @@ $(document).ready(function(){
   function addAnotherInput(origin){
     var newIndex = $('.multiple-inputs').length
     var newInput = '<div class="ui-group"><div class="multiple-inputs"><input type="text" name="socails['+newIndex+']" placeholder="Social links" /><svg class="ico ico-plus"><use xlink:href="img/sprite.svg#ico-plus"></use></svg></div></div>'
-
-    origin.parent().addClass('is-ready');
-    $(newInput).insertAfter(origin.parent().parent()).hide().fadeIn(250);
+    var maxLength = 5
+    if ( origin.val().length > 3 && newIndex < maxLength){
+      origin.parent().addClass('is-ready');
+      $(newInput).insertAfter(origin.parent().parent()).hide().fadeIn(250);
+      $('.multiple-inputs:last-child input').focus();
+    }
   }
 
   // pseudo radio
@@ -812,6 +860,16 @@ $(document).ready(function(){
       });
     }
   }
+
+  _document
+    .on('click', '[js-open-soundbar]', function(){
+      $(this).parent().find('.m-music__volume-bar').toggleClass('is-active')
+    })
+    .on('click', function(e){
+      if ( !$(e.target).closest('.m-music__volume').length > 0 ){
+        $('.m-music__volume-bar').removeClass('is-active')
+      }
+    })
 
 
   ////////////
