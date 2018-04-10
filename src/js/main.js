@@ -439,7 +439,7 @@ $(document).ready(function(){
     inner_scrolling: true,
     // offset_top: $('.header').height(),
     offset_top: 90,
-    
+
   })
 
   // tested
@@ -988,6 +988,13 @@ $(document).ready(function(){
 
         // load self from data attr
         wavesurfer.load($wave.data('src'));
+
+        // resize recalc
+        // refactor ? stops when resizing
+        _window.on('resize', debounce(function(){
+          wavesurfer.empty();
+          wavesurfer.drawBuffer();
+        }, 250));
 
         // create timestamps
         if ( $wave.data('timestamp') !== false ){

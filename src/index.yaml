@@ -22,9 +22,9 @@ PageList:
 - file: signup-suggestions.html
   ready: 90
 - file: profile.html
-  ready: 80
+  ready: 85
 - file: dashboard.html
-  ready: 75
+  ready: 85
 - file: marketplace.html
   ready: 60
 - file: product.html

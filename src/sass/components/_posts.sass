@@ -10,7 +10,8 @@
       border: none
       border-radius: 8px
       padding: 5px 0px
-      resize: vertical
+      //textarea will be resized automatically
+      resize: none
       // transition: .25s $ease
       &::placeholder
         color: $fontColor50
@@ -79,3 +80,9 @@
       color: $fontColor
   &__cta
     margin-left: auto
+
++r($mobile)
+  .create-post
+    &__type
+      span
+        display: none

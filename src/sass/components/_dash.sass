@@ -41,9 +41,13 @@
       flex: 0 0 auto
       max-width: 100%
       width: 100%
-      display: flex
+      &-wrap
+        width: 100%
+        display: flex
       .d-card
         flex: 0 1 50%
+        max-width: 50%
+        min-width: 1px
         margin-right: 24px
         &:last-child
           margin-right: 0
@@ -51,6 +55,33 @@
       flex: 0 0 auto
       margin-left: auto
       margin-right: auto
+    &--feed
+      .dash
+        &__sidebar
+          max-width: 100%
+          &-wrap
+            justify-content: center
+        &__content
+          max-width: 100%
+          flex: 0 0 auto
+          margin-left: auto
+          margin-right: auto
+
++r($tablet)
+  .dash
+    &__sidebar
+      &-wrap
+        flex-direction: column
+      .d-card
+        flex: 0 0 auto
+        max-width: 100%
+        margin-right: 0
+
++r($mobile)
+  .dash
+    margin-top: 20px
+    margin-left: -37px
+    margin-right: -37px
 
 // Dash card
 .d-card
@@ -156,18 +187,6 @@
   &__user
     display: flex
     align-items: center
-    &-avatar
-      position: relative
-      z-index: 1
-      size: 60px
-      font-size: 0
-      border-radius: 50%
-      overflow: hidden
-      img
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
 
     &-info
       margin-left: 25px
@@ -294,22 +313,6 @@
   &__comment
     display: flex
     margin: 30px 0
-    &-avatar
-      position: relative
-      z-index: 1
-      flex: 0 0 45px
-      size: 45px
-      border-radius: 50%
-      overflow: hidden
-      font-size: 0
-      box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
-      img
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        max-width: 105%
-
     &-content
       flex: 1 1 auto
       padding: 0 23px
@@ -353,3 +356,37 @@
       // transition: .25s $ease
       &::placeholder
         color: $fontColor50
+
++r($hd)
+  .d-card
+    &__options
+      &-list
+        right: 10px
+        left: auto
+        min-width: 180px
+
++r($mobile)
+  .d-card
+    border-radius: 0
+    margin-bottom: 15px
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.06)
+    padding: 25px 25px 0
+    &__content
+      p
+        font-size: 13px
+    &__user
+      &-name
+        font-size: 15px
+      &-position
+        font-size: 13px
+    &__comment
+      &-content
+        padding-left: 15px
+      &-author
+        font-size: 15px
+
+      &-text
+        font-size: 13px
+    &__reply
+      textarea
+        margin-left: 15px
