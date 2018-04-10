@@ -433,6 +433,152 @@ $(document).ready(function(){
   }
 
 
+  // Sticky
+  $('[js-sticky-area]').stick_in_parent({
+    // parent:
+    inner_scrolling: true,
+    // offset_top: $('.header').height(),
+    offset_top: 90,
+    
+  })
+
+  // tested
+  $('[-js-sticky-area]').each(function(i, sticky){
+    var
+      $el, elHeight, parent, parentDimensions, wHeight,
+      scrollPastBottom, scrollStart, scrollEnd, pastScroll = 0,
+      fixedByMarginTop = 0, fixedByMarginBottom = 0
+
+    function stickyParse(){
+      // general selectors and params get's cached
+      $el = $(sticky);
+      elHeight = $el.height();
+      parent = $el.parent();
+      parentDimensions = {
+        'top': parent.offset().top,
+        'left': parent.offset().left,
+        'height': parent.height(),
+        'width': parent.width()
+      }
+      wHeight = _window.height();
+
+      // we need parent top offset because $el would be fixed
+      scrollStart = Math.floor(parentDimensions.top)
+      scrollPastBottom = Math.floor((parentDimensions.top + elHeight) - wHeight)
+      scrollEnd = Math.floor(scrollStart + parentDimensions.height - wHeight)
+
+      // envoke scroll
+      stickyScroll();
+    }
+
+
+    // stick in parent emulation
+    function stickyScroll(){
+      // parse scroll and do manupilations based on it
+      var wScroll = _window.scrollTop();
+      var scrollDirection = pastScroll >= wScroll ? 'up' : 'down'
+
+      if ( _window.width() > bp.desktop ){
+        // debug
+        // console.log(
+        //   'wScroll', wScroll, scrollDirection,
+        //   'scrollStart', scrollStart,
+        //   'scrollPastBottom', scrollPastBottom,
+        //   'scrollEnd', scrollEnd,
+        //   'fixedByMarginTop', fixedByMarginTop
+        // )
+
+        // styles object
+        var elStyles = {
+          'position': "",
+          'bottom': "",
+          'top': "",
+          'width': "",
+          'marginTop': "",
+          'classFixed': ""
+        }
+
+        // calculate which styles to apply
+        if ( wScroll > scrollStart ){
+          // element at the top of viewport, start monitoring
+          elStyles.classFixed = "is-fixed"
+          elStyles.width = parentDimensions.width // prevent fixed/abs jump
+
+          if ( wScroll > scrollPastBottom ){
+            // element at the bottom of viewport
+            // stick it !
+            elStyles.position = "fixed"
+            elStyles.bottom = 0
+
+            // but monitor END POINT and absolute it
+            if ( wScroll > scrollEnd ){
+              elStyles.position = "absolute"
+              elStyles.classFixed = ""
+            }
+          } else {
+            elStyles.position = "static"
+          }
+
+          // make scrollable to the up dir
+          if (scrollDirection == "up" && wScroll < scrollEnd) {
+
+            // if fixed is zero - than it's a first time
+            if ( fixedByMarginTop == 0 ){
+
+              fixedByMarginTop = pastScroll // store the point when it's fixed with margin
+
+            } else {
+              // fixedByMarginTop = pastScroll
+            }
+
+            // if momentum is kept
+            if ( wScroll < fixedByMarginTop){
+              elStyles.position = "static"
+              elStyles.marginTop = ( fixedByMarginTop + wHeight ) - scrollStart - elHeight
+            } else {
+              // momentum is broken
+            }
+
+            if ( wScroll < fixedByMarginTop - (elHeight - wHeight) ){
+              // scrolled all with margin fixed
+              // stick to top
+              elStyles.position = "fixed"
+              elStyles.top = 0
+              elStyles.marginTop = 0
+              elStyles.bottom = "auto"
+            }
+
+          } else if ( scrollDirection == "down" ){
+
+          }
+
+        } else {
+          // scrilling somewhere above sticky el
+          elStyles.classFixed = ""
+        }
+
+
+        // apply styles
+        $el.css(elStyles)
+        // $el.addClass(elStyles.classFixed)
+
+        // required for scroll direction
+        pastScroll = wScroll
+      } else {
+        $el.attr('style', '')
+      }
+
+    }
+
+    // event bindings
+
+    stickyParse();
+
+    _window.on('scroll', throttle(stickyScroll, 5)) // just a minor delay
+    _window.on('resize', debounce(stickyParse, 250))
+
+  })
+
   //////////
   // SLIDERS
   //////////
