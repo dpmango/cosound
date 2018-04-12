@@ -52,10 +52,14 @@ $(document).ready(function(){
     initHidenSeek();
     initEmoji();
     initTeleport();
+    initSticky();
+    _window.on('resize', debounce(initSticky, 250));
     initEqualHeights();
     _window.on('resize', debounce(initEqualHeights, 250));
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
+    removeFooterMobile();
+    _window.on('resize', debounce(removeFooterMobile, 250));
 
     // login/sign
     setStepsClasses();
@@ -80,7 +84,9 @@ $(document).ready(function(){
 
   _window.on('load', function(){
     // your functions
-    swiperMarket.update();
+    if ( $('[js-market-slider]').length > 0 ){
+      swiperMarket.update();
+    }
   })
 
 
@@ -115,6 +121,7 @@ $(document).ready(function(){
       return false
     }
   }
+  var isMobile = isMobile();
 
   function msieversion() {
     var ua = window.navigator.userAgent;
@@ -131,7 +138,7 @@ $(document).ready(function(){
     $('body').addClass('is-ie');
   }
 
-  if ( isMobile() ){
+  if ( isMobile ){
     $('body').addClass('is-mobile');
   }
 
@@ -222,6 +229,20 @@ $(document).ready(function(){
     }
   }
 
+  // messages section remove footer
+  function removeFooterMobile() {
+    if ( $('.ms').length > 0 ){
+      if ( _window.width() < bp.tablet ){
+        $('.footer').css({
+          'display': 'none'
+        })
+      } else {
+        $('.footer').css({
+          'display': 'block'
+        })
+      }
+    }
+  }
 
 
   //////////
@@ -440,13 +461,20 @@ $(document).ready(function(){
 
 
   // Sticky
-  $('[js-sticky-area]').stick_in_parent({
-    // parent:
-    inner_scrolling: true,
-    // offset_top: $('.header').height(),
-    offset_top: 90,
+  function initSticky(){
+    if ( _window.width() > bp.desktop ){
+      $('[js-sticky-area]').stick_in_parent({
+        // parent:
+        inner_scrolling: true,
+        // offset_top: $('.header').height(),
+        offset_top: 90,
+        // recalc_every: 5,
+      });
+    } else {
+      $('[js-sticky-area]').trigger("sticky_kit:detach");
+    }
+  }
 
-  })
 
   // tested
   $('[-js-sticky-area]').each(function(i, sticky){
@@ -845,7 +873,7 @@ $(document).ready(function(){
 
   // MULTIPLE INPUTS
   _document
-    .on("keydown", ".multiple-inputs input", function(e){
+    .on("keypress", ".multiple-inputs input", function(e){
       // catch enter
       if ( e.originalEvent.keyCode == 13){
         addAnotherInput($(this));
@@ -853,14 +881,22 @@ $(document).ready(function(){
         e.stopPropagation();
       }
     })
-    .on('click', '.multiple-inputs .ico-plus', function(){
+    // ios fix for focusout
+    // .on("blur", ".multiple-inputs input", function(e){
+    //   if ( isMobile ){
+    //     addAnotherInput($(this));
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //   }
+    // })
+    .on('click', '.multiple-inputs__plus', function(){
       var linkedInput = $(this).parent().find('input');
       addAnotherInput(linkedInput)
     })
 
   function addAnotherInput(origin){
     var newIndex = $('.multiple-inputs').length
-    var newInput = '<div class="ui-group"><div class="multiple-inputs"><input type="text" name="socails['+newIndex+']" placeholder="Social links" /><svg class="ico ico-plus"><use xlink:href="img/sprite.svg#ico-plus"></use></svg></div></div>'
+    var newInput = '<div class="ui-group"><div class="multiple-inputs"><input type="text" name="socails['+newIndex+']" placeholder="Social links" /><div class="multiple-inputs__plus"><svg class="ico ico-plus"><use xlink:href="img/sprite.svg#ico-plus"></use></svg></div></div></div>'
     var maxLength = 5
     if ( origin.val().length > 3 && newIndex < maxLength){
       origin.parent().addClass('is-ready');
