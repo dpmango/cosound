@@ -1,9 +1,11 @@
 .cart-list
 
 .cart-item
+  position: relative
   display: flex
   align-items: center
   padding: 20px 0
+  min-width: 1px
   border-top: 1px solid $borderColor20
   &__image
     flex: 0 0 113px
@@ -18,29 +20,24 @@
       width: 100%
   &__info
     margin-left: 20px
-    flex: 1 1 auto
+    flex: 0 1 auto
+    max-width: 100%
+    min-width: 1px
+    min-height: 0
     display: flex
     align-items: center
     &-content
+      flex: 0 1 auto
+      min-width: 1px
+      max-width: 100%
       margin-left: 23px
-
-  &__author
-    flex: 0 0 44px
-    position: relative
-    z-index: 1
-    size: 44px
-    border-radius: 50%
-    overflow: hidden
-    img
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%,-50%)
+      padding-right: 20px
 
   &__name
     font-size: 20px
     line-height: 1.7
     font-weight: 500
+    +text-overflow
 
   &__rating
     display: flex
@@ -52,13 +49,56 @@
       font-size: 14px
 
   &__price
+    flex: 0 0 auto
     color: $colorViolet
     font-size: 30px
     margin-left: auto
 
++r($tablet)
+  .cart-item
+    padding: 15px 0
+    &__info
+      &-content
+        margin-left: 15px
+    &__name
+      font-size: 18px
+
+    &__price
+      font-size: 26px
+
++r($mobile)
+  .cart-item
+    &__image
+      flex: 0 0 85px
+      max-width: 85px
+    &__name
+      font-size: 16px
+      margin-bottom: -.3em
+      line-height: 2
+    &__info
+      margin-left: 15px
+      &-content
+        margin-left: 10px
+
++r(480)
+  .cart-item
+    flex-direction: column
+    &__image
+      flex-basis: auto
+      max-width: 113px
+    &__info
+      margin: 20px auto 0px 0
+      &-content
+        padding-right: 60px
+    &__price
+      margin-right: auto
+      position: absolute
+      right: 0
+      bottom: 23px
 
 /* Cart sidebar
 .cart-sidebar
+  flex-shrink: 0
   &__wrap
     background: #FFFFFF
     box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
@@ -167,6 +207,11 @@
       text-align: center
       line-height: 2
 
++r($desktop)
+  .cart-sidebar
+    display: block
+    margin-left: auto
+    margin-right: auto
 
 /* payment options
 .cart-payments

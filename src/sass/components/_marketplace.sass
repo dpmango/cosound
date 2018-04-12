@@ -84,6 +84,7 @@
 
 +r($tablet)
   .market
+    margin-bottom: 20px
     &__container
       padding-left: 25px
       padding-right: 25px
@@ -149,6 +150,29 @@
       right: 40px
       bottom: 35px
 
++r($mobile)
+  .market-slide
+    &__content
+      padding: 20px 25px 20px 35px
+    &__title
+      font-size: 36px
+    &__desc
+      margin-top: 25px
+      font-size: 14px
+    &__cta
+      right: 25px
+      bottom: 20px
+
++r(480)
+  .market-slide
+    &__content
+      padding-bottom: 30px
+    &__desc
+      margin-right: 0
+    &__cta
+      position: static
+      margin-top: 30px
+      text-align: right
 
 /* Market grid
 .market-grid
@@ -199,27 +223,37 @@
     &__col
       flex-basis: 33.3%
       max-width: 33.3%
-
-+r(1150)
-  .market-grid
-    &__col
-      flex-basis: 33.3%
-      max-width: 33.3%
+    &--narrow
+      .market-grid__col
+        flex-basis: 33.3%
+        max-width: 33.3%
 
 +r($tablet)
   .market-grid
+    padding: 50px 0 40px
     &__col
       flex-basis: 50%
       max-width: 50%
+    &--narrow
+      .market-grid__col
+        flex-basis: 50%
+        max-width: 50%
+    &__more
+      margin-top: 40px
 
-+r($mobile)
++r(480)
   .market-grid
     &__col
       flex-basis: 100%
       max-width: 100%
       max-width: 270px
+      padding: 10px
       margin-left: auto
       margin-right: auto
+    &--narrow
+      .market-grid__col
+        flex-basis: 100%
+        max-width: 100%
 
 .m-card
   position: relative
@@ -310,7 +344,7 @@
     cursor: pointer
     .ico
       font-size: 15px
-    &:hover
+    &:hover, &.is-active
       color: $colorRed
 
 

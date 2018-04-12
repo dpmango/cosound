@@ -10,7 +10,21 @@
   transform: translate3d(-100%,0%,0)
   // background: white
   transition: .25s $ease
-
+  &--market
+    // extra space for navbar
+    top: 155px
+    .mobile-navi__wrapper
+      min-height: calc(100vh - 155px)
+  &--fixed
+    position: fixed
+    &.is-scrolled
+      top: 65px
+      .mobile-navi__wrapper
+        min-height: calc(100vh - 65px)
+      &.mobile-navi--market
+        top: 120px
+        .mobile-navi__wrapper
+          min-height: calc(100vh - 120px)
   &.is-active
     opacity: 1
     transform: translate3d(0,0,0)
@@ -18,11 +32,13 @@
   &__wrapper
     display: flex
     flex-direction: column
-    min-height: 100vh
+    min-height: calc(100vh - 100px)
     color: $fontColor
+    overflow-y: auto
     margin-right: 20%
     padding: 50px 50px
     background: white
+    transition: .2s linear
   &__menu
     display: flex
     flex-direction: column

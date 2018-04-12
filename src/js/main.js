@@ -163,9 +163,11 @@ $(document).ready(function(){
       if ( vScroll > 10 ){
         header.addClass('is-scrolled');
         $('.notifications--fixed').addClass('is-scrolled')
+        $('.mobile-navi').addClass('is-scrolled')
       } else {
         header.removeClass('is-scrolled');
         $('.notifications--fixed').removeClass('is-scrolled')
+        $('.mobile-navi').removeClass('is-scrolled')
       }
     }, 10));
   }
@@ -583,6 +585,16 @@ $(document).ready(function(){
 
   })
 
+
+  //////////
+  // MARKETPLACE FUNCTIONS
+  //////////
+  _document
+    .on('click', '.m-card__like', function(e){
+      $(this).toggleClass('is-active')
+    });
+
+
   //////////
   // SLIDERS
   //////////
@@ -603,6 +615,15 @@ $(document).ready(function(){
       normalizeSlideIndex: true,
       // centeredSlides: true,
       freeMode: false,
+      effect: 'cube',
+      flipEffect: {
+        rotate: 30,
+        slideShadows: false,
+      },
+      cubeEffect: {
+        slideShadows: false,
+        shadow: false,
+      },
       navigation: {
         nextEl: '.market__slider-next',
         prevEl: '.market__slider-prev',

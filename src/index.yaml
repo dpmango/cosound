@@ -26,13 +26,13 @@ PageList:
 - file: dashboard.html
   ready: 85
 - file: marketplace.html
-  ready: 60
+  ready: 80
 - file: product.html
-  ready: 75
+  ready: 80
 - file: cart.html
-  ready: 60
+  ready: 80
 - file: cart-b.html
-  ready: 60
+  ready: 80
 - file: checkout.html
   ready: 60
 - file: messages.html
