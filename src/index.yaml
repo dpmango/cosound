@@ -40,8 +40,8 @@ PageList:
 - file: account.html
   ready: 80
 - file: plans.html
-  ready: 60
+  ready: 80
 - file: plans-b.html
-  ready: 60
+  ready: 80
 - file: payment.html
-  ready: 40
+  ready: 80
