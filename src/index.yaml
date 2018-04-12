@@ -16,7 +16,7 @@ PageList:
 - file: signup-3b.html
   ready: 90
 - file: signup-4.html
-  ready: 90
+  ready: 0
 - file: signup-5.html
   ready: 90
 - file: signup-suggestions.html
@@ -32,11 +32,11 @@ PageList:
 - file: cart.html
   ready: 80
 - file: cart-b.html
-  ready: 80
+  ready: 0
 - file: checkout.html
-  ready: 60
+  ready: 80
 - file: messages.html
-  ready: 70
+  ready: 75
 - file: account.html
   ready: 60
 - file: plans.html

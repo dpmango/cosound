@@ -30,25 +30,9 @@
     background: white
     text-align: center
     padding: 20px
-    &-avatar
-      position: relative
-      z-index: 1
-      size: 93px
-      border-radius: 50%
-      border: 2px solid white
-      overflow: hidden
+    .avatar
       margin-left: auto
       margin-right: auto
-      font-size: 0
-      img
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        min-width: 100%
-        min-height: 100%
-        width: auto
-        height: auto
 
   &__search
     flex: 0 0 auto
@@ -125,24 +109,10 @@
     mark
       background: transparent
       color: $colorAqua
-    &__avatar
-      flex: 0 0 44px
-      size: 44px
-      position: relative
-      z-index: 1
-      border-radius: 50%
-      font-size: 0
-      overflow: hidden
-      box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+    .avatar
       img
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        min-width: 100%
-        min-height: 100%
-        width: auto
-        height: auto
+        width: 110%
+
     &__content
       flex: 1 1 auto
       min-width: 1px
@@ -182,25 +152,9 @@
     display: flex
     width: auto
     margin: 20px 0 40px 0
-    &__avatar
-      flex: 0 0 44px
-      size: 44px
-      position: relative
-      z-index: 1
-      border-radius: 50%
-      font-size: 0
-      overflow: hidden
-      box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+    .avatar
       img
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
-        min-width: 100%
-        min-height: 100%
-        width: auto
-        height: auto
-
+        width: 106%
     &__content
       position: relative
       opacity: 0.9
@@ -244,9 +198,9 @@
     &--self
       flex-direction: row-reverse
       margin-left: auto
+      .avatar
+        display: none !important
       .ms-message
-        &__avatar
-          display: none
         &__content
           background: #EBEBEB
           border: 1px solid $borderColor20
@@ -293,3 +247,92 @@
         margin-bottom: -2px
       .emojionearea
         // outline: 1px solid tomato
+
+
++r($desktop)
+  .ms
+    &__sidebar
+      flex-basis: 280px
+      max-width: 280px
+    &__search
+      input
+        // padding-left: 60px
+        &:focus
+          + .ico
+            transform: translate(-15px,-50%)
+
+      .ico
+        left: 30px
+
+    &__list
+      padding: 15px 30px 40px 25px
+
+    &__create
+      padding: 20px 20px
+
+
+  /* dialog
+  .ms-dialog
+    padding: 15px 15px
+    &__content
+      margin-left: 15px
+    &__timestamp
+
+
+  // * message
+  .ms-message
+    &__content
+      padding: 10px 20px 10px 15px
+      p
+        font-size: 13px
+        line-height: 1.6
+    &__timestamp
+      font-size: 11px
+      bottom: -27px
+
+  /* create
+  .ms-create
+
+
++r($tablet)
+  .ms
+    margin-top: 112px
+    margin-bottom: 0
+    &__wrapper
+      margin-left: -25px
+      margin-right: -25px
+      border-radius: 0
+      height: calc(100vh - 112px)
+    &__sidebar
+      flex-basis: 75px
+      max-width: 75px
+    &__topbar
+      display: none
+    &__search
+      display: none
+
+  .ms-dialog
+    &__content
+      display: none
+
++r($mobile)
+  .ms
+    &__sidebar
+      flex-basis: 70px
+      max-width: 70px
+
+    &__list
+      padding-right: 20px
+      padding-left: 20px
+
+  .ms-message
+    .avatar
+      flex-basis: 25px
+      size: 25px
+    &__content
+      margin-left: 20px
+      margin-top: 10px
+      padding: 10px 10px 10px 15px
+      &::before
+        +arr(13, 10, white, tr)
+        left: -13px
