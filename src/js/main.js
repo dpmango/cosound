@@ -52,6 +52,8 @@ $(document).ready(function(){
     initHidenSeek();
     initEmoji();
     initTeleport();
+    initEqualHeights();
+    _window.on('resize', debounce(initEqualHeights, 250));
     revealFooter();
     _window.on('resize', throttle(revealFooter, 100));
 
@@ -72,8 +74,13 @@ $(document).ready(function(){
 
 
   // some plugins work best with onload triggers
+
+  // swiper's
+  var swiperMarket
+
   _window.on('load', function(){
     // your functions
+    swiperMarket.update();
   })
 
 
@@ -582,15 +589,16 @@ $(document).ready(function(){
 
   function initSliders(){
     // Why carousel
-    var swiperMarket = new Swiper('[js-market-slider]', {
+    swiperMarket = new Swiper('[js-market-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "market-slide",
       direction: 'horizontal',
       loop: false,
       watchOverflow: false,
+      setWrapperSize: true,
       // setWrapperSize: true,
       spaceBetween: 0,
-      // slidesPerView: 1,
+      slidesPerView: 1,
       // loop: true,
       normalizeSlideIndex: true,
       // centeredSlides: true,
@@ -1090,6 +1098,15 @@ $(document).ready(function(){
     })
   }
 
+  ////////////
+  // EQ HEIGHTS PLUGIN
+  ////////////
+  function initEqualHeights(){
+    $('[js-eqh]').each(function (i, val) {
+      var self = $(val);
+      var target = $('[data-eqh-target=' + self.data('eqh-watch') + ']');
+    });
+  }
 
   ////////////
   // SCROLLMONITOR - WOW LIKE

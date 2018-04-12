@@ -8,6 +8,7 @@
     margin: 0 auto
   &__top
     display: flex
+    // align-items: flex-start
     &-left
       flex: 0 1 16.666%
       max-width: 16.666%
@@ -19,16 +20,19 @@
       position: relative
       flex: 0 1 83.333%
       max-width: 83.333%
-      // display: flex
-      // flex-direction: column
+      display: flex
+      flex-direction: column
       margin-left: 30px
 
   &__slider
     position: relative
     border-radius: 9px
-    // flex: 1 0 auto
-    // display: flex
-    // flex-direction: column
+    width: 100%
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    .swiper-wrapper
+      flex: 1 1 auto
     &-next, &-prev
       position: absolute
       top: 50%
@@ -45,6 +49,9 @@
       transition: .25s $ease
       &:hover
         box-shadow: 0 12px 18px 0 rgba(0,0,0,0.1)
+      &.swiper-button-disabled
+        opacity: .7
+        cursor: default
     // .swiper-wrapper
     //   flex: 1 0 auto
     &-next
@@ -53,16 +60,40 @@
     &-prev
       left: -20px
 
++r(1660)
+  .market
+    &__top-left
+      flex-basis: 20%
+      max-width: 20%
+
++r(1400)
+  .market
+    &__top-left
+      flex-basis: 25%
+      max-width: 25%
+
++r($wide)
+  .market
+    &__top
+      &-left
+        display: none
+      &-right
+        flex-basis: 100%
+        max-width: 100%
+        margin-left: 0
 
 +r($tablet)
-.market
-  &__container
-    padding-left: 25px
-    padding-right: 25px
+  .market
+    &__container
+      padding-left: 25px
+      padding-right: 25px
 
 
 .market-slide
   flex: 0 0 auto
+  max-width: 100%
+  min-width: 1px
+  min-height: 0
   position: relative
   overflow: hidden
   background: black
@@ -75,11 +106,13 @@
     z-index: 1
     background-position: center center
     background-repeat: no-repeat
+    background-size: cover
     img
       width: 100%
 
   &__content
     position: relative
+    width: 100%
     z-index: 2
     padding: 20px 60px
     color: white
@@ -93,6 +126,8 @@
     font-size: 16px
     line-height: 1.67
     max-width: 500px
+    /* btn offset width
+    margin-right: 180px
     p
       margin: 0
       & + p
@@ -102,6 +137,20 @@
     bottom: 45px
     right: 60px
 
++r($desktop)
+  .market-slide
+    &__content
+      padding: 20px 40px
+    &__title
+      font-size: 42px
+    &__desc
+      font-size: 15px
+    &__cta
+      right: 40px
+      bottom: 35px
+
+
+/* Market grid
 .market-grid
   padding: 60px 0
   &--narrow
