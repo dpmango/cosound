@@ -28,7 +28,7 @@ PageList:
 - file: marketplace.html
   ready: 60
 - file: product.html
-  ready: 60
+  ready: 75
 - file: cart.html
   ready: 60
 - file: cart-b.html

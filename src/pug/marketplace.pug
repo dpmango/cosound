@@ -17,7 +17,8 @@ block content
           .d-card
             .sidebar-user
               .sidebar-user__avatar
-                img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+                .avatar.avatar--big
+                  img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
               .sidebar-user__name Lois Stokes
               .sidebar-user__position Job Title/Artist Name.
                        
@@ -83,7 +84,7 @@ block content
                 .m-card__content
                   .m-card__info
                     .m-card__info-left
-                      .m-card__avatar
+                      .avatar.avatar--small
                         img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
                     .m-card__info-right
                       a(href="#").m-card__name= card[1]
@@ -136,7 +137,7 @@ block content
                 .m-card__content
                   .m-card__info
                     .m-card__info-left
-                      .m-card__avatar
+                      .avatar.avatar--small
                         img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
                     .m-card__info-right
                       a(href="#").m-card__name= card[1]

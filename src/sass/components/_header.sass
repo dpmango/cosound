@@ -383,16 +383,26 @@
   padding-left: 50px
   padding-right: 50px
   display: flex
-  justify-content: center
+  // justify-content: center
+  overflow-x: auto
+  min-width: 100vw
+  -webkit-overflow-scrolling: touch
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09)
   li
+    position: relative
+    flex: 0 0 auto
+    min-width: 1px
+    min-height: 0
+    white-space: nowrap
     display: inline-block
     font-size: 14px
-    margin-right: 30px
+    margin-right: 37px
     color: #8E8E8E
     transition: .25s $ease
-    &:last-child
-      margin-right: 0
+    &:first-of-type
+      margin-left: auto
+    &:last-of-type
+      margin-right: auto
     a
       display: inline-block
       position: relative
@@ -415,9 +425,30 @@
     &:hover
       color: $fontColor
 
++r(1200)
+  .header-market
+    li
+      &:last-of-type
+        &::after
+          display: inline-block
+          content: ''
+          width: 50px
 
+
+
++r($desktop)
+  .header-market
+    li
+      margin-right: 25px
+      a
+        padding-left: 15px
+        padding-right: 15px
 
 +r($tablet)
   .header-market
     padding-left: 25px
     padding-right: 25px
+    li
+      &:last-of-type
+        &::after
+          width: 25px

@@ -173,3 +173,87 @@
 
   &__content
     padding: 20px 40px
+
+
++r($desktop)
+  .product
+    &__wrapper
+      display: block
+    &__content
+      max-width: 100%
+    &__sidebar
+      display: none
+  .product-sidebar
+    &__bottom
+      margin-bottom: 50px
+
++r($tablet)
+  .product
+    &__box
+      padding: 30px
+      &--no-pad
+        padding: 0
+    &__cover
+      flex-basis: 250px
+      size: 250px
+    &__scope
+      margin-left: 40px
+    &__artist
+      font-size: 18px
+    &__name
+      font-size: 26px
+    &__album
+      font-size: 13px
+    &__price
+      font-size: 34px
+
+  .product-testimonials
+    &__header, &__content
+      padding-left: 30px
+      padding-right: 30px
+
+
++r($mobile)
+  .product
+    &__box
+      margin-left: -25px
+      margin-right: -25px
+      padding: 25px
+      border-radius: 0
+      margin-bottom: 20px
+      &--no-pad
+        padding: 0
+    &__main
+      flex-direction: column
+      align-items: center
+    &__cover
+      margin-left: auto
+      margin-right: auto
+    &__scope
+      margin-left: auto
+      margin-right: auto
+      margin-top: 35px
+      margin-bottom: 25px
+      min-width: 250px
+
+    &__title
+      font-size: 26px
+
+    &__info
+      // font-size: 13px
+
+  .product-testimonials
+    &__header, &__content
+      padding-left: 25px
+      padding-right: 25px
+
+    &__header
+      flex-direction: column-reverse
+    &__rating
+      margin-top: 30px
+
+    &__sorting
+      margin-right: auto
+
+    &__content
+      padding-top: 0

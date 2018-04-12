@@ -317,7 +317,6 @@ $(document).ready(function(){
 
   _document
     .on('keyup', '[js-header-search]', debounce(function(e) {
-      console.clear()
       var searchValue = this.value.toLowerCase();
       var searchLength = this.value.length;
       var searchResultsDrop = $('[js-header-searchResults]')
@@ -344,8 +343,6 @@ $(document).ready(function(){
         });
 
         var totalResults = searchResultsDrop.find('.is-visible').length
-
-        console.log(totalResults)
 
         if ( totalResults == 0 ){
           searchResultsNotFound.fadeIn(250);
@@ -762,7 +759,6 @@ $(document).ready(function(){
       arrowButtonMarkup: '<b class="button"><svg class="ico ico-select-down"><use xlink:href="img/sprite.svg#ico-select-down"></use></svg></b>',
 
       onInit: function(element, data){
-        console.log(element,data)
         var $elm = $(element),
             $wrapper = $elm.closest('.' + data.classes.wrapper);
 
@@ -957,7 +953,7 @@ $(document).ready(function(){
         var closestCard = $wave.closest('.d-card').length > 0 ? $wave.closest('.d-card') : $wave.closest('.ms-message')
         var linkedControl = closestCard.find('[js-play-audio]'); // play btn
         var linkedSoundSlider
-        var haveSoundControl = closestCard.find('[js-set-volume]').length > 0
+        var haveSoundControl = closestCard.find('[js-set-volume]') !== undefined && closestCard.find('[js-set-volume]').length > 0
         if ( haveSoundControl ){
           linkedSoundSlider = closestCard.find('[js-set-volume]').get(0).noUiSlider;
         }
@@ -974,6 +970,11 @@ $(document).ready(function(){
         canvasGrad.addColorStop(0, '#8E5ACD');
         canvasGrad.addColorStop(1, '#21B0B0');
 
+
+        // bug
+        //https://github.com/katspaugh/wavesurfer.js/issues/9
+        // safari fails with DOM expection 12
+
         var wavesurfer = WaveSurfer.create({
           container: waveContainer,
           waveColor: '#D8D8D8',
@@ -983,6 +984,8 @@ $(document).ready(function(){
           cursorWidth: 0,
           height: waveHeight,
           barWidth: 2,
+          pixelRatio: 1, // faster canvas
+          minPxPerSec: 100,
           hideScrollbar: true,
         });
 

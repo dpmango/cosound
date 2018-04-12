@@ -53,6 +53,9 @@
   flex: 0 0 45px
   &--shad
     box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+  &--small
+    size: 30px
+    flex: 0 0 30px
   &--mid
     size: 60px
     flex: 0 0 60px
@@ -65,10 +68,12 @@
     position: absolute
     top: 50%
     left: 50%
-    min-width: 101%
-    min-height: 101%
-    width: auto
-    height: auto
+    width: 101%
+    // refactor - should behave as background cover
+    // min-width: 101%
+    // min-height: 101%
+    // width: auto
+    // height: auto
     transform: translate(-50%,-50%)
 
 +r($mobile)
