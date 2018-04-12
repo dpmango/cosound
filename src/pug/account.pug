@@ -16,7 +16,7 @@ block content
           include ../inline-svg/hero-bg-profile.svg
       .container
         .profile__info
-          .profile__image
+          .avatar.avatar--big
             img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
           .profile__name Lois Stokes
   
@@ -24,7 +24,7 @@ block content
     .container
       // settings
       .profile-settings
-        .profile__categories
+        .profile__categories(js-scrollbar)
           a(href="#").profile__category.--violet.is-active
             i.icon.icon-profile-gears
             span Account Settings

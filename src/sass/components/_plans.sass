@@ -17,9 +17,23 @@
         .btn
           background: #8262CB
 
++r($tablet)
+  .plans
+    &__grid
+      display: block
+
+    &__col
+      flex: 0 0 auto
+      padding: 10px
+      width: 100%
+      max-width: 400px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 40px
+
 .plan-card
   background: white
-  padding: 65px 20px 00px
+  padding: 65px 20px 0px
   text-align: center
   color: $fontColor
   box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
@@ -52,6 +66,16 @@
     // btn height
     transform: translateY(21px)
 
++r($desktop)
+  .plan-card
+    padding: 50px 15px 0px
+    &__name
+      margin-top: 45px
+      font-size: 26px
+    &__desc
+      margin-top: 20px
+    &__cta
+      margin-top: 45px
 
 .plans-tabs
   margin: 160px 0 -40px

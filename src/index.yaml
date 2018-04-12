@@ -36,9 +36,9 @@ PageList:
 - file: checkout.html
   ready: 80
 - file: messages.html
-  ready: 75
+  ready: 80
 - file: account.html
-  ready: 60
+  ready: 80
 - file: plans.html
   ready: 60
 - file: plans-b.html

@@ -70,6 +70,7 @@
     padding: 0
     flex: 1 1 auto
     overflow-y: auto
+    -webkit-overflow-scrolling: touch
     background: white
 
   &__content
@@ -81,8 +82,14 @@
     min-height: 0
   &__list
     flex: 1 1 auto
+    min-width: 1px
     overflow-y: auto
+    -webkit-overflow-scrolling: touch
     padding: 15px 35px 40px
+    &::after
+      display: block
+      content: ' '
+      height: 40px
 
   &__create
     flex: 0 0 auto
@@ -265,7 +272,9 @@
         left: 30px
 
     &__list
-      padding: 15px 30px 40px 25px
+      padding: 15px 30px 30px 25px
+      &::after
+        height: 30px
 
     &__create
       padding: 20px 20px
@@ -325,6 +334,10 @@
       padding-right: 20px
       padding-left: 20px
 
+    &__create
+      padding-left: 10px
+      padding-right: 10px
+
   .ms-message
     .avatar
       flex-basis: 25px
@@ -336,3 +349,12 @@
       &::before
         +arr(13, 10, white, tr)
         left: -13px
+
+  .ms-create
+    &__textarea
+      margin: 0 15px
+    .emojionearea
+      .emojionearea-button
+        right: -49px
+      .emojionearea-picker.emojionearea-picker-position-top
+        right: -49px

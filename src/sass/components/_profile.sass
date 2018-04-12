@@ -135,6 +135,7 @@
   margin-left: auto
   margin-right: auto
 
+
 .profile
   &__categories
     position: relative
@@ -143,6 +144,11 @@
     justify-content: space-between
     margin-left: -10px
     margin-right: -10px
+    width: calc(100% + 20px)
+    min-width: 1px
+    min-height: 0
+    overflow-x: auto
+
     &::before
       display: inline-block
       content: ' '
@@ -154,6 +160,10 @@
       background: rgba(#979797, .13)
 
   &__category
+    flex: 0 0 auto
+    white-space: nowrap
+    min-width: 1px
+    min-height: 0
     position: relative
     display: flex
     align-items: center
@@ -242,3 +252,55 @@
     display: none
     &.is-active
       display: block
+
++r($desktop)
+  .profile-tabs
+    margin-top: 80px
+    &__sidebar
+      flex-basis: 210px
+      max-width: 210px
+
+    &__links
+      padding-right: 10px
+    &__content
+      padding-left: 30px
+
++r($tablet)
+  .profile
+    &__categories
+      // overflow-y: auto
+
+      margin-left: -35px
+      margin-right: -35px
+      padding-left: 25px
+      padding-right: 45px
+      overflow-x: auto
+      width: calc(100% + 50px)
+      &::after
+        // refactor
+        // hard fix is not working ?
+        display: inline-block
+        content: ' '
+        width: 25px
+
+
+  .profile-tabs
+    margin-top: 40px
+    display: block
+    &__sidebar
+      max-width: 100%
+      margin-bottom: 40px
+    &__links
+      padding-right: 0
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      li
+        padding: 10px 12px
+        font-size: 12px
+        margin-bottom: 5px
+        margin-right: 5px
+        &:last-child
+          margin-right: 0
+    &__content
+      padding-left: 0
