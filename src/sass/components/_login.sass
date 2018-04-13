@@ -8,6 +8,9 @@
     z-index: 2
   &__wrapper
     min-height: 1100px
+    /* ie fix
+    // https://github.com/philipwalton/flexbugs/issues/231
+    // height: 1099px
     width: 100%
     display: flex
     flex-direction: column
@@ -15,6 +18,10 @@
     justify-content: center
     text-align: center
     padding: 90px 0
+    // &::after
+    //   content: ''
+    //   min-height: inherit
+    //   font-size: 0
 
 
 /* Login form

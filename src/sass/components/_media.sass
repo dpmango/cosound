@@ -165,6 +165,8 @@
 .m-audio
   position: relative
   margin: 30px 0 10px
+  &--ie
+    display: none
   &__time-total, &__time-current
     position: absolute
     bottom: 0
@@ -174,20 +176,32 @@
   &__time-current
     left: 0
 
+.is-ie
+  .m-audio
+    display: none
+    &--ie
+      display: block
+  .m-music__play
+    display: none
+
 
 /* gallery
 .m-gallery
   display: flex
   flex-wrap: wrap
   margin: 0 -7px 25px
+  font-size: 0
   &__item
     flex: 0 1 33.3%
+    max-width: 33.3%
+    min-width: 1px
+    min-height: 0
     font-size: 0
     padding: 7px
   &__img-holder
     display: inline-block
     // min-size: 120px
-    height: 120px
+    // height: 120px
     width: 100%
     position: relative
     z-index: 1
@@ -197,17 +211,18 @@
     transition: .25s $ease
     &:hover
       box-shadow: none
-      img
-        transform: translate(-50%,-50%) scale(1.1)
+      // img
+      //   transform: translate(-50%,-50%) scale(1.1)
     img
-      position: absolute
-      top: 50%
-      left: 50%
-      transform: translate(-50%,-50%)
-      min-width: 100%
-      min-height: 100%
-      width: auto
-      height: auto
+      // position: absolute
+      // top: 50%
+      // left: 50%
+      // transform: translate(-50%,-50%)
+      // min-width: 100%
+      // min-height: 100%
+      // width: auto
+      // height: auto
+      width: 100%
       transition: .25s $ease
 
 // image row
@@ -234,7 +249,7 @@
       .m-img-row__col
         flex: 0 0 100%
 
-        
+
 .m-image
   margin: 20px 0
   position: relative

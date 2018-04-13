@@ -45,7 +45,10 @@
     // audio track (waveform)
     .m-audio
       div(js-audio-waveform data-src='media/audio-drum.mp3')
-
+    .m-audio.m-audio--ie
+      audio
+        source(src="media/audio-drum.mp3" type="audio/mpeg")
+          
   .d-card__actions
     .d-card__like
       +icon('ico-like')

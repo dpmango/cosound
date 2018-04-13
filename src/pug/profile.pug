@@ -57,6 +57,9 @@ block content
                     //- img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
                   .m-audio
                     div(js-audio-waveform data-src='media/audio-piano.mp3' data-mini="true")
+                  .m-audio.m-audio--ie
+                    audio
+                      source(src="media/audio-piano.mp3" type="audio/mpeg")
                   .m-music__tracks
                     .m-music__track
                       span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]

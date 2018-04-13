@@ -9,6 +9,9 @@ $(document).ready(function(){
   // http://selectize.github.io/selectize.js/
   // https://goodies.pixabay.com/jquery/tag-editor/demo.html
 
+  // svg optimizations?
+  // https://github.com/arjunmehta/svg-animation-cpu-optimize
+
 
   //////////
   // Global variables
@@ -990,7 +993,14 @@ $(document).ready(function(){
     // MEDIAELEMENT.js
     // https://github.com/mediaelement/mediaelement/blob/master/docs/api.md
 
-    $('video, audio').mediaelementplayer({
+    var mediaPlayerSelectors
+
+    if ( msieversion() ){
+      mediaPlayerSelectors = $('video, audio')
+    } else {
+      mediaPlayerSelectors = $('video')
+    }
+    mediaPlayerSelectors.mediaelementplayer({
     	// Do not forget to put a final slash (/)
     	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
     	// this will allow the CDN to use Flash without restrictions
@@ -1009,7 +1019,8 @@ $(document).ready(function(){
     });
 
     // WAVESURFER
-    if ( $('[js-audio-waveform]').length > 0 ){
+    // IE DOESN't SUPPORT WEB AUDIO
+    if ( $('[js-audio-waveform]').length > 0 && !msieversion() ){
 
       $('[js-audio-waveform]').each(function(i, wave){
         var waveContainer = wave;
