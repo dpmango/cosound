@@ -150,6 +150,12 @@
         height: 2px
         background: linear-gradient(to right, #8E5ACD, #21B0B0)
 
++r($hd)
+  .m-music
+    &__volume
+      &-bar
+        left: auto
+        right: 35px
 
 
 /* video
@@ -176,13 +182,16 @@
   &__time-current
     left: 0
 
+//* IE fix (doesn't support feature)
+// mediaelement.js is used instead
 .is-ie
   .m-audio
     display: none
     &--ie
       display: block
-  .m-music__play
-    display: none
+  .m-music
+    &__play, &__volume
+     display: none
 
 
 /* gallery

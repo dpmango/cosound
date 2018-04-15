@@ -14,7 +14,7 @@ block content
       // top
       .market__top
         .market__top-left
-          .d-card
+          .d-card.wow(data-animation-class="wowFadeLeft")
             .sidebar-user
               .sidebar-user__avatar
                 .avatar.avatar--big
@@ -22,7 +22,7 @@ block content
               .sidebar-user__name Lois Stokes
               .sidebar-user__position Job Title/Artist Name.
                        
-        .market__top-right
+        .market__top-right.wow(data-animation-class="wowFadeRight")
           //slider
           .market__slider.swiper-container(js-market-slider)
             .swiper-wrapper

@@ -7,6 +7,12 @@ gulp.task('copy:fonts', function() {
     .pipe(gulp.dest(config.dest.fonts));
 });
 
+gulp.task('copy:json', function() {
+  return gulp
+    .src(config.src.json + '/**/*.*')
+    .pipe(gulp.dest(config.dest.json));
+});
+
 gulp.task('copy:media', function() {
   return gulp
     .src(config.src.media + '/**/*.*')
@@ -29,12 +35,14 @@ gulp.task('copy', [
   // 'copy:rootfiles',
   'copy:vendor',
   'copy:fonts',
+  'copy:json',
   'copy:media'
 ]);
 
 gulp.task('copy:watch', function() {
   gulp.watch(config.src.fonts + '/*.{ttf,eot,woff,woff2}', ['copy:fonts']);
   gulp.watch(config.src.media + '/**/*.*', ['copy:media']);
+  gulp.watch(config.src.json + '/**/*.*', ['copy:json']);
   gulp.watch(config.src.vendor + '/**/*.*', ['copy:vendor']);
   // gulp.watch(config.src.root + '/*.*', ['copy:rootfiles']);
 });

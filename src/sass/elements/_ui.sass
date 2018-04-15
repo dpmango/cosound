@@ -6,6 +6,7 @@
   position: relative
   margin-bottom: 35px
   width: 100%
+  text-align: left
   label
     display: block
     margin-bottom: 10px
@@ -35,6 +36,16 @@
       transform: translateY(-50%)
       &-search
         font-size: 18px
+
+  // when selectize is active (without + selector)
+  .ico-search
+    position: absolute
+    top: 50%
+    right: 20px
+    z-index: 2
+    transform: translateY(-50%)
+    font-size: 18px
+
   textarea
     resize: vertical
 

@@ -16,14 +16,14 @@ block content
           include ../inline-svg/hero-bg-profile.svg
       .container
         .profile__info
-          .avatar.avatar--big
+          .avatar.avatar--big.wow(data-animation-class="wowFadeUp")
             img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
-          .profile__name Lois Stokes
+          .profile__name.wow(data-animation-delay=".4s") Lois Stokes
   
           
     .container
       // settings
-      .profile-settings
+      .profile-settings.wow
         .profile__categories(js-scrollbar)
           a(href="#").profile__category.--violet.is-active
             i.icon.icon-profile-gears
@@ -39,7 +39,7 @@ block content
             span Support Center
       
       .profile-tabs
-        .profile-tabs__sidebar(js-tabs)
+        .profile-tabs__sidebar(js-tabs).wow(data-animation-class="wowFadeLeft" data-animation-delay=".5s")
           ul.profile-tabs__links
             li(data-target="tab1").is-active Contact information 
             li(data-target="tab2") Cover photo
@@ -47,7 +47,7 @@ block content
             li(data-target="tab4") Notification settings 
             li(data-target="tab5") Other
             
-        .profile-tabs__content
+        .profile-tabs__content.wow
           // tab
           .profile-tabs__tab(data-tab="tab1").is-active
             .ui-group

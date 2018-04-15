@@ -16,17 +16,17 @@ block content
           include ../inline-svg/hero-bg-profile.svg
       .container
         .profile__info
-          .profile__image
+          .profile__image.wow(data-animation-class="wowFadeDown")
             .avatar.avatar--big
               img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
-          .profile__status
-            a(href="#") Premium
-          .profile__name Lois Stokes
-          .profile__position Job Title/Artist Name.
-          .profile__connections
+          a(href="#" data-animation-delay=".4s").profile__status.wow
+            span Premium
+          .profile__name.wow(data-animation-delay=".5s") Lois Stokes
+          .profile__position.wow(data-animation-delay=".6s") Job Title/Artist Name.
+          .profile__connections.wow(data-animation-delay=".8s")
             .profile__connections-num 500+ 
             .profile__connections-name Connections
-          .profile__bio
+          .profile__bio.wow
             p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     
     // DASH CONTENT
@@ -35,7 +35,7 @@ block content
         .dash__sidebar
           .dash__sidebar-wrap(js-sticky-area js-sticky-bp="992")
             // card
-            .d-card
+            .d-card.wow
               .d-card__head
                 .d-card__title My Music
                 .d-card__action(js-do-some)
@@ -78,7 +78,7 @@ block content
                   a(href="#" js-load-more) View More…
                 
             // card
-            .d-card
+            .d-card.wow
               .d-card__head
                 .d-card__title My images
                 .d-card__action(js-do-some)
@@ -120,7 +120,7 @@ block content
         // DASH CONTENT (CENTER COL)    
         .dash__content
           //card
-          .d-card
+          .d-card.wow
             form(action="#").create-post
               .create-post__writting
                 textarea(name="content" placeholder="Wright something…" rows="5" data-min-rows="5")

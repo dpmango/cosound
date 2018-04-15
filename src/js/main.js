@@ -307,7 +307,7 @@ $(document).ready(function(){
         window.location.href="/signup-3.html"
       }
 
-    },1000))
+    },500))
 
   //////////
   // PROFILE/DASH FUNCTIONS
@@ -762,7 +762,7 @@ $(document).ready(function(){
   		},
     });
     // $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
-    $('[js-mask-cc]').mask('9999     9999     9999     9999');
+    $('[js-mask-cc]').mask('9999  9999  9999  9999');
     $("[js-mask-mmyy]").mask('A9/B9', {
       translation: {
         A: { pattern: /[0-1]/ },
@@ -841,16 +841,55 @@ $(document).ready(function(){
 
   function initSelectize(){
     $('[js-selectize]').selectize({
+      plugins: ['remove_button'],
       delimiter: ',',
       persist: false,
+      createOnBlur: true,
+      // closeAfterSelect: true,
+      // allowEmptyOption: true,
       create: function(input) {
         return {
           value: input,
           text: input
         }
       },
-
     });
+
+    // GENRES from step 3 of signup
+    if ( $('[js-selectize-genres]').length > 0 ){
+      var $genresSelect = $('[js-selectize-genres]').selectize({
+        plugins: ['remove_button'],
+        delimiter: ',',
+        persist: false,
+        createOnBlur: true,
+        maxOptions: 10,
+        maxItems: 3,
+        create: false,
+        options: [],
+        valueField: 'id',
+        labelField: 'name',
+        searchField: 'name',
+        preload: true,
+        load: function(query, callback) {
+          if (!query.length) return callback();
+          $.ajax({
+            // + encodeURIComponent(query)
+            // better to get sorting on back-end side
+            // and not process whole array
+            url: 'json/genres.json',
+            type: 'GET',
+            dataType: 'json',
+            error: function() {
+              callback();
+            },
+            success: function(res) {
+              callback(res);
+            }
+          });
+        }
+      })[0].selectize;
+    }
+
   }
 
   // SHOW SELECTED IMAGE IN READER
@@ -1161,7 +1200,6 @@ $(document).ready(function(){
         teleport();
         _window.on('resize', debounce(teleport, 100));
 
-
       }
     })
   }
@@ -1462,7 +1500,7 @@ $(document).ready(function(){
 
       anime({
         targets: "html, body",
-        scrollTop: 0,
+        scrollTop: 1,
         easing: easingSwing, // swing
         duration: 150
       });
@@ -1497,7 +1535,7 @@ $(document).ready(function(){
 
   // some plugins get bindings onNewPage only that way
   function triggerBody(){
-    _window.scrollTop(1);
+    _window.scrollTop(0);
     _window.scroll();
     _window.resize();
   }
