@@ -184,10 +184,17 @@ $(document).ready(function(){
 
 
   // HAMBURGER TOGGLER
-  _document.on('click', '[js-hamburger]', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
-  });
+  _document
+    .on('click', '[js-hamburger]', function(){
+      $(this).toggleClass('is-active');
+      $('.mobile-navi').toggleClass('is-active');
+    })
+    .on('click', function(e){
+      if ( !$(e.target).closest('.header').length > 0 && 
+           !$(e.target).closest('.mobile-navi__wrapper').length > 0 ){
+        closeMobileMenu();
+      }
+    })
 
   function closeMobileMenu(){
     $('[js-hamburger]').removeClass('is-active');

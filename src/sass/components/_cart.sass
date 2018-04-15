@@ -1,3 +1,17 @@
+// kind of wrapper
+// possible refactor
+.cart
+  margin-top: 165px
+  margin-bottom: 40px
+
++r($tablet)
+  .cart
+    margin-top: 115px
+
++r($mobile)
+  .cart
+    margin-top: 87px
+
 .cart-list
 
 .cart-item
@@ -8,6 +22,7 @@
   min-width: 1px
   border-top: 1px solid $borderColor20
   &__image
+    display: block
     flex: 0 0 113px
     max-width: 113px
     position: relative
@@ -16,8 +31,11 @@
     border-radius: 6px
     overflow: hidden
     font-size: 0
+    transition: .25s $ease
     img
       width: 100%
+    &:hover
+      box-shadow: 0 3px 4px 0 rgba(0,0,0,0.06)
   &__info
     margin-left: 20px
     flex: 0 1 auto
@@ -34,10 +52,14 @@
       padding-right: 20px
 
   &__name
+    display: block
     font-size: 20px
     line-height: 1.7
     font-weight: 500
     +text-overflow
+    transition: .25s $ease
+    &:hover
+      color: $colorAqua
 
   &__rating
     display: flex

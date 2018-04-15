@@ -334,7 +334,12 @@
       display: none
     &--dash
       .header
-        //
+        &__wrapper
+          //* minus 40px
+          padding-top: 15px
+          padding-bottom: 15px
+      &.js-should-scroll.is-scrolled
+        transform: translate3d(0,0,0)
 
 +r($mobile)
   .header

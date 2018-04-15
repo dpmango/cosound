@@ -3,6 +3,10 @@
   z-index: 2
   margin-top: 100px
 
++r($tablet)
+  .feed
+    margin-top: 60px
+
 .dash
   display: flex
   margin: 50px -12px
@@ -63,6 +67,7 @@
       .dash
         &__sidebar
           max-width: 100%
+          flex-basis: auto
           &-wrap
             justify-content: center
         &__content
