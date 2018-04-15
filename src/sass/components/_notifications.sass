@@ -17,6 +17,11 @@
       .notifications
         &__wrapper
           max-height: calc(100vh - 72px - 42px)
+    +r($tablet)
+      top: 72px
+      .notifications
+        &__wrapper
+          max-height: calc(100vh - 72px - 42px)
   &.is-active
     opacity: 1
     pointer-events: all
