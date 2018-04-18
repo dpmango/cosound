@@ -1,0 +1,83 @@
+.services
+  margin-top: 50px
+  margin-bottom: 150px
+  max-width: 850px
+  margin-left: auto
+  margin-right: auto
+  &__head
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    &-sorting
+      display: flex
+      align-items: center
+      span
+        font-size: 14px
+        display: inline-block
+        margin-right: 5px
+
+
+  &__wrapper
+    position: relative
+    z-index: 1
+    background: #FFFFFF
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+    border-radius: 10px
+    padding: 0 40px
+    margin-top: 25px
+    &--no-bg
+      background: transparent
+      box-shadow: none
+
+  &--option-b
+    max-width: 770px
+    .services
+      &__wrapper
+        background: transparent
+        box-shadow: none
+        padding: 0
+
+    .services-item
+      border-top: 1px solid $borderColor20
+      border-bottom: 0
+
+.services-item
+  position: relative
+  z-index: 1
+  display: flex
+  border-bottom: 1px solid $borderColor20
+  padding: 35px 0
+  &:hover
+    .services-item
+      &__name
+        color: $colorAqua
+      // .avatar
+      //   transform: translateX(-5px)
+  &:last-child
+    border-bottom: 0
+
+  &__content
+    flex: 1 1 auto
+    margin-left: 20px
+
+  &__name
+    font-size: 20px
+    font-weight: 500
+    line-height: 1.6
+    transition: .25s $ease
+
+  &__category
+    font-size: 14px
+    color: $fontColor50
+    line-height: 1.5
+    margin-top: -.3em
+  &__desc
+    margin-top: 10px
+    font-size: 14px
+    line-height: 1.9
+    p
+      margin: 0
+      & + p
+        margin-top: 1em

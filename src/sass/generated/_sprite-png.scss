@@ -18,7 +18,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -65px,
+		offset-x: -117px,
 		offset-y: -193px,
 		width: 14px,
 		height: 14px,
@@ -63,8 +63,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	pay-jcb: (
-		offset-x: -185px,
-		offset-y: 0px,
+		offset-x: -125px,
+		offset-y: -104px,
 		width: 35px,
 		height: 21px,
 		total-width: 220px,
@@ -73,7 +73,7 @@ $sprite: (
 	),
 	pay-maestro-old: (
 		offset-x: -185px,
-		offset-y: -31px,
+		offset-y: 0px,
 		width: 35px,
 		height: 21px,
 		total-width: 220px,
@@ -90,8 +90,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	pay-paypal: (
-		offset-x: -125px,
-		offset-y: -104px,
+		offset-x: -185px,
+		offset-y: -31px,
 		width: 35px,
 		height: 21px,
 		total-width: 220px,
@@ -108,7 +108,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	profile-communication: (
-		offset-x: -35px,
+		offset-x: -69px,
 		offset-y: -158px,
 		width: 26px,
 		height: 21px,
@@ -117,7 +117,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	profile-gears: (
-		offset-x: -129px,
+		offset-x: -168px,
 		offset-y: -158px,
 		width: 18px,
 		height: 18px,
@@ -125,17 +125,35 @@ $sprite: (
 		total-height: 216px,
 		image: '../img/sprite.png'
 	),
-	profile-privacy: (
-		offset-x: -102px,
+	profile-history: (
+		offset-x: -136px,
 		offset-y: -158px,
+		width: 22px,
+		height: 19px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
+	profile-privacy: (
+		offset-x: -65px,
+		offset-y: -193px,
 		width: 17px,
 		height: 20px,
 		total-width: 220px,
 		total-height: 216px,
 		image: '../img/sprite.png'
 	),
+	profile-services: (
+		offset-x: -35px,
+		offset-y: -158px,
+		width: 24px,
+		height: 23px,
+		total-width: 220px,
+		total-height: 216px,
+		image: '../img/sprite.png'
+	),
 	profile-support: (
-		offset-x: -71px,
+		offset-x: -105px,
 		offset-y: -158px,
 		width: 21px,
 		height: 21px,
@@ -144,7 +162,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -89px,
+		offset-x: -141px,
 		offset-y: -193px,
 		width: 15px,
 		height: 11px,
@@ -180,7 +198,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -157px,
+		offset-x: -196px,
 		offset-y: -158px,
 		width: 19px,
 		height: 15px,
@@ -189,7 +207,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -114px,
+		offset-x: -166px,
 		offset-y: -193px,
 		width: 10px,
 		height: 10px,
@@ -198,7 +216,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -134px,
+		offset-x: -186px,
 		offset-y: -193px,
 		width: 10px,
 		height: 10px,
@@ -216,8 +234,8 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	time: (
-		offset-x: -186px,
-		offset-y: -158px,
+		offset-x: -92px,
+		offset-y: -193px,
 		width: 15px,
 		height: 15px,
 		total-width: 220px,
@@ -322,8 +340,14 @@ $sprite: (
 	.icon-profile-gears {
 		@include sprite(profile-gears)
 	}
+	.icon-profile-history {
+		@include sprite(profile-history)
+	}
 	.icon-profile-privacy {
 		@include sprite(profile-privacy)
+	}
+	.icon-profile-services {
+		@include sprite(profile-services)
 	}
 	.icon-profile-support {
 		@include sprite(profile-support)

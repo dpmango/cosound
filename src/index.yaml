@@ -45,3 +45,7 @@ PageList:
   ready: 90
 - file: payment.html
   ready: 90
+- file: purchased-services.html
+  ready: 90
+- file: purchased-services-b.html
+  ready: 90
