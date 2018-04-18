@@ -1,0 +1,54 @@
+---
+title: Create Service
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero.profile__hero--short
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .avatar.avatar--big.wow(data-animation-class="wowFadeUp")
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__name.wow(data-animation-delay=".4s") Lois Stokes
+  
+          
+    .container
+      // settings
+      .profile-settings.wow
+        .profile__categories(js-scrollbar)
+          a(href="purchased-services.html").profile__category.--violet
+            i.icon.icon-profile-gears
+            span Purchased Services 
+          a(href="#").profile__category.--blue.is-active
+            i.icon.icon-profile-services
+            span Offered Services
+          a(href="#").profile__category.--aqua
+            i.icon.icon-profile-history
+            span Historic
+          a(href="#").profile__category.--blue-mute
+            i.icon.icon-profile-support
+            span Support Center
+      
+      // SERVICES
+      .services
+        .services-create
+          .services-create__title Nice! Let's create your first service!
+          
+          form(action="#").services-create__form
+            .ui-group.wow(data-animation-delay=".6s" style="z-index: 2")
+              label What type of service are you offering?            
+              input(type="text" name="genres" placeholder="Music Genres" js-selectize-genres)
+            
+            .services-create__cta
+              button(type="submit").btn.btn-primary.btn-primary--red
+                span Next
+            
