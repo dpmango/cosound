@@ -190,7 +190,7 @@ $(document).ready(function(){
       $('.mobile-navi').toggleClass('is-active');
     })
     .on('click', function(e){
-      if ( !$(e.target).closest('.header').length > 0 && 
+      if ( !$(e.target).closest('.header').length > 0 &&
            !$(e.target).closest('.mobile-navi__wrapper').length > 0 ){
         closeMobileMenu();
       }
@@ -468,6 +468,10 @@ $(document).ready(function(){
       switchTabs(origin, dataTab, targetTab);
     }
   }
+
+  // CREATE SERVICES
+  /////////////////
+
 
 
   // Sticky
@@ -900,9 +904,15 @@ $(document).ready(function(){
   }
 
   // SHOW SELECTED IMAGE IN READER
+  $('[js-photo-upload] input').on('change', function (e) {
+    var parent = $(this).parent();
+    readURL(this);
+  });
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var parent = $(input).parent();
+      console.log(input)
       var targetPlaceholder = parent.find('img');
       var reader = new FileReader();
 
@@ -914,11 +924,6 @@ $(document).ready(function(){
       reader.readAsDataURL(input.files[0]);
     }
   }
-
-  $('[js-photo-upload] input').on('change', function (e) {
-    var parent = $(this).parent();
-    readURL(this);
-  });
 
   // MULTIPLE INPUTS
   _document
@@ -1457,6 +1462,164 @@ $(document).ready(function(){
         name: {
           required: "This field is required",
         },
+        name: {
+          required: "This field is required",
+        },
+      }
+    });
+
+    //////////////
+    // CREATE SERVICES
+    /////////////
+    function nextStep(num){
+      var target = $('[data-step='+num+']');
+      console.log(target);
+
+      if ( target ){
+        target.siblings().slideUp();
+        target.slideDown();
+      }
+
+    }
+
+    $("[js-validateCreate-1]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: function(form) {
+        $(form).addClass('loading');
+        // $.ajax({
+        //   type: "POST",
+        //   url: $(form).attr('action'),
+        //   data: $(form).serialize(),
+        //   success: function(response) {
+        //     $(form).removeClass('loading');
+        //     var data = $.parseJSON(response);
+        //     if (data.status == 'success') {
+        //       // do something I can't test
+        //     } else {
+        //         $(form).find('[data-error]').html(data.message).show();
+        //     }
+        //   }
+        // });
+        console.log(form)
+        nextStep( $(form).data('next-step') )
+
+      },
+      rules: {
+        genres: {
+          required: true,
+        },
+      },
+      messages: {
+        genres: {
+          required: "This field is required",
+        },
+      }
+    });
+
+    // step 2
+    $("[js-validateCreate-2]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: function(form) {
+        $(form).addClass('loading');
+        // $.ajax({
+        //   type: "POST",
+        //   url: $(form).attr('action'),
+        //   data: $(form).serialize(),
+        //   success: function(response) {
+        //     $(form).removeClass('loading');
+        //     var data = $.parseJSON(response);
+        //     if (data.status == 'success') {
+        //       // do something I can't test
+        //     } else {
+        //         $(form).find('[data-error]').html(data.message).show();
+        //     }
+        //   }
+        // });
+        nextStep( $(form).data('next-step') )
+
+      },
+      rules: {
+        description: {
+          required: true,
+        },
+      },
+      messages: {
+        description: {
+          required: "This field is required",
+        },
+      }
+    });
+
+    // step 3
+    $("[js-validateCreate-3]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: function(form) {
+        $(form).addClass('loading');
+        // $.ajax({
+        //   type: "POST",
+        //   url: $(form).attr('action'),
+        //   data: $(form).serialize(),
+        //   success: function(response) {
+        //     $(form).removeClass('loading');
+        //     var data = $.parseJSON(response);
+        //     if (data.status == 'success') {
+        //       // do something I can't test
+        //     } else {
+        //         $(form).find('[data-error]').html(data.message).show();
+        //     }
+        //   }
+        // });
+        nextStep( $(form).data('next-step') )
+
+      },
+      rules: {
+        cost: {
+          required: true,
+        },
+      },
+      messages: {
+        cost: {
+          required: "This field is required",
+        },
+      }
+    });
+
+    // step 4
+    $("[js-validateCreate-4]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: function(form) {
+        $(form).addClass('loading');
+        // $.ajax({
+        //   type: "POST",
+        //   url: $(form).attr('action'),
+        //   data: $(form).serialize(),
+        //   success: function(response) {
+        //     $(form).removeClass('loading');
+        //     var data = $.parseJSON(response);
+        //     if (data.status == 'success') {
+        //       // do something I can't test
+        //     } else {
+        //         $(form).find('[data-error]').html(data.message).show();
+        //     }
+        //   }
+        // });
+        nextStep( $(form).data('next-step') )
+
+      },
+      rules: {
+        name: {
+          required: true,
+        },
+      },
+      messages: {
         name: {
           required: "This field is required",
         },
