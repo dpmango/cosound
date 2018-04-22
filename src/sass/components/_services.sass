@@ -4,15 +4,21 @@
   max-width: 850px
   margin-left: auto
   margin-right: auto
+  &--wide
+    max-width: 100%
+
   &__head
     position: relative
     z-index: 2
     display: flex
     align-items: center
-    justify-content: flex-end
+    &-name
+      color: $fontColor50
+      font-size: 14px
     &-sorting
       display: flex
       align-items: center
+      margin-left: auto
       span
         font-size: 14px
         display: inline-block
@@ -49,6 +55,7 @@
   display: flex
   border-bottom: 1px solid $borderColor20
   padding: 35px 0
+  text-align: left
   &:hover
     .services-item
       &__name
@@ -81,6 +88,19 @@
       margin: 0
       & + p
         margin-top: 1em
+    &--row
+      display: flex
+
+  &__cta
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    padding-left: 10px
+    .btn
+      margin-right: 7px
+      &:last-child
+        margin-right: 0
+
 
 /* No services
 .services-no
@@ -119,8 +139,24 @@
     text-align: center
     margin-top: 100px
 
+  &__price-hint
+    display: flex
+    align-items: center
+    text-align: center
+    justify-content: center
+    margin-top: 65px
+    margin-bottom: -20px
+    color: $colorBlue
+    font-size: 16px
+    span
+      margin-right: 10px
+      display: inline-block
+    .ico
+      font-size: 25px
+
   &__step
     display: none
+
     &.is-active
       display: block
 

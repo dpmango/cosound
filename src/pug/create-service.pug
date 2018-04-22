@@ -37,9 +37,10 @@ block content
           a(href="#").profile__category.--blue-mute
             i.icon.icon-profile-support
             span Support Center
-      
+    
+    .container.container--wide
       // SERVICES
-      .services
+      .services.services--wide
         .services-create
           .services-create__title.wow Nice! Let's create your first service!
           
@@ -69,8 +70,12 @@ block content
               form(action="#" js-validateCreate-3 data-next-step="4").services-create__form
                 .ui-group
                   label What is the cost of this service?         
-                  input(type="text" name="cost" placeholder="Cost")
+                  input(type="text" name="cost" placeholder="Cost" js-mask-price)
                 
+                .services-create__price-hint
+                  span Price will be given after a consultation
+                  +icon('ico-check-outline')
+                  
                 .services-create__cta
                   button(type="submit").btn.btn-primary.btn-primary--red
                     span Next
@@ -81,6 +86,11 @@ block content
                   label Name your service
                   input(type="text" name="name" placeholder="Service name")
                 
+                // shoud it be here?
+                .services-create__price-hint
+                  span Price will be given after a consultation
+                  +icon('ico-check-outline')
+                      
                 .services-create__cta
                   button(type="submit").btn.btn-primary.btn-primary--red
                     span Next

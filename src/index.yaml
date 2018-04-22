@@ -52,4 +52,8 @@ PageList:
 - file: no-services.html
   ready: 70
 - file: create-service.html
+  ready: 70
+- file: advanced-search.html
   ready: 50
+- file: advanced-search-results.html
+  ready: 40

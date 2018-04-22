@@ -26,6 +26,9 @@ button
     border-radius: 45px
     padding: 8px 35px
     min-width: 166px
+    &:hover
+      box-shadow: 0 7px 20px 0 rgba(0,0,0,0.15)
+
     &--red
       background: $colorRed
       color: white
@@ -38,9 +41,31 @@ button
       &:hover
         background: $fontColor
         color: white
-
-    &:hover
-      box-shadow: 0 7px 20px 0 rgba(0,0,0,0.15)
+    &--smaller
+      font-size: 14px
+      padding: 7px 25px
+      min-width: 111px
+    &--aqua
+      background: $colorAqua
+      color: white
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        background: $fontColor
+        color: white
+        box-shadow: none
+    &--violet
+      background: $colorViolet
+      color: white
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        background: $fontColor
+        color: white
+        box-shadow: none
+    &--disabled
+      color: #8E8E8E
+      background: #F5F5F5
+      pointer-events: none
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
 
     .ico, .icon
       position: absolute

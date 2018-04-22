@@ -1,5 +1,5 @@
 ---
-title: PAYMENT
+title: Payment page
 ---
 extends shared/_layout
 
@@ -8,16 +8,16 @@ block header
   
 block content
   
-  // PAYMENT
-  .payment
+  // Payment page
+  .full-height-wrap
     .container
-      .payment__title.wow(data-animation-delay=".1s") Please add your card info
-      .payment__subtitle.wow(data-animation-delay=".2s") We wont keep any personal information about your card in our system.
+      .f-page__title.wow(data-animation-delay=".1s") Please add your card info
+      .f-page__subtitle.wow(data-animation-delay=".2s") We wont keep any personal information about your card in our system.
       
-      form.payment__form(action="#" js-validate-cc)
+      form.f-page__form(action="#" js-validate-cc)
         .ui-group.wow(data-animation-delay=".4s")
           input(type="text" name="cc" placeholder="XXXX  XXXX  XXXX  XXXX" js-mask-cc)
-        .payment__form-row
+        .f-page__form-row
           .ui-group.wow(data-animation-delay=".4s")
             input(type="text" placeholder="MM/YY" js-mask-mmyy)
           .ui-group.wow(data-animation-delay=".5s")
@@ -30,6 +30,6 @@ block content
           label(for="remember")
             span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         
-        .payment__form-cta.wow(data-animation-delay="1s")
+        .f-page__form-cta.wow(data-animation-delay="1s")
           button(type="submit").btn.btn-primary.btn-primary--red
             span Pay

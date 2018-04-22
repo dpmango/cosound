@@ -55,6 +55,8 @@
       &__placeholder
         img
           opacity: 1
+        .ico
+          opacity: 0
   &--top-label
     .photo-uploader
       &__name
@@ -70,6 +72,14 @@
         font-size: 58px
         .ico
           opacity: 1
+
++r($tablet)
+  .photo-uploader
+    &--boxed
+      .photo-uploader
+        &__placeholder
+          size: 220px
+          font-size: 50px
 
 +r($mobile)
   .photo-uploader

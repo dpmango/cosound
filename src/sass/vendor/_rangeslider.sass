@@ -293,3 +293,43 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle
   transform: translate(0, -50%)
   top: 50%
   right: 120%
+
+// Themes
+.noUi-main-theme
+  &.noUi-target
+    background: none
+    border: 0
+    margin-top: -5px
+    box-shadow: none
+    &::after
+      display: inline-block
+      content: ' '
+      background: white
+      height: 2px
+      position: absolute
+      left: 12px
+      right: 12px
+      top: 20px
+  &.noUi-horizontal
+    height: 40px
+    overflow: hidden
+    padding-left: 12px
+    padding-right: 12px
+  .noUi-base
+    padding-top: 12px
+    padding-bottom: 12px
+
+  .noUi-handle
+    border-radius: 50%
+    size: 25px
+    right: -13px !important
+    top: -13px !important
+    background: $colorViolet2
+    box-shadow: 0 5px 10px 0 rgba(139,88,200,0.32)
+    cursor: pointer
+    &::before, &::after
+      display: none
+  .noUi-origin
+    top: 20px
+    height: 2px
+    background: $colorViolet2
