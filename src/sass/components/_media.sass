@@ -256,7 +256,10 @@
   .m-img-row
     &[data-images="2"]
       .m-img-row__col
-        flex: 0 0 100%
+        flex: 0 0 calc(100% + 50px)
+        margin-left: -25px
+        margin-right: -25px
+        border-radius: 0
 
 
 .m-image
@@ -268,3 +271,9 @@
   img
     max-width: 100%
     width: 100%
+
++r($mobile)
+  .m-image
+    margin-left: -25px
+    margin-right: -25px
+    border-radius: 0

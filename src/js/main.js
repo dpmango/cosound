@@ -1274,6 +1274,8 @@ $(document).ready(function(){
             self.html(objHtml)
             target.html("")
           }
+
+          initScrollMonitor();
         }
 
         teleport();

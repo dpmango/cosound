@@ -57,3 +57,5 @@ PageList:
   ready: 50
 - file: advanced-search-results.html
   ready: 60
+- file: promo.html
+  ready: 50
