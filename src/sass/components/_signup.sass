@@ -153,6 +153,7 @@
     &__skip
       margin-top: 35px
 
+$colorStep: #2a8b8b
 
 /* Signup step
 .signup-step
@@ -225,7 +226,7 @@
       width: 100%
       left: -50%
       background-color: $colorGreen2
-      background: linear-gradient(to right, $colorViolet2, $colorGreen2)
+      background: linear-gradient(to right, $colorStep, $colorGreen2)
     .signup-step__progress
       &::before
         background: $colorGreen2
@@ -240,16 +241,16 @@
   &.is-done
     pointer-events: all
     &::before, &::after
-      background-color: $colorViolet2
+      background-color: $colorStep
     .signup-step__progress
       &::before
-        background: $colorViolet2
+        background: $colorStep
         border-color: transparent
-        box-shadow: 0 5px 10px 0 rgba($colorViolet2,0.32)
+        box-shadow: 0 5px 10px 0 rgba($colorStep,0.32)
       &::after
         transform: translate(-50%,-50%) scale(1)
     span
-      color: $colorViolet2
+      color: $colorStep
       transition: .25s $ease
     &:hover
       .signup-step__progress
