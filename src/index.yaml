@@ -56,4 +56,4 @@ PageList:
 - file: advanced-search.html
   ready: 50
 - file: advanced-search-results.html
-  ready: 40
+  ready: 60
