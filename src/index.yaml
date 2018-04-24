@@ -23,6 +23,12 @@ PageList:
   ready: 90
 - file: profile.html
   ready: 90
+- file: profile-2.html
+  ready: 90
+- file: profile-3.html
+  ready: 90
+- file: profile-4.html
+  ready: 90
 - file: dashboard.html
   ready: 90
 - file: marketplace.html
