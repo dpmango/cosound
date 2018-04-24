@@ -172,11 +172,11 @@ $(document).ready(function(){
 
       if ( vScroll > 10 ){
         header.addClass('is-scrolled');
-        $('.notifications--fixed').addClass('is-scrolled')
+        $('.ntf--fixed').addClass('is-scrolled')
         $('.mobile-navi').addClass('is-scrolled')
       } else {
         header.removeClass('is-scrolled');
-        $('.notifications--fixed').removeClass('is-scrolled')
+        $('.ntf--fixed').removeClass('is-scrolled')
         $('.mobile-navi').removeClass('is-scrolled')
       }
     }, 10));
@@ -324,10 +324,10 @@ $(document).ready(function(){
     // notifications toggle
     .on('click', '[js-header-notifications]', function(e){
       $(this).toggleClass('is-active');
-      $('.notifications').toggleClass('is-active');
+      $('.ntf').toggleClass('is-active');
     })
     .on('click', function(e){
-      if ( !$(e.target).closest('.notifications').length > 0 &&
+      if ( !$(e.target).closest('.ntf').length > 0 &&
            !$(e.target).closest('[js-header-notifications]').length > 0 ){
         closeNotifications();
       }
@@ -410,7 +410,7 @@ $(document).ready(function(){
 
   function closeNotifications(){
     $('[js-header-notifications]').removeClass('is-active');
-    $('.notifications').removeClass('is-active');
+    $('.ntf').removeClass('is-active');
   }
 
   //////////

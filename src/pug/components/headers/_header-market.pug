@@ -9,9 +9,11 @@ header.header.header--dash.header--bg.js-should-scroll
       
     include _actions
 
-    .header__premium
-      a(href="plans.html") Premium
-      
+    //- .header__premium
+    //-   a(href="plans.html") Premium
+    
+    include _user
+    
     .header__hamburger
       .hamburger.hamburger--squeeze(js-hamburger)
         .hamburger-box
@@ -39,24 +41,8 @@ header.header.header--dash.header--bg.js-should-scroll
 // MOBILE NAV
 .mobile-navi.mobile-navi--market.mobile-navi--fixed
   .mobile-navi__wrapper(js-scrollbar)
-    .header__search
-      .header__search-input
-        input(name="search" type="text" placeholder="Search.." js-header-search)
-        +icon('ico-search')
-      .header__search-drop(js-header-searchResults)
-        li
-          a(href="#") Music
-        li
-          a(href="#") Music Lounge
-        li
-          a(href="#") Music Rock
-        li
-          a(href="#") Music Listen
-        li
-          a(href="#") Music
-        li
-          a(href="#") Music Lounge
-        .header__search-no-results No results found for <span>qqq</span> query
+    include _search
+    
     ul.mobile-navi__menu
       li
         a(href="#") about us. 
