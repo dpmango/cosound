@@ -64,4 +64,4 @@ PageList:
 - file: advanced-search-results.html
   ready: 90
 - file: promo.html
-  ready: 50
+  ready: 90

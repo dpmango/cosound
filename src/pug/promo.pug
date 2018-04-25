@@ -70,14 +70,18 @@ block content
     
   // INFO
   .info
+    .info__bg
+      .info__bg-wrapper
+        include ../inline-svg/infoPromoBg.svg
     .container
       .info__wrapper
         .info__content.wow(data-animation-class="wowFadeRight")
           h2.heading.c-aqua Artist Development
           .info__text
             p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
-            a(href="signup.html").btn.btn-primary.btn-primary--red
-              span Get Started
+            .info__cta
+              a(href="signup.html").btn.btn-primary.btn-primary--red
+                span Get Started
         .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
           .info__image-mask
             img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')

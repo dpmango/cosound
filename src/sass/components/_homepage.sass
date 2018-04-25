@@ -87,7 +87,11 @@
 
 // INFO
 .info
+  position: relative
   margin-top: 90px
+  & + .info
+    margin-top: 200px
+
   &--m-bottom
     margin-bottom: 150px
   &__wrapper
@@ -103,6 +107,27 @@
           padding-right: 5%
           margin-left: 0
           margin-right: auto
+
+  &__bg
+    position: absolute 0
+    top: 50px
+    display: flex
+    flex-direction: column
+
+    &-wrapper
+      flex: 1 1 auto
+      position: relative
+      max-height: 602px
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      // width: auto
+      width: 1920px
+      height: auto
 
   &__content
     flex: 0 0 auto
@@ -123,6 +148,8 @@
       margin-top: 0
       & + p
         margin-top: 1em
+  &__cta
+    margin-top: 26px
 
   &__image
     flex: 0 1 auto
@@ -148,6 +175,8 @@
       overflow: hidden
       font-size: 0
       box-shadow: 0 10px 60px 0 rgba(0,0,0,0.26)
+      img
+        max-width: 100%
     &-placeholder
       font-size: 0
       user-select: none
@@ -177,8 +206,19 @@
 
 +r($desktop)
   .info
+    & + .info
+      margin-top: 150px
+
+
     &__wrapper
       flex-direction: column-reverse
+      &--reverse
+        .info
+          &__image
+            margin-left: auto
+            margin-right: auto
+            padding-right: 0
+
     &__image
       padding-left: 0
       margin-left: auto
@@ -189,12 +229,12 @@
       margin-right: auto
       text-align: center
 
-+r($mobile)
-
 
 +r($tablet)
   .info
     margin-top: 0
+    & + .info
+      margin-top: 100px
     &--m-bottom
       margin-bottom: 120px
 
