@@ -51,6 +51,11 @@
   textarea
     resize: vertical
 
++r($mobile)
+  .ui-group
+    label:not(.ui-input__validation)
+      margin-bottom: 15px
+      font-size: 14px
 
 // Checkbox
 .ui-checkbox
@@ -127,7 +132,7 @@
       &:hover
         span
           color: $colorViolet
-          
+
 
 .ui-input__validation
   position: absolute

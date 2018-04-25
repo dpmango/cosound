@@ -30,12 +30,19 @@ block content
             span Is a service provider (optional)
         
         .adv-search__price
-          .ui-group
-            label Service Price
-            div(js-pricerange).noUi-main-theme
-            .adv-search__price-range
-              span(js-range-from)
-              span(js-range-to)
+          .adv-search__price-row
+            .ui-group
+              label Service Price
+              div(js-pricerange).noUi-main-theme
+              .adv-search__price-range
+                span(js-range-from)
+                span(js-range-to)
+            .ui-group
+              label Price per
+              select
+                option fixed
+                option hour
+                option monthly
             
         .f-page__form-cta.wow(data-animation-delay="1s")
           button(type="submit").btn.btn-primary.btn-primary--red

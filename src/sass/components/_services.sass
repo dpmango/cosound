@@ -6,7 +6,8 @@
   margin-right: auto
   &--wide
     max-width: 100%
-
+  &--top-offset
+    margin-top: 100px
   &__head
     position: relative
     z-index: 2
@@ -15,7 +16,12 @@
     &-name
       color: $fontColor50
       font-size: 14px
+      +text-overflow
+      padding-right: 15px
+      flex: 0 1 auto
+      min-width: 1px
     &-sorting
+      flex: 0 0 auto
       display: flex
       align-items: center
       margin-left: auto
@@ -49,6 +55,36 @@
       border-top: 1px solid $borderColor20
       border-bottom: 0
 
++r($tablet)
+  .services
+    &__wrapper
+      padding-left: 30px
+      padding-right: 30px
+
++r($mobile)
+  .services
+    margin-bottom: 80px
+    &--top-offset
+      margin-bottom: 0
+    &__wrapper
+      margin-left: -25px
+      margin-right: -25px
+      border-radius: 0
+      padding-left: 20px
+      padding-right: 25px
+    &--option-b
+      .services
+        &__wrapper
+          margin-left: 0
+          margin-right: 0
+    &__head
+      flex-direction: column
+      align-items: flex-start
+      &-name
+        flex: 0 0 auto
+        text-align: left
+        margin-bottom: 15px
+
 .services-item
   position: relative
   z-index: 1
@@ -72,14 +108,15 @@
   &__name
     font-size: 20px
     font-weight: 500
-    line-height: 1.6
+    line-height: 1.4
+    margin-top: 2px
     transition: .25s $ease
 
   &__category
     font-size: 14px
     color: $fontColor50
     line-height: 1.5
-    margin-top: -.3em
+    margin-top: -.1em
   &__desc
     margin-top: 10px
     font-size: 14px
@@ -101,6 +138,35 @@
       &:last-child
         margin-right: 0
 
++r($desktop)
+  .services-item
+    &__desc
+      &--row
+        flex-direction: column
+    &__cta
+      margin-top: 15px
+      margin-left: auto
+
++r($mobile)
+  .services-item
+    padding: 25px 0
+    &__name
+      font-size: 18px
+    &__category
+      font-size: 13px
+    &__content
+      margin-left: 15px
+    &__desc
+      font-size: 13px
+    &__cta
+      // margin-left: 0px
+      margin-right: auto
+      padding-left: 0
+      .btn
+        padding: 5px 7px
+        min-width: 100px
+
+
 
 /* No services
 .services-no
@@ -119,6 +185,26 @@
 
   &__cta
     margin-top: 60px
+
++r($tablet)
+  .services-no
+    margin-top: 100px
+    &__name
+      margin-top: 75px
+
++r($mobile)
+  .services-no
+    margin-top: 60px
+    &__icon
+      transform: scale(0.75)
+      transform-origin: center bottom
+    &__name
+      margin-top: 40px
+      font-size: 26px
+    &__desc
+      margin-top: 25px
+    &__cta
+      margin-top: 50px
 
 .services-create
   margin-top: 120px
@@ -176,3 +262,48 @@
     &-col
       padding: 15px
       flex: 0 1 auto
+
+
++r($tablet)
+  .services-create
+    margin-top: 90px
+    &__form
+      margin-top: 65px
+
+    &__cta
+      margin-top: 80px
+
++r($mobile)
+  .services-create
+    margin-top: 60px
+    &__title
+      font-size: 26px
+    &__form
+      margin-top: 50px
+    &__price-hint
+      margin-top: 30px
+      font-size: 14px
+      .ico
+        font-size: 22px
+    &__cta
+      margin-top: 60px
+    .photo-uploader
+      color: $fontColor
+      &__name
+        margin-bottom: 35px
+
+    &__images
+      &-wrap
+        margin-left: -10px
+        margin-right: -10px
+      &-col
+        padding: 10px
+
++r(375)
+  .services-create
+    &__price-hint
+      font-size: 13px
+      margin-left: -10px
+      margin-right: -10px
+      .ico
+        font-size: 20px

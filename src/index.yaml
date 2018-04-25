@@ -52,16 +52,16 @@ PageList:
 - file: payment.html
   ready: 90
 - file: purchased-services.html
-  ready: 70
+  ready: 90
 - file: purchased-services-b.html
-  ready: 70
+  ready: 90
 - file: no-services.html
-  ready: 70
+  ready: 90
 - file: create-service.html
-  ready: 70
+  ready: 90
 - file: advanced-search.html
-  ready: 50
+  ready: 90
 - file: advanced-search-results.html
-  ready: 60
+  ready: 90
 - file: promo.html
   ready: 50

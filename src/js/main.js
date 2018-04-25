@@ -1571,10 +1571,11 @@ $(document).ready(function(){
         //     }
         //   }
         // });
-        console.log(form)
         nextStep( $(form).data('next-step') )
 
       },
+      // selectize hidden field fix
+      ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
       rules: {
         genres: {
           required: true,
