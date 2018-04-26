@@ -1,30 +1,31 @@
 .mobile-navi
   position: absolute
-  top: 100px
+  // top: 100px
+  top: 0
   right: 0
   left: 0
   bottom: 0
-  z-index: 9
+  z-index: 10
   opacity: 0
   pointer-events: none
   transform: translate3d(-100%,0%,0)
   // background: white
   transition: .25s $ease
-  &--market
-    // extra space for navbar
-    top: 155px
-    .mobile-navi__wrapper
-      min-height: calc(100vh - 155px)
+  // &--market
+  //   // extra space for navbar
+  //   top: 155px
+  //   .mobile-navi__wrapper
+  //     min-height: calc(100vh - 155px)
   &--fixed
     position: fixed
-    &.is-scrolled
-      top: 72px
-      .mobile-navi__wrapper
-        min-height: calc(100vh - 72px)
-      &.mobile-navi--market
-        top: 120px
-        .mobile-navi__wrapper
-          min-height: calc(100vh - 120px)
+    // &.is-scrolled
+    //   top: 72px
+    //   .mobile-navi__wrapper
+    //     min-height: calc(100vh - 72px)
+    //   &.mobile-navi--market
+    //     top: 120px
+    //     .mobile-navi__wrapper
+    //       min-height: calc(100vh - 120px)
   &.is-active
     opacity: 1
     transform: translate3d(0,0,0)
@@ -32,13 +33,42 @@
   &__wrapper
     display: flex
     flex-direction: column
-    min-height: calc(100vh - 100px)
-    color: $fontColor
+    // min-height: calc(100vh - 100px)
+    min-height: 100vh
+    color: white
     overflow-y: auto
     margin-right: 20%
     padding: 50px 50px
     background: white
+    background-image: linear-gradient(0deg, #8E5ACD 0%, #21B0B0 100%)
     transition: .2s linear
+
+  &__profile
+    text-align: center
+    margin-top: 40px
+    &-status
+      margin-top: 10px
+      margin-bottom: 10px
+      display: inline-block
+      border-radius: 50px
+      font-size: 13px
+      font-weight: 500
+      background: white
+      color: $colorGreen
+      padding: 8px 14px
+      transition: background .25s $ease, color .25s $ease
+      &:hover
+        background: #319B9D
+        color: white
+
+    &-name
+      margin-top: 5px
+      font-size: 24px
+      font-weight: 500
+      color: white
+      text-align: center
+      +text-overflow
+
   &__menu
     display: flex
     flex-direction: column
@@ -48,8 +78,11 @@
     li
       position: relative
       margin-bottom: 10px
+      span
+        display: inline-block
     a
-      display: inline-block
+      display: flex
+      align-items: center
       padding: 10px 0
       transition: color .25s $ease
       &::after
@@ -65,39 +98,93 @@
       &:hover
         &::after
           right: 0
+    &--dash
+      a
+        color: rgba(white, .7)
+        &::after
+          right: auto
+          left: -30px
+          bottom: 0
+          top: 0
+          height: auto
+          width: 2px
+          opacity: 0
+        &:hover, &.is-active
+          color: white
+          &::after
+            right: auto
+            left: -25px
+            opacity: 1
+
+    &-icon
+      margin-right: 10px
+      flex: 0 0 30px
+      text-align: left
+      .ico
+        &-case
+          font-size: 18px
+        &-comments
+          font-size: 18px
+          transform: translateY(2px)
+        &-profile
+          font-size: 18px
+        &-notifications
+          font-size: 20px
+        &-cart
+          font-size: 20px
+
+    &-counter
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-left: auto
+      background: rgba(#424242, .2)
+      border-radius: 26px
+      flex: 0 0 30px
+      size: 30px 25px
+      margin-left: 15px
+      font-size: 12px
+      font-weight: 500
+      text-align: center
+      transition: .25s $ease
+      color: white
 
   .header__search
+    position: relative
+    z-index: 5
     display: block
     margin-left: 0
     flex: 0 0 auto
     padding-left: 0
     &-input
-      input
-        background: rgba($fontColor, .13)
-        color: $fontColor
-        transition: .25s $ease
-        &::placeholder
-          color: rgba($fontColor, .6)
-        &:focus, &.is-focused
-          color: white
-          background: $fontColor
-          box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
-          &::placeholder
-            color: white
-          + .ico
-            fill: white
-      .ico
-        fill: $fontColor
+      // for the whiter backgeround
+
+      // input
+      //   background: rgba($fontColor, .13)
+      //   color: $fontColor
+      //   transition: .25s $ease
+      //   &::placeholder
+      //     color: rgba($fontColor, .6)
+      //   &:focus, &.is-focused
+      //     color: white
+      //     background: $fontColor
+      //     box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+      //     &::placeholder
+      //       color: white
+      //     + .ico
+      //       fill: white
+      // .ico
+      //   fill: $fontColor
 
 +r($tablet)
   .mobile-navi
     &__wrapper
       padding: 50px 25px
-    &--fixed
-      top: 72px
-      .mobile-navi__wrapper
-        min-height: calc(100vh - 72px)
-      &.mobile-navi--market
-        top: 120px
-        .mobile-navi__wrapper
-          min-height: calc(100vh - 120px)
+    // &--fixed
+    //   top: 72px
+    //   .mobile-navi__wrapper
+    //     min-height: calc(100vh - 72px)
+    //   &.mobile-navi--market
+    //     top: 120px
+    //     .mobile-navi__wrapper
+    //       min-height: calc(100vh - 120px)

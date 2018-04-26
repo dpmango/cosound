@@ -14,7 +14,6 @@ header.header.header--dash.header--bg.js-should-scroll
   
     include _user
     
-      
     .header__hamburger
       .hamburger.hamburger--squeeze(js-hamburger)
         .hamburger-box
@@ -28,13 +27,6 @@ header.header.header--dash.header--bg.js-should-scroll
   .mobile-navi__wrapper(js-scrollbar)
     include _search
     
-    ul.mobile-navi__menu
-      li
-        a(href="#") about us. 
-      li
-        a(href="#") lorem ipsum. 
-      li
-        a(href="#") lorem ipsum. 
-
+    include _dash-mobileMenu
 
 include ../_notifications
