@@ -173,11 +173,11 @@ $(document).ready(function(){
       if ( vScroll > 10 ){
         header.addClass('is-scrolled');
         $('.ntf--fixed').addClass('is-scrolled')
-        $('.mobile-navi').addClass('is-scrolled')
+        $('.mnav').addClass('is-scrolled')
       } else {
         header.removeClass('is-scrolled');
         $('.ntf--fixed').removeClass('is-scrolled')
-        $('.mobile-navi').removeClass('is-scrolled')
+        $('.mnav').removeClass('is-scrolled')
       }
     }, 10));
   }
@@ -187,18 +187,18 @@ $(document).ready(function(){
   _document
     .on('click', '[js-hamburger]', function(){
       $(this).toggleClass('is-active');
-      $('.mobile-navi').toggleClass('is-active');
+      $('.mnav').toggleClass('is-active');
     })
     .on('click', function(e){
       if ( !$(e.target).closest('.header').length > 0 &&
-           !$(e.target).closest('.mobile-navi__wrapper').length > 0 ){
+           !$(e.target).closest('.mnav__wrapper').length > 0 ){
         closeMobileMenu();
       }
     })
 
   function closeMobileMenu(){
     $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
+    $('.mnav').removeClass('is-active');
   }
 
   // SET ACTIVE CLASS IN HEADER
