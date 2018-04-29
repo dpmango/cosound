@@ -1,254 +1,281 @@
 $sprite: (
 	checkmark: (
-		offset-x: -165px,
-		offset-y: -104px,
+		offset-x: -333px,
+		offset-y: -140px,
 		width: 10px,
 		height: 8px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
+		image: '../img/sprite.png'
+	),
+	cosound-token: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 138px,
+		height: 115px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	emodji: (
-		offset-x: -204px,
-		offset-y: -157px,
+		offset-x: -227px,
+		offset-y: -187px,
 		width: 23px,
 		height: 23px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -237px,
-		offset-y: -157px,
+		offset-x: -333px,
+		offset-y: -55px,
 		width: 14px,
 		height: 14px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
+		image: '../img/sprite.png'
+	),
+	itoCardDiscount: (
+		offset-x: -148px,
+		offset-y: -73px,
+		width: 69px,
+		height: 73px,
+		total-width: 350px,
+		total-height: 305px,
+		image: '../img/sprite.png'
+	),
+	itoCardGlobe: (
+		offset-x: -148px,
+		offset-y: -156px,
+		width: 69px,
+		height: 73px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	list-check: (
-		offset-x: -135px,
-		offset-y: -157px,
+		offset-x: -227px,
+		offset-y: -73px,
 		width: 25px,
 		height: 25px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	no-services: (
 		offset-x: 0px,
-		offset-y: 0px,
+		offset-y: -125px,
 		width: 135px,
 		height: 116px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	paperclip: (
 		offset-x: 0px,
-		offset-y: -199px,
+		offset-y: -282px,
 		width: 22px,
 		height: 23px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-amex: (
-		offset-x: -261px,
-		offset-y: -85px,
+		offset-x: 0px,
+		offset-y: -251px,
 		width: 35px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-discover: (
-		offset-x: -179px,
-		offset-y: -126px,
+		offset-x: -224px,
+		offset-y: -251px,
 		width: 34px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-jcb: (
-		offset-x: -261px,
-		offset-y: -116px,
+		offset-x: -45px,
+		offset-y: -251px,
 		width: 35px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-maestro-old: (
-		offset-x: -261px,
-		offset-y: -147px,
+		offset-x: -90px,
+		offset-y: -251px,
 		width: 35px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-mastercard-old: (
-		offset-x: -190px,
-		offset-y: -73px,
+		offset-x: -268px,
+		offset-y: -251px,
 		width: 34px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-paypal: (
-		offset-x: -145px,
-		offset-y: -73px,
+		offset-x: -135px,
+		offset-y: -251px,
 		width: 35px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	pay-visa: (
-		offset-x: -135px,
-		offset-y: -126px,
+		offset-x: -180px,
+		offset-y: -251px,
 		width: 34px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-communication: (
-		offset-x: -223px,
-		offset-y: -126px,
+		offset-x: -227px,
+		offset-y: -156px,
 		width: 26px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-gears: (
 		offset-x: -95px,
-		offset-y: -199px,
+		offset-y: -282px,
 		width: 18px,
 		height: 18px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-history: (
 		offset-x: -63px,
-		offset-y: -199px,
+		offset-y: -282px,
 		width: 22px,
 		height: 19px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-privacy: (
-		offset-x: -234px,
-		offset-y: -73px,
+		offset-x: -333px,
+		offset-y: 0px,
 		width: 17px,
 		height: 20px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-services: (
-		offset-x: -170px,
-		offset-y: -157px,
+		offset-x: -227px,
+		offset-y: -108px,
 		width: 24px,
 		height: 23px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	profile-support: (
 		offset-x: -32px,
-		offset-y: -199px,
+		offset-y: -282px,
 		width: 21px,
 		height: 21px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -261px,
-		offset-y: -178px,
+		offset-x: -333px,
+		offset-y: -79px,
 		width: 15px,
 		height: 11px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	signup-type-band: (
-		offset-x: -145px,
+		offset-x: -148px,
 		offset-y: 0px,
 		width: 106px,
 		height: 63px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	signup-type-musician: (
-		offset-x: -261px,
-		offset-y: 0px,
+		offset-x: -264px,
+		offset-y: -73px,
 		width: 49px,
 		height: 75px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	signup-type-pro: (
-		offset-x: 0px,
-		offset-y: -126px,
+		offset-x: -264px,
+		offset-y: 0px,
 		width: 59px,
 		height: 63px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -123px,
-		offset-y: -199px,
+		offset-x: -264px,
+		offset-y: -224px,
 		width: 19px,
 		height: 15px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -286px,
-		offset-y: -178px,
+		offset-x: -333px,
+		offset-y: -100px,
 		width: 10px,
 		height: 10px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -145px,
-		offset-y: -104px,
+		offset-x: -333px,
+		offset-y: -120px,
 		width: 10px,
 		height: 10px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	suggestions-search: (
-		offset-x: -69px,
-		offset-y: -126px,
+		offset-x: -264px,
+		offset-y: -158px,
 		width: 56px,
 		height: 56px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 	time: (
-		offset-x: -152px,
-		offset-y: -199px,
+		offset-x: -333px,
+		offset-y: -30px,
 		width: 15px,
 		height: 15px,
-		total-width: 310px,
-		total-height: 222px,
+		total-width: 350px,
+		total-height: 305px,
 		image: '../img/sprite.png'
 	),
 );
@@ -310,11 +337,20 @@ $sprite: (
 	.icon-checkmark {
 		@include sprite(checkmark)
 	}
+	.icon-cosound-token {
+		@include sprite(cosound-token)
+	}
 	.icon-emodji {
 		@include sprite(emodji)
 	}
 	.icon-fullscreen {
 		@include sprite(fullscreen)
+	}
+	.icon-itoCardDiscount {
+		@include sprite(itoCardDiscount)
+	}
+	.icon-itoCardGlobe {
+		@include sprite(itoCardGlobe)
 	}
 	.icon-list-check {
 		@include sprite(list-check)

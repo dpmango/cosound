@@ -744,6 +744,29 @@ $(document).ready(function(){
       },
     })
 
+    // ito swiper
+    new Swiper('[js-ito-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-slider__slide",
+      direction: 'horizontal',
+      loop: true,
+      watchOverflow: false,
+      setWrapperSize: false,
+      // setWrapperSize: true,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      // loop: true,
+      normalizeSlideIndex: true,
+      // centeredSlides: true,
+      freeMode: false,
+      // effect: 'cube',
+      navigation: {
+        nextEl: '.ito-slider-next',
+        prevEl: '.ito-slider-prev',
+      },
+    })
+
+
   }
 
   //////////
