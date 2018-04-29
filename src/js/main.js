@@ -31,7 +31,8 @@ $(document).ready(function(){
     updateHeaderActiveClass();
     initHeaderScroll();
     checkHash();
-
+    swipeCloser();
+    
     initPopups();
     initSliders();
     initScrollMonitor();
@@ -189,19 +190,34 @@ $(document).ready(function(){
       $(this).toggleClass('is-active');
       $('.mnav').toggleClass('is-active');
     })
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.header').length > 0 &&
            !$(e.target).closest('.mnav__wrapper').length > 0 ){
-             // alert(e.target.closest('.header'))
         closeMobileMenu();
-
-        e.preventDefault();
       }
     })
 
   function closeMobileMenu(){
     $('[js-hamburger]').removeClass('is-active');
     $('.mnav').removeClass('is-active');
+  }
+
+  function swipeCloser(){
+    var hammertime = new Hammer(document.querySelector('.page'));
+    hammertime.get('swipe').set({
+      direction: Hammer.DIRECTION_HORIZONTAL,
+      threshold: 50
+    });
+
+    hammertime.on('swipeleft swiperight', function(ev) {
+      if ( ev.type === "swipeleft" ){
+        closeMobileMenu()
+      }
+      if ( ev.type === "swiperight" ){
+        $('[js-hamburger]').addClass('is-active');
+        $('.mnav').addClass('is-active');
+      }
+    });
   }
 
 
@@ -330,12 +346,10 @@ $(document).ready(function(){
       $(this).toggleClass('is-active');
       $('.ntf').toggleClass('is-active');
     })
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.ntf').length > 0 &&
            !$(e.target).closest('[js-header-notifications]').length > 0 ){
         closeNotifications();
-
-        e.preventDefault();
       }
     })
 
@@ -352,11 +366,11 @@ $(document).ready(function(){
     .on('click', '[js-card-options]', function(){
       $(this).closest('.d-card__options').find('.d-card__options-list').toggleClass('is-visible')
     })
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.d-card__options').length > 0 ){
         $('.d-card__options-list').removeClass('is-visible');
 
-        e.preventDefault();
+        e.stopPropagation();
       }
     })
 
@@ -405,11 +419,11 @@ $(document).ready(function(){
       }
 
     }, 200))
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.header__search').length > 0 ){
         closeSearch();
 
-        e.preventDefault();
+        e.stopPropagation();
       }
     })
 
@@ -667,11 +681,11 @@ $(document).ready(function(){
     .on('click', '[js-mobile-market]', toggleMobileMarket)
     .on('click', '.header-market__mobile', toggleMobileMarket)
     .on('click', '.header-market__menu li', closeMobileMarket)
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.header-market').length > 0 ){
         closeMobileMarket();
 
-        e.preventDefault();
+        e.stopPropagation();
       }
     })
 
@@ -699,11 +713,11 @@ $(document).ready(function(){
     .on('click', '[js-mobile-account-nav]', toggleMobileAccount)
     .on('click', '.profile__categories-mobile', toggleMobileAccount)
     .on('click', '.profile__categories', closeMobileAccount)
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.profile-settings').length > 0 ){
         closeMobileAccount();
 
-        e.preventDefault();
+        e.stopPropagation();
       }
     })
 
@@ -1354,10 +1368,10 @@ $(document).ready(function(){
     .on('click', '[js-open-soundbar]', function(){
       $(this).parent().find('.m-music__volume-bar').toggleClass('is-active')
     })
-    .on('click touchstart', function(e){
+    .on('click', function(e){
       if ( !$(e.target).closest('.m-music__volume').length > 0 ){
         $('.m-music__volume-bar').removeClass('is-active');
-        e.preventDefault();
+        e.stopPropagation();
       }
     })
 

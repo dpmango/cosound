@@ -1,7 +1,7 @@
 $sprite: (
 	checkmark: (
 		offset-x: -333px,
-		offset-y: -140px,
+		offset-y: -170px,
 		width: 10px,
 		height: 8px,
 		total-width: 350px,
@@ -28,7 +28,7 @@ $sprite: (
 	),
 	fullscreen: (
 		offset-x: -333px,
-		offset-y: -55px,
+		offset-y: -85px,
 		width: 14px,
 		height: 14px,
 		total-width: 350px,
@@ -49,6 +49,15 @@ $sprite: (
 		offset-y: -156px,
 		width: 69px,
 		height: 73px,
+		total-width: 350px,
+		total-height: 305px,
+		image: '../img/sprite.png'
+	),
+	itoHandle: (
+		offset-x: -333px,
+		offset-y: -30px,
+		width: 15px,
+		height: 20px,
 		total-width: 350px,
 		total-height: 305px,
 		image: '../img/sprite.png'
@@ -90,7 +99,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	pay-discover: (
-		offset-x: -224px,
+		offset-x: -180px,
 		offset-y: -251px,
 		width: 34px,
 		height: 21px,
@@ -135,7 +144,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	pay-visa: (
-		offset-x: -180px,
+		offset-x: -224px,
 		offset-y: -251px,
 		width: 34px,
 		height: 21px,
@@ -199,7 +208,7 @@ $sprite: (
 	),
 	signup-check: (
 		offset-x: -333px,
-		offset-y: -79px,
+		offset-y: -109px,
 		width: 15px,
 		height: 11px,
 		total-width: 350px,
@@ -244,7 +253,7 @@ $sprite: (
 	),
 	star-blank: (
 		offset-x: -333px,
-		offset-y: -100px,
+		offset-y: -130px,
 		width: 10px,
 		height: 10px,
 		total-width: 350px,
@@ -253,7 +262,7 @@ $sprite: (
 	),
 	star-fill: (
 		offset-x: -333px,
-		offset-y: -120px,
+		offset-y: -150px,
 		width: 10px,
 		height: 10px,
 		total-width: 350px,
@@ -271,7 +280,7 @@ $sprite: (
 	),
 	time: (
 		offset-x: -333px,
-		offset-y: -30px,
+		offset-y: -60px,
 		width: 15px,
 		height: 15px,
 		total-width: 350px,
@@ -351,6 +360,9 @@ $sprite: (
 	}
 	.icon-itoCardGlobe {
 		@include sprite(itoCardGlobe)
+	}
+	.icon-itoHandle {
+		@include sprite(itoHandle)
 	}
 	.icon-list-check {
 		@include sprite(list-check)
