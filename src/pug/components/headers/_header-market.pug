@@ -19,21 +19,30 @@ header.header.header--dash.header--bg.js-should-scroll
         .hamburger-box
           .hamburger-inner
   
-  ul.header-market(js-scrollbar)
-    li.is-active
-      a(href="#") Graphics &amp; Design
-    li
-      a(href="#") Marketing &amp; Promotion
-    li
-      a(href="#") Publishing
-    li
-      a(href="#") Legal
-    li
-      a(href="#") Music &amp; Audio
-    li
-      a(href="#") Music Business
-    li
-      a(href="#") Video
+  .header-market
+    .header-market__mobile Graphics &amp; Design
+    ul.header-market__menu(js-scrollbar data-disable-on="<992")
+      li.is-active
+        a(href="#") Graphics &amp; Design
+      li
+        a(href="#") Marketing &amp; Promotion
+      li
+        a(href="#") Publishing
+      li
+        a(href="#") Legal
+      li
+        a(href="#") Music &amp; Audio
+      li
+        a(href="#") Music Business
+      li
+        a(href="#") Video
+    
+    // mobile toggle
+    .header-market__toggle(js-mobile-market)
+      +icon('ico-select-down')
+
+  
+.bg-overlay
 
 // HEADER :: END
 

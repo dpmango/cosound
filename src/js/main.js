@@ -1,14 +1,5 @@
 $(document).ready(function(){
 
-  // autocompleate (signup)
-  // https://github.com/devbridge/jQuery-Autocomplete +
-  // https://goodies.pixabay.com/jquery/auto-complete/demo.html
-  // https://github.com/pawelczak/EasyAutocomplete ++
-
-  // tagged inputs
-  // http://selectize.github.io/selectize.js/
-  // https://goodies.pixabay.com/jquery/tag-editor/demo.html
-
   // svg optimizations?
   // https://github.com/arjunmehta/svg-animation-cpu-optimize
 
@@ -67,10 +58,10 @@ $(document).ready(function(){
     // login/sign
     setStepsClasses();
 
+    // Countdown();
+
     // barba fixed - closing certain elements on refresh
-    closeMobileMenu();
-    closeSearch();
-    closeNotifications();
+    closeAllActive();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -159,6 +150,14 @@ $(document).ready(function(){
     })
 
 
+  // close all active elements on page
+  function closeAllActive(){
+    closeMobileMenu();
+    closeSearch();
+    closeNotifications();
+    closeMobileMarket();
+  }
+
   // HEADER SCROLL
   // add .header-static for .page or body
   // to disable sticky header
@@ -200,6 +199,7 @@ $(document).ready(function(){
     $('[js-hamburger]').removeClass('is-active');
     $('.mnav').removeClass('is-active');
   }
+
 
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering when header is inside barba-container
@@ -651,7 +651,28 @@ $(document).ready(function(){
   _document
     .on('click', '.m-card__like', function(e){
       $(this).toggleClass('is-active')
-    });
+    })
+
+    // marketplace mobile header
+    .on('click', '[js-mobile-market]', toggleMobileMarket)
+    .on('click', '.header-market__mobile', toggleMobileMarket)
+    .on('click', '.header-market__menu li', closeMobileMarket)
+    .on('click', function(e){
+      if ( !$(e.target).closest('.header-market').length > 0 ){
+        closeMobileMarket();
+      }
+    })
+
+  function toggleMobileMarket(){
+    $('[js-mobile-market]').toggleClass('is-active');
+    $('.header-market__menu').toggleClass('is-active');
+    $('.bg-overlay').toggleClass('is-active');
+  }
+  function closeMobileMarket(){
+    $('[js-mobile-market]').removeClass('is-active');
+    $('.header-market__menu').removeClass('is-active');
+    $('.bg-overlay').removeClass('is-active');
+  }
 
 
   //////////
@@ -1021,13 +1042,38 @@ $(document).ready(function(){
   function initPerfectScrollbar(){
     if ( $('[js-scrollbar]').length > 0 ){
       $('[js-scrollbar]').each(function(i, scrollbar){
-        if ( $(scrollbar).not('.ps') ){ // if it initialized
-          var ps = new PerfectScrollbar(scrollbar, {
+        var ps;
+
+        function initPS(){
+          ps = new PerfectScrollbar(scrollbar, {
             // wheelSpeed: 2,
             // wheelPropagation: true,
             minScrollbarLength: 20
           });
         }
+
+        initPS();
+
+        // toggle init destroy
+        function checkMedia(){
+          if ( $(scrollbar).data('disable-on') ){
+
+            if ( mediaCondition($(scrollbar).data('disable-on')) ){
+              if ( $(scrollbar).is('.ps') ){
+                ps.destroy();
+                ps = null;
+              }
+            } else {
+              if ( $(scrollbar).not('.ps') ){
+                initPS();
+              }
+            }
+          }
+        }
+
+        checkMedia();
+        _window.on('resize', debounce(checkMedia, 250));
+
       })
     }
   }
@@ -1253,21 +1299,13 @@ $(document).ready(function(){
       var self = $(val)
       var objHtml = $(val).html();
       var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
-      var conditionMedia = $(val).data('teleport-condition').substring(1);
-      var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
+      var condition = $(val).data('teleport-condition');
 
-      if (target && objHtml && conditionPosition) {
+      if (target && objHtml && condition) {
 
         function teleport() {
-          var condition;
 
-          if (conditionPosition === "<") {
-            condition = _window.width() < conditionMedia;
-          } else if (conditionPosition === ">") {
-            condition = _window.width() > conditionMedia;
-          }
-
-          if (condition) {
+          if ( mediaCondition(condition) ) {
             target.html(objHtml)
             self.html('')
           } else {
@@ -1778,6 +1816,200 @@ $(document).ready(function(){
     _window.scrollTop(0);
     _window.scroll();
     _window.resize();
+  }
+
+  //////////
+  // COUNTDOWN
+  //////////
+  // Create Countdown
+  function Countdown(){
+
+    var Countdown = {
+
+      // Backbone-like structure
+      $el: $('.counter__nums'),
+
+      // Params
+      countdown_interval: null,
+      total_seconds     : 0,
+
+      // Initialize the countdown
+      init: function() {
+
+        // DOM
+    		this.$ = {
+          days  : this.$el.find('.bloc-time.days .figure'),
+        	hours  : this.$el.find('.bloc-time.hours .figure'),
+        	minutes: this.$el.find('.bloc-time.min .figure'),
+        	seconds: this.$el.find('.bloc-time.sec .figure')
+       	};
+
+        var countMonth = this.$el.data('month');
+        var countDay = this.$el.data('day');
+        var countHour = this.$el.data('hour');
+        var countMin = this.$el.data('minute');
+
+        var currentDate = new Date();
+
+        var a = moment([2017, countMonth, countDay, countHour, countMin]);
+        var b = moment([2017, currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()]);
+
+        // Init countdown values
+        this.values = {
+            days  : a.diff(b, 'days'),
+            hours  : a.diff(b, 'hours') - (a.diff(b, 'days') * 24),
+            minutes: Math.abs(a.diff(b, 'minutes') - (a.diff(b, 'hours') * 60) - (a.diff(b, 'days') * 24)),
+            seconds: 30,
+        };
+
+        // this.values = {
+        //     days  : this.$.days.parent().attr('data-init-value'),
+    	  //     hours  : this.$.hours.parent().attr('data-init-value'),
+        //     minutes: this.$.minutes.parent().attr('data-init-value'),
+        //     seconds: this.$.seconds.parent().attr('data-init-value'),
+        // };
+
+        // Initialize total seconds
+        this.total_seconds = this.values.days * 60 * 60 * 60 + this.values.hours * 60 * 60 + (this.values.minutes * 60) + this.values.seconds;
+
+        // Animate countdown to the end
+        this.count();
+      },
+
+      count: function() {
+
+        var that    = this,
+            $day_1  = this.$.days.eq(0),
+            $day_2  = this.$.days.eq(1),
+            $hour_1 = this.$.hours.eq(0),
+            $hour_2 = this.$.hours.eq(1),
+            $min_1  = this.$.minutes.eq(0),
+            $min_2  = this.$.minutes.eq(1),
+            $sec_1  = this.$.seconds.eq(0),
+            $sec_2  = this.$.seconds.eq(1);
+
+            this.countdown_interval = setInterval(function() {
+
+            if(that.total_seconds > 0) {
+
+              --that.values.seconds;
+
+              if(that.values.minutes >= 0 && that.values.seconds < 0) {
+
+                  that.values.seconds = 59;
+                  --that.values.minutes;
+              }
+
+              if(that.values.hours >= 0 && that.values.minutes < 0) {
+
+                  that.values.minutes = 59;
+                  --that.values.hours;
+              }
+
+              if(that.values.days >= 0 && that.values.hours < 0) {
+
+                  that.values.hours = 24;
+                  --that.values.days;
+              }
+
+              // Update DOM values
+              // Days
+              that.checkHour(that.values.days, $day_1, $day_2);
+
+              // Hours
+              that.checkHour(that.values.hours, $hour_1, $hour_2);
+
+              // Minutes
+              that.checkHour(that.values.minutes, $min_1, $min_2);
+
+              // Seconds
+              that.checkHour(that.values.seconds, $sec_1, $sec_2);
+
+              --that.total_seconds;
+            }
+            else {
+                clearInterval(that.countdown_interval);
+            }
+        }, 1000);
+      },
+
+      animateFigure: function($el, value) {
+
+         var that         = this,
+    		     $top         = $el.find('.top'),
+             $bottom      = $el.find('.bottom'),
+             $back_top    = $el.find('.top-back'),
+             $back_bottom = $el.find('.bottom-back');
+
+        // Before we begin, change the back value
+        $back_top.find('span').html(value);
+
+        // Also change the back bottom value
+        $back_bottom.find('span').html(value);
+
+        // Then animate
+        TweenMax.to($top, 0.8, {
+            rotationX           : '-180deg',
+            transformPerspective: 300,
+    	      ease                : Quart.easeOut,
+            onComplete          : function() {
+
+                $top.html(value);
+
+                $bottom.html(value);
+
+                TweenMax.set($top, { rotationX: 0 });
+            }
+        });
+
+        TweenMax.to($back_top, 0.8, {
+            rotationX           : 0,
+            transformPerspective: 300,
+    	      ease                : Quart.easeOut,
+            clearProps          : 'all'
+        });
+      },
+
+      checkHour: function(value, $el_1, $el_2) {
+
+        var val_1       = value.toString().charAt(0),
+            val_2       = value.toString().charAt(1),
+            fig_1_value = $el_1.find('.top').html(),
+            fig_2_value = $el_2.find('.top').html();
+
+        if(value >= 10) {
+
+            // Animate only if the figure has changed
+            if(fig_1_value !== val_1) this.animateFigure($el_1, val_1);
+            if(fig_2_value !== val_2) this.animateFigure($el_2, val_2);
+        }
+        else {
+
+            // If we are under 10, replace first figure with 0
+            if(fig_1_value !== '0') this.animateFigure($el_1, 0);
+            if(fig_2_value !== val_1) this.animateFigure($el_2, val_1);
+        }
+      }
+    };
+
+    Countdown.init();
+  }
+
+  //////////
+  // MEDIA Condition helper function
+  //////////
+  function mediaCondition(cond){
+    var disabledBp;
+    var conditionMedia = cond.substring(1);
+    var conditionPosition = cond.substring(0, 1);
+
+    if (conditionPosition === "<") {
+      disabledBp = _window.width() < conditionMedia;
+    } else if (conditionPosition === ">") {
+      disabledBp = _window.width() > conditionMedia;
+    }
+
+    return disabledBp
   }
 
   //////////

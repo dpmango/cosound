@@ -22,6 +22,8 @@ gulp.task('javascript:vendor', function() {
       path.resolve('bower_components', 'animejs/anime.min.js'),
       path.resolve('bower_components', 'emojionearea/dist/emojionearea.min.js'),
       path.resolve('bower_components', 'selectize/dist/js/standalone/selectize.min.js'),
+      path.resolve('bower_components', 'moment/min/moment.min.js'),
+
       // moved to /js/vendor and fixed flicker
       // path.resolve('bower_components', 'mediaelement/build/mediaelement-and-player.js'),
       // shims, langs

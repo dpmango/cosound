@@ -30,6 +30,7 @@
     "perfect-scrollbar": "^0.8.1",
     "swiper": "^4.2.2",
     "emojionearea": "^3.0.0",
-    "selectize": "^0.12.4"
+    "selectize": "^0.12.4",
+    "moment": "^2.22.1"
   }
 }
