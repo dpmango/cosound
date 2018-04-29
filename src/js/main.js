@@ -156,6 +156,7 @@ $(document).ready(function(){
     closeSearch();
     closeNotifications();
     closeMobileMarket();
+    closeMobileAccount();
   }
 
   // HEADER SCROLL
@@ -666,14 +667,47 @@ $(document).ready(function(){
   function toggleMobileMarket(){
     $('[js-mobile-market]').toggleClass('is-active');
     $('.header-market__menu').toggleClass('is-active');
-    $('.bg-overlay').toggleClass('is-active');
+    if ( $('[js-mobile-market]').length > 0 ){
+      $('.bg-overlay').toggleClass('is-active');
+    }
   }
   function closeMobileMarket(){
     $('[js-mobile-market]').removeClass('is-active');
     $('.header-market__menu').removeClass('is-active');
-    $('.bg-overlay').removeClass('is-active');
+    if ( $('[js-mobile-market]').length > 0 ){
+      $('.bg-overlay').removeClass('is-active');
+    }
   }
 
+
+  //////////
+  // ACCOUNT NAV
+  //////////
+
+  _document
+    .on('click', '[js-mobile-account-nav]', toggleMobileAccount)
+    .on('click', '.profile__categories-mobile', toggleMobileAccount)
+    .on('click', '.profile__categories', closeMobileAccount)
+    .on('click', function(e){
+      if ( !$(e.target).closest('.profile-settings').length > 0 ){
+        closeMobileAccount();
+      }
+    })
+
+  function toggleMobileAccount(){
+    $('[js-mobile-account-nav]').toggleClass('is-active');
+    $('.profile__categories').toggleClass('is-active');
+    if ( $('[js-mobile-account-nav]').length > 0 ){
+      $('.bg-overlay').toggleClass('is-active');
+    }
+  }
+  function closeMobileAccount(){
+    $('[js-mobile-account-nav]').removeClass('is-active');
+    $('.profile__categories').removeClass('is-active');
+    if ( $('[js-mobile-account-nav]').length > 0 ){
+      $('.bg-overlay').removeClass('is-active');
+    }
+  }
 
   //////////
   // SLIDERS

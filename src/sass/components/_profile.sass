@@ -146,6 +146,8 @@
 
 
 .profile-settings
+  position: relative
+  z-index: 6
   margin-top: 80px
   max-width: 740px
   margin-left: auto
@@ -160,11 +162,8 @@
     justify-content: space-between
     margin-left: -10px
     margin-right: -10px
-    width: calc(100% + 20px)
     min-width: 1px
     min-height: 0
-    overflow-x: auto
-
     &::before
       display: inline-block
       content: ' '
@@ -174,7 +173,34 @@
       right: 10px
       height: 1px
       background: rgba(#979797, .13)
-
+    &-mobile
+      display: none
+    &-toggle
+      position: absolute
+      right: 0px
+      top: 50%
+      z-index: 3
+      display: none
+      align-items: center
+      justify-content: center
+      width: 42px
+      height: 36px
+      font-size: 7px
+      background-color: white
+      color: #8E8E8E
+      text-align: center
+      border: 1px solid $borderColor
+      border-radius: 30px
+      cursor: pointer
+      transform: translateY(-50%)
+      transition: .25s $ease
+      .ico
+        transition: transform .25s $ease
+      &:hover
+        color: $colorGreen
+      &.is-active
+        .ico
+          transform: rotate(180deg)
   &__category
     flex: 0 0 auto
     white-space: nowrap
@@ -188,6 +214,12 @@
     line-height: 2
     padding: 30px 10px 10px
     transition: .25s $ease
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+    .icon
+      margin-right: 10px
     &::after
       display: block
       content: ' '
@@ -202,10 +234,8 @@
       color: $fontColor
       &::after
         right: 10px
-
-    .icon
-      margin-right: 10px
     span
+      flex: 1 1 auto
       display: inline-block
       font-size: 14px
 
@@ -283,22 +313,57 @@
 
 +r($tablet)
   .profile
+    &-settings
+      margin-top: 60px
     &__categories
-      // overflow-y: auto
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      z-index: 2
+      padding-left: 0
+      padding-right: 0
+      margin-left: -25px
+      margin-right: -25px
+      display: block
+      background: white
+      opacity: 0
+      pointer-events: none
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09)
+      transition: .25s $ease
+      &::before
+        display: none
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translate3d(0,0,0)
+      &-mobile
+        display: block
+      &-toggle
+        display: flex
 
-      margin-left: -35px
-      margin-right: -35px
-      padding-left: 25px
-      padding-right: 45px
-      overflow-x: auto
-      width: calc(100% + 50px)
+      .profile__category
+        padding-left: 20px
+        padding-right: 25px
+        margin-left: 0
+        &:hover
+          background: #F5F5F5
+
+
+    &__category
+      padding: 15px 0px
+      margin-left: -5px
+      &-icon
+        flex: 0 0 40px
+        max-width: 40px
+        min-width: 1px
+        text-align: center
+        font-size: 0
+        padding-right: 10px
+      .icon
+        margin-right: 0
       &::after
-        // refactor
-        // hard fix is not working ?
-        display: inline-block
-        content: ' '
-        width: 25px
-
+        display: none
 
   .profile-tabs
     margin-top: 40px
@@ -306,6 +371,7 @@
     &__sidebar
       max-width: 100%
       margin-bottom: 40px
+      border-right: 0
     &__links
       padding-right: 0
       flex-direction: row

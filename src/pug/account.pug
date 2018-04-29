@@ -22,20 +22,33 @@ block content
   
           
     .container
+      .bg-overlay
       // settings
       .profile-settings.wow
-        .profile__categories(js-scrollbar)
+        .profile__categories-mobile
           a(href="#").profile__category.--violet.is-active
-            i.icon.icon-profile-gears
+            .profile__category-icon
+              i.icon.icon-profile-gears
+            span Account Settings
+        .profile__categories-toggle(js-mobile-account-nav)
+          +icon('ico-select-down')
+  
+        .profile__categories
+          a(href="#").profile__category.--violet.is-active
+            .profile__category-icon
+              i.icon.icon-profile-gears
             span Account Settings
           a(href="#").profile__category.--blue
-            i.icon.icon-profile-privacy
+            .profile__category-icon
+              i.icon.icon-profile-privacy
             span Privacy
           a(href="#").profile__category.--aqua
-            i.icon.icon-profile-communication
+            .profile__category-icon
+              i.icon.icon-profile-communication
             span Communiaction
           a(href="#").profile__category.--blue-mute
-            i.icon.icon-profile-support
+            .profile__category-icon
+              i.icon.icon-profile-support
             span Support Center
       
       .profile-tabs
