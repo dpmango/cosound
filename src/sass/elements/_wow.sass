@@ -25,3 +25,13 @@
   to
     opacity: 1
     transform: translate3d(0, 0, 0)
+
+.wowBlur
+  animation-fill-mode: forwards
+  animation-timing-function: ease-in-out
+  animation-duration: 0.3s
+  filter: blur(10px)
+
+@keyframes wowBlurUp
+  to
+    filter: blur(0px)

@@ -32,7 +32,7 @@ $(document).ready(function(){
     initHeaderScroll();
     checkHash();
     swipeCloser();
-    
+
     initPopups();
     initSliders();
     initScrollMonitor();
@@ -786,11 +786,20 @@ $(document).ready(function(){
       normalizeSlideIndex: true,
       // centeredSlides: true,
       freeMode: false,
-      // effect: 'cube',
+      // effect: 'fade',
+      autoplay: {
+        delay: 5000,
+      },
       navigation: {
         nextEl: '.ito-slider-next',
         prevEl: '.ito-slider-prev',
       },
+      breakpoints: {
+        // when window width is <= 992px
+        992: {
+          autoHeight: true
+        }
+      }
     })
 
 

@@ -44,6 +44,8 @@
 
   &__logo
     font-size: 66px
+    &--smaller
+      font-size: 56px
 
   &__text
     margin-top: 50px
@@ -70,8 +72,11 @@
   &--ito
     background: white
     .hero
+      &__logo
+        margin-top: auto
       &__wrapper
         min-height: 695px
+        padding-bottom: 0
 
 +r($tablet)
   .hero
@@ -87,6 +92,11 @@
       font-size: 50px
     &__text
       font-size: 18px
+    &--ito
+      .hero
+        &__wrapper
+          min-height: 550px
+          // padding-bottom: 120px
 
 
 // INFO

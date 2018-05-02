@@ -15,14 +15,14 @@ block content
       .ito-bg
         .ito-bg__wrapper
           include ../inline-svg/ito-bg.svg
-          img(src='img/itoBg.png' srcset='img/itoBg@2x.png 2x')
+          img.wow(src='img/itoBg.png' srcset='img/itoBg@2x.png 2x' data-animation-class="wowBlur" data-animation-name="wowBlurUp" data-animation-delay=".9s")
       .container
         .hero__wrapper
-          .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+          .hero__logo.hero__logo--smaller.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
             +icon('ico-logo')
           .ito-counter
-            .ito-counter__title Token Sale Ends In:
-            .ito-counter__wrapper(js-counter data-month=05 data-day=07 data-hour=15 data-minute=05)
+            .ito-counter__title.wow(data-animation-delay=".4s") Token Sale Ends In:
+            .ito-counter__wrapper.wow(js-counter data-animation-delay=".5s" data-month=06 data-day=07 data-hour=15 data-minute=05)
               .ito-counter__col(js-counter-days)
                 .ito-counter__num 
                   span 0
@@ -46,28 +46,28 @@ block content
           
           // progress
           .ito-progress
-            .ito-progress__info
+            .ito-progress__info.wow(data-animation-delay=".4s" data-animation-class="wowFadeLeft")
               span $500k
               span Soft cap
-            .ito-progress__bar
+            .ito-progress__bar.wow(data-animation-delay=".5s")
               .ito-progress__fill(style="width: 30%")
                 .ito-progress__fill-wrap
                   .ito-progress__handle
                     i.icon.icon-itoHandle
-            .ito-progress__info
+            .ito-progress__info.wow(data-animation-delay=".4s" data-animation-class="wowFadeRight")
               span $2m
               span Soft cap
           
           // CTA
-          .ito-cta-buttons
+          .ito-cta-buttons.wow(data-animation-delay=".75s")
             a(href='#').btn.btn-primary.btn-primary--red
               span Buy Tokens
             a(href='#').btn.btn-primary.btn-primary--white
               span White Paper
     
-                
+    // PROMO BENEFITS
     .promo-benefits.promo-benefits--ito
-      .container
+      .container.container--wide
         .benefits__list
           // el
           .benefits__el.wow(data-animation-delay=".1s")
@@ -118,7 +118,7 @@ block content
         include ../inline-svg/ito-distribution.svg
       .container.container--wide
         .ito-info__wrapper
-          .ito-info__left
+          .ito-info__left.wow(data-animation-class="wowFadeLeft")
             .benefits__icon
               +icon('ico-promo-benefiit-3')
             h2.ito-info__title ICO Distribution
@@ -130,7 +130,7 @@ block content
           .ito-info__right
             .ito-info__grid
               // col
-              .ito-info__col
+              .ito-info__col.wow(data-animation-delay=".4s")
                 .ito-card
                   .ito-card__head
                     .ito-card__name ICO
@@ -152,7 +152,7 @@ block content
                         span Buy Tokens
               
               // Discount
-              .ito-info__col
+              .ito-info__col.wow(data-animation-delay=".5s")
                 .ito-card
                   .ito-card__head.ito-card__head--green
                     .ito-card__name Discount
@@ -189,7 +189,7 @@ block content
         .ito-slider__slide
           .container.container--wide
             .ito-slider__wrapper
-              .ito-slider__left
+              .ito-slider__left.wow(data-animation-class="wowFadeLeft")
                 .benefits__icon
                   +icon('ico-distribution')
                 h3.ito-slider__title Fund Distribution
@@ -211,7 +211,7 @@ block content
                     td 7,5%
 
                       
-              .ito-slider__right
+              .ito-slider__right.wow(data-animation-class="wowFadeRight" data-animation-delay=".3s")
                 .ito-slider__image
                   img(src='img/itoSlide-1.png' srcset='img/itoSlide-1@2x.png 2x')
                   .ito-slider__dot.ito-slider__dot--pd
@@ -250,7 +250,7 @@ block content
         +icon("ico-arrow-left")
             
       .ito-slider__token
-        i.icon.icon-cosound-token
+        i.icon.icon-cosound-token.wow
     
     // ITO members
     .ito-members
