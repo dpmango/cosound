@@ -2008,17 +2008,30 @@ $(document).ready(function(){
         var countHour = this.$el.data('hour');
         var countMin = this.$el.data('minute');
 
-        var currentDate = new Date();
+        function createDateAsUTC(date) {
+          return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()));
+        }
 
-        var a = moment([2017, countMonth, countDay, countHour, countMin]);
-        var b = moment([2017, currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()]);
+        var currentDate = createDateAsUTC(new Date());
+
+        var a = moment([2018, countMonth, countDay, countHour, countMin]);
+        var b = moment([2018, currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), currentDate.getSeconds()]);
+
+        // console.log(
+        //   'days', a.diff(b, 'days'),
+        //   'daysAsHours', a.diff(b, 'days') * 24,
+        //   'hours', a.diff(b, 'hours'),
+        //   'hoursAsMinutes', a.diff(b, 'hours') * 60,
+        //   'minutes', a.diff(b, 'minutes')
+        // )
 
         // Init countdown values
         this.values = {
           days  : a.diff(b, 'days'),
           hours  : a.diff(b, 'hours') - (a.diff(b, 'days') * 24),
-          minutes: Math.abs(a.diff(b, 'minutes') - (a.diff(b, 'hours') * 60) - (a.diff(b, 'days') * 24)),
-          seconds: 30,
+          minutes: a.diff(b, 'minutes') - (a.diff(b, 'hours') * 60),
+          // minutes: Math.abs(a.diff(b, 'minutes') - (a.diff(b, 'hours') * 60) - (a.diff(b, 'days') * 24)),
+          seconds: 27,
         };
 
         // Initialize total seconds

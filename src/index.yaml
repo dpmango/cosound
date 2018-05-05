@@ -66,4 +66,4 @@ PageList:
 - file: promo.html
   ready: 90
 - file: ito.html
-  ready: 80
+  ready: 90
