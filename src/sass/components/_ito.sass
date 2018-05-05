@@ -454,31 +454,50 @@
 /* ITO slider
 .ito-slider
   position: relative
+  z-index: 3
+  overflow: visible
   width: 100%
-  padding-bottom: 57px
+  display: flex
+  flex-direction: column
+  /* on desktop content is filled according to the background height
+  /* on mobile content is dynamic in heaight and background is sticket to top
+  /* token icon block is hidden/visible because of svg background overflow issues
   &-bg
-    position: absolute 0
-    bottom: 55px
-    overflow: hidden
+    position: relative
+    z-index: 1
+    font-size: 0
+    .ito-slider__token
+      display: block
     svg
-      position: absolute
-      top: 0
+      overflow: visible
+      position: relative
+      // top: 0
       left: 50%
-      z-index: 1
+      // z-index: 1
       transform: translateX(-50%)
+      min-width: 100%
       width: 1920px
       height: auto
+
+  .swiper-container
+    position: absolute 0
+    z-index: 2
 
   &__slide
     position: relative
     z-index: 2
     flex: 0 0 auto
     max-width: 100%
-    padding: 160px 0 110px
+    padding: 150px 0 110px
     // background: #2F385B
+    display: flex
+    flex-direction: column
     color: white
     > .container
-      background: #2F385B
+      // background: #2F385B
+      flex: 1 0 auto
+      display: flex
+      flex-direction: column
 
   &-next, &-prev
     position: absolute
@@ -517,15 +536,17 @@
         transform: translateX(-5px)
 
   &__token
+    display: none
     position: absolute
     left: 50%
     z-index: 3
-    bottom: 0px
+    bottom: -55px
     transform: translateX(-50%)
     pointer-events: none
 
   &__wrapper
     display: flex
+    flex: 1 0 auto
     // align-items: center
 
   &__left
@@ -541,7 +562,7 @@
   &__title
     font-size: 37px
     font-weight: 500
-    margin: 0em 0 .7em
+    margin: 0em 0 0.5em
     padding-top: .7em
     margin-top: auto
 
@@ -549,8 +570,9 @@
     width: 100%
     margin-bottom: auto
     border-collapse: collapse
+    max-width: 310px
     td
-      padding: 10px 0
+      padding: 18px 0
       font-size: 18px
     tr
       td:last-child
@@ -559,15 +581,18 @@
         padding-left: 5%
 
   &__right
-    flex: 0 1 520px
-    max-width: 520px
+    flex: 0 1 550px
+    max-width: 550px
     padding-left: 30px
     display: flex
     flex-direction: column
+    justify-content: center
     margin-left: auto
+    padding-top: 25px
     // margin-left: 70px
 
   &__image
+    // padding-top: 25px
     margin: auto 0
     position: relative
     width: 100%
@@ -649,7 +674,7 @@
 +r($hd)
   .ito-slider
     &-next, &-prev
-      top: 70px
+      top: 90px
       transform: translate(0,0)
 
     &-next
@@ -658,16 +683,36 @@
       right: 120px
       left: auto
 
+    &__dot
+      position: absolute
+      z-index: 2
+      &--pd
+        span
+          left: auto
+          right: 15px
+
 
 +r($desktop)
   .ito-slider
+    display: block
+    &-bg
+      position: absolute 0
+      z-index: 1
+      .ito-slider__token
+        display: none
+
+    .swiper-container
+      position: relative auto
     &__slide
       padding-bottom: 55px
       > .container
         padding-bottom: 55px
+        background: #2F385B
     &__wrapper
-      display: block
+      flex-direction: column
+      justify-content: space-between
     &__left
+      flex: 0 0 auto
       max-width: 400px
       margin-left: auto
       margin-right: auto
@@ -675,21 +720,22 @@
       .benefits__icon
         margin-left: auto
     &__right
+      flex: 0 0 auto
+      padding-top: 0
       margin-top: 50px
       padding-left: 0
       margin-right: auto
-      padding-bottom: 50px
+      padding-bottom: 80px
     &__table
       text-align: left
 
     &__token
-      bottom: 55px
-
+      bottom: 0
 
 
 /* ITO members
 .ito-members
-  margin: 100px 0
+  margin: 130px 0 160px
   &__wrapper
     display: flex
     flex-wrap: wrap
@@ -781,6 +827,8 @@
 
 +r($desktop)
   .ito-members
+    margin-top: 80px
+    margin-bottom: 120px
     &__wrapper
 
     &__col
@@ -790,7 +838,7 @@
 
 +r($tablet)
   .ito-members
-    margin: 50px 0 80px
+    margin: 50px 0 100px
     &__wrapper
       max-width: 500px
       margin-left: auto

@@ -849,9 +849,9 @@ $(document).ready(function(){
       // centeredSlides: true,
       freeMode: false,
       // effect: 'fade',
-      autoplay: {
-        delay: 5000,
-      },
+      // autoplay: {
+      //   delay: 5000,
+      // },
       navigation: {
         nextEl: '.ito-slider-next',
         prevEl: '.ito-slider-prev',
@@ -859,7 +859,7 @@ $(document).ready(function(){
       breakpoints: {
         // when window width is <= 992px
         992: {
-          autoHeight: true
+          // autoHeight: true
         }
       }
     })

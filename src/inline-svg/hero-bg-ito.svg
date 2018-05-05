@@ -8,6 +8,8 @@
             <stop stop-color="#2CC1A5" offset="0%"></stop>
             <stop stop-color="#1CA9B4" offset="26.5881045%"></stop>
             <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <animate attributeName="x2" dur="4s" from="-5.36336263%" to="-5.36336263%" values="-5.36336263%;15%;-5.36336263%" repeatCount="indefinite" />
+            <animate attributeName="y2" dur="4s" from="82.3432999%" to="82.3432999%" values="82.3432999%;70%;82.3432999%" repeatCount="indefinite" />
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

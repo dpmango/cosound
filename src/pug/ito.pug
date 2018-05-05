@@ -14,7 +14,7 @@ block content
     .hero.hero--ito
       .ito-bg
         .ito-bg__wrapper
-          include ../inline-svg/ito-bg.svg
+          include ../inline-svg/hero-bg-ito.svg
           img.wow(src='img/itoBg.png' srcset='img/itoBg@2x.png 2x' data-animation-class="wowBlur" data-animation-name="wowBlurUp" data-animation-delay=".9s")
       .container
         .hero__wrapper
@@ -116,7 +116,7 @@ block content
     .ito-info
       .ito-info__bg
         include ../inline-svg/ito-distribution.svg
-      .container.container--wide
+      .container.container--extra
         .ito-info__wrapper
           .ito-info__left.wow(data-animation-class="wowFadeLeft")
             .benefits__icon
@@ -181,80 +181,85 @@ block content
                         span Buy Tokens
     
     // ITO SLIDER
-    .ito-slider(js-ito-slider).swiper-container
+    .ito-slider
       .ito-slider-bg
         include ../inline-svg/ito-slide-bg.svg
-      .swiper-wrapper
-        // slide
-        .ito-slider__slide
-          .container.container--wide
-            .ito-slider__wrapper
-              .ito-slider__left.wow(data-animation-class="wowFadeLeft")
-                .benefits__icon
-                  +icon('ico-distribution')
-                h3.ito-slider__title Fund Distribution
-                table.ito-slider__table
-                  tr
-                    td Advisors/Talent: 
-                    td 20%
-                  tr
-                    td Admin/Legal:
-                    td 7,5%
-                  tr
-                    td Markering:
-                    td 35%
-                  tr
-                    td Product Development:
-                    td 30%
-                  tr
-                    td Exchange Listing Strategy:
-                    td 7,5%
-
-                      
-              .ito-slider__right.wow(data-animation-class="wowFadeRight" data-animation-delay=".3s")
-                .ito-slider__image
-                  img(src='img/itoSlide-1.png' srcset='img/itoSlide-1@2x.png 2x')
-                  .ito-slider__dot.ito-slider__dot--pd
-                    .ito-slider__dot-wrap
-                      span Product Development
-                      
-        // slide
-        .ito-slider__slide
-          .container.container--wide
-            .ito-slider__wrapper
-              .ito-slider__left
-                .benefits__icon
-                  +icon('ico-distribution')
-                h3.ito-slider__title Token Allocation
-                table.ito-slider__table
-                  tr
-                    td Pre-sale:
-                    td 20m
-                  tr
-                    td Main sale
-                    td 250m
-                  tr
-                    td Bountry:
-                    td 150m
-
-              .ito-slider__right
-                .ito-slider__image
-                  img(src='img/itoSlide-2.png' srcset='img/itoSlide-2@2x.png 2x')
-                  .ito-slider__dot.ito-slider__dot--bounty
-                    .ito-slider__dot-wrap
-                      span Bountry
-                      
-      .ito-slider-next
-        +icon("ico-arrow-right")
-      .ito-slider-prev
-        +icon("ico-arrow-left")
+        .ito-slider__token
+          i.icon.icon-cosound-token.wow
+              
+      div(js-ito-slider).swiper-container
+        .ito-slider__token
+          i.icon.icon-cosound-token.wow
             
-      .ito-slider__token
-        i.icon.icon-cosound-token.wow
+        .swiper-wrapper
+          // slide
+          .ito-slider__slide
+            .container.container--extra
+              .ito-slider__wrapper
+                .ito-slider__left.wow(data-animation-class="wowFadeLeft")
+                  .benefits__icon
+                    +icon('ico-distribution')
+                  h3.ito-slider__title Fund Distribution
+                  table.ito-slider__table
+                    tr
+                      td Advisors/Talent: 
+                      td 20%
+                    tr
+                      td Admin/Legal:
+                      td 7,5%
+                    tr
+                      td Markering:
+                      td 35%
+                    tr
+                      td Product Development:
+                      td 30%
+                    tr
+                      td Exchange Listing Strategy:
+                      td 7,5%
+
+                        
+                .ito-slider__right.wow(data-animation-class="wowFadeRight" data-animation-delay=".3s")
+                  .ito-slider__image
+                    img(src='img/itoSlide-1.png' srcset='img/itoSlide-1@2x.png 2x')
+                    .ito-slider__dot.ito-slider__dot--pd
+                      .ito-slider__dot-wrap
+                        span Product Development
+                        
+          // slide
+          .ito-slider__slide
+            .container.container--extra
+              .ito-slider__wrapper
+                .ito-slider__left
+                  .benefits__icon
+                    +icon('ico-distribution')
+                  h3.ito-slider__title Token Allocation
+                  table.ito-slider__table
+                    tr
+                      td Pre-sale:
+                      td 20m
+                    tr
+                      td Main sale
+                      td 250m
+                    tr
+                      td Bountry:
+                      td 150m
+
+                .ito-slider__right
+                  .ito-slider__image
+                    img(src='img/itoSlide-2.png' srcset='img/itoSlide-2@2x.png 2x')
+                    .ito-slider__dot.ito-slider__dot--bounty
+                      .ito-slider__dot-wrap
+                        span Bountry
+                        
+        .ito-slider-next
+          +icon("ico-arrow-right")
+        .ito-slider-prev
+          +icon("ico-arrow-left")
+            
     
     // ITO members
     .ito-members
-      .container
+      .container.container--extra
         .ito-members__wrapper
           -
             var cards = [
@@ -287,15 +292,15 @@ block content
     .info.info--ito
       .info__bg
         .info__bg-wrapper
-          include ../inline-svg/infoPromoBg.svg
-      .container
+          include ../inline-svg/info-promo-bg-2.svg
+      .container.container--extra
         .info__wrapper
           .info__content.wow(data-animation-class="wowFadeRight")
             h2.heading.c-aqua Artist Development
             .info__text
               p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
               .info__cta
-                a(href="signup.html").btn.btn-primary.btn-primary--red
+                a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
                   span Get Started
           .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
             .info__image-mask
