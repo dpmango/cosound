@@ -60,10 +60,13 @@
     &__wrapper
       padding-left: 30px
       padding-right: 30px
+    &--top-offset
+      margin-top: 50px
 
 +r($mobile)
   .services
-    margin-bottom: 80px
+    margin-bottom: 50px
+    margin-top: 20px
     &--top-offset
       margin-bottom: 0
     &__wrapper
@@ -158,6 +161,7 @@
       margin-left: 15px
     &__desc
       font-size: 13px
+      margin-left: -55px
     &__cta
       // margin-left: 0px
       margin-right: auto
@@ -166,7 +170,10 @@
         padding: 5px 7px
         min-width: 100px
 
-
++r($mobile-s)
+  .services-item
+    &__cta
+      margin-left: 0
 
 /* No services
 .services-no
@@ -298,6 +305,14 @@
         margin-right: -10px
       &-col
         padding: 10px
+
++r($mobile-s)
+  .services-create
+    &__images
+      &-col
+        flex: 0 1 100%
+    &__cta
+      margin-top: 40px
 
 +r(375)
   .services-create

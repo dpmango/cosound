@@ -45,4 +45,7 @@ block content
   // PREFOOTER    
   .prefooter
     .container.wow
-      img(src='img/prefooter.png' srcset='img/prefooter@2x.png 2x')
+      picture
+        source(media="(min-width: 568px)" srcset="img/prefooter.png 1x, img/prefooter@2x.png 2x")
+        source(media="(max-width: 568px)" srcset="img/prefooterMobile.png 1x, img/prefooterMobile@2x.png 2x")
+        img(src="img/prefooter.png")

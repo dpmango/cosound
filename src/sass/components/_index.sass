@@ -44,6 +44,21 @@
       // padding-top: 150px
 
 
+/* BG OVERLAY
+.bg-overlay
+  position: fixed 0
+  z-index: 5
+  opacity: 0
+  background: rgba(black, .57)
+  pointer-events: none
+  transition: .25s $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+  +rmin($desktop)
+    display: none !important
+
+
 // Payment, adv. search pages
 .full-height-wrap
   margin: 160px 0 80px 0

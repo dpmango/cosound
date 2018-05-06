@@ -58,6 +58,15 @@
       flex: 0 0 auto
       margin: 17px
 
++r($tablet)
+  .login-form
+    &__socials
+      margin-top: 40px
+      margin-left: -10px
+      margin-right: -10px
+      .btn
+        margin: 10px
+
 +r($mobile)
   .login
     &__wrapper
@@ -67,9 +76,17 @@
   .login-form
     margin-top: 60px
     margin-bottom: 40px
+
+
++r($mobile-s)
+  .login
+    &__wrapper
+      // padding-top: 120px
+
+  .login-form
     &__socials
-      margin-top: 40px
-      margin-left: -10px
-      margin-right: -10px
+      margin-top: 0
+      margin-left: -8px
+      margin-right: -8px
       .btn
-        margin: 10px
+        margin: 5px

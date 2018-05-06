@@ -548,15 +548,15 @@ $(document).ready(function(){
   // ADVANCED SEARCH
   /////////////////
 
-  _document.on('change', '[js-advSearch-service-provider]', function(){
-    var target = $('.adv-search__price');
-    if ( $(this).is(':checked') ){
-      target.slideDown();
-    } else {
-      target.slideUp();
-    }
-  })
-
+  _document
+    .on('change', '[js-advSearch-service-provider]', function(){
+      var target = $('.adv-search__price');
+      if ( $(this).is(':checked') ){
+        target.slideDown();
+      } else {
+        target.slideUp();
+      }
+    })
 
 
 
@@ -797,6 +797,34 @@ $(document).ready(function(){
       $('.bg-overlay').removeClass('is-active');
     }
   }
+
+  // SEARCH NAV
+  _document
+    .on('click', '[js-header-search-toggle]', function(){
+      $(this).toggleClass('is-active');
+      $('.header-search__wrapper').toggleClass('is-active');
+    })
+    .on('click', function(e){
+      if ( isMobile && e.type == "touchstart" ){
+        close();
+      } else if ( e.type == "click" ){
+        close();
+      }
+
+      function close(){
+        if ( !$(e.target).closest('.header-search').length > 0 ){
+          closeMobileAvvSearch();
+
+          e.stopPropagation();
+        }
+      }
+    })
+
+  function closeMobileAvvSearch(){
+    $('[js-header-search-toggle]').removeClass('is-active');
+    $('.header-search__wrapper').removeClass('is-active');
+  }
+
 
   //////////
   // SLIDERS

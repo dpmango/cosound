@@ -92,6 +92,7 @@
     right: 0
     &-toggle
       cursor: pointer
+      font-size: 0
       transition: .25s $ease
       &:hover
         opacity: .7
@@ -157,6 +158,21 @@
         left: auto
         right: 35px
 
++r($mobile)
+  .m-music
+    &__names
+      padding-bottom: 20px
+      margin-top: -8px
+    &__volume
+      bottom: -10px
+      top: auto
+      left: 130px
+      right: auto
+      &-bar
+        left: 35px
+        right: auto
+        padding: 10px 8px
+        box-shadow: 5px 3px 25px 0 rgba(0,0,0,0.08)
 
 /* video
 // mediaelement.js

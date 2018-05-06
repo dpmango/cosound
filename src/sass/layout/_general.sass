@@ -54,11 +54,16 @@ body, html
     // outline: 1px solid rebeccapurple
   &--extra
     max-width: 1300px
-    
+
 +r($tablet)
   .container
     padding-left: 25px
     padding-right: 25px
+
++r($mobile-s)
+  .container
+    padding-left: 15px
+    padding-right: 15px
 
 // REMOVE FOR PRODUCTION !
 .dev-bp-debug

@@ -20,6 +20,10 @@ header.header.header--dash.header--bg.js-should-scroll
           .hamburger-inner
   
   .header-search
+    .header-search__mobile-toggle(js-header-search-toggle)
+      span I'm looking for
+      .header-search__mobile-btn
+        +icon('ico-select-down')
     form(action="#").header-search__wrapper
       .header-search__keywords
         .header-search__group

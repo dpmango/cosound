@@ -16,7 +16,7 @@
 
   &__logo
     font-size: 25px
-    
+
   &__socials
     margin-left: auto
     display: flex
@@ -64,6 +64,8 @@
     margin-top: auto
     font-size: 14px
     color: white
+    &--mobile
+      display: none
 
   &__nav
     flex: 0 0 auto
@@ -109,15 +111,28 @@
 
 +r($desktop)
   .footer
+    &__main
+      margin-top: 20px
+      flex-wrap: wrap
+    &__info
+      .footer__copy
+        display: none
+    &__copy
+      &--mobile
+        display: block
+        flex: 0 0 100%
+        margin-top: 30px
     &__nav
-      display: none
+      margin-top: 20px
+      padding-left: 0
+      // display: none
 
 +r($tablet)
   .footer
     &__main
-      margin-top: 30px
+      // margin-top: 30px
     &__info, &__copy
-      font-size: 12px
+      // font-size: 12px
 
     &--mini
       .footer
@@ -128,21 +143,45 @@
 +r($mobile)
   .footer
     &__wrapper
-      padding: 40px 0 40px
+      padding: 30px 0 30px
     &__top
-      flex-direction: column
+      // flex-direction: column
     &__socials
+      // justify-content: center
+      // margin-left: 0
+      // margin-top: 20px
       padding-right: 0
-      justify-content: center
-      margin-left: 0
-      margin-top: 20px
     &__main
+      margin-top: 0
 
     &__info
-      text-align: center
-      p
-        display: none
+      // text-align: center
+      // p
+      //   display: none
+
+    &__nav
+      margin-top: 10px
+      flex: 0 1 100%
+      flex-wrap: wrap
+      &-col
+        margin-bottom: 30px
+
+    &__copy
+      &--mobile
+        margin-top: 0px
+
     &--mini
       .footer
         &__socials
-          margin-right: 10px
+          // margin-right: 10px
+
++r($mobile-s)
+  .footer
+    &__logo
+      font-size: 25px
+
+    &--mini
+      .footer
+        &__wrapper
+          padding-left: 15px
+          padding-right: 15px
