@@ -13,9 +13,9 @@ block content
     .container.container--wide
       // breadcrumbs
       .breadcrumbs.wow
-        a(href="#") Service Category 1
-        a(href="#") Service Category 2
-        a(href="#") Category 3
+        a(href="#") Marketing & Promotion
+        a(href="#") Spotify Playlists
+        a(href="#") Pop
   
       .product__wrapper
         .product__content
@@ -25,14 +25,15 @@ block content
         
           // box
           .product__box.wow
-            .product__main
+            // cover modifier to cover bg photo
+            .product__main.product__main--cover
               .product__cover
-                img(src='img/productCover.jpg' srcset='img/productCover@2x.jpg 2x')
+                img(src='img/coverNew.jpg')
               .product__scope
-                .product__artist Give and Take
-                .product__name Bassline Drift
-                .product__album Album · 2005
-                .product__price $99
+                .product__artist Spotify Playlists
+                .product__name I will list you on 30 Pop Playlists
+                .product__album · 
+                .product__price $199
                 .product__delivery
                   +icon('ico-time')
                   span Delivery time <span>3 Days</span>
@@ -40,8 +41,8 @@ block content
           .product__box.wow
             .product__title About this Job
             .product__info
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, 
-              p consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitationLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              p I can list your Pop track on 30 highly subscribed playlists! Each of the playlists has around 700 - 2000 active subscribers and are often played in bars and clubs around the Shoreditch area. These playlists only have 30/40 songs in each, so you're much more likely to be heard. 
+              p I'm looking forward to working with you!! Please drop me a message so that I can listen to the song(s) before hand! 
               
           //- // teleport sidebar here!
           div(data-teleport-target="product-sidebar")
@@ -84,7 +85,7 @@ block content
                     .testimonial__timestamp about 21 hours ago
                     .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
                   .testimonial__content
-                    p With Golden Hour, pop-country singer-songwriter Kacey Musgraves delivers a warm, vulnerable album chock-full of masterful love songs that ring pure and true. Musgraves sounds more confident as a musician than she ever has — and her superb debut album, Same Trailer, Different Park, and its follow-up, Pageant Material, were hardly meek.
+                    p Awesome service, exactly as described! Thanks Chester!
                 
                 // testiminial
                 .testimonial
@@ -106,7 +107,7 @@ block content
                     .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
                   
                   .testimonial__content
-                    p a stunning slip of a song that, in less than a minute and 30 seconds, uncovers the aching love that flows through generations of women and has never failed to bring me to tears.
+                    p My spotify plays went THROUGH THE ROOF! Chester is a really great guy, and delivered exactly what he promised.
                 // testiminial
                 .testimonial
                   .testimonial__head
@@ -127,7 +128,7 @@ block content
                     .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
                     
                   .testimonial__content
-                    p Golden Hour is the steady and self-assured product of an audacious artist whose body of work speaks for itself. The record exemplifies the deep and powerful magic of pure goodness. Musgraves hits one high note after another on Golden Hour; her talent as a songwriter and melody-maker is second to none, and each song is thoughtful, well-formed, and a delightful experience on its own.       
+                    p Perfect service for the promotion of my artist! Our label will be buying again in future!      
             
         //sidebar
         .product__sidebar.product-sidebar(js-teleport data-teleport-to="product-sidebar" data-teleport-condition="<992")
@@ -137,7 +138,7 @@ block content
                 .avatar.avatar--big
                   img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
               .sidebar-user__name.sidebar-user__name--bigger Chester Parsons
-              .sidebar-user__position Job Title/Artist Name.
+              .sidebar-user__position Spotify Playlist Curator
               .sidebar-user__rating
                 .rating-stars.rating-stars--bigger(data-rating='3')
                   i.icon
@@ -147,11 +148,11 @@ block content
                   i.icon
                     
           .product-sidebar__bottom.wow
-            .product-sidebar__title Services
+            .product-sidebar__title Service
             ul.product-sidebar__list
-              li Lorem ipsum dolor si
-              li Lorem ipsum dolor longer text to fit
-              li Lorem ipsum dolor si
+              li Your music on 30 Pop Playlists
+              li For up to 4 weeks
+              li A full report at the end!
             .product-sidebar__message
               a(href="message.html").btn.btn-message
                 span Message seller

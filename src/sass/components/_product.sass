@@ -27,6 +27,17 @@
 
   &__main
     display: flex
+    &--cover
+      display: block
+      .product
+        &__cover
+          margin: -40px -40px 0
+          size: calc(100% + 80px) auto
+          border-bottom-left-radius: 0px
+          border-bottom-right-radius: 0px
+        &__scope
+          margin-top: 40px
+          margin-left: 0
   &__cover
     position: relative
     z-index: 1
@@ -35,6 +46,7 @@
     box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
     border-radius: 5px
     overflow: hidden
+    font-size: 0
     img
       width: 100%
 
