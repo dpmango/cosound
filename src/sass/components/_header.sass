@@ -165,6 +165,8 @@
     justify-content: flex-end
     min-width: 1px
     min-height: 42px
+    &--search
+      display: none
     &-item
       flex: 0 1 80px
       // min-width: 80px
@@ -207,6 +209,8 @@
         font-size: 22px
       &-cart
         font-size: 22px
+      &-search
+        font-size: 20px
 
 
   &__premium
@@ -378,6 +382,33 @@
     &--dash
       .header
         //
+    &--alt
+      .header
+        &__hamburger
+          flex: 0 0 60px
+          order: 1
+          padding-left: 0
+          padding-right: 20px
+          .hamburger
+            margin-left: -10px
+            margin-right: 0
+
+        &__actions
+          flex: 0 0 60px
+          order: 3
+          margin-left: 0
+          display: none
+          &--search
+            transform: translateX(10px)
+            display: flex
+          &-item
+            display: flex !important
+
+        &__logo
+          order: 2
+          margin-left: auto
+          margin-right: auto
+          padding-right: 0
 
 +r(460)
   .header

@@ -386,3 +386,45 @@
           margin-right: 0
     &__content
       padding-left: 0
+
++r($mobile)
+  .profile
+    &--alt
+      .profile
+        &__status
+          display: none
+        &__bg
+          &-wrapper
+            background-image: linear-gradient(85deg, #2CC1A5 0%, #8E5ACD 100%)
+            border-bottom-left-radius: 50%
+            border-bottom-right-radius: 50%
+            top: -145px
+            min-height: 300px
+            width: 120%
+            margin-left: -10%
+            svg
+              display: none
+        &__info
+          margin-top: 5px
+        &__position
+          order: 1
+          margin-top: 0
+          margin-bottom: 15px
+
+        &__image
+          order: 2
+        &__name
+          order: 3
+          color: $fontColor
+        &__connections
+          margin-top: 0
+          order: 4
+          background: transparent
+          box-shadow: none
+          &-num
+            color: $colorAqua
+        &__bio
+          order: 5
+          margin-top: 0
+          p
+            font-size: 13px
