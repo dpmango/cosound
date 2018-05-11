@@ -392,7 +392,13 @@
     &--alt
       .profile
         &__status
-          display: none
+          order: 1
+          background: transparent
+          font-size: 14px
+          margin-top: 5px
+          color: $colorWhite50
+          text-align: center
+          padding: 0
         &__bg
           &-wrapper
             background-image: linear-gradient(85deg, #2CC1A5 0%, #8E5ACD 100%)
@@ -407,10 +413,10 @@
         &__info
           margin-top: 5px
         &__position
-          order: 1
-          margin-top: 0
+          order: 4
+          margin-top: 10px
           margin-bottom: 15px
-
+          color: $fontColor50
         &__image
           order: 2
         &__name
@@ -418,13 +424,13 @@
           color: $fontColor
         &__connections
           margin-top: 0
-          order: 4
+          order: 5
           background: transparent
           box-shadow: none
           &-num
             color: $colorAqua
         &__bio
-          order: 5
+          order: 6
           margin-top: 0
           p
             font-size: 13px
