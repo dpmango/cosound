@@ -1030,7 +1030,7 @@ $(document).ready(function(){
       $('[js-mask-zip]').mask(mask, zipOptions);
     }};
 
-    $('[js-mask-zip]').mask('AA99 AA9', zipOptions);
+    // $('[js-mask-zip]').mask('AA99 AA9', zipOptions);
 
     _document
       .on('keydown', '[js-mask-price]', function(e){
