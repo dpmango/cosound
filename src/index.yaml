@@ -43,6 +43,8 @@ PageList:
   ready: 90
 - file: messages.html
   ready: 90
+- file: messages-2.html
+  ready: 90
 - file: account.html
   ready: 90
 - file: plans.html

@@ -2,6 +2,20 @@
 .ms
   margin-top: 140px
   margin-bottom: 95px
+  &--fullpage
+    margin-top: 115px
+    margin-bottom: 0
+    .ms
+      &__wrapper
+        margin-left: -50px
+        margin-right: -50px
+        border-radius: 0
+        height: calc(100vh - 115px)
+      &__sidebar
+        border-top-left-radius: 0px
+        border-bottom-left-radius: 0px
+      &__create
+        border-bottom-right-radius: 0px
   &__wrapper
     position: relative
     z-index: 1
@@ -307,6 +321,11 @@
   .ms
     margin-top: 72px
     margin-bottom: 0
+    &--fullpage
+      .ms
+        &__wrapper
+          margin-left: -25px
+          margin-right: -25px
     &__wrapper
       margin-left: -25px
       margin-right: -25px
@@ -358,3 +377,9 @@
         right: -49px
       .emojionearea-picker.emojionearea-picker-position-top
         right: -49px
+
++r($mobile-s)
+  .ms
+    &__wrapper
+      margin-left: -15px
+      margin-right: -15px

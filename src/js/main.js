@@ -300,17 +300,20 @@ $(document).ready(function(){
 
   // Fillings steps
   function setStepsClasses() {
-    var $steps = $('.signup__steps');
-    var $stepsChilds = $steps.children();
-    var productStep = parseInt($steps.data('active-step')) - 1; // arr index
+    var $allSteps = $('.signup__steps');
+    $allSteps.each(function(i, steps){
+      var $steps = $(steps);
+      var $stepsChilds = $steps.children();
+      var productStep = parseInt($steps.data('active-step')) - 1; // arr index
 
-    if (typeof productStep == 'number' && $stepsChilds.length > 1) {
-        $($stepsChilds[productStep]).addClass('is-current')
+      if (typeof productStep == 'number' && $stepsChilds.length > 1) {
+          $($stepsChilds[productStep]).addClass('is-current')
 
-        for (var i = 0; i <= productStep - 1; i++) {
-            $($stepsChilds[i]).addClass('is-done')
-        }
-    }
+          for (var i = 0; i <= productStep - 1; i++) {
+              $($stepsChilds[i]).addClass('is-done')
+          }
+      }
+    })
   }
   _document.on('change', '[js-change-location]', function(e){
     var selectedVal = $(this).val().toLowerCase();
@@ -362,7 +365,8 @@ $(document).ready(function(){
     // HEADER
     // notifications toggle
     .on('click', '[js-header-notifications]', function(e){
-      $(this).toggleClass('is-active');
+      closeMobileMenu();
+      $('[js-header-notifications]').toggleClass('is-active');
       $('.ntf').toggleClass('is-active');
     })
     .on('click touchstart', function(e){
@@ -556,6 +560,18 @@ $(document).ready(function(){
       } else {
         target.slideUp();
       }
+    })
+    .on('click', '[js-advSearch-fake-btn]', function(){
+      if ( $(this).is('.btn-primary--violet') ){
+        $(this).removeClass('btn-primary--violet');
+        $(this).addClass('btn-primary--disabled');
+        $(this).find('span').html('Requested');
+      } else {
+        $(this).removeClass('btn-primary--disabled');
+        $(this).addClass('btn-primary--violet');
+        $(this).find('span').html('Connect');
+      }
+
     })
 
 
@@ -1004,13 +1020,17 @@ $(document).ready(function(){
     $('[js-mask-cvc]').mask('999');
 
     // refactor multiple formats ?
-    var zipOptions =  {onKeyPress: function(cep, e, field, options){
-      var masks = ['00000-000', '0-00-00-00'];
-      var mask = (cep.length>7) ? masks[1] : masks[0];
+    var zipOptions =  {
+      translation: {
+        A: { pattern: /[A-Za-z]/ },
+      },
+      onKeyPress: function(cep, e, field, options){
+      var masks = ['AA99 AA9', '0-00-00-00'];
+      var mask = (cep.length>8) ? masks[1] : masks[0];
       $('[js-mask-zip]').mask(mask, zipOptions);
     }};
 
-    $('[js-mask-zip]').mask('00000-000', zipOptions);
+    $('[js-mask-zip]').mask('AA99 AA9', zipOptions);
 
     _document
       .on('keydown', '[js-mask-price]', function(e){
@@ -1158,7 +1178,6 @@ $(document).ready(function(){
   function readURL(input) {
     if (input.files && input.files[0]) {
       var parent = $(input).parent();
-      console.log(input)
       var targetPlaceholder = parent.find('img');
       var reader = new FileReader();
 
@@ -1655,7 +1674,28 @@ $(document).ready(function(){
       errorPlacement: validateErrorPlacement,
       highlight: validateHighlight,
       unhighlight: validateUnhighlight,
-      submitHandler: validateSubmitHandler,
+      submitHandler: function(form){
+        var validator = this;
+        var email = $(form).find('input[name="email"]').val();
+        var password = $(form).find('input[name="password"]').val();
+
+        if ( email !== "admin@mail.com" ){
+          validator.showErrors({
+            "email": "No user found with this email"
+          });
+        }
+
+        if ( password !== "admin" ){
+          validator.showErrors({
+            "password": "Wrong passowrd"
+          });
+        }
+
+        if ( email == "admin@mail.com" && password == "admin" ) {
+          window.location.href = '/dashboard.html'
+        }
+
+      },
       rules: {
         email: {
           required: true,
@@ -1663,7 +1703,7 @@ $(document).ready(function(){
         },
         password: {
           required: true,
-          minlength: 6,
+          minlength: 4,
         }
       },
       messages: {
@@ -1705,7 +1745,9 @@ $(document).ready(function(){
       errorPlacement: validateErrorPlacement,
       highlight: validateHighlight,
       unhighlight: validateUnhighlight,
-      submitHandler: validateSubmitHandler,
+      submitHandler: function(){
+        window.location.href = '/signup-2.html'
+      },
       rules: {
         postal_code: {
           required: true,
@@ -1719,30 +1761,6 @@ $(document).ready(function(){
         },
       }
     });
-
-
-    // $("[js-validate-signup-2]").validate({
-    //   errorPlacement: validateErrorPlacement,
-    //   highlight: validateHighlight,
-    //   unhighlight: validateUnhighlight,
-    //   submitHandler: validateSubmitHandler,
-    //   rules: {
-    //     postal_code: {
-    //       required: true,
-    //       minlength: 6,
-    //     }
-    //   },
-    //   messages: {
-    //     postal_code: {
-    //         required: "This field is required",
-    //         minlength: "Postal code should be at least 6 character"
-    //     },
-    //   }
-    // });
-
-
-    // ????
-    // HOW TO VALIDATE STEP 2 AND REDIRECT ????
 
 
     $("[js-validate-signup-3]").validate({
@@ -1773,8 +1791,6 @@ $(document).ready(function(){
     /////////////
     function nextStep(num){
       var target = $('[data-step='+num+']');
-      console.log(target);
-
       if ( target ){
         target.siblings().slideUp();
         target.slideDown();
@@ -2009,6 +2025,8 @@ $(document).ready(function(){
     _window.scrollTop(0);
     _window.scroll();
     _window.resize();
+
+    initScrollMonitor();
   }
 
   //////////
