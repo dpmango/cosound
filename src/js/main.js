@@ -382,8 +382,27 @@ $(document).ready(function(){
           closeNotifications();
         }
       }
-
     })
+
+    // header user
+    _document
+      .on('click', '.header__user .avatar', function(){
+        closeAllActive();
+        $('.header__user-dropdown').toggleClass('is-active');
+      })
+      .on('click touchstart', function(e){
+        if ( isMobile && e.type == "touchstart" ){
+          close();
+        } else if ( e.type == "click" ){
+          close();
+        }
+
+        function close(){
+          if ( !$(e.target).closest('.header__user').length > 0 ) {
+            $('.header__user-dropdown').removeClass('is-active');
+          }
+        }
+      })
 
     .on('click', '[js-post-types] .create-post__type', function(){
       $(this).addClass('is-current').siblings().removeClass('is-current')
