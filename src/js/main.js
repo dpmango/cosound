@@ -792,7 +792,25 @@ $(document).ready(function(){
     }
   }
 
+  //////////
+  // PRE ITO FUNCTIONS
+  //////////
 
+  // focus in
+  _document.on('focus', '[js-add-focus-parent]', function(){
+    $(this).parent().addClass('is-focused');
+  })
+
+  // focus out
+  _document.on('blur', '[js-add-focus-parent]', function(){
+    var thisVal = $(this).val();
+    var parent = $(this).parent();
+    if ( thisVal !== "" ){
+      parent.addClass('is-focused');
+    } else {
+      parent.removeClass('is-focused');
+    }
+  })
   //////////
   // ACCOUNT NAV
   //////////
@@ -1954,6 +1972,30 @@ $(document).ready(function(){
       messages: {
         name: {
           required: "This field is required",
+        },
+      }
+    });
+
+    //////////////
+    // PRE ITO
+    //////////////
+
+    // email form
+    $("[js-validate-pre-ito]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+      },
+      messages: {
+        email: {
+            required: "This field is required",
+            email: "Email is not valid"
         },
       }
     });

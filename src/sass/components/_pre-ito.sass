@@ -1,0 +1,39 @@
+
+/* ITO PRE
+.ito-pre
+  &-email
+    width: 100%
+    position: relative
+    z-index: 1
+    display: flex
+    background: white
+    border-radius: 30px
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+    transition: .25s $ease
+    input
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      background: transparent
+      color: $colorAqua
+      border: none
+      border-radius: 30px
+      padding: 20px 80px 19px 35px
+      font-size: 16px
+      transition: .25s $ease
+      &::placeholder
+        color: $colorAqua
+      &:focus
+        outline: none
+
+    button
+      position: absolute
+      top: 0
+      bottom: 0
+      // fix to cover border-radius
+      right: -1px
+      z-index: 2
+
+    &.is-focused
+      box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2)

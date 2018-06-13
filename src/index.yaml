@@ -69,3 +69,5 @@ PageList:
   ready: 90
 - file: ito.html
   ready: 90
+- file: ito-pre.html
+  ready: 40
