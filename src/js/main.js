@@ -942,6 +942,38 @@ $(document).ready(function(){
     })
 
 
+    // ito swiper
+    new Swiper('[js-ito-testimonials-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-testimonials__slide",
+      direction: 'horizontal',
+      loop: true,
+      watchOverflow: false,
+      setWrapperSize: false,
+      // setWrapperSize: true,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      // loop: true,
+      normalizeSlideIndex: true,
+      // centeredSlides: true,
+      freeMode: false,
+      // effect: 'fade',
+      autoplay: {
+        delay: 5000,
+      },
+      navigation: {
+        nextEl: '.ito-slider-next',
+        prevEl: '.ito-slider-prev',
+      },
+      breakpoints: {
+        // when window width is <= 992px
+        992: {
+          // autoHeight: true
+        }
+      }
+    })
+
+
   }
 
   //////////

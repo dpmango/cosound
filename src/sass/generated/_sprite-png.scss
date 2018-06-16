@@ -1,11 +1,101 @@
 $sprite: (
+	brand-aion: (
+		offset-x: -382px,
+		offset-y: 0px,
+		width: 141px,
+		height: 55px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-coincart: (
+		offset-x: -148px,
+		offset-y: 0px,
+		width: 224px,
+		height: 65px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-dropbox: (
+		offset-x: -148px,
+		offset-y: -142px,
+		width: 213px,
+		height: 59px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-factom: (
+		offset-x: 0px,
+		offset-y: -251px,
+		width: 246px,
+		height: 44px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-icon: (
+		offset-x: 0px,
+		offset-y: -368px,
+		width: 158px,
+		height: 48px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-paypal: (
+		offset-x: -195px,
+		offset-y: -305px,
+		width: 168px,
+		height: 45px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-quantstamp: (
+		offset-x: -148px,
+		offset-y: -75px,
+		width: 223px,
+		height: 57px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-slack: (
+		offset-x: 0px,
+		offset-y: -305px,
+		width: 185px,
+		height: 53px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-stripe: (
+		offset-x: -382px,
+		offset-y: -65px,
+		width: 135px,
+		height: 57px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
+	brand-visa: (
+		offset-x: -382px,
+		offset-y: -288px,
+		width: 119px,
+		height: 37px,
+		total-width: 582px,
+		total-height: 499px,
+		image: '../img/sprite.png'
+	),
 	checkmark: (
-		offset-x: -333px,
-		offset-y: -170px,
+		offset-x: -498px,
+		offset-y: -186px,
 		width: 10px,
 		height: 8px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	cosound-token: (
@@ -13,62 +103,62 @@ $sprite: (
 		offset-y: 0px,
 		width: 138px,
 		height: 115px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	emodji: (
-		offset-x: -227px,
-		offset-y: -187px,
+		offset-x: -533px,
+		offset-y: -401px,
 		width: 23px,
 		height: 23px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -333px,
-		offset-y: -85px,
+		offset-x: -568px,
+		offset-y: -302px,
 		width: 14px,
 		height: 14px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	itoCardDiscount: (
-		offset-x: -148px,
-		offset-y: -73px,
+		offset-x: -382px,
+		offset-y: -205px,
 		width: 69px,
 		height: 73px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	itoCardGlobe: (
-		offset-x: -148px,
-		offset-y: -156px,
+		offset-x: 0px,
+		offset-y: -426px,
 		width: 69px,
 		height: 73px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	itoHandle: (
-		offset-x: -333px,
-		offset-y: -30px,
+		offset-x: -567px,
+		offset-y: -337px,
 		width: 15px,
 		height: 20px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	list-check: (
-		offset-x: -227px,
-		offset-y: -73px,
+		offset-x: -533px,
+		offset-y: -302px,
 		width: 25px,
 		height: 25px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	no-services: (
@@ -76,215 +166,215 @@ $sprite: (
 		offset-y: -125px,
 		width: 135px,
 		height: 116px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	paperclip: (
-		offset-x: 0px,
-		offset-y: -282px,
+		offset-x: -533px,
+		offset-y: -434px,
 		width: 22px,
 		height: 23px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-amex: (
-		offset-x: 0px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -116px,
 		width: 35px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-discover: (
-		offset-x: -180px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -209px,
 		width: 34px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-jcb: (
-		offset-x: -45px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -147px,
 		width: 35px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-maestro-old: (
-		offset-x: -90px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -178px,
 		width: 35px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-mastercard-old: (
-		offset-x: -268px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -271px,
 		width: 34px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-paypal: (
-		offset-x: -135px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -85px,
 		width: 35px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	pay-visa: (
-		offset-x: -224px,
-		offset-y: -251px,
+		offset-x: -533px,
+		offset-y: -240px,
 		width: 34px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-communication: (
-		offset-x: -227px,
-		offset-y: -156px,
+		offset-x: -533px,
+		offset-y: -370px,
 		width: 26px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-gears: (
-		offset-x: -95px,
-		offset-y: -282px,
+		offset-x: -564px,
+		offset-y: -467px,
 		width: 18px,
 		height: 18px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-history: (
-		offset-x: -63px,
-		offset-y: -282px,
+		offset-x: -498px,
+		offset-y: -132px,
 		width: 22px,
 		height: 19px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-privacy: (
-		offset-x: -333px,
-		offset-y: 0px,
+		offset-x: -565px,
+		offset-y: -434px,
 		width: 17px,
 		height: 20px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-services: (
-		offset-x: -227px,
-		offset-y: -108px,
+		offset-x: -533px,
+		offset-y: -337px,
 		width: 24px,
 		height: 23px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	profile-support: (
-		offset-x: -32px,
-		offset-y: -282px,
+		offset-x: -533px,
+		offset-y: -467px,
 		width: 21px,
 		height: 21px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -333px,
-		offset-y: -109px,
+		offset-x: -382px,
+		offset-y: -335px,
 		width: 15px,
 		height: 11px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	signup-type-band: (
-		offset-x: -148px,
-		offset-y: 0px,
+		offset-x: -382px,
+		offset-y: -132px,
 		width: 106px,
 		height: 63px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	signup-type-musician: (
-		offset-x: -264px,
-		offset-y: -73px,
+		offset-x: -533px,
+		offset-y: 0px,
 		width: 49px,
 		height: 75px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	signup-type-pro: (
-		offset-x: -264px,
-		offset-y: 0px,
+		offset-x: -461px,
+		offset-y: -205px,
 		width: 59px,
 		height: 63px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -264px,
-		offset-y: -224px,
+		offset-x: -498px,
+		offset-y: -161px,
 		width: 19px,
 		height: 15px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -333px,
-		offset-y: -130px,
+		offset-x: -569px,
+		offset-y: -370px,
 		width: 10px,
 		height: 10px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -333px,
-		offset-y: -150px,
+		offset-x: -511px,
+		offset-y: -288px,
 		width: 10px,
 		height: 10px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	suggestions-search: (
-		offset-x: -264px,
-		offset-y: -158px,
+		offset-x: -79px,
+		offset-y: -426px,
 		width: 56px,
 		height: 56px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 	time: (
-		offset-x: -333px,
-		offset-y: -60px,
+		offset-x: -566px,
+		offset-y: -401px,
 		width: 15px,
 		height: 15px,
-		total-width: 350px,
-		total-height: 305px,
+		total-width: 582px,
+		total-height: 499px,
 		image: '../img/sprite.png'
 	),
 );
@@ -343,6 +433,36 @@ $sprite: (
 
 
 
+	.icon-brand-aion {
+		@include sprite(brand-aion)
+	}
+	.icon-brand-coincart {
+		@include sprite(brand-coincart)
+	}
+	.icon-brand-dropbox {
+		@include sprite(brand-dropbox)
+	}
+	.icon-brand-factom {
+		@include sprite(brand-factom)
+	}
+	.icon-brand-icon {
+		@include sprite(brand-icon)
+	}
+	.icon-brand-paypal {
+		@include sprite(brand-paypal)
+	}
+	.icon-brand-quantstamp {
+		@include sprite(brand-quantstamp)
+	}
+	.icon-brand-slack {
+		@include sprite(brand-slack)
+	}
+	.icon-brand-stripe {
+		@include sprite(brand-stripe)
+	}
+	.icon-brand-visa {
+		@include sprite(brand-visa)
+	}
 	.icon-checkmark {
 		@include sprite(checkmark)
 	}

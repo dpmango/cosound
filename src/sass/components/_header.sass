@@ -28,6 +28,7 @@
     margin-left: auto
     display: flex
     align-items: center
+    min-height: 34px
     li
       display: inline-block
       margin-right: 25px
@@ -373,6 +374,12 @@
 
 +r($desktop)
   .header
+    /* fix a gap to store more elements
+    &__menu
+      display: none
+    &__hamburger
+      margin-left: auto
+      display: block
     &__search
       display: none
     &__actions
@@ -380,18 +387,19 @@
     &--dash
       .header
         &__hamburger
-          display: block
+          // display: block
+          margin-left: 0
 
 +r($tablet)
   .header
     &__wrapper
       padding-left: 25px
       padding-right: 25px
-    &__menu
-      display: none
+    // &__menu
+    //   display: none
     &__hamburger
       margin-left: auto
-      display: block
+      // display: block
     &__premium
       display: none
     &__user

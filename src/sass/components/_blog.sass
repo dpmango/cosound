@@ -1,0 +1,185 @@
+.blog
+  position: relative
+  /* to position above hero
+  z-index: 2
+  margin: -280px 0 80px 0
+  &__grid
+    display: flex
+    flex-wrap: wrap
+    margin-left: -15px
+    margin-right: -15px
+  &__col
+    flex: 0 1 33.3%
+    max-width: 33.3%
+    /* for equal cols
+    display: flex
+    flex-direction: column
+    min-width: 1px
+    min-height: 0
+    padding: 15px
+    &--wide
+      flex-basis: 100%
+      max-width: 100%
+
+  &__more
+    margin-top: 30px
+    text-align: center
+
+
+.blog-card
+  flex: 1 0 auto
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  background: white
+  box-shadow: 0 10px 35px 0 rgba(147,150,162,0.25)
+  border-radius: 8px
+  overflow: hidden
+  transition: box-shadow .25s $ease
+  &:hover
+    box-shadow: 0 5px 20px 0 rgba(147,150,162,0.25)
+
+  &__image
+    flex: 0 0 auto
+    position: relative
+    z-index: 1
+    overflow: hidden
+    font-size: 0
+    img
+      width: 100%
+  &__content
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    padding: 30px 30px 40px
+  &__title
+    font-size: 20px
+    font-weight: 500
+    line-height: 1.6
+    margin-bottom: 10px
+  &__description
+    font-size: 16px
+    line-height: 1.875
+    color: $fontColor50
+    margin: 10px 0
+  &__cta
+    padding-top: 25px
+    margin-top: auto
+    a
+      position: relative
+      display: inline-block
+      color: $colorRed
+      font-size: 15px
+      font-weight: 500
+      transition: .25s $ease
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 0px
+        left: 0
+        right: 0
+        height: 1px
+        background: $colorRed
+        transition: .25s $ease
+      &:hover
+        color: $colorAqua
+        &::after
+          right: 100%
+
+  /* card modifiers
+  &--horizontal
+    flex-direction: row
+    .blog-card
+      &__image
+        flex: 0 2 100%
+        max-width: 100%
+        img
+          position: absolute
+          top: 50%
+          left: 50%
+          min-width: 100%
+          min-height: 100%
+          width: auto
+          height: auto
+          transform: translate(-50%,-50%)
+      &__content
+        flex: 0 0 400px
+        max-width: 400px
+        min-width: 1px
+        padding: 50px 50px 50px 60px
+
++r(1150)
+
+
++r($desktop)
+  .blog
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+      &--wide
+        flex-basis: 100%
+        max-width: 100%
+
+  .blog-card
+    &__title
+      font-size: 18px
+    &__description
+      font-size: 14px
+    &__cta
+      padding-top: 15px
+    &--horizontal
+      .blog-card
+        &__content
+          flex-basis: 350px
+          max-width: 350px
+          padding: 40px 30px 40px 40px
+
++r($tablet)
+  .blog
+    margin-top: -200px
+    &__col
+      // flex-basis: 50%
+      // max-width: 50%
+
+  .blog-card
+    &__content
+      padding: 25px 20px 30px
+
+    &--horizontal
+      flex-direction: column
+      .blog-card
+        &__image
+          flex: 0 0 auto
+          img
+            position: static
+            transform: none
+            margin-left: -8px
+            margin-right: -8px
+            width: calc(100% + 16px)
+            min-width: 1px
+            min-height: 1px
+        &__content
+          flex: 0 0 auto
+          max-width: 400px
+          margin-left: auto
+          margin-right: auto
+          padding: 35px 20px 40px
+
++r($mobile)
+  .blog
+    &__wrapper
+      margin-left: -10px
+      margin-right: -10px
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      padding: 10px
+
+  .blog-card
+
+
++r($mobile-s)
+  .blog
+    margin-top: 0

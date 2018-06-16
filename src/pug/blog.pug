@@ -1,0 +1,119 @@
+---
+title: Blog
+---
+extends shared/_layout
+
+block footer
+  include components/_footer-full--blue
+  
+block content
+  
+  // HERO
+  .hero
+    .hero__bg
+      .hero__bg-wrapper
+        include ../inline-svg/hero-bg-blog.svg
+    .container
+      .hero__wrapper.hero__wrapper--have-bottom-content
+        .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+          +icon('ico-logo')
+        .hero__text.wow(data-animation-delay=".5s")
+          p Welcome to a word of collaboration and infinite opportunity
+          
+  // BLOG
+  .blog
+    .container.container--extra
+      .blog__grid
+        // card wide
+        .blog__col.blog__col--wide
+          .blog-card.blog-card--horizontal
+            .blog-card__image
+              img(src='img/blogCard-1.jpg' srcset='img/blogCard-1@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title Global Music Industry Directory 
+              .blog-card__description Stay on top of all your projects using this free project management form template from Framestr. This template makes it easy to stay on top of big projects to make sure they run smoothly and…
+              .blog-card__cta
+                a(href="#") Read more
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-2.jpg' srcset='img/blogCard-2@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title A Music Industry Marketplace and Payment Portal
+              .blog-card__description Restaurant reviews help us to judge whether a place is worth eating at or if it’s better to simply….
+              .blog-card__cta
+                a(href="#") Read more
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-3.jpg' srcset='img/blogCard-3@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title A Music Industry Social Network
+              .blog-card__description The employee review process is an important aspect of improving both individuals performance...
+              .blog-card__cta
+                a(href="#") Read more
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-4.jpg' srcset='img/blogCard-4@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title Employee Evaluation Form
+              .blog-card__description Performance reviews are a valuable aspect of every company operation. The employee evaluation...
+              .blog-card__cta
+                a(href="#") Read more  
+        
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-5.jpg' srcset='img/blogCard-5@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title Advanced AI integration
+              .blog-card__description While no one would ever want such a tragic event as a car accident to occur, it’s always wise to...
+              .blog-card__cta
+                a(href="#") Read more
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-6.jpg' srcset='img/blogCard-6@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title Adipiscing bibendum est ultricies intege
+              .blog-card__description The form you have but hope you never have to use, the accident report form, is an integral…
+              .blog-card__cta
+                a(href="#") Read more
+        // card
+        .blog__col
+          .blog-card
+            .blog-card__image
+              img(src='img/blogCard-7.jpg' srcset='img/blogCard-7@2x.jpg 2x')
+            .blog-card__content
+              .blog-card__title Adipiscing bibendum est ultricies intege
+              .blog-card__description Sometimes the templates that are out there don’t just cut. We need to create our own form for…
+              .blog-card__cta
+                a(href="#") Read more                        
+      
+      .blog__more
+        a(href='#' js-fake---).btn.btn-outline
+          span Next
+          
+  // INFO
+  .info.info--ito
+    .info__bg
+      .info__bg-wrapper
+        include ../inline-svg/info-promo-bg-2.svg
+    .container.container--extra
+      .info__wrapper
+        .info__content.wow(data-animation-class="wowFadeRight")
+          h2.heading.c-aqua Artist Development
+          .info__text
+            p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+            .info__cta
+              a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
+                span Get Started
+        .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+          .info__image-mask
+            img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
