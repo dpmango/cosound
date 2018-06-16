@@ -8,113 +8,105 @@ block footer
   
 block content
   
-  // HERO
-  .hero
-    .hero__bg
-      .hero__bg-wrapper
-        //- include ../inline-svg/hero-bg-home.svg
-    .container
-      .hero__wrapper
-        .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
-          +icon('ico-logo')
-        .hero__text.wow(data-animation-delay=".5s")
-          p Welcome to a word of collaboration and infinite opportunity
+  .ambassadors
+    // HERO
+    .hero
+      .hero__bg
+        .hero__bg-wrapper
+          include ../inline-svg/hero-bg-blog.svg
+      .container
+        .hero__wrapper.hero__wrapper--have-bottom-content
+          .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+            +icon('ico-logo')
+          .hero__text.wow(data-animation-delay=".5s")
+            p Welcome to a word of collaboration and infinite opportunity
           
-          
-  // ITO members
-  .ito-members
-    .container.container--extra
-      .ito-members__wrapper
-        -
-          var cards = [
-            ['itoMember-1', 'Steven Watson'],
-            ['itoMember-2', 'Steven Watson'],
-            ['itoMember-3', 'Steven Watson'],
-            ['itoMember-4', 'Steven Watson'],
-            ['itoMember-5', 'Steven Watson'],
-            ['itoMember-6', 'Steven Watson'],
-            ['itoMember-7', 'Steven Watson'],
-            ['itoMember-8', 'Steven Watson']
-          ]
-        
-        each card, index in cards    
-          // col
-          .ito-members__col.wow
-            .ito-member
-              .ito-member__image
-                img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
-              .ito-member__content
-                .ito-member__description
-                  .ito-member__name= card[1]
-                  .ito-member__position Lorem ipsum
-              .ito-member__popover
-                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
-
-  
-  // ITO brands
-  .ito-brands
-    .container.container--extra
-      .ito-brands__title Brand  Partnerships
-      .ito-brands__wrapper
-        .ito-brands__el
-          i.icon.icon-brand-paypal
-        .ito-brands__el
-          i.icon.icon-brand-visa
-        .ito-brands__el
-          i.icon.icon-brand-stripe
-        .ito-brands__el
-          i.icon.icon-brand-dropbox
-        .ito-brands__el
-          i.icon.icon-brand-slack
-  
-  // ITO testimonials
-  .ito-testimonials
-    .container
-      .ito-testimonials__slider(js-ito-testimonials-slider).swiper-container
-        .swiper-wrapper
-          .ito-testimonials__slide
-            .ito-testimonial
-              .ito-testimonial__avatar.avatar.avatar--big
-                img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
-              .ito-testimonial__credentials
-                .ito-testimonial__name Mike  James
-                .ito-testimonial__position New York
-              .ito-testimonial__content
-                p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
+          .hero__scroller
+            a.hero__scroller-icon.wow(href="#" js-scrollTo data-selector='.ito-members' data-animation-delay=".75s")
+              include ../inline-svg/scroll-mouse.svg
             
+    // ITO members
+    .ito-members.ito-members--no-margin
+      .ito-members__title Meet  the  Ambassadors
+      .container.container--extra
+        .ito-members__wrapper
+          -
+            var cards = [
+              ['itoMember-1', 'Steven Watson'],
+              ['itoMember-2', 'Maurice Perkins'],
+              ['itoMember-3', 'Welch Zhou'],
+              ['itoMember-4', 'Lulu Moran'],
+              ['itoMember-5', 'Matilda Huff'],
+              ['itoMember-6', 'Lydia Tucker'],
+              ['itoMember-7', 'Steven Watson'],
+              ['itoMember-8', 'Winnie Barton']
+            ]
           
-                    
-  // INFO
-  .info.info--ito
-    .info__bg
-      .info__bg-wrapper
-        include ../inline-svg/info-promo-bg-2.svg
-    .container.container--extra
-      .info__wrapper
-        .info__content.wow(data-animation-class="wowFadeRight")
-          h2.heading.c-aqua Artist Development
-          .info__text
-            p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
-            .info__cta
-              a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
-                span Get Started
-        .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
-          .info__image-mask
-            img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
+          each card, index in cards    
+            // col
+            .ito-members__col.wow
+              .ito-member
+                .ito-member__image
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .ito-member__content
+                  .ito-member__description
+                    .ito-member__name= card[1]
+                    .ito-member__position Lorem ipsum
+                .ito-member__popover
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
 
-  // ITO brands
-  .ito-brands
-    .container.container--extra
-      .ito-brands__title Featured  in
-      .ito-brands__wrapper
-        .ito-brands__el
-          i.icon.icon-brand-coincart
-        .ito-brands__el
-          i.icon.icon-brand-icon
-        .ito-brands__el
-          i.icon.icon-brand-aion
-        .ito-brands__el
-          i.icon.icon-brand-quantstamp
-        .ito-brands__el
-          i.icon.icon-brand-factom
+    
+    // ITO brands
+    include components/_ito-brands
+    
+    // ITO testimonials
+    .ito-testimonials
+      .container
+        .ito-testimonials__slider(js-ito-testimonials-slider).swiper-container
+          .swiper-wrapper
+            .ito-testimonials__slide
+              .ito-testimonial
+                .ito-testimonial__avatar.avatar.avatar--big
+                  img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
+                .ito-testimonial__credentials
+                  .ito-testimonial__name Mike  James
+                  .ito-testimonial__position New York
+                .ito-testimonial__content
+                  p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
+              
             
+                      
+    // INFO
+    .info.info--ito
+      .info__bg
+        .info__bg-wrapper
+          include ../inline-svg/info-promo-bg-2.svg
+      .container.container--extra
+        .info__wrapper
+          .info__content.wow(data-animation-class="wowFadeRight")
+            h2.heading.c-aqua Artist Development
+            .info__text
+              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+              .info__cta
+                a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
+                  span Get Started
+          .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+            .info__image-mask
+              img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
+
+    // ITO brands
+    .ito-brands
+      .container.container--extra
+        .ito-brands__title Featured  in
+        .ito-brands__wrapper
+          .ito-brands__el
+            i.icon.icon-brand-coincart
+          .ito-brands__el
+            i.icon.icon-brand-icon
+          .ito-brands__el
+            i.icon.icon-brand-aion
+          .ito-brands__el
+            i.icon.icon-brand-quantstamp
+          .ito-brands__el
+            i.icon.icon-brand-factom
+              

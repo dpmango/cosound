@@ -1,7 +1,16 @@
 .ito-brands
+  position: relative
+  z-index: 1
   padding: 50px 0
   margin: 100px 0
   width: 100%
+  &--white
+    margin: -200px 0 0
+    padding: 270px 0 200px
+    > .container
+      position: relative
+      z-index: 2
+
   &__title
     font-size: 40px
     font-weight: 500
@@ -19,6 +28,27 @@
     padding: 20px 10px
     flex: 0 0 auto
 
+  &__bg
+    position: absolute 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      max-height: 680px
+      flex-direction: column
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
 
 +r(1200)
   .ito-brands
@@ -78,6 +108,7 @@
       & + p
         margin-top: 1em
 
+
 /* ITO PRE
 .ito-pre
   &-email
@@ -116,3 +147,9 @@
     &.is-focused
       box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
       box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+
+
+/* Pretty much blank wrappers
+
+//  ambassadors
+.ambassadors

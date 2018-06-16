@@ -149,6 +149,19 @@ $(document).ready(function(){
           scrollTop: $(el).offset().top}, 1000);
       return false;
     })
+    .on('click', '[js-scrollTo]', function() { // section scroll
+      var selector = $(this).data('selector')
+      // $('body, html').animate({
+      //     scrollTop: $(selector).offset().top}, 1000);
+      anime({
+        targets: "html, body",
+        scrollTop: $(selector).offset().top,
+        easing: easingSwing, // swing
+        duration: 1000
+      });
+      return false;
+    })
+
 
 
   // close all active elements on page

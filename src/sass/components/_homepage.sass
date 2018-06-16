@@ -81,6 +81,36 @@
       padding-top: 13px
       padding-bottom: 12px
 
+  &__scroller
+    position: absolute
+    z-index: 1
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 100px
+    &-icon
+      size: 100px
+      background: white
+      border-radius: 50%
+      box-shadow: 24px 7px 40px 0 rgba(72,89,125,0.23)
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: box-shadow .25s $ease
+      &:hover
+        box-shadow: 12px 3px 20px 0 rgba(72,89,125,0.23)
+        svg
+          transform: translate(0,7px)
+      svg
+        transition: .25s $ease
+
+      // reference to svg group
+      #mouse
+        circle
+          animation-name: scrollerCircle
+          animation-duration: 1.25s
+          animation-timing-function: ease
+          animation-iteration-count: infinite
+
   /* promo modifier
   &--promo
     .hero
@@ -94,6 +124,15 @@
       &__wrapper
         min-height: 695px
         padding-bottom: 0
+
+/* Scroller mouse animation
+@keyframes scrollerCircle
+  from
+    transform: translate(0,0)
+  40%
+    transform: translate(0,20px)
+  to
+    transform: translate(0,0)
 
 +r($tablet)
   .hero
