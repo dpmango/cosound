@@ -168,11 +168,19 @@
         margin-right: 5px
     &__scroller
       display: none
+
     &--ito
       .hero
         &__wrapper
           min-height: 550px
           // padding-bottom: 120px
+
++r($mobile)
+  .hero
+    &__ito-pre
+      flex-direction: column
+      a.btn
+        margin-top: 20px
 
 +r($mobile-s)
   .hero

@@ -70,9 +70,9 @@ PageList:
 - file: ito.html
   ready: 100
 - file: ito-pre.html
-  ready: 80
+  ready: 90
 - file: ito-pre-simple.html
-  ready: 60
+  ready: 90
 - file: ambassadors.html
   ready: 90
 - file: blog.html

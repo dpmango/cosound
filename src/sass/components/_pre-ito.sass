@@ -368,7 +368,8 @@
       color: $colorAqua
       border: none
       border-radius: 30px
-      padding: 20px 80px 19px 35px
+      /* huge padding for button
+      padding: 20px 180px 19px 35px
       font-size: 16px
       transition: .25s $ease
       &::placeholder
@@ -394,6 +395,17 @@
         top: 1px
         bottom: 1px
 
+
++r($mobile)
+  .ito-pre
+    &-email
+      input
+        padding-left: 20px
+        padding-right: 130px
+      button
+        min-width: 120px
+        padding-left: 15px
+        padding-right: 15px
 /* Pretty much blank wrappers
 
 //  ambassadors
