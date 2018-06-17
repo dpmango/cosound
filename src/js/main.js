@@ -954,8 +954,25 @@ $(document).ready(function(){
       }
     })
 
+    // ito members slider
+    new Swiper('[js-ito-members-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-members__wrapper",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: false,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      normalizeSlideIndex: true,
+      freeMode: true,
+      navigation: {
+        nextEl: '.ito-members__next',
+        prevEl: '.ito-members__prev',
+      }
+    })
 
-    // ito swiper
+    // ito testimonials swiper
     new Swiper('[js-ito-testimonials-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "ito-testimonials__slide",
@@ -975,14 +992,34 @@ $(document).ready(function(){
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,
-      },
-      breakpoints: {
-        // when window width is <= 992px
-        992: {
-          // autoHeight: true
-        }
       }
     })
+
+    // QUOTES SLIDER
+    var itoQuotesSlider = new Swiper('[js-ito-quotes-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-quotes__slide",
+      // direction: 'vertical',
+      // effect: 'fade',
+      loop: false,
+      watchOverflow: false,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      normalizeSlideIndex: true,
+      freeMode: false,
+      // effect: 'flip',
+      // flipEffect: {
+      //   rotate: 30,
+      //   slideShadows: false,
+      // },
+    })
+
+    _document
+      .on('click', '[js-itoQuotes-nav]', function(){
+        var targetSlide = $(this).data('slide');
+        itoQuotesSlider.slideTo( targetSlide - 1 )
+      })
 
 
   }

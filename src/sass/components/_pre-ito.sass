@@ -222,9 +222,184 @@
     &.is-focused
       box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
       box-shadow: 0 4px 8px rgba(0,0,0,0.2)
-
+    &--bordered
+      border: 1px solid white
+      button
+        right: 1px
+        top: 1px
+        bottom: 1px
 
 /* Pretty much blank wrappers
 
 //  ambassadors
 .ambassadors
+
+
+
+
+
+
+
+/* ITO QUOTES
+.ito-quotes
+  position: relative
+  margin: 150px 0 120px 0
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    pointer-events: none
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      max-height: 820px
+      flex-direction: column
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
+
+  &__wrapper
+    min-height: 820px
+    display: flex
+    margin-left: -15px
+    margin-right: -15px
+
+  &__slider
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    min-height: 0
+    padding: 100px 15px 100px 0
+    display: flex
+    flex-direction: column
+
+  &__nav
+    position: relative
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    min-height: 0
+    padding: 15px 0
+    &-el
+      position: absolute
+      font-size: 0
+      cursor: pointer
+      transition: .25s $ease
+
+      &--1
+        top: 0
+        left: 0
+      &--2
+        top: 10%
+        right: 0%
+      &--3
+        top: 40%
+        left: 35%
+      &--4
+        top: 60%
+        left: 0
+      &--5
+        top: 60%
+        right: 0
+      &--6
+        top: 90%
+        left: 50%
+
+
+    &-avatar
+      display: inline-block
+      position: relative
+      z-index: 2
+      border-radius: 50%
+      overflow: hidden
+      font-size: 0
+      box-shadow: 0 25px 50px 0 rgba(29,36,84,0.52)
+      border: 5px solid transparent
+      &--1
+        border-color: white
+        size: 190px
+      &--2
+        border-color: #28BAA9
+        size: 190px
+      &--3
+        border-color: #8064CA
+        size: 190px
+      &--4
+        border-color: #28BAA9
+        size: 100px
+      &--5
+        border-color: #FF277B
+        size: 137px
+      &--6
+        border-color: white
+        size: 167px
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 105%
+        transform: translate(-50%,-50%)
+
+  &__slider
+    position: relative
+  &__slide
+    position: relative
+    flex: 0 0 auto
+    padding-top: 150px
+    padding-left: 30px
+
+  &__quotemark
+    position: absolute
+    top: 90px
+    left: 0
+    font-size: 0
+    z-index: 1
+    pointer-events: none
+    .ico
+      transform: rotate(180deg)
+      fill: rgba(#FFFFFF, .03)
+      font-size: 280px
+
+
+.ito-quote-t
+  color: white
+  &__head
+    display: flex
+    align-items: center
+    &-content
+      margin-left: 25px
+
+  &__avatar
+    flex: 0 0 94px
+
+  &__name
+    font-size: 26px
+    color: white
+    font-weight: 500
+  &__position
+    font-size: 24px
+    color: $colorWhite70
+    line-height: 1.67
+
+  &__content
+    font-size: 24px
+    color: $colorWhite70
+    line-height: 1.67
+    margin-top: 25px
+    p
+      margin: 0
+      & + p
+        margin-top: 1em

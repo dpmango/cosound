@@ -35,7 +35,7 @@ block content
       .info__bg
         .info__bg-wrapper
           //- include ../inline-svg/info-promo-bg.svg
-      .container
+      .container.container--extra
         .info__wrapper
           .info__content.wow(data-animation-class="wowFadeRight")
             h2.heading.c-aqua Music  is  the  great  uniter
@@ -50,64 +50,210 @@ block content
 
 
     // ITO members
-    .ito-members.ito-members--no-margin
-      .container.container--extra
-        .ito-members__wrapper
-          -
-            var cards = [
-              ['itoMember-1', 'Steven Watson'],
-              ['itoMember-2', 'Steven Watson'],
-              ['itoMember-3', 'Steven Watson'],
-              ['itoMember-4', 'Steven Watson'],
-              ['itoMember-5', 'Steven Watson'],
-              ['itoMember-6', 'Steven Watson'],
-              ['itoMember-7', 'Steven Watson'],
-              ['itoMember-8', 'Steven Watson']
-            ]
-          
-          each card, index in cards    
-            // col
-            .ito-members__col.wow
-              .ito-member
-                .ito-member__image
-                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
-                .ito-member__content
-                  .ito-member__description
-                    .ito-member__name= card[1]
-                    .ito-member__position Lorem ipsum
-                .ito-member__popover
-                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+    -
+      var cards = [
+        ['itoMember-1', 'Steven Watson'],
+        ['itoMember-2', 'Steven Watson'],
+        ['itoMember-3', 'Steven Watson'],
+        ['itoMember-4', 'Steven Watson'],
+        ['itoMember-5', 'Steven Watson'],
+        ['itoMember-6', 'Steven Watson'],
+        ['itoMember-7', 'Steven Watson'],
+        ['itoMember-8', 'Steven Watson']
+      ]
     
+    .ito-members.ito-members--no-margin
+      .ito-members__title Meet  the  Ambassadors
+      .container.container--extra
+        .ito-members__slider(js-ito-members-slider).swiper-container
+          .swiper-wrapper
+            .ito-members__wrapper
+              each card, index in cards    
+                // col
+                .ito-members__col.wow
+                  .ito-member
+                    .ito-member__image
+                      img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                    .ito-member__content
+                      .ito-member__description
+                        .ito-member__name= card[1]
+                        .ito-member__position Lorem ipsum
+                    .ito-member__popover
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+            .ito-members__wrapper
+              each card, index in cards    
+                // col
+                .ito-members__col.wow
+                  .ito-member
+                    .ito-member__image
+                      img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                    .ito-member__content
+                      .ito-member__description
+                        .ito-member__name= card[1]
+                        .ito-member__position Lorem ipsum
+                    .ito-member__popover
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+          
+        .ito-members__next
+          +icon("ico-arrow-right")
+        .ito-members__prev
+          +icon("ico-arrow-left")
+          
     // ITO brands
     include components/_ito-brands
 
     // INFO invert
     .info.info--m-bottom
-      .container
+      .container.container--extra
         .info__wrapper.info__wrapper--reverse
           .info__content.wow(data-animation-class="wowFadeLeft")
-            h2.heading.c-violet Your Career
+            h2.heading.c-violet Our Vision
             .info__text
-              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
-          
+              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae auctor eu augue   
+            form.ito-pre-email.ito-pre-email--bordered(action="#" js-validate-pre-ito)
+              input(type="text" placeholder="Email  Address" js-add-focus-parent)
+              button(type="submit").btn.btn-primary.btn-primary--red Join us
+              
           .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
             .info__image-mask
               img(src='img/promoImage_2.jpg' srcset='img/promoImage_2@2x.jpg 2x')
     
+    
+    .ito-quotes
+      .ito-quotes__bg
+        .ito-quotes__bg-wrapper
+          include ../inline-svg/ito-quotes-bg.svg
+      .container.container--extra
+        .ito-quotes__wrapper
+          .ito-quotes__slider(js-ito-quotes-slider).swiper-container
+            .ito-quotes__quotemark
+              +icon('ico-quotemark')
+            .swiper-wrapper
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-1.jpg' srcset='img/itoNavAvatar-1@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat! 
+                    
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-2.jpg' srcset='img/itoNavAvatar-2@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat! 
+              
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-3.jpg' srcset='img/itoNavAvatar-3@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p Adipiscing bibendum est ultricies integer quis auctor. facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat! 
+                    
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-4.jpg' srcset='img/itoNavAvatar-4@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor  egestas erat! 
+              
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-5.jpg' srcset='img/itoNavAvatar-5@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat! 
+                    
+              // slide
+              .ito-quotes__slide
+                .ito-quote-t
+                  .ito-quote-t__head
+                    .ito-quote-t__avatar.avatar.avatar--big
+                      img(src='img/itoNavAvatar-6.jpg' srcset='img/itoNavAvatar-6@2x.jpg 2x')
+                    .ito-quote-t__head-content
+                      .ito-quote-t__name Maurice Wood
+                      .ito-quote-t__position gerald.nolan@marilyne.biz
+                  .ito-quote-t__content
+                    p Adipiscing bibendum est ultricies integer quis auctor.et est placerat in egestas erat! 
+                                                        
+                
+          // slider nav
+          .ito-quotes__nav
+            .ito-quotes__nav-el.ito-quotes__nav-el--1(js-itoQuotes-nav data-slide="1")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--1
+                img(src='img/itoNavAvatar-1.jpg' srcset='img/itoNavAvatar-1@2x.jpg 2x')
+            .ito-quotes__nav-el.ito-quotes__nav-el--2(js-itoQuotes-nav data-slide="2")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--2
+                img(src='img/itoNavAvatar-2.jpg' srcset='img/itoNavAvatar-2@2x.jpg 2x')
+            .ito-quotes__nav-el.ito-quotes__nav-el--3(js-itoQuotes-nav data-slide="3")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--3
+                img(src='img/itoNavAvatar-3.jpg' srcset='img/itoNavAvatar-3@2x.jpg 2x')              
+            .ito-quotes__nav-el.ito-quotes__nav-el--4(js-itoQuotes-nav data-slide="4")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--4
+                img(src='img/itoNavAvatar-4.jpg' srcset='img/itoNavAvatar-4@2x.jpg 2x')
+            .ito-quotes__nav-el.ito-quotes__nav-el--5(js-itoQuotes-nav data-slide="5")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--5
+                img(src='img/itoNavAvatar-5.jpg' srcset='img/itoNavAvatar-5@2x.jpg 2x')
+            .ito-quotes__nav-el.ito-quotes__nav-el--6(js-itoQuotes-nav data-slide="6")
+              .ito-quotes__nav-avatar.ito-quotes__nav-avatar--6
+                img(src='img/itoNavAvatar-6.jpg' srcset='img/itoNavAvatar-6@2x.jpg 2x')
+                              
+    
+    // ITO brands
+    .ito-brands
+      .container.container--extra
+        .ito-brands__title Featured  in
+        .ito-brands__wrapper
+          .ito-brands__el
+            i.icon.icon-brand-coincart
+          .ito-brands__el
+            i.icon.icon-brand-icon
+          .ito-brands__el
+            i.icon.icon-brand-aion
+          .ito-brands__el
+            i.icon.icon-brand-quantstamp
+          .ito-brands__el
+            i.icon.icon-brand-factom
+              
     // INFO
     .info.info--ito
       .info__bg
         .info__bg-wrapper
-          include ../inline-svg/info-promo-bg-2.svg
+          //- include ../inline-svg/info-promo-bg-2.svg
       .container.container--extra
         .info__wrapper
           .info__content.wow(data-animation-class="wowFadeRight")
-            h2.heading.c-aqua Artist Development
+            h2.heading.c-aqua Join  the  revolution
             .info__text
-              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+              p Sign  up  to  be  part  of  the  BETA  launch  now.  The  first1000  members  get  a  lifetime  founders  badge  andaccess  to  Cosound  events  worldwide
               .info__cta
                 a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
-                  span Get Started
+                  span Join Beta
           .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
             .info__image-mask
               img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
