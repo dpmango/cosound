@@ -5,8 +5,8 @@
   margin: 100px 0 70px
   width: 100%
   &--white
-    margin: -200px 0 0
-    padding: 270px 0 200px
+    margin: -190px 0 0
+    padding: 300px 0 200px
     > .container
       position: relative
       z-index: 2
@@ -23,7 +23,13 @@
     display: flex
     align-items: center
     justify-content: space-between
+    // justify-content: center
     flex-wrap: wrap
+    &.is-wrapped
+      justify-content: center
+      .ito-brands__el
+        margin: 0 auto
+
   &__el
     padding: 20px 10px
     flex: 0 0 auto
@@ -52,6 +58,9 @@
 
 +r(1200)
   .ito-brands
+    &--white
+      // margin: -150px 0 0
+      // padding: 240px 0 200px
     &__wrapper
       margin-left: 0
       margin-right: 0
@@ -61,12 +70,43 @@
         transform: scale(.8)
         transform-origin: center center
 
++r($desktop)
+  .ito-brands
+    &--white
+      // margin: -190px 0 0
+      padding: 250px 0 180px
+
++r($tablet)
+  .ito-brands
+    padding: 30px 0
+    margin: 60px 0 50px
+    &--white
+      margin-top: -140px
+      padding: 200px 0 140px
+
+    &__title
+      font-size: 34px
+
++r(480)
+  .ito-brands
+    &__title
+      font-size: 28px
+    &__wrapper
+      margin-top: 25px
+      &.is-wrapped
+        .ito-brands__el
+          margin: 0 -10px
+    &__el
+      padding: 5px 0
+      margin: 0 -10px
+      .icon
+        transform: scale(.65)
 
 
 /* ITO testimonials
 .ito-testimonials
   position: relative
-  margin: 30px 0
+  margin: 30px 0 120px
   &__wrapper
 
   &__slider
@@ -76,6 +116,11 @@
     flex: 0 0 auto
     padding-top: 150px
     padding-bottom: 50px
+    /* offset for prev, next cards
+    padding-left: 13.5%
+    padding-right: 13.5%
+    display: flex
+    flex-direction: column
 
   .swiper-pagination
     bottom: 0
@@ -125,6 +170,9 @@
           transform: translate(-50%,-50%) scale(1)
 
 .ito-testimonial
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
   max-width: 860px
   margin-left: auto
   margin-right: auto
@@ -162,10 +210,14 @@
     color: #C4CBD3
     margin-top: 6px
   &__content
-    margin-top: 25px
+    // margin-top: 25px
+    padding-top: 25px
+    margin-top: auto
+    margin-bottom: auto
     p
       margin: 0
       font-size: 22px
+      line-height: 1.8
       font-style: italic
       color: #8392A6
       & + p
@@ -183,6 +235,49 @@
       fill: rgba(#262626, .03)
       font-size: 180px
 
+.ito-testimonial-before, .ito-testimonial-after
+  position: absolute
+  z-index: 1
+  // 150 / 2
+  top: calc(50% + 50px)
+  transform: translateY(-50%)
+  width: 55%
+  padding: 70px 30px 40px
+  background: white
+  border-radius: 5px
+  pointer-events: none
+  box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.24)
+  .ito-testimonial__content
+    opacity: .5
+    p
+      font-size: 17px
+
+.ito-testimonial-before
+  left: 30px
+.ito-testimonial-after
+  right: 30px
+
++r($tablet)
+  .ito-testimonial
+    padding: 60px 40px 40px
+    &::after
+      transform: translateX(-50%) scale(.83)
+      transform-origin: center top
+    &__avatar
+      size: 100px
+      top: -57px
+    &__name
+      font-size: 20px
+    &__position
+      font-size: 16px
+    &__content
+      padding-top: 15px
+      p
+        font-size: 18px
+    &__quotemark
+      top: 20px
+      .ico
+        font-size: 150px
 
 /* ITO PRE
 .ito-pre

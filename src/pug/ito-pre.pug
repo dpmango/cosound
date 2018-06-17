@@ -23,8 +23,8 @@ block content
           .hero__text.wow(data-animation-delay=".5s")
             p Join  the  revolution.  Be  part  of  the  community  of  sound.
           .hero__ito-pre.wow(data-animation-delay=".75s")
-            form.ito-pre-email(action="#" js-validate-pre-ito)
-              input(type="text" placeholder="Email  Address" js-add-focus-parent)
+            form.ito-pre-email(action="" js-validate-pre-ito)
+              input(type="text" name="email" placeholder="Email  Address" js-add-focus-parent)
               button(type="submit").btn.btn-primary.btn-primary--aqua Join us
             a(href="#").btn.btn-primary.btn-primary.btn-primary--red
               span More info
@@ -63,7 +63,8 @@ block content
       ]
     
     .ito-members.ito-members--no-margin
-      .ito-members__title Meet  the  Ambassadors
+      .container.container--extra
+        .ito-members__title Meet  the  Ambassadors
       .container.container--extra
         .ito-members__slider(js-ito-members-slider).swiper-container
           .swiper-wrapper
@@ -80,6 +81,7 @@ block content
                         .ito-member__position Lorem ipsum
                     .ito-member__popover
                       p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+                      a(href="#").ito-member__more Read More
             .ito-members__wrapper
               each card, index in cards    
                 // col
@@ -93,7 +95,8 @@ block content
                         .ito-member__position Lorem ipsum
                     .ito-member__popover
                       p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
-          
+                      a(href="#").ito-member__more Read More
+                      
         .ito-members__next
           +icon("ico-arrow-right")
         .ito-members__prev
@@ -106,12 +109,12 @@ block content
     .info.info--m-bottom
       .container.container--extra
         .info__wrapper.info__wrapper--reverse
-          .info__content.wow(data-animation-class="wowFadeLeft")
+          .info__content.info__content--align-left.wow(data-animation-class="wowFadeLeft")
             h2.heading.c-violet Our Vision
-            .info__text
+            .info__text.info__text--full
               p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae auctor eu augue   
-            form.ito-pre-email.ito-pre-email--bordered(action="#" js-validate-pre-ito)
-              input(type="text" placeholder="Email  Address" js-add-focus-parent)
+            form.ito-pre-email.ito-pre-email--bordered(action="" js-validate-pre-ito)
+              input(type="text" name="email" placeholder="Email  Address" js-add-focus-parent)
               button(type="submit").btn.btn-primary.btn-primary--red Join us
               
           .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")

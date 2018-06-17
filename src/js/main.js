@@ -56,6 +56,8 @@ $(document).ready(function(){
     removeFooterMobile();
     _window.on('resize', debounce(removeFooterMobile, 250));
 
+    watchFlexWrap();
+    _window.on('resize', debounce(watchFlexWrap, 250));
     // login/sign
     setStepsClasses();
 
@@ -824,6 +826,26 @@ $(document).ready(function(){
       parent.removeClass('is-focused');
     }
   })
+
+  // WATCH FLEX WRAP
+  function watchFlexWrap(){
+    if ( $('[js-watch-flex-wrap]').length > 0 ){
+      $('[js-watch-flex-wrap]').each(function(i, container){
+        var $container = $(container);
+
+        var cHeight = $container.height();
+        var targetBreakAt = 100;
+
+        if (cHeight > targetBreakAt ) {
+          $container.addClass('is-wrapped');
+        } else {
+          $container.removeClass('is-wrapped');
+        }
+      })
+    }
+  }
+
+
   //////////
   // ACCOUNT NAV
   //////////
@@ -982,18 +1004,46 @@ $(document).ready(function(){
       setWrapperSize: false,
       // setWrapperSize: true,
       spaceBetween: 0,
+      // should be css only
+      // autoHeight: true,
       slidesPerView: 1,
       // loop: true,
       normalizeSlideIndex: true,
       // centeredSlides: true,
       freeMode: false,
-      // effect: 'coverflow',
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 70,
+        slideShadows: false,
+        // stretch: 50,
+      },
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,
       }
     })
+
+    // POPULATE PSEUDO CARDS
+    if ( $('[js-populateContent-ito-before]').length > 0 ){
+      $('[js-populateContent-ito-before]').each(function(i, card){
+        var prevCard = $(this).closest('.ito-testimonials__slide').prev(); // find prev slide
+        var targetContent = prevCard.find('.ito-testimonial__content').html()
+
+        if ( targetContent ){
+          $(card).html(targetContent)
+        }
+      })
+
+      $('[js-populateContent-ito-after]').each(function(i, card){
+        var nextCard = $(this).closest('.ito-testimonials__slide').next(); // find prev slide
+        var targetContent = nextCard.find('.ito-testimonial__content').html()
+
+        if ( targetContent ){
+          $(card).html(targetContent)
+        }
+      })
+    }
 
     // QUOTES SLIDER
     var itoQuotesSlider = new Swiper('[js-ito-quotes-slider]', {

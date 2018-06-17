@@ -771,7 +771,7 @@
     font-size: 40px
     font-weight: 500
     text-align: center
-    margin-bottom: 40px
+    margin-bottom: 50px
 
   &__slider
     .swiper-wrapper
@@ -881,8 +881,9 @@
     color: white
     text-align: center
     display: flex
-    align-items: center
-    justify-content: center
+    flex-direction: column
+    // align-items: center
+    // justify-content: center
     padding: 15px
     transition: .35s $ease
     transform: translate(0,100%)
@@ -890,6 +891,30 @@
       font-size: 15px
       font-weight: 700
       line-height: 1.8
+      &:first-child
+        margin-top: auto
+      &:last-child
+        margin-bottom: auto
+  &__more
+    margin-top: auto
+    margin-bottom: 10px
+    box-shadow: none
+    cursor: pointer
+    font-weight: 500
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 8px 35px
+    min-width: 150px
+    background: rgba(white, .09)
+    border: 1px solid white
+    transition: .25s $ease
+    &:hover
+      background: white
+      color: $fontColor
+
+    &:focus
+      outline: none
   &:hover
     .ito-member
       &__content
@@ -902,6 +927,9 @@
   .ito-members
     margin-top: 80px
     margin-bottom: 120px
+    &--no-margin
+      margin-top: 50px
+      margin-bottom: 0
     &__wrapper
 
     &__col
@@ -912,6 +940,9 @@
 +r($tablet)
   .ito-members
     margin: 50px 0 100px
+    &--no-margin
+      margin-top: 50px
+      margin-bottom: 0
     &__wrapper
       max-width: 500px
       margin-left: auto
@@ -919,6 +950,9 @@
     &__col
       flex: 0 1 50%
       max-width: 50%
+    &__title
+      font-size: 34px
+      margin-bottom: 30px
 
 +r($mobile)
   .ito-members
@@ -933,3 +967,7 @@
       max-width: 275px
       margin-left: auto
       margin-right: auto
+
+    &__title
+      font-size: 28px
+      margin-bottom: 20px

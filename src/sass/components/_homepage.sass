@@ -42,12 +42,14 @@
     text-align: center
     padding: 90px 0
     &--have-bottom-content
-      padding-bottom: 300px
+      padding-bottom: 270px
 
   &__logo
     font-size: 66px
     &--smaller
       font-size: 56px
+    &--bigger
+      font-size: 77px
 
   &__text
     margin-top: 50px
@@ -55,6 +57,8 @@
     max-width: 670px
     margin-left: auto
     margin-right: auto
+    &--less-m
+      margin-top: 25px
     p
       margin: 0
       line-height: 1.9
@@ -86,7 +90,7 @@
     z-index: 1
     left: 50%
     transform: translateX(-50%)
-    bottom: 100px
+    bottom: 110px
     &-icon
       size: 100px
       background: white
@@ -154,6 +158,8 @@
       .btn
         margin-left: 5px
         margin-right: 5px
+    &__scroller
+      display: none
     &--ito
       .hero
         &__wrapper
@@ -240,12 +246,19 @@
     min-height: 1px
     // margin-top: 90px
     text-align: right
+    &--align-left
+      text-align: left
+    .ito-pre-email
+      margin-top: 35px
 
   &__text
     margin-top: 25px
     color: rgba($fontColor, .52)
     max-width: 343px
     margin-left: auto
+    &--full
+      max-width: 460px
+      // max-width: 50%
     p
       font-size: 14px
       line-height: 2
