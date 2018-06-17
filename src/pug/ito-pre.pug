@@ -1,5 +1,5 @@
 ---
-title: Promo page
+title: PRE ITO
 ---
 extends shared/_layout
 
@@ -11,16 +11,16 @@ block content
   // PRE ITO page
   .ito-pre
     // HERO
-    .hero.hero--promo
-      .promo-bg
+    .hero
+      .promo-bg.promo-bg--white
         .promo-bg__wrapper
-          include ../inline-svg/hero-bg-promo.svg
+          include ../inline-svg/hero-bg-promo-white.svg
           img(src='img/itoPreBg.jpg' srcset='img/itoPreBg@2x.jpg 2x')
       .container
-        .hero__wrapper
-          .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+        .hero__wrapper.hero__wrapper--have-bottom-content
+          .hero__logo.hero__logo--bigger.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
             +icon('ico-logo')
-          .hero__text.wow(data-animation-delay=".5s")
+          .hero__text.hero__text--less-m.wow(data-animation-delay=".5s")
             p Join  the  revolution.  Be  part  of  the  community  of  sound.
           .hero__ito-pre.wow(data-animation-delay=".75s")
             form.ito-pre-email(action="" js-validate-pre-ito)
@@ -31,15 +31,15 @@ block content
             
           
     // INFO
-    .info
+    .info.info--ito-first
       .info__bg
         .info__bg-wrapper
-          //- include ../inline-svg/info-promo-bg.svg
+          include ../inline-svg/info-promo-bg.svg
       .container.container--extra
         .info__wrapper
-          .info__content.wow(data-animation-class="wowFadeRight")
+          .info__content.info__content--align-left.info__content--left-pad.wow(data-animation-class="wowFadeRight")
             h2.heading.c-aqua Music  is  the  great  uniter
-            .info__text
+            .info__text.info__text--full
               p Sign  up  to  be  part  of  the  BETA  launch  now.  The  first1000  members  get  a  lifetime  founders  badge  andaccess  to  Cosound  events  worldwide 
               .info__cta
                 a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
@@ -64,7 +64,7 @@ block content
     
     .ito-members.ito-members--no-margin
       .container.container--extra
-        .ito-members__title Meet  the  Ambassadors
+        .ito-members__title.wow Meet  the  Ambassadors
       .container.container--extra
         .ito-members__slider(js-ito-members-slider).swiper-container
           .swiper-wrapper
@@ -128,7 +128,7 @@ block content
           include ../inline-svg/ito-quotes-bg.svg
       .container.container--extra
         .ito-quotes__wrapper
-          .ito-quotes__slider(js-ito-quotes-slider).swiper-container
+          .ito-quotes__slider.wow(js-ito-quotes-slider data-animation-class="wowFadeLeft").swiper-container
             .ito-quotes__quotemark
               +icon('ico-quotemark')
             .swiper-wrapper
@@ -206,7 +206,7 @@ block content
                                                         
                 
           // slider nav
-          .ito-quotes__nav
+          .ito-quotes__nav.wow(data-animation-class="wowFadeRight")
             .ito-quotes__nav-el.ito-quotes__nav-el--1(js-itoQuotes-nav data-slide="1")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--1
                 img(src='img/itoNavAvatar-1.jpg' srcset='img/itoNavAvatar-1@2x.jpg 2x')
@@ -230,24 +230,24 @@ block content
     // ITO brands
     .ito-brands
       .container.container--extra
-        .ito-brands__title Featured  in
-        .ito-brands__wrapper
-          .ito-brands__el
+        .ito-brands__title.wow Featured  in
+        .ito-brands__wrapper(js-watch-flex-wrap)
+          .ito-brands__el.wow(data-animation-delay=".1s")
             i.icon.icon-brand-coincart
-          .ito-brands__el
+          .ito-brands__el.wow(data-animation-delay=".2s")
             i.icon.icon-brand-icon
-          .ito-brands__el
+          .ito-brands__el.wow(data-animation-delay=".3s")
             i.icon.icon-brand-aion
-          .ito-brands__el
+          .ito-brands__el.wow(data-animation-delay=".4s")
             i.icon.icon-brand-quantstamp
-          .ito-brands__el
+          .ito-brands__el.wow(data-animation-delay=".5s")
             i.icon.icon-brand-factom
               
     // INFO
     .info.info--ito
       .info__bg
         .info__bg-wrapper
-          //- include ../inline-svg/info-promo-bg-2.svg
+          include ../inline-svg/info-promo-bg-2.svg
       .container.container--extra
         .info__wrapper
           .info__content.wow(data-animation-class="wowFadeRight")
