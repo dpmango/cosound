@@ -1,11 +1,20 @@
 $sprite: (
+	afterItoTestimonialAvatar: (
+		offset-x: 0px,
+		offset-y: -305px,
+		width: 178px,
+		height: 61px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
 	brand-aion: (
 		offset-x: -382px,
-		offset-y: 0px,
+		offset-y: -63px,
 		width: 141px,
 		height: 55px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-coincart: (
@@ -13,8 +22,8 @@ $sprite: (
 		offset-y: 0px,
 		width: 224px,
 		height: 65px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-dropbox: (
@@ -22,8 +31,8 @@ $sprite: (
 		offset-y: -142px,
 		width: 213px,
 		height: 59px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-factom: (
@@ -31,26 +40,26 @@ $sprite: (
 		offset-y: -251px,
 		width: 246px,
 		height: 44px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-icon: (
-		offset-x: 0px,
-		offset-y: -368px,
+		offset-x: -382px,
+		offset-y: -183px,
 		width: 158px,
 		height: 48px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-paypal: (
-		offset-x: -195px,
-		offset-y: -305px,
+		offset-x: -382px,
+		offset-y: -128px,
 		width: 168px,
 		height: 45px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-quantstamp: (
@@ -58,44 +67,44 @@ $sprite: (
 		offset-y: -75px,
 		width: 223px,
 		height: 57px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-slack: (
-		offset-x: 0px,
-		offset-y: -305px,
+		offset-x: -382px,
+		offset-y: 0px,
 		width: 185px,
 		height: 53px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-stripe: (
 		offset-x: -382px,
-		offset-y: -65px,
+		offset-y: -241px,
 		width: 135px,
 		height: 57px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	brand-visa: (
 		offset-x: -382px,
-		offset-y: -288px,
+		offset-y: -308px,
 		width: 119px,
 		height: 37px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	checkmark: (
-		offset-x: -498px,
-		offset-y: -186px,
+		offset-x: -553px,
+		offset-y: -88px,
 		width: 10px,
 		height: 8px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	cosound-token: (
@@ -103,62 +112,62 @@ $sprite: (
 		offset-y: 0px,
 		width: 138px,
 		height: 115px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	emodji: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -401px,
 		width: 23px,
 		height: 23px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	fullscreen: (
-		offset-x: -568px,
+		offset-x: -612px,
 		offset-y: -302px,
 		width: 14px,
 		height: 14px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	itoCardDiscount: (
-		offset-x: -382px,
-		offset-y: -205px,
+		offset-x: 0px,
+		offset-y: -449px,
 		width: 69px,
 		height: 73px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	itoCardGlobe: (
-		offset-x: 0px,
-		offset-y: -426px,
+		offset-x: -79px,
+		offset-y: -449px,
 		width: 69px,
 		height: 73px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	itoHandle: (
-		offset-x: -567px,
+		offset-x: -611px,
 		offset-y: -337px,
 		width: 15px,
 		height: 20px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	list-check: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -302px,
 		width: 25px,
 		height: 25px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	no-services: (
@@ -166,215 +175,215 @@ $sprite: (
 		offset-y: -125px,
 		width: 135px,
 		height: 116px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	paperclip: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -434px,
 		width: 22px,
 		height: 23px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	pay-amex: (
-		offset-x: -533px,
-		offset-y: -116px,
-		width: 35px,
-		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
-		image: '../img/sprite.png'
-	),
-	pay-discover: (
-		offset-x: -533px,
-		offset-y: -209px,
-		width: 34px,
-		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
-		image: '../img/sprite.png'
-	),
-	pay-jcb: (
-		offset-x: -533px,
-		offset-y: -147px,
-		width: 35px,
-		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
-		image: '../img/sprite.png'
-	),
-	pay-maestro-old: (
-		offset-x: -533px,
-		offset-y: -178px,
-		width: 35px,
-		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
-		image: '../img/sprite.png'
-	),
-	pay-mastercard-old: (
-		offset-x: -533px,
-		offset-y: -271px,
-		width: 34px,
-		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
-		image: '../img/sprite.png'
-	),
-	pay-paypal: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -85px,
 		width: 35px,
 		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
-	pay-visa: (
-		offset-x: -533px,
+	pay-discover: (
+		offset-x: -577px,
+		offset-y: -209px,
+		width: 34px,
+		height: 21px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
+	pay-jcb: (
+		offset-x: -577px,
+		offset-y: -178px,
+		width: 35px,
+		height: 21px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
+	pay-maestro-old: (
+		offset-x: -577px,
+		offset-y: -116px,
+		width: 35px,
+		height: 21px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
+	pay-mastercard-old: (
+		offset-x: -577px,
 		offset-y: -240px,
 		width: 34px,
 		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
+	pay-paypal: (
+		offset-x: -577px,
+		offset-y: -147px,
+		width: 35px,
+		height: 21px,
+		total-width: 626px,
+		total-height: 522px,
+		image: '../img/sprite.png'
+	),
+	pay-visa: (
+		offset-x: -577px,
+		offset-y: -271px,
+		width: 34px,
+		height: 21px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-communication: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -370px,
 		width: 26px,
 		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-gears: (
-		offset-x: -564px,
+		offset-x: -608px,
 		offset-y: -467px,
 		width: 18px,
 		height: 18px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-history: (
-		offset-x: -498px,
-		offset-y: -132px,
+		offset-x: -577px,
+		offset-y: -498px,
 		width: 22px,
 		height: 19px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-privacy: (
-		offset-x: -565px,
+		offset-x: -609px,
 		offset-y: -434px,
 		width: 17px,
 		height: 20px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-services: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -337px,
 		width: 24px,
 		height: 23px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	profile-support: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: -467px,
 		width: 21px,
 		height: 21px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	signup-check: (
-		offset-x: -382px,
-		offset-y: -335px,
+		offset-x: -609px,
+		offset-y: -498px,
 		width: 15px,
 		height: 11px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	signup-type-band: (
-		offset-x: -382px,
-		offset-y: -132px,
+		offset-x: 0px,
+		offset-y: -376px,
 		width: 106px,
 		height: 63px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	signup-type-musician: (
-		offset-x: -533px,
+		offset-x: -577px,
 		offset-y: 0px,
 		width: 49px,
 		height: 75px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	signup-type-pro: (
-		offset-x: -461px,
-		offset-y: -205px,
+		offset-x: -116px,
+		offset-y: -376px,
 		width: 59px,
 		height: 63px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	soundbar: (
-		offset-x: -498px,
-		offset-y: -161px,
+		offset-x: -533px,
+		offset-y: -63px,
 		width: 19px,
 		height: 15px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	star-blank: (
-		offset-x: -569px,
+		offset-x: -613px,
 		offset-y: -370px,
 		width: 10px,
 		height: 10px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	star-fill: (
-		offset-x: -511px,
-		offset-y: -288px,
+		offset-x: -533px,
+		offset-y: -88px,
 		width: 10px,
 		height: 10px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	suggestions-search: (
-		offset-x: -79px,
-		offset-y: -426px,
+		offset-x: -188px,
+		offset-y: -305px,
 		width: 56px,
 		height: 56px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 	time: (
-		offset-x: -566px,
+		offset-x: -610px,
 		offset-y: -401px,
 		width: 15px,
 		height: 15px,
-		total-width: 582px,
-		total-height: 499px,
+		total-width: 626px,
+		total-height: 522px,
 		image: '../img/sprite.png'
 	),
 );
@@ -433,6 +442,9 @@ $sprite: (
 
 
 
+	.icon-afterItoTestimonialAvatar {
+		@include sprite(afterItoTestimonialAvatar)
+	}
 	.icon-brand-aion {
 		@include sprite(brand-aion)
 	}

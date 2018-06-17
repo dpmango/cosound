@@ -970,13 +970,11 @@ $(document).ready(function(){
       normalizeSlideIndex: true,
       // centeredSlides: true,
       freeMode: false,
-      // effect: 'fade',
-      autoplay: {
-        delay: 5000,
-      },
-      navigation: {
-        nextEl: '.ito-slider-next',
-        prevEl: '.ito-slider-prev',
+      // effect: 'coverflow',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
       },
       breakpoints: {
         // when window width is <= 992px

@@ -2,7 +2,7 @@
   position: relative
   z-index: 1
   padding: 50px 0
-  margin: 100px 0
+  margin: 100px 0 70px
   width: 100%
   &--white
     margin: -200px 0 0
@@ -65,33 +65,96 @@
 
 /* ITO testimonials
 .ito-testimonials
+  position: relative
+  margin: 30px 0
   &__wrapper
 
   &__slider
 
   &__slide
+    position: relative
     flex: 0 0 auto
-    padding-top: 50px
-    padding-bottom: 30px
+    padding-top: 150px
+    padding-bottom: 50px
+
+  .swiper-pagination
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 10px 0
+    .swiper-pagination-bullet
+      position: relative
+      background: transparent
+      border: 1px solid transparent
+      size: 13px
+      opacity: 1
+      border: 1px solid #23B4AD
+      transition: .25s $ease
+      cursor: pointer
+      margin: 0 7px
+      &::before, &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 50%
+        top: 50%
+        border-radius: 50%
+      &::before
+        size: 24px
+        z-index: 1
+        opacity: .22
+        transform: translate(-50%,-50%) scale(.5)
+        background-image: linear-gradient(54deg, #2CC1A5 0%, #1CA9B4 27%, #8E5ACD 100%)
+        transition: transform .25s $ease
+      &::after
+        size: 13px
+        background: white
+        // border: 1px solid #23B4AD
+        z-index: 2
+        transform: translate(-50%,-50%) scale(.82)
+        transition: .25s $ease
+      &-active
+        transform: scale(1)
+        border-color: transparent
+        &::after
+          background-image: linear-gradient(54deg, #2CC1A5 0%, #1CA9B4 27%, #8E5ACD 100%)
+          // border-color: transparent
+          transform: translate(-50%,-50%) scale(1)
+        &::before
+          transform: translate(-50%,-50%) scale(1)
 
 .ito-testimonial
   max-width: 860px
   margin-left: auto
   margin-right: auto
   position: relative
+  z-index: 2
   text-align: center
   background: #FFFFFF
   box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.24)
   border-radius: 5px
   padding: 80px 60px 50px
-
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    z-index: 1
+    top: 0px
+    left: 50%
+    transform: translateX(-50%)
+    +sprite(afterItoTestimonialAvatar)
   &__avatar
     position: absolute
+    z-index: 2
     left: 50%
-    top: -50px
+    top: -67px
+    size: 120px
     transform: translateX(-50%)
-
+    box-shadow: 0 2px 20px rgba(#696969, .42)
   &__name
+    position: relative
+    z-index: 2
     font-size: 22px
     font-weight: 500
   &__position
@@ -107,6 +170,18 @@
       color: #8392A6
       & + p
         margin-top: 1em
+
+  &__quotemark
+    position: absolute
+    top: 8px
+    left: 50%
+    transform: translateX(-50%)
+    font-size: 0
+    z-index: 1
+    pointer-events: none
+    .ico
+      fill: rgba(#262626, .03)
+      font-size: 180px
 
 
 /* ITO PRE
