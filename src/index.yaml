@@ -70,7 +70,7 @@ PageList:
 - file: ito.html
   ready: 100
 - file: ito-pre.html
-  ready: 70
+  ready: 80
 - file: ito-pre-simple.html
   ready: 60
 - file: ambassadors.html
