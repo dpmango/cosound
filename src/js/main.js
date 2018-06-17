@@ -995,7 +995,7 @@ $(document).ready(function(){
     })
 
     // ito testimonials swiper
-    new Swiper('[js-ito-testimonials-slider]', {
+    var itoTestimonialsSlider = new Swiper('[js-ito-testimonials-slider]', {
       wrapperClass: "swiper-wrapper",
       slideClass: "ito-testimonials__slide",
       direction: 'horizontal',
@@ -1044,6 +1044,15 @@ $(document).ready(function(){
         }
       })
     }
+
+    // pseudo nav
+    _document
+      .on('click', '.ito-testimonial-before', function(){
+        itoTestimonialsSlider.slidePrev()
+      })
+      .on('click', '.ito-testimonial-after', function(){
+        itoTestimonialsSlider.slideNext()
+      })
 
     // QUOTES SLIDER
     var itoQuotesSlider = new Swiper('[js-ito-quotes-slider]', {

@@ -74,6 +74,6 @@ PageList:
 - file: ito-pre-simple.html
   ready: 50
 - file: ambassadors.html
-  ready: 80
+  ready: 90
 - file: blog.html
-  ready: 80
+  ready: 90

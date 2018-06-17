@@ -2,7 +2,7 @@
   position: relative
   z-index: 1
   padding: 50px 0
-  margin: 100px 0 70px
+  margin: 120px 0 70px
   width: 100%
   &--white
     margin: -190px 0 0
@@ -106,7 +106,7 @@
 /* ITO testimonials
 .ito-testimonials
   position: relative
-  margin: 30px 0 120px
+  margin: 0px 0 120px
   &__wrapper
 
   &__slider
@@ -114,13 +114,18 @@
   &__slide
     position: relative
     flex: 0 0 auto
-    padding-top: 150px
-    padding-bottom: 50px
-    /* offset for prev, next cards
-    padding-left: 13.5%
-    padding-right: 13.5%
     display: flex
     flex-direction: column
+    > .container
+      position: relative
+      flex: 1 0 auto
+      display: flex
+      flex-direction: column
+      padding-top: 150px
+      padding-bottom: 70px
+      /* offset for prev, next cards
+      padding-left: 13.5%
+      padding-right: 13.5%
 
   .swiper-pagination
     bottom: 0
@@ -169,6 +174,19 @@
         &::before
           transform: translate(-50%,-50%) scale(1)
 
++r($mobile)
+  .ito-testimonials
+    margin-bottom: 100px
+    &__slide
+      > .container
+        padding-top: 100px
+        padding-bottom: 50px
+        padding-left: 40px
+        padding-right: 40px
+    .swiper-pagination
+
+
+/* ITO TESTIMONIAL
 .ito-testimonial
   flex: 1 0 auto
   display: flex
@@ -245,19 +263,26 @@
   padding: 70px 30px 40px
   background: white
   border-radius: 5px
-  pointer-events: none
+  // pointer-events: none
+  cursor: pointer
   box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.24)
+  transition: box-shadow .25s $ease
   .ito-testimonial__content
     opacity: .5
+    transition: opacity .25s $ease
     p
       font-size: 17px
+  &:hover
+    box-shadow: 5px 9px 15px 0 rgba(129,129,129,0.24)
+    .ito-testimonial__content
+      opacity: .7
 
 .ito-testimonial-before
   left: 30px
 .ito-testimonial-after
   right: 30px
 
-+r($tablet)
++r($desktop)
   .ito-testimonial
     padding: 60px 40px 40px
     &::after
@@ -278,6 +303,51 @@
       top: 20px
       .ico
         font-size: 150px
+
+  .ito-testimonial-before, .ito-testimonial-after
+    padding: 45px 25px 30px
+    .ito-testimonial__content
+      p
+        font-size: 13px
+
++r($tablet)
+  .ito-testimonial
+    padding: 60px 25px 30px
+    &__name
+      font-size: 18px
+    &__position
+      font-size: 15px
+    &__content
+      p
+        font-size: 16px
+
++r($mobile)
+  .ito-testimonial
+    padding: 50px 15px 25px
+    &::after
+      transform: translateX(-50%) scale(.66)
+    &__avatar
+      size: 80px
+      top: -47px
+    &__content
+      p
+        font-size: 15px
+
+    &__quotemark
+      top: -10px
+      .ico
+        font-size: 130px
+
+  .ito-testimonial-before, .ito-testimonial-after
+    width: 80%
+    .ito-testimonial__content
+      p
+        font-size: 11px
+  .ito-testimonial-before
+    left: 5px
+
+  .ito-testimonial-after
+    right: 5px
 
 /* ITO PRE
 .ito-pre

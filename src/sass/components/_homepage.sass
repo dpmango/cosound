@@ -203,6 +203,8 @@
       text-align: left
   &--m-bottom
     margin-bottom: 150px
+  // &--last-margin
+  //   margin-bottom: 250px
   &__wrapper
     display: flex
     width: 100%
@@ -219,7 +221,8 @@
 
   &__bg
     position: absolute 0
-    top: 50px
+    /* possible another class for top
+    top: 80px
     display: flex
     flex-direction: column
 
@@ -248,6 +251,8 @@
     text-align: right
     &--align-left
       text-align: left
+    &--left-pad
+      padding-left: 40px
     .ito-pre-email
       margin-top: 35px
 
@@ -259,6 +264,8 @@
     &--full
       max-width: 460px
       // max-width: 50%
+      .info__cta
+        margin-top: 40px
     p
       font-size: 14px
       line-height: 2
@@ -320,6 +327,12 @@
       .ico
         transform: translateX(10%)
         transition: .25s $ease
+
++r(1200)
+  .info
+    &__content
+      &--left-pad
+        padding-left: 0
 
 +r($desktop)
   .info

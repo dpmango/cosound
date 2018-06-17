@@ -8,6 +8,7 @@ block footer
   
 block content
   
+  // AMBASSADORS page
   .ambassadors
     // HERO
     .hero
@@ -20,7 +21,6 @@ block content
             +icon('ico-logo')
           .hero__text.hero__text--less-m.wow(data-animation-delay=".5s")
             p Welcome to a word of collaboration and infinite opportunity
-          
           .hero__scroller
             a.hero__scroller-icon.wow(href="#" js-scrollTo data-selector='.ito-members' data-animation-delay=".75s")
               include ../inline-svg/scroll-mouse.svg
@@ -58,92 +58,19 @@ block content
                   a(href="#").ito-member__more Read More
     
     // ITO brands
-    include components/_ito-brands
+    include components/ito/_ito-brands
     
     // ITO testimonials
-    .ito-testimonials
-      .container.container--extra
-        .ito-testimonials__slider(js-ito-testimonials-slider).swiper-container
-          .swiper-wrapper
-            .ito-testimonials__slide
-              .ito-testimonial__quotemark
-                +icon('ico-quotemark')
-              .ito-testimonial
-                .ito-testimonial__avatar.avatar.avatar--big
-                  img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
-                .ito-testimonial__credentials
-                  .ito-testimonial__name Mike  James
-                  .ito-testimonial__position New York
-                .ito-testimonial__content
-                  p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-            
-              .ito-testimonial-after
-                .ito-testimonial__content(js-populateContent-ito-after)
-                  // will be poplated from next card content
-                  //- p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-            
-            // slide  
-            .ito-testimonials__slide
-              .ito-testimonial__quotemark
-                +icon('ico-quotemark')
-              .ito-testimonial
-                .ito-testimonial__avatar.avatar.avatar--big
-                  img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
-                .ito-testimonial__credentials
-                  .ito-testimonial__name Mike  James
-                  .ito-testimonial__position New York
-                .ito-testimonial__content
-                  p Congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-            
-              .ito-testimonial-before
-                .ito-testimonial__content(js-populateContent-ito-before)
-                  //- p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-              .ito-testimonial-after
-                .ito-testimonial__content(js-populateContent-ito-after)
-                  //- p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-            
-            // slide
-            .ito-testimonials__slide
-              .ito-testimonial__quotemark
-                +icon('ico-quotemark')
-              .ito-testimonial
-                .ito-testimonial__avatar.avatar.avatar--big
-                  img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
-                .ito-testimonial__credentials
-                  .ito-testimonial__name Mike  James
-                  .ito-testimonial__position New York
-                .ito-testimonial__content
-                  p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. 
-
-              .ito-testimonial-before
-                .ito-testimonial__content(js-populateContent-ito-before)
-                  //- p «Nam sed est enim. Fusce aliquam est ut mauris congue, sed auctor odio sollicitudin. Morbi dictum sem a nulla tempor mattis. Morbi consectetur mollis finibus. In hac habitasse platea dictumst. Nam lobortis felis eu ex ornare rutrum. Suspendisse potenti. Sed sodales velit at diam faucibus»
-                
-                
-          .swiper-pagination
-            
+    .ito-testimonials.wow
+      include components/ito/_itoTestimonialsSlider
                       
     // INFO
     .info
-      .info__bg
-        .info__bg-wrapper
-          include ../inline-svg/info-promo-bg.svg
-      .container.container--extra
-        .info__wrapper
-          .info__content.info__content--align-left.wow(data-animation-class="wowFadeRight")
-            h2.heading.c-aqua Artist Development
-            .info__text
-              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
-              .info__cta
-                a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
-                  span Get Started
-          .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
-            .info__image-mask
-              img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
-
+      include components/ito/_itoInfoJoin
+      
     // ITO brands
     .ito-brands
-      .container.container--extra
+      .container.container--1400
         .ito-brands__title.wow Featured  in
         .ito-brands__wrapper(js-watch-flex-wrap)
           .ito-brands__el.wow(data-animation-delay=".1s")
