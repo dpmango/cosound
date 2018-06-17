@@ -11,9 +11,9 @@ block content
   // PRE ITO page
   .ito-pre
     // HERO
-    .hero
+    .hero.hero--pre-ito
       .promo-bg.promo-bg--white
-        .promo-bg__wrapper
+        .promo-bg__wrapper.promo-bg__wrapper--more-height
           include ../inline-svg/hero-bg-promo-white.svg
           img(src='img/itoPreBg.jpg' srcset='img/itoPreBg@2x.jpg 2x')
       .container
@@ -22,6 +22,7 @@ block content
             +icon('ico-logo')
           .hero__text.hero__text--less-m.wow(data-animation-delay=".5s")
             p Join  the  revolution.  Be  part  of  the  community  of  sound.
+            p <span class="t-bigger">1000</span> Founding  Members  Remaining
           .hero__ito-pre.wow(data-animation-delay=".75s")
             form.ito-pre-email(action="" js-validate-pre-ito)
               input(type="text" name="email" placeholder="Email  Address" js-add-focus-parent)

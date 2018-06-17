@@ -749,6 +749,8 @@
   position: relative
   z-index: 2
   margin: 130px 0 160px
+  > .container
+    position: relative
   &--no-margin
     margin-top: 50px
     margin-bottom: 0
@@ -789,7 +791,7 @@
 
   &__next, &__prev
     position: absolute
-    top: 50%
+    top: calc(50% - 10px)
     transform: translateY(-50%)
     size: 65px
     z-index: 3
@@ -810,16 +812,21 @@
       color: $colorGreen
 
     &.swiper-button-disabled
-      opacity: .7
+      opacity: .5
       cursor: default
+      .ico
+        color: $fontColor
+      &:hover
+        .ico
+          transform: none
   &__next
-    right: -0px
+    right: -90px
     &:hover
       .ico
         transform: translateX(5px)
 
   &__prev
-    left: -0px
+    left: -90px
     &:hover
       .ico
         transform: translateX(-5px)
@@ -922,6 +929,21 @@
       &__popover
         transform: translate(0,0)
 
++r(1520)
+  .ito-members__prev
+    left: -40px
+  .ito-members__next
+    right: -40px
+
++r($hd)
+  .ito-members__prev, .ito-members__next
+    size: 50px
+    font-size: 18px
+
+  .ito-members__prev
+    left: 5px
+  .ito-members__next
+    right: 5px
 
 +r($desktop)
   .ito-members
@@ -954,6 +976,9 @@
       font-size: 34px
       margin-bottom: 30px
 
+  .ito-members__prev, .ito-members__next
+    display: none
+    
 +r($mobile)
   .ito-members
     &__wrapper
