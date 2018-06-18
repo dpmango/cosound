@@ -746,7 +746,14 @@
 
 /* ITO members
 .ito-members
+  position: relative
+  z-index: 2
   margin: 130px 0 160px
+  > .container
+    position: relative
+  &--no-margin
+    margin-top: 50px
+    margin-bottom: 0
   &__wrapper
     display: flex
     flex-wrap: wrap
@@ -761,6 +768,68 @@
     padding: 15px
     display: flex
     flex-direction: column
+
+  &__title
+    font-size: 40px
+    font-weight: 500
+    text-align: center
+    margin-bottom: 50px
+
+  &__slider
+    .swiper-wrapper
+      /* shadow fix
+      /* TODO
+      margin-left: -30px
+      margin-right: -30px
+      padding-left: 30px
+      padding-right: 30px
+    .ito-members__wrapper
+      flex: 0 0 auto
+      margin-left: 0
+      margin-right: 0
+      padding-bottom: 20px
+
+  &__next, &__prev
+    position: absolute
+    top: calc(50% - 10px)
+    transform: translateY(-50%)
+    size: 65px
+    z-index: 3
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    background: white
+    border-radius: 50%
+    color: $colorAqua
+    font-size: 20px
+    transition: .25s $ease
+    box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.15)
+    .ico
+      transition: .25s $ease
+    &:hover
+      // background: rgba(white, .75)
+      color: $colorGreen
+
+    &.swiper-button-disabled
+      opacity: .5
+      cursor: default
+      .ico
+        color: $fontColor
+      &:hover
+        .ico
+          transform: none
+  &__next
+    right: -90px
+    &:hover
+      .ico
+        transform: translateX(5px)
+
+  &__prev
+    left: -90px
+    &:hover
+      .ico
+        transform: translateX(-5px)
 
 .ito-member
   flex: 1 0 auto
@@ -819,8 +888,9 @@
     color: white
     text-align: center
     display: flex
-    align-items: center
-    justify-content: center
+    flex-direction: column
+    // align-items: center
+    // justify-content: center
     padding: 15px
     transition: .35s $ease
     transform: translate(0,100%)
@@ -828,6 +898,30 @@
       font-size: 15px
       font-weight: 700
       line-height: 1.8
+      &:first-child
+        margin-top: auto
+      &:last-child
+        margin-bottom: auto
+  &__more
+    margin-top: auto
+    margin-bottom: 10px
+    box-shadow: none
+    cursor: pointer
+    font-weight: 500
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 8px 35px
+    min-width: 150px
+    background: rgba(white, .09)
+    border: 1px solid white
+    transition: .25s $ease
+    &:hover
+      background: white
+      color: $fontColor
+
+    &:focus
+      outline: none
   &:hover
     .ito-member
       &__content
@@ -835,11 +929,29 @@
       &__popover
         transform: translate(0,0)
 
++r(1520)
+  .ito-members__prev
+    left: -40px
+  .ito-members__next
+    right: -40px
+
++r($hd)
+  .ito-members__prev, .ito-members__next
+    size: 50px
+    font-size: 18px
+
+  .ito-members__prev
+    left: 5px
+  .ito-members__next
+    right: 5px
 
 +r($desktop)
   .ito-members
     margin-top: 80px
     margin-bottom: 120px
+    &--no-margin
+      margin-top: 50px
+      margin-bottom: 0
     &__wrapper
 
     &__col
@@ -850,6 +962,9 @@
 +r($tablet)
   .ito-members
     margin: 50px 0 100px
+    &--no-margin
+      margin-top: 25px
+      margin-bottom: 0
     &__wrapper
       max-width: 500px
       margin-left: auto
@@ -857,6 +972,12 @@
     &__col
       flex: 0 1 50%
       max-width: 50%
+    &__title
+      font-size: 34px
+      margin-bottom: 30px
+
+  .ito-members__prev, .ito-members__next
+    display: none
 
 +r($mobile)
   .ito-members
@@ -871,3 +992,7 @@
       max-width: 275px
       margin-left: auto
       margin-right: auto
+
+    &__title
+      font-size: 28px
+      margin-bottom: 20px

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" viewBox="0 0 1920 680" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <defs>
+        <!-- <linearGradient x1="-30.8235677%" y1="0%" x2="99.0013075%" y2="92.9118589%" id="linearGradient-1">
+            <stop stop-color="#2CC1A5" offset="0%"></stop>
+            <stop stop-color="#1CA9B4" offset="16.9330415%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+        </linearGradient> -->
+        <linearGradient x1="98.7626139%" y1="5.50013715%" x2="-5.36336263%" y2="82.3432999%" id="linearGradient-1">
+            <stop stop-color="#2CC1A5" offset="0%"></stop>
+            <stop stop-color="#1CA9B4" offset="45.2143426%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <animate attributeName="x2" dur="4s" from="-5.36336263%" to="-5.36336263%" values="-5.36336263%;30%;-5.36336263%" repeatCount="indefinite" />
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Ambassadors" fill="url(#linearGradient-1)">
+            <g id="Fill-2">
+                <path d="M1920,580.047047 C1869.6412,593.554757 1817.48884,598.299313 1765.37406,595.243269 C1709.84683,591.986579 1655.23193,580.488595 1601.46451,566.690555 C1547.21567,552.768568 1492.08825,538.797604 1439.00523,520.951108 C1343.62574,488.877556 1242.76847,464.691452 1141.74662,479.660584 C1029.83835,496.238947 938.119328,560.79878 844.064913,618.621944 C789.296033,652.295001 730.943157,676.748363 665.85561,678.969243 C604.904931,681.04784 550.377516,658.571547 499.543868,626.711961 C456.822554,599.936728 416.97161,568.373675 371.363886,546.423464 C326.824799,524.987476 278.254008,514.791868 228.855141,517.065113 C147.669928,520.791377 71.1849532,552.895483 -1.24344979e-14,591.781309 L0,0 L1920,0 L1920,580.047057 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

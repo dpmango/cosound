@@ -1,0 +1,86 @@
+---
+title: Ambassadors
+---
+extends shared/_layout
+
+block footer
+  include components/_footer-full--blue
+  
+block content
+  
+  // AMBASSADORS page
+  .ambassadors
+    // HERO
+    .hero
+      .hero__bg
+        .hero__bg-wrapper
+          include ../inline-svg/hero-bg-blog.svg
+      .container
+        .hero__wrapper.hero__wrapper--have-bottom-content
+          .hero__logo.hero__logo--bigger.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+            +icon('ico-logo')
+          .hero__text.hero__text--less-m.wow(data-animation-delay=".5s")
+            p Welcome to a word of collaboration and infinite opportunity
+          .hero__scroller
+            a.hero__scroller-icon.wow(href="#" js-scrollTo data-selector='.ito-members' data-animation-delay=".75s")
+              include ../inline-svg/scroll-mouse.svg
+            
+    // ITO members
+    .ito-members.ito-members--no-margin
+      .container.container--extra
+        .ito-members__title.wow Meet  the  Ambassadors
+      .container.container--extra
+        .ito-members__wrapper
+          -
+            var cards = [
+              ['itoMember-1', 'Steven Watson'],
+              ['itoMember-2', 'Maurice Perkins'],
+              ['itoMember-3', 'Welch Zhou'],
+              ['itoMember-4', 'Lulu Moran'],
+              ['itoMember-5', 'Matilda Huff'],
+              ['itoMember-6', 'Lydia Tucker'],
+              ['itoMember-7', 'Steven Watson'],
+              ['itoMember-8', 'Winnie Barton']
+            ]
+          
+          each card, index in cards    
+            // col
+            .ito-members__col.wow
+              .ito-member
+                .ito-member__image
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .ito-member__content
+                  .ito-member__description
+                    .ito-member__name= card[1]
+                    .ito-member__position Lorem ipsum
+                .ito-member__popover
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+                  a(href="#").ito-member__more Read More
+    
+    // ITO brands
+    include components/ito/_ito-brands
+    
+    // ITO testimonials
+    .ito-testimonials.wow
+      include components/ito/_itoTestimonialsSlider
+                      
+    // INFO
+    .info
+      include components/ito/_itoInfoJoin
+      
+    // ITO brands
+    .ito-brands
+      .container.container--1400
+        .ito-brands__title.wow Featured  in
+        .ito-brands__wrapper(js-watch-flex-wrap)
+          .ito-brands__el.wow(data-animation-delay=".1s")
+            i.icon.icon-brand-coincart
+          .ito-brands__el.wow(data-animation-delay=".2s")
+            i.icon.icon-brand-icon
+          .ito-brands__el.wow(data-animation-delay=".3s")
+            i.icon.icon-brand-aion
+          .ito-brands__el.wow(data-animation-delay=".4s")
+            i.icon.icon-brand-quantstamp
+          .ito-brands__el.wow(data-animation-delay=".5s")
+            i.icon.icon-brand-factom
+              

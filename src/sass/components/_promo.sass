@@ -21,6 +21,8 @@
   z-index: 1
   display: flex
   flex-direction: column
+  &--white
+    background: white
   &__wrapper
     flex: 1 1 auto
     display: flex
@@ -28,6 +30,10 @@
     flex-direction: column
     position: relative
     overflow: hidden
+    &--more-height
+      max-height: 780px
+      svg
+        min-height: 172px
   svg, img
     position: absolute
     top: 50%
@@ -61,3 +67,8 @@
       min-width: auto
       min-height: auto
       width: 1300px
+    &--white
+      // background: transaprent
+      img
+        top: 0
+        transform: translate(-50%,0)

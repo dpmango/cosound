@@ -41,11 +41,15 @@
     justify-content: center
     text-align: center
     padding: 90px 0
+    &--have-bottom-content
+      padding-bottom: 270px
 
   &__logo
     font-size: 66px
     &--smaller
       font-size: 56px
+    &--bigger
+      font-size: 77px
 
   &__text
     margin-top: 50px
@@ -53,11 +57,16 @@
     max-width: 670px
     margin-left: auto
     margin-right: auto
+    &--less-m
+      margin-top: 25px
     p
       margin: 0
       line-height: 1.9
       & + p
-        margin-bottom: 1em
+        // margin-top: 1em
+      .t-bigger
+        font-weight: 500
+        font-size: 1.8em
 
   &__cta
     margin-top: 100px
@@ -65,6 +74,49 @@
     margin-right: -13px
     .btn
       margin: 0 13px 20px
+
+  &__ito-pre
+    display: flex
+    align-items: center
+    margin-top: 40px
+    width: 100%
+    max-width: 690px
+    margin-left: auto
+    margin-right: auto
+    a.btn
+      margin-left: 12px
+      padding-top: 13px
+      padding-bottom: 12px
+
+  &__scroller
+    position: absolute
+    z-index: 1
+    left: 50%
+    transform: translateX(-50%)
+    bottom: 110px
+    &-icon
+      size: 100px
+      background: white
+      border-radius: 50%
+      box-shadow: 24px 7px 40px 0 rgba(72,89,125,0.23)
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: box-shadow .25s $ease
+      &:hover
+        box-shadow: 12px 3px 20px 0 rgba(72,89,125,0.23)
+        svg
+          transform: translate(0,7px)
+      svg
+        transition: .25s $ease
+
+      // reference to svg group
+      #mouse
+        circle
+          animation-name: scrollerCircle
+          animation-duration: 1.25s
+          animation-timing-function: ease
+          animation-iteration-count: infinite
 
   /* promo modifier
   &--promo
@@ -79,6 +131,20 @@
       &__wrapper
         min-height: 695px
         padding-bottom: 0
+  &--pre-ito
+    .hero
+      &__wrapper
+        min-height: 780px
+
+
+/* Scroller mouse animation
+@keyframes scrollerCircle
+  from
+    transform: translate(0,0)
+  40%
+    transform: translate(0,20px)
+  to
+    transform: translate(0,0)
 
 +r($tablet)
   .hero
@@ -100,11 +166,25 @@
       .btn
         margin-left: 5px
         margin-right: 5px
+    &__scroller
+      display: none
+
     &--ito
       .hero
         &__wrapper
           min-height: 550px
           // padding-bottom: 120px
+    &--pre-ito
+      .hero
+        &__wrapper
+          min-height: 600px
+
++r($mobile)
+  .hero
+    &__ito-pre
+      flex-direction: column
+      a.btn
+        margin-top: 20px
 
 +r($mobile-s)
   .hero
@@ -112,6 +192,8 @@
       min-height: 1px
       padding-top: 95px
       padding-bottom: 50px
+      &--have-bottom-content
+        padding-bottom: 100px
     &__bg
       svg
         margin-left: -200px
@@ -129,6 +211,10 @@
           min-height: 1px
           /* bg offset
           padding-bottom: 140px
+    &--pre-ito
+      .hero
+        &__wrapper
+          min-height: 1px
 
 // INFO
 .info
@@ -143,6 +229,22 @@
       text-align: left
   &--m-bottom
     margin-bottom: 150px
+  // &--last-margin
+  //   margin-bottom: 250px
+  &--ito-first
+    z-index: 1
+    margin-top: 0px
+    margin-bottom: 200px
+    // padding-top: 200px
+    &::before
+      display: block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      background: white
+      height: 200px
   &__wrapper
     display: flex
     width: 100%
@@ -156,10 +258,17 @@
           padding-right: 5%
           margin-left: 0
           margin-right: auto
+          &--m-left
+            padding-left: 60px
+            padding-right: 0
+            margin-right: 5%
+            +r(1200)
+              padding-left: 0
 
   &__bg
     position: absolute 0
-    top: 50px
+    /* possible another class for top
+    top: 80px
     display: flex
     flex-direction: column
 
@@ -186,12 +295,25 @@
     min-height: 1px
     // margin-top: 90px
     text-align: right
+    &--align-left
+      text-align: left
+    &--left-pad
+      padding-left: 40px
+    &--fill
+      margin-right: auto
+    .ito-pre-email
+      margin-top: 35px
 
   &__text
     margin-top: 25px
     color: rgba($fontColor, .52)
     max-width: 343px
     margin-left: auto
+    &--full
+      max-width: 460px
+      // max-width: 50%
+      .info__cta
+        margin-top: 40px
     p
       font-size: 14px
       line-height: 2
@@ -254,6 +376,12 @@
         transform: translateX(10%)
         transition: .25s $ease
 
++r(1200)
+  .info
+    &__content
+      &--left-pad
+        padding-left: 0
+
 +r($desktop)
   .info
     & + .info
@@ -274,6 +402,8 @@
       > .container
         position: relative
         z-index: 2
+    &--ito-first
+      margin-bottom: 150px
 
     &__wrapper
       flex-direction: column-reverse
@@ -294,6 +424,10 @@
       margin-right: auto
       text-align: center
       text-align: left
+      &--align-center-mobile
+        text-align: center
+        .info__text
+          text-align: center
 
 
 +r($tablet)
@@ -307,6 +441,11 @@
     &__image
       &-box
         border: 0
+
++r($mobile)
+  .info
+    &--ito-first
+      margin-bottom: 100px
 
 +r($mobile-s)
   .info

@@ -56,6 +56,8 @@ $(document).ready(function(){
     removeFooterMobile();
     _window.on('resize', debounce(removeFooterMobile, 250));
 
+    watchFlexWrap();
+    _window.on('resize', debounce(watchFlexWrap, 250));
     // login/sign
     setStepsClasses();
 
@@ -149,6 +151,19 @@ $(document).ready(function(){
           scrollTop: $(el).offset().top}, 1000);
       return false;
     })
+    .on('click', '[js-scrollTo]', function() { // section scroll
+      var selector = $(this).data('selector')
+      // $('body, html').animate({
+      //     scrollTop: $(selector).offset().top}, 1000);
+      anime({
+        targets: "html, body",
+        scrollTop: $(selector).offset().top,
+        easing: easingSwing, // swing
+        duration: 1000
+      });
+      return false;
+    })
+
 
 
   // close all active elements on page
@@ -792,6 +807,44 @@ $(document).ready(function(){
     }
   }
 
+  //////////
+  // PRE ITO FUNCTIONS
+  //////////
+
+  // focus in
+  _document.on('focus', '[js-add-focus-parent]', function(){
+    $(this).parent().addClass('is-focused');
+  })
+
+  // focus out
+  _document.on('blur', '[js-add-focus-parent]', function(){
+    var thisVal = $(this).val();
+    var parent = $(this).parent();
+    if ( thisVal !== "" ){
+      parent.addClass('is-focused');
+    } else {
+      parent.removeClass('is-focused');
+    }
+  })
+
+  // WATCH FLEX WRAP
+  function watchFlexWrap(){
+    if ( $('[js-watch-flex-wrap]').length > 0 ){
+      $('[js-watch-flex-wrap]').each(function(i, container){
+        var $container = $(container);
+
+        var cHeight = $container.height();
+        var targetBreakAt = 100;
+
+        if (cHeight > targetBreakAt ) {
+          $container.addClass('is-wrapped');
+        } else {
+          $container.removeClass('is-wrapped');
+        }
+      })
+    }
+  }
+
 
   //////////
   // ACCOUNT NAV
@@ -922,6 +975,110 @@ $(document).ready(function(){
         }
       }
     })
+
+    // ito members slider
+    new Swiper('[js-ito-members-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-members__wrapper",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: false,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      normalizeSlideIndex: true,
+      freeMode: true,
+      navigation: {
+        nextEl: '.ito-members__next',
+        prevEl: '.ito-members__prev',
+      }
+    })
+
+    // ito testimonials swiper
+    var itoTestimonialsSlider = new Swiper('[js-ito-testimonials-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-testimonials__slide",
+      direction: 'horizontal',
+      loop: true,
+      watchOverflow: false,
+      setWrapperSize: false,
+      // setWrapperSize: true,
+      spaceBetween: 0,
+      // should be css only
+      // autoHeight: true,
+      slidesPerView: 1,
+      // loop: true,
+      normalizeSlideIndex: true,
+      // centeredSlides: true,
+      freeMode: false,
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 70,
+        slideShadows: false,
+        // stretch: 50,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      }
+    })
+
+    // POPULATE PSEUDO CARDS
+    if ( $('[js-populateContent-ito-before]').length > 0 ){
+      $('[js-populateContent-ito-before]').each(function(i, card){
+        var prevCard = $(this).closest('.ito-testimonials__slide').prev(); // find prev slide
+        var targetContent = prevCard.find('.ito-testimonial__content').html()
+
+        if ( targetContent ){
+          $(card).html(targetContent)
+        }
+      })
+
+      $('[js-populateContent-ito-after]').each(function(i, card){
+        var nextCard = $(this).closest('.ito-testimonials__slide').next(); // find prev slide
+        var targetContent = nextCard.find('.ito-testimonial__content').html()
+
+        if ( targetContent ){
+          $(card).html(targetContent)
+        }
+      })
+    }
+
+    // pseudo nav
+    _document
+      .on('click', '.ito-testimonial-before', function(){
+        itoTestimonialsSlider.slidePrev()
+      })
+      .on('click', '.ito-testimonial-after', function(){
+        itoTestimonialsSlider.slideNext()
+      })
+
+    // QUOTES SLIDER
+    var itoQuotesSlider = new Swiper('[js-ito-quotes-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "ito-quotes__slide",
+      // direction: 'vertical',
+      // effect: 'fade',
+      loop: false,
+      watchOverflow: false,
+      setWrapperSize: false,
+      spaceBetween: 0,
+      slidesPerView: 1,
+      normalizeSlideIndex: true,
+      freeMode: false,
+      // effect: 'flip',
+      // flipEffect: {
+      //   rotate: 30,
+      //   slideShadows: false,
+      // },
+    })
+
+    _document
+      .on('click', '[js-itoQuotes-nav]', function(){
+        var targetSlide = $(this).data('slide');
+        itoQuotesSlider.slideTo( targetSlide - 1 )
+      })
 
 
   }
@@ -1954,6 +2111,30 @@ $(document).ready(function(){
       messages: {
         name: {
           required: "This field is required",
+        },
+      }
+    });
+
+    //////////////
+    // PRE ITO
+    //////////////
+
+    // email form
+    $("[js-validate-pre-ito]").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+      },
+      messages: {
+        email: {
+            required: "This field is required",
+            email: "Email is not valid"
         },
       }
     });

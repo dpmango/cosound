@@ -1,0 +1,737 @@
+.ito-brands
+  position: relative
+  z-index: 1
+  padding: 50px 0
+  margin: 120px 0 70px
+  width: 100%
+  &--white
+    margin: -190px 0 0
+    padding: 300px 0 200px
+    > .container
+      position: relative
+      z-index: 2
+
+  &__title
+    font-size: 40px
+    font-weight: 500
+    text-align: center
+
+  &__wrapper
+    margin-left: -10px
+    margin-right: -10px
+    margin-top: 40px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    // justify-content: center
+    flex-wrap: wrap
+    &.is-wrapped
+      justify-content: center
+      .ito-brands__el
+        margin: 0 auto
+
+  &__el
+    padding: 20px 10px
+    flex: 0 0 auto
+
+  &__bg
+    position: absolute 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      max-height: 680px
+      flex-direction: column
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
+
++r(1200)
+  .ito-brands
+    &--white
+      // margin: -150px 0 0
+      // padding: 240px 0 200px
+    &__wrapper
+      margin-left: 0
+      margin-right: 0
+    &__el
+      padding: 10px 0
+      .icon
+        transform: scale(.8)
+        transform-origin: center center
+
++r($desktop)
+  .ito-brands
+    &--white
+      // margin: -190px 0 0
+      padding: 250px 0 180px
+
++r($tablet)
+  .ito-brands
+    padding: 30px 0
+    margin: 60px 0 50px
+    &--white
+      margin-top: -140px
+      padding: 200px 0 140px
+
+    &__title
+      font-size: 34px
+
++r(480)
+  .ito-brands
+    &__title
+      font-size: 28px
+    &__wrapper
+      margin-top: 25px
+      &.is-wrapped
+        .ito-brands__el
+          margin: 0 -10px
+    &__el
+      padding: 5px 0
+      margin: 0 -10px
+      .icon
+        transform: scale(.65)
+
+
+/* ITO testimonials
+.ito-testimonials
+  position: relative
+  margin: 0px 0 120px
+  &__wrapper
+
+  &__slider
+
+  &__slide
+    position: relative
+    flex: 0 0 auto
+    display: flex
+    flex-direction: column
+    > .container
+      position: relative
+      flex: 1 0 auto
+      display: flex
+      flex-direction: column
+      padding-top: 150px
+      padding-bottom: 70px
+      /* offset for prev, next cards
+      padding-left: 13.5%
+      padding-right: 13.5%
+
+  .swiper-pagination
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 10px 0
+    .swiper-pagination-bullet
+      position: relative
+      background: transparent
+      border: 1px solid transparent
+      size: 13px
+      opacity: 1
+      border: 1px solid #23B4AD
+      transition: .25s $ease
+      cursor: pointer
+      margin: 0 7px
+      &::before, &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        left: 50%
+        top: 50%
+        border-radius: 50%
+      &::before
+        size: 24px
+        z-index: 1
+        opacity: .22
+        transform: translate(-50%,-50%) scale(.5)
+        background-image: linear-gradient(54deg, #2CC1A5 0%, #1CA9B4 27%, #8E5ACD 100%)
+        transition: transform .25s $ease
+      &::after
+        size: 13px
+        background: white
+        // border: 1px solid #23B4AD
+        z-index: 2
+        transform: translate(-50%,-50%) scale(.82)
+        transition: .25s $ease
+      &-active
+        transform: scale(1)
+        border-color: transparent
+        &::after
+          background-image: linear-gradient(54deg, #2CC1A5 0%, #1CA9B4 27%, #8E5ACD 100%)
+          // border-color: transparent
+          transform: translate(-50%,-50%) scale(1)
+        &::before
+          transform: translate(-50%,-50%) scale(1)
+
++r($mobile)
+  .ito-testimonials
+    margin-bottom: 100px
+    &__slide
+      > .container
+        padding-top: 100px
+        padding-bottom: 50px
+        padding-left: 40px
+        padding-right: 40px
+    .swiper-pagination
+
+
+/* ITO TESTIMONIAL
+.ito-testimonial
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
+  max-width: 860px
+  margin-left: auto
+  margin-right: auto
+  position: relative
+  z-index: 2
+  text-align: center
+  background: #FFFFFF
+  box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.24)
+  border-radius: 5px
+  padding: 80px 60px 50px
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    z-index: 1
+    top: 0px
+    left: 50%
+    transform: translateX(-50%)
+    +sprite(afterItoTestimonialAvatar)
+  &__avatar
+    position: absolute
+    z-index: 2
+    left: 50%
+    top: -67px
+    size: 120px
+    transform: translateX(-50%)
+    box-shadow: 0 2px 20px rgba(#696969, .42)
+  &__name
+    position: relative
+    z-index: 2
+    font-size: 22px
+    font-weight: 500
+  &__position
+    font-size: 18px
+    color: #C4CBD3
+    margin-top: 6px
+  &__content
+    // margin-top: 25px
+    padding-top: 25px
+    margin-top: auto
+    margin-bottom: auto
+    p
+      margin: 0
+      font-size: 22px
+      line-height: 1.8
+      font-style: italic
+      color: #8392A6
+      & + p
+        margin-top: 1em
+
+  &__quotemark
+    position: absolute
+    top: 8px
+    left: 50%
+    transform: translateX(-50%)
+    font-size: 0
+    z-index: 1
+    pointer-events: none
+    .ico
+      fill: rgba(#262626, .03)
+      font-size: 180px
+
+.ito-testimonial-before, .ito-testimonial-after
+  position: absolute
+  z-index: 1
+  // 150 / 2
+  top: calc(50% + 50px)
+  transform: translateY(-50%)
+  width: 55%
+  padding: 70px 30px 40px
+  background: white
+  border-radius: 5px
+  // pointer-events: none
+  cursor: pointer
+  box-shadow: 9px 18px 30px 0 rgba(129,129,129,0.24)
+  transition: box-shadow .25s $ease
+  .ito-testimonial__content
+    opacity: .5
+    transition: opacity .25s $ease
+    p
+      font-size: 17px
+  &:hover
+    box-shadow: 5px 9px 15px 0 rgba(129,129,129,0.24)
+    .ito-testimonial__content
+      opacity: .7
+
+.ito-testimonial-before
+  left: 30px
+.ito-testimonial-after
+  right: 30px
+
++r($desktop)
+  .ito-testimonial
+    padding: 60px 40px 40px
+    &::after
+      transform: translateX(-50%) scale(.83)
+      transform-origin: center top
+    &__avatar
+      size: 100px
+      top: -57px
+    &__name
+      font-size: 20px
+    &__position
+      font-size: 16px
+    &__content
+      padding-top: 15px
+      p
+        font-size: 18px
+    &__quotemark
+      top: 20px
+      .ico
+        font-size: 150px
+
+  .ito-testimonial-before, .ito-testimonial-after
+    padding: 45px 25px 30px
+    .ito-testimonial__content
+      p
+        font-size: 13px
+
++r($tablet)
+  .ito-testimonial
+    padding: 60px 25px 30px
+    &__name
+      font-size: 18px
+    &__position
+      font-size: 15px
+    &__content
+      p
+        font-size: 16px
+
++r($mobile)
+  .ito-testimonial
+    padding: 50px 15px 25px
+    &::after
+      transform: translateX(-50%) scale(.66)
+    &__avatar
+      size: 80px
+      top: -47px
+    &__content
+      p
+        font-size: 15px
+
+    &__quotemark
+      top: -10px
+      .ico
+        font-size: 130px
+
+  .ito-testimonial-before, .ito-testimonial-after
+    width: 80%
+    .ito-testimonial__content
+      p
+        font-size: 11px
+  .ito-testimonial-before
+    left: 5px
+
+  .ito-testimonial-after
+    right: 5px
+
+/* ITO PRE
+.ito-pre
+  &-email
+    width: 100%
+    position: relative
+    z-index: 1
+    display: flex
+    background: white
+    border-radius: 30px
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+    transition: .25s $ease
+    input
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      background: transparent
+      color: $colorAqua
+      border: none
+      border-radius: 30px
+      /* huge padding for button
+      padding: 20px 180px 19px 35px
+      font-size: 16px
+      transition: .25s $ease
+      &::placeholder
+        color: $colorAqua
+      &:focus
+        outline: none
+
+    button
+      position: absolute
+      top: 0
+      bottom: 0
+      // fix to cover border-radius
+      right: -1px
+      z-index: 2
+
+    &.is-focused
+      box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+    &--bordered
+      border: 1px solid white
+      button
+        right: 1px
+        top: 1px
+        bottom: 1px
+
+
++r($mobile)
+  .ito-pre
+    &-email
+      input
+        padding-left: 20px
+        padding-right: 130px
+      button
+        min-width: 120px
+        padding-left: 15px
+        padding-right: 15px
+/* Pretty much blank wrappers
+
+//  ambassadors
+.ambassadors
+
+
+
+
+
+
+
+/* ITO QUOTES
+.ito-quotes
+  position: relative
+  margin: 150px 0 120px 0
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    pointer-events: none
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      max-height: 820px
+      flex-direction: column
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
+
+  &__wrapper
+    min-height: 820px
+    display: flex
+    margin-left: -15px
+    margin-right: -15px
+
+  &__slider
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    min-height: 0
+    padding: 130px 15px 100px 0
+    display: flex
+    flex-direction: column
+    margin-left: -60px
+
+  &__nav
+    position: relative
+    z-index: 2
+    flex: 0 1 50%
+    max-width: 50%
+    min-width: 1px
+    min-height: 0
+    padding: 0 15px
+    margin-right: -100px
+    &-el
+      position: absolute
+      font-size: 0
+      cursor: pointer
+      transition: .25s $ease
+      &:hover
+        opacity: .8
+
+      &--1
+        top: 3%
+        left: 0%
+      &--2
+        top: 17%
+        right: 0%
+      &--3
+        top: 42%
+        left: 31%
+      &--4
+        top: 60%
+        left: 0
+      &--5
+        top: 60%
+        right: 5%
+      &--6
+        top: 87%
+        left: 25%
+
+    &-avatar
+      display: inline-block
+      position: relative
+      z-index: 2
+      border-radius: 50%
+      overflow: hidden
+      font-size: 0
+      box-shadow: 0 25px 50px 0 rgba(29,36,84,0.52)
+      border: 5px solid transparent
+      &--1
+        border-color: white
+        size: 190px
+      &--2
+        border-color: #28BAA9
+        size: 190px
+      &--3
+        border-color: #8064CA
+        size: 190px
+      &--4
+        border-color: #28BAA9
+        size: 100px
+      &--5
+        border-color: #FF277B
+        size: 137px
+      &--6
+        border-color: white
+        size: 167px
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 105%
+        transform: translate(-50%,-50%)
+
+  &__slider
+    position: relative
+  &__slide
+    position: relative
+    flex: 0 0 auto
+    padding-top: 150px
+    padding-left: 30px
+
+  &__quotemark
+    position: absolute
+    top: 90px
+    left: 0
+    font-size: 0
+    z-index: 1
+    pointer-events: none
+    .ico
+      transform: rotate(180deg)
+      fill: rgba(#FFFFFF, .03)
+      font-size: 280px
+
++r($hd)
+  .ito-quotes
+    /* pseudo wide container
+    &__slider
+      margin-left: 0
+    &__nav
+      margin-right: 0
+
++r(1200)
+  .ito-quotes
+    &__quotemark
+      top: 150px
+      .ico
+        font-size: 240px
+    &__slide
+      padding-left: 20px
+    &__nav
+      &-el
+        &--1
+          top: 5%
+        &--4, &--5
+          top: 65%
+        &--6
+          top: 90%
+      &-avatar
+        border-width: 3px
+        &--1
+          size: 150px
+        &--2
+          size: 150px
+        &--3
+          size: 150px
+        &--4
+          size: 80px
+        &--5
+          size: 110px
+        &--6
+          size: 120px
+
++r($tablet)
+  .ito-quotes
+    margin-bottom: 80px
+    &__bg
+      &-wrapper
+        margin-top: auto
+    &__wrapper
+      flex-direction: column-reverse
+      min-height: 900px
+      justify-content: center
+    &__slider
+      flex: 0 0 auto
+      max-width: 400px
+      width: 100%
+      margin-left: auto
+      margin-right: auto
+      padding: 20px 15px 0px 0
+    &__slide
+      // flex-shrink: 1
+      flex-basis: 100%
+    &__nav
+      flex: 0 0 auto
+      min-height: 375px
+      max-width: 100%
+      top: -50px
+      &-el
+        &--1
+          left: 5%
+        &--2
+          right: 5%
+        &--3
+          left: 40%
+        &--4
+          left: 5%
+        &--5
+          right: 10%
+        &--6
+          top: auto
+          bottom: -5%
+      &-avatar
+        border-width: 2px
+        &--1
+          size: 125px
+        &--2
+          size: 125px
+        &--3
+          size: 125px
+        &--4
+          size: 70px
+        &--5
+          size: 95px
+        &--6
+          size: 100px
+
+    &__slide
+      padding-top: 60px
+    &__quotemark
+      top: 0
+      .ico
+        font-size: 200px
+
++r($mobile)
+  .ito-quotes
+    margin-bottom: 60px
+    &__nav
+      &-avatar
+        &--1
+          size: 100px
+        &--2
+          size: 100px
+        &--3
+          size: 100px
+        &--4
+          size: 60px
+        &--5
+          size: 80px
+        &--6
+          size: 85px
+
+.ito-quote-t
+  color: white
+  &__head
+    display: flex
+    align-items: center
+    &-content
+      margin-left: 25px
+
+  &__avatar
+    flex: 0 0 94px
+
+  &__name
+    font-size: 26px
+    color: white
+    font-weight: 500
+  &__position
+    font-size: 24px
+    color: $colorWhite70
+    line-height: 1.67
+
+  &__content
+    font-size: 24px
+    color: $colorWhite70
+    line-height: 1.67
+    margin-top: 25px
+    p
+      margin: 0
+      & + p
+        margin-top: 1em
+
++r(1200)
+  .ito-quote-t
+    &__name
+      font-size: 22px
+    &__avatar
+      flex-basis: 70px
+      size: 70px
+    &__head
+      &-content
+        margin-left: 15px
+    &__position
+      font-size: 18px
+    &__content
+      font-size: 20px
+
++r($tablet)
+  .ito-quote-t
+
++r($mobile)
+  .ito-quote-t
+    &__head
+      flex-direction: column
+      text-align: center
+
+      &-content
+        margin-left: 0
+    &__avatar
+      margin-bottom: 15px
+    &__position
+      font-size: 15px
+    &__content
+      font-size: 17px
+      text-align: center
