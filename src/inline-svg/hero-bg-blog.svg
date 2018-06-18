@@ -2,10 +2,16 @@
 <svg width="1920px" viewBox="0 0 1920 680" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
     <defs>
-        <linearGradient x1="-30.8235677%" y1="0%" x2="99.0013075%" y2="92.9118589%" id="linearGradient-1">
+        <!-- <linearGradient x1="-30.8235677%" y1="0%" x2="99.0013075%" y2="92.9118589%" id="linearGradient-1">
             <stop stop-color="#2CC1A5" offset="0%"></stop>
             <stop stop-color="#1CA9B4" offset="16.9330415%"></stop>
             <stop stop-color="#8E5ACD" offset="100%"></stop>
+        </linearGradient> -->
+        <linearGradient x1="98.7626139%" y1="5.50013715%" x2="-5.36336263%" y2="82.3432999%" id="linearGradient-1">
+            <stop stop-color="#2CC1A5" offset="0%"></stop>
+            <stop stop-color="#1CA9B4" offset="45.2143426%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <animate attributeName="x2" dur="4s" from="-5.36336263%" to="-5.36336263%" values="-5.36336263%;30%;-5.36336263%" repeatCount="indefinite" />
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

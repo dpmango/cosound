@@ -595,6 +595,7 @@
 
 +r($tablet)
   .ito-quotes
+    margin-bottom: 80px
     &__bg
       &-wrapper
         margin-top: auto
@@ -605,15 +606,23 @@
     &__slider
       flex: 0 0 auto
       max-width: 400px
+      width: 100%
       margin-left: auto
       margin-right: auto
       padding: 20px 15px 0px 0
+    &__slide
+      // flex-shrink: 1
+      flex-basis: 100%
     &__nav
       flex: 0 0 auto
       min-height: 375px
       max-width: 100%
       top: -50px
       &-el
+        &--1
+          left: 5%
+        &--2
+          right: 5%
         &--3
           left: 40%
         &--4
@@ -627,10 +636,8 @@
         border-width: 2px
         &--1
           size: 125px
-          left: 5%
         &--2
           size: 125px
-          right: 5%
         &--3
           size: 125px
         &--4
@@ -647,6 +654,23 @@
       .ico
         font-size: 200px
 
++r($mobile)
+  .ito-quotes
+    margin-bottom: 60px
+    &__nav
+      &-avatar
+        &--1
+          size: 100px
+        &--2
+          size: 100px
+        &--3
+          size: 100px
+        &--4
+          size: 60px
+        &--5
+          size: 80px
+        &--6
+          size: 85px
 
 .ito-quote-t
   color: white
@@ -695,3 +719,19 @@
 
 +r($tablet)
   .ito-quote-t
+
++r($mobile)
+  .ito-quote-t
+    &__head
+      flex-direction: column
+      text-align: center
+
+      &-content
+        margin-left: 0
+    &__avatar
+      margin-bottom: 15px
+    &__position
+      font-size: 15px
+    &__content
+      font-size: 17px
+      text-align: center
