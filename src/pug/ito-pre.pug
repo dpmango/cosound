@@ -22,10 +22,10 @@ block content
             +icon('ico-logo')
           .hero__text.hero__text--less-m.wow(data-animation-delay=".5s")
             p Join  the  revolution.  Be  part  of  the  community  of  sound.
-            p <span class="t-bigger">1000</span> Founding  Members  Remaining
+            //- p <span class="t-bigger">1000</span> Founding  Members  Remaining
           .hero__ito-pre.wow(data-animation-delay=".75s")
             form.ito-pre-email(action="" js-validate-pre-ito)
-              input(type="text" name="email" placeholder="Email  Address" js-add-focus-parent)
+              input(type="text" name="email" placeholder="Register your interest" js-add-focus-parent)
               button(type="submit").btn.btn-primary.btn-primary--aqua Join us
             a(href="#").btn.btn-primary.btn-primary.btn-primary--red
               span More info
@@ -38,7 +38,7 @@ block content
           include ../inline-svg/info-promo-bg.svg
       .container.container--extra
         .info__wrapper
-          .info__content.info__content--align-left.info__content--left-pad.wow(data-animation-class="wowFadeRight")
+          .info__content.info__content--align-center-mobile.info__content--align-left.info__content--left-pad.wow(data-animation-class="wowFadeRight")
             h2.heading.c-aqua Music  is  the  great  uniter
             .info__text.info__text--full
               p Sign  up  to  be  part  of  the  BETA  launch  now.  The  first1000  members  get  a  lifetime  founders  badge  andaccess  to  Cosound  events  worldwide 
@@ -110,7 +110,7 @@ block content
     .info.info--m-bottom
       .container.container--extra
         .info__wrapper.info__wrapper--reverse
-          .info__content.info__content--align-left.info__content--fill.wow(data-animation-class="wowFadeLeft")
+          .info__content.info__content--align-center-mobile.info__content--align-left.info__content--fill.wow(data-animation-class="wowFadeLeft")
             h2.heading.c-violet Our Vision
             .info__text.info__text--full
               p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae auctor eu augue   
@@ -208,22 +208,22 @@ block content
                 
           // slider nav
           .ito-quotes__nav.wow(data-animation-class="wowFadeRight")
-            .ito-quotes__nav-el.ito-quotes__nav-el--1(js-itoQuotes-nav data-slide="1")
+            .ito-quotes__nav-el.ito-quotes__nav-el--1.wow(data-animation-delay=".1s" js-itoQuotes-nav data-slide="1")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--1
                 img(src='img/itoNavAvatar-1.jpg' srcset='img/itoNavAvatar-1@2x.jpg 2x')
-            .ito-quotes__nav-el.ito-quotes__nav-el--2(js-itoQuotes-nav data-slide="2")
+            .ito-quotes__nav-el.ito-quotes__nav-el--2.wow(data-animation-delay=".2s" js-itoQuotes-nav data-slide="2")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--2
                 img(src='img/itoNavAvatar-2.jpg' srcset='img/itoNavAvatar-2@2x.jpg 2x')
-            .ito-quotes__nav-el.ito-quotes__nav-el--3(js-itoQuotes-nav data-slide="3")
+            .ito-quotes__nav-el.ito-quotes__nav-el--3.wow(data-animation-delay=".3s" js-itoQuotes-nav data-slide="3")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--3
                 img(src='img/itoNavAvatar-3.jpg' srcset='img/itoNavAvatar-3@2x.jpg 2x')              
-            .ito-quotes__nav-el.ito-quotes__nav-el--4(js-itoQuotes-nav data-slide="4")
+            .ito-quotes__nav-el.ito-quotes__nav-el--4.wow(data-animation-delay=".4s" js-itoQuotes-nav data-slide="4")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--4
                 img(src='img/itoNavAvatar-4.jpg' srcset='img/itoNavAvatar-4@2x.jpg 2x')
-            .ito-quotes__nav-el.ito-quotes__nav-el--5(js-itoQuotes-nav data-slide="5")
+            .ito-quotes__nav-el.ito-quotes__nav-el--5.wow(data-animation-delay=".5s" js-itoQuotes-nav data-slide="5")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--5
                 img(src='img/itoNavAvatar-5.jpg' srcset='img/itoNavAvatar-5@2x.jpg 2x')
-            .ito-quotes__nav-el.ito-quotes__nav-el--6(js-itoQuotes-nav data-slide="6")
+            .ito-quotes__nav-el.ito-quotes__nav-el--6.wow(data-animation-delay=".6s" js-itoQuotes-nav data-slide="6")
               .ito-quotes__nav-avatar.ito-quotes__nav-avatar--6
                 img(src='img/itoNavAvatar-6.jpg' srcset='img/itoNavAvatar-6@2x.jpg 2x')
                               
