@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>MARKETPLACE - CART</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- place where pjax bindings happen's-->
+    <div id="barba-wrapper">
+      <!-- what should be changed with every pjax-->
+      <div class="page">
+        <!-- HEADER :: START-->
+        <header class="header header--dash header--bg js-should-scroll">
+          <!-- no wow class here-->
+          <div class="header__wrapper"><a class="header__logo" href="homepage.html">
+              <svg class="ico ico-logo">
+                <use xlink:href="img/sprite.svg#ico-logo"></use>
+              </svg></a>
+            <div class="header__search">
+              <div class="header__search-input">
+                <input name="search" type="text" placeholder="Search.." js-header-search>
+                <svg class="ico ico-search">
+                  <use xlink:href="img/sprite.svg#ico-search"></use>
+                </svg>
+                <div class="header__search-drop" js-header-searchResults>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <li><a href="#">Music Rock</a></li>
+                  <li><a href="#">Music Listen</a></li>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <div class="header__search-no-results">No results found for <span>qqq</span> query</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__actions">
+              <div class="header__actions-item"><a href="marketplace.html">
+                  <svg class="ico ico-case">
+                    <use xlink:href="img/sprite.svg#ico-case"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a href="messages.html">
+                  <svg class="ico ico-comments">
+                    <use xlink:href="img/sprite.svg#ico-comments"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a href="profile.html">
+                  <svg class="ico ico-profile">
+                    <use xlink:href="img/sprite.svg#ico-profile"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a class="header__notifications has-notifications" href="#" js-header-notifications>
+                  <svg class="ico ico-notifications">
+                    <use xlink:href="img/sprite.svg#ico-notifications"></use>
+                  </svg><span class="header__notifications-mark"></span></a></div>
+              <div class="header__actions-item"><a class="header__cart" href="cart.html">
+                  <svg class="ico ico-cart">
+                    <use xlink:href="img/sprite.svg#ico-cart"></use>
+                  </svg>
+                  <div class="header__cart-num"><span>4</span></div></a></div>
+            </div>
+            <div class="header__user">
+              <div class="avatar"><img src="img/avatar-1.jpg" srcset="img/avatar-1@2x.jpg 2x"></div>
+              <div class="header__user-dropdown">
+                <div class="header__user-list"><a href="account.html">Account Settings</a><a href="purchased-services.html">My Marketplace</a><a href="plans.html">Subscription</a>
+                  <div class="header__user-separator"></div><a href="homepage.html">Logout</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__hamburger">
+              <div class="hamburger hamburger--squeeze" js-hamburger>
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- HEADER :: END-->
+        <!-- MOBILE NAV-->
+        <div class="mnav mnav--fixed">
+          <div class="mnav__wrapper" js-scrollbar>
+            <div class="header__search">
+              <div class="header__search-input">
+                <input name="search" type="text" placeholder="Search.." js-header-search>
+                <svg class="ico ico-search">
+                  <use xlink:href="img/sprite.svg#ico-search"></use>
+                </svg>
+                <div class="header__search-drop" js-header-searchResults>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <li><a href="#">Music Rock</a></li>
+                  <li><a href="#">Music Listen</a></li>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <div class="header__search-no-results">No results found for <span>qqq</span> query</div>
+                </div>
+              </div>
+            </div>
+            <div class="mnav__profile">
+              <div class="mnav__profile-mage">
+                <div class="avatar avatar--big"><img src="img/avatar-1.jpg" srcset="img/avatar-1@2x.jpg 2x"></div>
+              </div><a class="mnav__profile-status" href="plans.html"><span>Premium</span></a>
+              <div class="mnav__profile-name">Benjamin Rees</div>
+            </div>
+            <ul class="mnav__menu mnav__menu--dash">
+              <li><a href="marketplace.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-case">
+                      <use xlink:href="img/sprite.svg#ico-case"></use>
+                    </svg>
+                  </div><span>Market</span></a></li>
+              <li><a href="messages.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-comments">
+                      <use xlink:href="img/sprite.svg#ico-comments"></use>
+                    </svg>
+                  </div><span>Messages  </span>
+                  <div class="mnav__menu-counter"> <span>3</span></div></a></li>
+              <li><a href="profile.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-profile">
+                      <use xlink:href="img/sprite.svg#ico-profile"></use>
+                    </svg>
+                  </div><span>Profile</span></a></li>
+              <li><a href="#" js-header-notifications>
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-notifications">
+                      <use xlink:href="img/sprite.svg#ico-notifications"></use>
+                    </svg>
+                  </div><span>Notifications</span>
+                  <div class="mnav__menu-counter"><span>9+</span></div></a></li>
+              <li><a href="cart.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-cart">
+                      <use xlink:href="img/sprite.svg#ico-cart"></use>
+                    </svg>
+                  </div><span>Cart </span>
+                  <div class="mnav__menu-counter"><span>2</span></div></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- ntf-->
+        <div class="ntf ntf--fixed">
+          <div class="ntf__title">Notifications</div>
+          <div class="ntf__wrapper" js-scrollbar>
+            <div class="ntf__list">
+              <!-- card-->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-violet">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card -->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-3.jpg" srcset="img/suggestionCard-avatar-3@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-aqua">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card -->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-4.jpg" srcset="img/suggestionCard-avatar-4@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-aqua">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__content">
+          <!-- MARKETPLACE CART-->
+          <div class="cart">
+            <div class="container container--wide">
+              <div class="product__wrapper">
+                <div class="product__content">
+                  <!-- box-->
+                  <div class="product__box wow">
+                    <div class="product__title">Your Service</div>
+                    <div class="cart-list">
+                      <!-- cart item-->
+                      <div class="cart-item"><a class="cart-item__image" href="product.html"><img src="img/cartItemImage.jpg" srcset="img/cartItemImage@2x.jpg 2x"></a>
+                        <div class="cart-item__info">
+                          <div class="avatar"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="cart-item__info-content"><a class="cart-item__name" href="product.html">Service title</a>
+                            <div class="cart-item__rating">
+                              <div class="rating-stars" data-rating="3"><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div><span>112 </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-item__price">$99</div>
+                      </div>
+                      <!-- cart item-->
+                      <div class="cart-item"><a class="cart-item__image" href="product.html"><img src="img/cartItemImage.jpg" srcset="img/cartItemImage@2x.jpg 2x"></a>
+                        <div class="cart-item__info">
+                          <div class="avatar"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="cart-item__info-content"><a class="cart-item__name" href="product.html">Very long Service title! Cosound marketplace marketplace</a>
+                            <div class="cart-item__rating">
+                              <div class="rating-stars" data-rating="3"><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div><span>112 </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-item__price">$99</div>
+                      </div>
+                      <!-- cart item-->
+                      <div class="cart-item"><a class="cart-item__image" href="product.html"><img src="img/cartItemImage.jpg" srcset="img/cartItemImage@2x.jpg 2x"></a>
+                        <div class="cart-item__info">
+                          <div class="avatar"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="cart-item__info-content"><a class="cart-item__name" href="product.html">Service title</a>
+                            <div class="cart-item__rating">
+                              <div class="rating-stars" data-rating="3"><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div><span>112 </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-item__price">$99</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--sidebar-->
+                <div class="product__sidebar cart-sidebar">
+                  <div class="cart-sidebar__wrap wow">
+                    <div class="cart-sidebar__title">Summary</div>
+                    <div class="cart-sidebar__table">
+                      <div class="cart-sidebar__line"><span>Subtotal</span><span>$199</span></div>
+                      <div class="cart-sidebar__line"><span>Tax</span><span>-</span></div>
+                    </div>
+                  </div>
+                  <div class="cart-sidebar__bottom wow">
+                    <div class="cart-sidebar__table cart-sidebar__table--bold">
+                      <div class="cart-sidebar__line"><span>Total</span><span>$199</span></div>
+                      <div class="cart-sidebar__line"><span>Delivery Time</span><span>3 days</span></div>
+                    </div>
+                    <div class="cart-sidebar__cta"><a class="btn btn-primary btn-primary--red" href="checkout.html"><span>Proceed to payment</span></a></div>
+                    <div class="cart-sidebar__add"><a href="#">Add to cart</a></div>
+                  </div>
+                  <div class="cart-sidebar__payments wow">
+                    <div class="cart-sidebar__payments-logos"><i class="icon icon-pay-discover"></i><i class="icon icon-pay-visa"></i><i class="icon icon-pay-maestro-old"></i><i class="icon icon-pay-jcb"></i><i class="icon icon-pay-paypal"></i><i class="icon icon-pay-amex"></i><i class="icon icon-pay-mastercard-old">   </i></div>
+                    <div class="cart-sidebar__payments-title">Payment Methods Accepted</div>
+                  </div>
+                  <div class="cart-sidebar__ssl wow">
+                    <div class="cart-sidebar__ssl-icon">
+                      <svg class="ico ico-ssl">
+                        <use xlink:href="img/sprite.svg#ico-ssl"></use>
+                      </svg>
+                    </div>
+                    <div class="cart-sidebar__ssl-title">Secure Payment SLL Lorem</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER :: START-->
+        <footer class="footer footer--mini">
+          <div class="footer__wrapper">
+            <div class="footer__top">
+              <div class="footer__copy">(c) elit. Nulla 2018</div>
+              <div class="footer__socials"><a href="#" target="_blank">
+                  <svg class="ico ico-social-fb">
+                    <use xlink:href="img/sprite.svg#ico-social-fb"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="ico ico-social-insta">
+                    <use xlink:href="img/sprite.svg#ico-social-insta"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="ico ico-social-soundcloud">
+                    <use xlink:href="img/sprite.svg#ico-social-soundcloud"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER :: END-->
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>

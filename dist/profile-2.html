@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- MADE WITH LOVE BY <> KHMELEVSKOY & ASSOCIATES </> www.khmelevskoy.co-->
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <!-- remove for production-->
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="all" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- place where pjax bindings happen's-->
+    <div id="barba-wrapper">
+      <!-- what should be changed with every pjax-->
+      <div class="page">
+        <!-- HEADER :: START-->
+        <header class="header header--dash header--alt js-should-scroll">
+          <div class="header__wrapper wow" data-animation-class="wowFadeDown"><a class="header__logo" href="homepage.html">
+              <svg class="ico ico-logo">
+                <use xlink:href="img/sprite.svg#ico-logo"></use>
+              </svg></a>
+            <div class="header__search">
+              <div class="header__search-input">
+                <input name="search" type="text" placeholder="Search.." js-header-search>
+                <svg class="ico ico-search">
+                  <use xlink:href="img/sprite.svg#ico-search"></use>
+                </svg>
+                <div class="header__search-drop" js-header-searchResults>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <li><a href="#">Music Rock</a></li>
+                  <li><a href="#">Music Listen</a></li>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <div class="header__search-no-results">No results found for <span>qqq</span> query</div>
+                </div>
+              </div>
+            </div>
+            <div class="header__actions">
+              <div class="header__actions-item"><a href="marketplace.html">
+                  <svg class="ico ico-case">
+                    <use xlink:href="img/sprite.svg#ico-case"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a href="messages.html">
+                  <svg class="ico ico-comments">
+                    <use xlink:href="img/sprite.svg#ico-comments"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a href="profile.html">
+                  <svg class="ico ico-profile">
+                    <use xlink:href="img/sprite.svg#ico-profile"></use>
+                  </svg></a></div>
+              <div class="header__actions-item"><a class="header__notifications has-notifications" href="#" js-header-notifications>
+                  <svg class="ico ico-notifications">
+                    <use xlink:href="img/sprite.svg#ico-notifications"></use>
+                  </svg><span class="header__notifications-mark"></span></a></div>
+              <div class="header__actions-item"><a class="header__cart" href="cart.html">
+                  <svg class="ico ico-cart">
+                    <use xlink:href="img/sprite.svg#ico-cart"></use>
+                  </svg>
+                  <div class="header__cart-num"><span>4</span></div></a></div>
+            </div>
+            <div class="header__actions header__actions--search">
+              <div class="header__actions-item"><a href="advanced-search.html">
+                  <svg class="ico ico-search">
+                    <use xlink:href="img/sprite.svg#ico-search"></use>
+                  </svg></a></div>
+            </div>
+            <div class="header__user">
+              <div class="avatar"><img src="img/avatar-1.jpg" srcset="img/avatar-1@2x.jpg 2x"></div>
+              <div class="header__user-dropdown">
+                <div class="header__user-list"><a href="account.html">Account Settings</a><a href="purchased-services.html">My Marketplace</a><a href="plans.html">Subscription</a>
+                  <div class="header__user-separator"></div><a href="homepage.html">Logout</a>
+                </div>
+              </div>
+            </div>
+            <div class="header__hamburger">
+              <div class="hamburger hamburger--squeeze" js-hamburger>
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- HEADER :: END-->
+        <!-- MOBILE NAV-->
+        <div class="mnav mnav--fixed">
+          <div class="mnav__wrapper" js-scrollbar>
+            <div class="header__search">
+              <div class="header__search-input">
+                <input name="search" type="text" placeholder="Search.." js-header-search>
+                <svg class="ico ico-search">
+                  <use xlink:href="img/sprite.svg#ico-search"></use>
+                </svg>
+                <div class="header__search-drop" js-header-searchResults>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <li><a href="#">Music Rock</a></li>
+                  <li><a href="#">Music Listen</a></li>
+                  <li><a href="#">Music</a></li>
+                  <li><a href="#">Music Lounge</a></li>
+                  <div class="header__search-no-results">No results found for <span>qqq</span> query</div>
+                </div>
+              </div>
+            </div>
+            <div class="mnav__profile">
+              <div class="mnav__profile-mage">
+                <div class="avatar avatar--big"><img src="img/avatar-1.jpg" srcset="img/avatar-1@2x.jpg 2x"></div>
+              </div><a class="mnav__profile-status" href="plans.html"><span>Premium</span></a>
+              <div class="mnav__profile-name">Benjamin Rees</div>
+            </div>
+            <ul class="mnav__menu mnav__menu--dash">
+              <li><a href="marketplace.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-case">
+                      <use xlink:href="img/sprite.svg#ico-case"></use>
+                    </svg>
+                  </div><span>Market</span></a></li>
+              <li><a href="messages.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-comments">
+                      <use xlink:href="img/sprite.svg#ico-comments"></use>
+                    </svg>
+                  </div><span>Messages  </span>
+                  <div class="mnav__menu-counter"> <span>3</span></div></a></li>
+              <li><a href="profile.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-profile">
+                      <use xlink:href="img/sprite.svg#ico-profile"></use>
+                    </svg>
+                  </div><span>Profile</span></a></li>
+              <li><a href="#" js-header-notifications>
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-notifications">
+                      <use xlink:href="img/sprite.svg#ico-notifications"></use>
+                    </svg>
+                  </div><span>Notifications</span>
+                  <div class="mnav__menu-counter"><span>9+</span></div></a></li>
+              <li><a href="cart.html">
+                  <div class="mnav__menu-icon">
+                    <svg class="ico ico-cart">
+                      <use xlink:href="img/sprite.svg#ico-cart"></use>
+                    </svg>
+                  </div><span>Cart </span>
+                  <div class="mnav__menu-counter"><span>2</span></div></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- ntf-->
+        <div class="ntf ntf--fixed">
+          <div class="ntf__title">Notifications</div>
+          <div class="ntf__wrapper" js-scrollbar>
+            <div class="ntf__list">
+              <!-- card-->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-violet">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card -->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-3.jpg" srcset="img/suggestionCard-avatar-3@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-aqua">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- card -->
+              <div class="ntf__card">
+                <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-4.jpg" srcset="img/suggestionCard-avatar-4@2x.jpg 2x"></div>
+                <div class="ntf__card-contents">
+                  <div class="ntf__card-title c-aqua">Viewed your profile</div>
+                  <div class="ntf__card-date">1 day ago</div>
+                  <div class="ntf__card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__content">
+          <!-- PROFILE-->
+          <div class="profile profile--alt">
+            <div class="profile__hero">
+              <div class="profile__bg">
+                <div class="profile__bg-wrapper"><?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 524" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>hero-bg-profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <!-- 140deg -->
+        <!-- orig x1="-3.93107096%" y1="0%" x2="80.0870768%" y2="102.746302%" -->
+        <!-- x1="100%" y1="2.53214336%" x2="-0.647379557%" y2="46.4503738%" -->
+
+        <linearGradient x1="0%" y1="2.53214336%" x2="95.647379557%" y2="20.4503738%" id="linearGradient-profile-1">
+            <stop stop-color="#2CC4A0" offset="0%"></stop>
+            <stop stop-color="#0DC6AD" offset="41.1338247%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <animate attributeName="x2" dur="4s" from="95.647379557%" to="95.647379557%" values="95.647379557%;85%;95.647379557%" repeatCount="indefinite" />
+            <animate attributeName="y2" dur="4s" from="20.4503738%" to="20.4503738%" values="20.4503738%;10%;20.4503738%" repeatCount="indefinite" />
+        </linearGradient>
+        <path d="M0,428.665485 L0,0 L1920,0 L1920,428.665485 C1643.91086,488.96002 1314.17246,524 960,524 C605.827536,524 276.089144,488.96002 -8.52651283e-14,428.665485 Z" id="path-2"></path>
+    </defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="17">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="hero-bg-profile" fill="url(#linearGradient-profile-1)" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>
+
+                </div>
+              </div>
+              <div class="container">
+                <div class="profile__info">
+                  <div class="profile__image wow" data-animation-class="wowFadeDown">
+                    <div class="avatar avatar--big"><img src="img/avatar-2.jpg" srcset="img/avatar-2@2x.jpg 2x"></div>
+                  </div><a class="profile__status wow" href="plans.html" data-animation-delay=".4s"><span>Premium</span></a>
+                  <div class="profile__name wow" data-animation-delay=".5s">Jonnie Forster</div>
+                  <div class="profile__position wow" data-animation-delay=".6s">CEO at The Foundation </div>
+                  <div class="profile__connections wow" data-animation-delay=".8s">
+                    <div class="profile__connections-num">100k+ </div>
+                    <div class="profile__connections-name">Connections</div>
+                  </div>
+                  <div class="profile__bio wow">
+                    <p>JONNIE FORSTER EMERGED AS A MUSIC ENTREPRENEUR AFTER GRADUATING WITH A BACHELOR OF SCIENCE IN MARKETING FROM SAN DIEGO STATE UNIVERSITY. HE SOON JOINED A&M/TUFF BREAK RECORDS TO HELP IMPLEMENT MARKETING PLANS FOR THEIR HIP-HOP ROSTER. JONNIE MOVED NEXT TO CAPITOL RECORDS’ CATALOG DEPARTMENT, AS A MARKETING EXECUTIVE, AND WAS INSTRUMENTAL IN VASTLY SUCCESSFUL CAMPAIGNS FOR THE BEATLES, FRANK SINATRA, JIMI HENDRIX, THE BEACH BOYS, TINA TURNER, PINK FLOYD, AND A HOST OF OTHERS. JONNIE CONCEPTUALIZED AND EXECUTIVE PRODUCED GEORGE CLINTON’S “GREATEST FUNKIN’ HITS” ALBUM SECURING ARTISTS LIKE ICE CUBE, BUSTA RHYMES, Q-TIP, OL’ DIRTY BASTARD, COOLIO, AND DIGITAL UNDERGROUND.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- DASH CONTENT-->
+            <div class="container container--wide">
+              <div class="dash">
+                <div class="dash__sidebar">
+                  <div class="dash__sidebar-wrap" js-sticky-area js-sticky-bp="992">
+                    <!-- card-->
+                    <div class="d-card wow">
+                      <div class="d-card__head">
+                        <div class="d-card__title">My Music</div>
+                        <div class="d-card__action" js-do-some>
+                          <svg class="ico ico-card-add">
+                            <use xlink:href="img/sprite.svg#ico-card-add"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="d-card__content">
+                        <!-- music plugin (media)-->
+                        <div class="m-music">
+                          <div class="m-music__scope">
+                            <div class="m-music__cover"><img src="img/audioCoverMini.jpg" srcset="img/audioCoverMini@2x.jpg 2x">
+                              <div class="m-music__play" js-play-audio>
+                                <svg class="ico ico-play">
+                                  <use xlink:href="img/sprite.svg#ico-play"></use>
+                                </svg>
+                                <svg class="ico ico-stop">
+                                  <use xlink:href="img/sprite.svg#ico-stop"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="m-music__names">
+                              <div class="m-music__author">Kygo</div>
+                              <div class="m-music__title">Of Monsters and Men - Dirty Paws (Kygo remix)</div>
+                            </div>
+                          </div>
+                          <div class="m-audio">
+                            <div js-audio-waveform data-src="media/audio-piano.mp3" data-mini="true"></div>
+                          </div>
+                          <div class="m-audio m-audio--ie">
+                            <audio>
+                              <source src="media/audio-piano.mp3" type="audio/mpeg">
+                            </audio>
+                          </div>
+                          <div class="m-music__tracks">
+                            <div class="m-music__track"><span class="m-music__track-name">1. Save Me Baby (Nayio Bitz Remix]</span><span class="m-music__track-duration">5:10</span></div>
+                            <div class="m-music__track"><span class="m-music__track-name">2. Summer Stories (Original Mix)</span><span class="m-music__track-duration">5:10</span></div>
+                            <div class="m-music__track"><span class="m-music__track-name">3. Dancing Ninja (Original Mix)</span><span class="m-music__track-duration">5:10</span></div>
+                            <div class="m-music__track"><span class="m-music__track-name">4. Him I (GeoM Remix )</span><span class="m-music__track-duration">5:10</span></div>
+                          </div>
+                        </div>
+                        <div class="d-card__more"><a href="#" js-load-more>View More…</a></div>
+                      </div>
+                    </div>
+                    <!-- card-->
+                    <div class="d-card wow">
+                      <div class="d-card__head">
+                        <div class="d-card__title">My images</div>
+                        <div class="d-card__action" js-do-some>
+                          <svg class="ico ico-card-add">
+                            <use xlink:href="img/sprite.svg#ico-card-add"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="d-card__content">
+                        <!-- gallery plugin (media)-->
+                        <div class="m-gallery" js-popup-gallery>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/1.jpg"><img src="img/gallery-img-1.jpg" srcset="img/gallery-img-1@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/2.jpg"><img src="img/gallery-img-2.jpg" srcset="img/gallery-img-2@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/3.jpg"><img src="img/gallery-img-3.jpg" srcset="img/gallery-img-3@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/1.jpg"><img src="img/gallery-img-4.jpg" srcset="img/gallery-img-4@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/2.jpg"><img src="img/gallery-img-5.jpg" srcset="img/gallery-img-5@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/3.jpg"><img src="img/gallery-img-6.jpg" srcset="img/gallery-img-6@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/1.jpg"><img src="img/gallery-img-7.jpg" srcset="img/gallery-img-7@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/1.jpg"><img src="img/gallery-img-8.jpg" srcset="img/gallery-img-8@2x.jpg 2x"></a></div>
+                          <div class="m-gallery__item"><a class="m-gallery__img-holder no-barba" href="/img/lightbox/2.jpg"><img src="img/gallery-img-9.jpg" srcset="img/gallery-img-9@2x.jpg 2x"></a></div>
+                        </div>
+                        <div class="d-card__more"><a href="#" js-load-more>View More…      </a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- DASH CONTENT (CENTER COL)    -->
+                <div class="dash__content">
+                  <!--card-->
+                  <div class="d-card d-card--mobile-btn-offset wow">
+                    <form class="create-post" action="#">
+                      <div class="create-post__writting">
+                        <textarea name="content" placeholder="Wright something…" rows="5" data-min-rows="5"></textarea>
+                      </div>
+                      <div class="create-post__actions">
+                        <div class="create-post__types" js-post-types>
+                          <div class="create-post__type create-post__type--music is-current">
+                            <svg class="ico ico-music">
+                              <use xlink:href="img/sprite.svg#ico-music"></use>
+                            </svg><span>Music</span>
+                          </div>
+                          <div class="create-post__type create-post__type--video">
+                            <svg class="ico ico-video">
+                              <use xlink:href="img/sprite.svg#ico-video"></use>
+                            </svg><span>Video</span>
+                          </div>
+                          <div class="create-post__type create-post__type--images">
+                            <svg class="ico ico-images">
+                              <use xlink:href="img/sprite.svg#ico-images"></use>
+                            </svg><span>Images</span>
+                          </div>
+                        </div>
+                        <div class="create-post__cta">
+                          <button class="btn btn-post" type="submit"><span>Post</span>
+                            <svg class="ico ico-arrow-next">
+                              <use xlink:href="img/sprite.svg#ico-arrow-next"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- card (post)-->
+                  <div class="d-card wow">
+                    <div class="d-card__head">
+                      <div class="d-card__user">
+                        <div class="avatar avatar--mid"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                        <div class="d-card__user-info">
+                          <div class="d-card__user-name">Bryan Garza</div>
+                          <div class="d-card__user-position">Job Title/Artist Name.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-card__content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                      <div class="m-video">
+                        <video poster="img/post-image-1@2x.jpg">
+                          <source src="media/video-test.mp4" type="video/mp4">Your browser does not support the video element.
+                        </video>
+                      </div>
+                    </div>
+                    <div class="d-card__actions">
+                      <div class="d-card__like is-active">
+                        <svg class="ico ico-like">
+                          <use xlink:href="img/sprite.svg#ico-like"></use>
+                        </svg><span>1k</span>
+                      </div>
+                      <div class="d-card__share">
+                        <svg class="ico ico-share">
+                          <use xlink:href="img/sprite.svg#ico-share"></use>
+                        </svg><span>56</span>
+                      </div>
+                      <div class="d-card__repost">
+                        <svg class="ico ico-repost">
+                          <use xlink:href="img/sprite.svg#ico-repost"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="d-card__comments">
+                      <div class="d-card__comments-head">
+                        <div class="d-card__comments-toggle" js-toggle-comments>
+                          <div class="d-card__comments-text">
+                            <svg class="ico ico-comment">
+                              <use xlink:href="img/sprite.svg#ico-comment"></use>
+                            </svg><span>9 comments</span>
+                          </div>
+                          <div class="d-card__comments-arrow">
+                            <svg class="ico ico-select-down">
+                              <use xlink:href="img/sprite.svg#ico-select-down"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- comment-->
+                      <div class="d-card__comments-drop">
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-3.jpg" srcset="img/suggestionCard-avatar-3@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Devin Richardson</div>
+                            <div class="d-card__comment-text">
+                              <p>Very Nice!</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The 11-minute opener begins well enough, with bass thumps building a trance beneath paranormal EQs as White-Gluz’s vocals </p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Clifford Rowe</div>
+                            <div class="d-card__comment-text">
+                              <p>nice work, congrats</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-4.jpg" srcset="img/suggestionCard-avatar-4@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The only song that makes effective use of White-Gluz’s and Kember’s complementary skills is “Triangle Probably.”</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago  </span></div>
+                        </div>
+                      </div>
+                      <!-- add comment-->
+                      <div class="d-card__reply">
+                        <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                        <textarea name="d-reply" placeholder="Write a comment"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- card (post)-->
+                  <div class="d-card wow">
+                    <div class="d-card__head">
+                      <div class="d-card__user">
+                        <div class="avatar avatar--mid"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                        <div class="d-card__user-info">
+                          <div class="d-card__user-name">Bryan Garza</div>
+                          <div class="d-card__user-position">Job Title/Artist Name.</div>
+                        </div>
+                      </div>
+                      <div class="d-card__options">
+                        <div class="d-card__options-wrap">
+                          <div class="d-card__options-toggle" js-card-options>
+                            <svg class="ico ico-more">
+                              <use xlink:href="img/sprite.svg#ico-more"></use>
+                            </svg>
+                          </div>
+                          <ul class="d-card__options-list">
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">Copy link</a></li>
+                            <li><a href="#">Share</a></li>
+                            <li><a href="#">Unollow User</a></li>
+                            <li><a href="#">Report Post</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-card__content">
+                      <!-- music plugin (media)-->
+                      <div class="m-music">
+                        <div class="m-music__scope">
+                          <div class="m-music__cover"><img src="img/audioCoverMini.jpg" srcset="img/audioCoverMini@2x.jpg 2x">
+                            <div class="m-music__play" js-play-audio>
+                              <svg class="ico ico-play">
+                                <use xlink:href="img/sprite.svg#ico-play"></use>
+                              </svg>
+                              <svg class="ico ico-stop">
+                                <use xlink:href="img/sprite.svg#ico-stop"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="m-music__names">
+                            <div class="m-music__author">Kygo</div>
+                            <div class="m-music__title">Of Monsters and Men - Dirty Paws (Kygo remix)</div>
+                          </div>
+                        </div>
+                        <div class="m-music__volume">
+                          <div class="m-music__volume-toggle" js-open-soundbar><i class="icon icon-soundbar"></i></div>
+                          <div class="m-music__volume-bar">
+                            <div js-rangeslider js-set-volume></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- audio track (waveform)-->
+                      <div class="m-audio">
+                        <div js-audio-waveform data-src="media/audio-piano.mp3"></div>
+                      </div>
+                      <div class="m-audio m-audio--ie">
+                        <audio>
+                          <source src="media/audio-piano.mp3" type="audio/mpeg">
+                        </audio>
+                      </div>
+                    </div>
+                    <div class="d-card__actions">
+                      <div class="d-card__like">
+                        <svg class="ico ico-like">
+                          <use xlink:href="img/sprite.svg#ico-like"></use>
+                        </svg><span>1k</span>
+                      </div>
+                      <div class="d-card__share">
+                        <svg class="ico ico-share">
+                          <use xlink:href="img/sprite.svg#ico-share"></use>
+                        </svg><span>56</span>
+                      </div>
+                      <div class="d-card__repost">
+                        <svg class="ico ico-repost">
+                          <use xlink:href="img/sprite.svg#ico-repost"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="d-card__comments">
+                      <div class="d-card__comments-head">
+                        <div class="d-card__comments-toggle" js-toggle-comments>
+                          <div class="d-card__comments-text">
+                            <svg class="ico ico-comment">
+                              <use xlink:href="img/sprite.svg#ico-comment"></use>
+                            </svg><span>9 comments</span>
+                          </div>
+                          <div class="d-card__comments-arrow">
+                            <svg class="ico ico-select-down">
+                              <use xlink:href="img/sprite.svg#ico-select-down"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- comment-->
+                      <div class="d-card__comments-drop">
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-3.jpg" srcset="img/suggestionCard-avatar-3@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Devin Richardson</div>
+                            <div class="d-card__comment-text">
+                              <p>Very Nice!</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The 11-minute opener begins well enough, with bass thumps building a trance beneath paranormal EQs as White-Gluz’s vocals </p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Clifford Rowe</div>
+                            <div class="d-card__comment-text">
+                              <p>nice work, congrats</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-4.jpg" srcset="img/suggestionCard-avatar-4@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The only song that makes effective use of White-Gluz’s and Kember’s complementary skills is “Triangle Probably.”</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago  </span></div>
+                        </div>
+                      </div>
+                      <!-- add comment-->
+                      <div class="d-card__reply">
+                        <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                        <textarea name="d-reply" placeholder="Write a comment"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- card (post)-->
+                  <div class="d-card wow">
+                    <div class="d-card__head">
+                      <div class="d-card__user">
+                        <div class="avatar avatar--mid"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                        <div class="d-card__user-info">
+                          <div class="d-card__user-name">Bryan Garza</div>
+                          <div class="d-card__user-position">Job Title/Artist Name.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-card__content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+                      <div class="m-video">
+                        <video poster="img/post-image-1@2x.jpg">
+                          <source src="media/video-test.mp4" type="video/mp4">Your browser does not support the video element.
+                        </video>
+                      </div>
+                    </div>
+                    <div class="d-card__actions">
+                      <div class="d-card__like is-active">
+                        <svg class="ico ico-like">
+                          <use xlink:href="img/sprite.svg#ico-like"></use>
+                        </svg><span>1k</span>
+                      </div>
+                      <div class="d-card__share">
+                        <svg class="ico ico-share">
+                          <use xlink:href="img/sprite.svg#ico-share"></use>
+                        </svg><span>56</span>
+                      </div>
+                      <div class="d-card__repost">
+                        <svg class="ico ico-repost">
+                          <use xlink:href="img/sprite.svg#ico-repost"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="d-card__comments">
+                      <div class="d-card__comments-head">
+                        <div class="d-card__comments-toggle" js-toggle-comments>
+                          <div class="d-card__comments-text">
+                            <svg class="ico ico-comment">
+                              <use xlink:href="img/sprite.svg#ico-comment"></use>
+                            </svg><span>9 comments</span>
+                          </div>
+                          <div class="d-card__comments-arrow">
+                            <svg class="ico ico-select-down">
+                              <use xlink:href="img/sprite.svg#ico-select-down"></use>
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- comment-->
+                      <div class="d-card__comments-drop">
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-3.jpg" srcset="img/suggestionCard-avatar-3@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Devin Richardson</div>
+                            <div class="d-card__comment-text">
+                              <p>Very Nice!</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-1.jpg" srcset="img/suggestionCard-avatar-1@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The 11-minute opener begins well enough, with bass thumps building a trance beneath paranormal EQs as White-Gluz’s vocals </p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Clifford Rowe</div>
+                            <div class="d-card__comment-text">
+                              <p>nice work, congrats</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago</span></div>
+                        </div>
+                        <!-- comment-->
+                        <div class="d-card__comment">
+                          <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-4.jpg" srcset="img/suggestionCard-avatar-4@2x.jpg 2x"></div>
+                          <div class="d-card__comment-content">
+                            <div class="d-card__comment-author">Marcus Cobb</div>
+                            <div class="d-card__comment-text">
+                              <p>The only song that makes effective use of White-Gluz’s and Kember’s complementary skills is “Triangle Probably.”</p>
+                            </div>
+                          </div>
+                          <div class="d-card__comment-date"><span>1 day ago  </span></div>
+                        </div>
+                      </div>
+                      <!-- add comment-->
+                      <div class="d-card__reply">
+                        <div class="avatar avatar--shad"><img src="img/suggestionCard-avatar-2.jpg" srcset="img/suggestionCard-avatar-2@2x.jpg 2x"></div>
+                        <textarea name="d-reply" placeholder="Write a comment"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER :: START-->
+        <footer class="footer footer--mini">
+          <div class="footer__wrapper">
+            <div class="footer__top">
+              <div class="footer__copy">(c) elit. Nulla 2018</div>
+              <div class="footer__socials"><a href="#" target="_blank">
+                  <svg class="ico ico-social-fb">
+                    <use xlink:href="img/sprite.svg#ico-social-fb"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="ico ico-social-insta">
+                    <use xlink:href="img/sprite.svg#ico-social-insta"></use>
+                  </svg></a><a href="#" target="_blank">
+                  <svg class="ico ico-social-soundcloud">
+                    <use xlink:href="img/sprite.svg#ico-social-soundcloud"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER :: END-->
+      </div>
+      <script src="js/vendor.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>
